@@ -1,0 +1,2 @@
+import{l as m}from"/assets/js/chunk-6BQLHAAI-b878c8bf.js";import{g as n}from"/assets/js/chunk-VHFKZWVR-c7a13a34.js";var t=n();function a(r,o,e,i){m.isTest||m.debugPerformance&&(e||(e=performance.now()),e>=o&&(t?console.timeStamp(r,o,e,i):(performance.measure(r,{start:o,end:e,detail:{devtool:{track:i}}}),performance.clearMeasures(r))))}export{a};
+//# sourceMappingURL=/assets/js/chunk-OOA4IV6W-bb5942af.js.map

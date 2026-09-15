@@ -1,0 +1,2 @@
+import{a as n}from"/assets/js/chunk-2FCXHKEL-f3af3f92.js";import{e as t}from"/assets/js/chunk-WLHSDIGQ-997a23cc.js";var r=t(n());function o(){return(0,r.jsx)("svg",{role:"presentation",xmlns:"http://www.w3.org/2000/svg",width:"12",height:"12",children:(0,r.jsx)("path",{d:"m1.5 5.75 2.293 2.293a1 1 0 0 0 1.414 0L10 3.25",fill:"transparent",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round",stroke:"currentColor"})})}export{o as a};
+//# sourceMappingURL=/assets/js/chunk-YGN7H5WF-07ac481d.js.map
