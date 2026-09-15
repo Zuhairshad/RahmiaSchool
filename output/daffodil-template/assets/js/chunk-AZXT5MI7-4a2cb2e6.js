@@ -1,2 +1,0 @@
-import{a as e}from"/assets/js/chunk-2FCXHKEL-f3af3f92.js";import{e as o}from"/assets/js/chunk-WLHSDIGQ-997a23cc.js";var t=o(e());function L(r){return(0,t.jsx)("svg",{role:"presentation",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 10 15",width:"10",height:"15",...r,children:(0,t.jsx)("path",{d:"M 0 0 L 10 0 L 10 5 L 5 5 Z M 0 5 L 5 5 L 10 10 L 0 10 Z M 5 10 L 5 15 L 0 10 Z",fill:"currentColor"})})}export{L as a};
-//# sourceMappingURL=/assets/js/chunk-AZXT5MI7-4a2cb2e6.js.map

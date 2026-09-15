@@ -1,2 +1,0 @@
-import{a as i,d as m}from"/assets/js/chunk-Z2D6QWS4-52b2063f.js";import{b as t}from"/assets/js/chunk-4JY5UMT2-eb896d4a.js";var u=2**32-1,a=10,o=u-a,d=Array.from({length:a},(r,e)=>u-e);function p(){return Math.floor(Math.random()*o)}function f(r){return Number.isSafeInteger(r)&&r>=0&&r<=o}function N(r){return Number.isSafeInteger(r)&&r>=0}function b(r,e){let n=r===i?e:m(`${r}:${e}`)%o;return t(f(n),()=>`invalid clientId derived for ${r}:${e}: ${n}`),n}export{d as a,p as b,f as c,N as d,b as e};
-//# sourceMappingURL=/assets/js/chunk-AFIURHLI-cdc71315.js.map
