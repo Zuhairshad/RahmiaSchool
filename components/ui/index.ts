@@ -3,3 +3,7 @@ export { default as SectionLabel } from "./SectionLabel";
 export { default as WavyUnderline } from "./WavyUnderline";
 export { default as Button } from "./Button";
 export { default as StatTile } from "./StatTile";
+export { default as BlogCard } from "./BlogCard";
+export { default as PricingCard } from "./PricingCard";
+export { default as ContactForm } from "./ContactForm";
+export { default as AdmissionForm } from "./AdmissionForm";

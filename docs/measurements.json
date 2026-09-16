@@ -1,0 +1,264 @@
+{
+  "_meta": {
+    "source": "reference-site/public/*.html (real Framer export)",
+    "verifiedAgainst": [
+      "reference-site/public/index.html (fully inlined CSS, 210,979 chars)",
+      "reference-site/public/programs/little-explorer-program.html (fully inlined CSS, 162,760 chars)",
+      "body{--token-...} custom properties, identical on all 8 top-level HTML files including the empty contact.html"
+    ],
+    "caveat": "Only the two files listed above ship their full component CSS inline. The other 13 HTML files in this export only ship a shared ~78KB reset/font/token block, so exact spacing/grid values for those pages are extrapolated from the two canonical files, not independently verified per page. See docs/reference-analysis.md section 0 and 7 for full detail.",
+    "emptyPages": [
+      "reference-site/public/contact.html",
+      "reference-site/public/programs/bright-starters-program.html",
+      "reference-site/public/programs/growth-initiative.html",
+      "reference-site/public/blogs/the-importance-of-play-in-early-learningfun-ways-to-encourage-creativity-in-young-children.html"
+    ]
+  },
+  "colors": {
+    "tintGreen": "#d7fdcf",
+    "tintPurple": "#ebe1fd",
+    "tintCream": "#feeecd",
+    "bgCream": "#fcfaed",
+    "brandPurple": "#3d2f6b",
+    "purpleDeep": "#520080",
+    "brandTeal": "#09d89a",
+    "gold": "#fcb520",
+    "goldLight": "#f4da58",
+    "black": "#000000",
+    "white": "#ffffff",
+    "bodyText": "#575757",
+    "grayLight": "#d5d5d5",
+    "grayMid": "#bababa",
+    "grayDark": "#9d9d9d",
+    "darkBg": "#141414",
+    "borderGray": "#373737",
+    "blackAlpha10": "#0000001a",
+    "whiteAlpha10": "#ffffff1a",
+    "red": "#ff2244",
+    "redAlpha15": "#ff224426",
+    "blackAlpha30": "#0000004d",
+    "unverifiedFromDraftOnly": {
+      "note": "These appear only in the previous hand-drafted .tsx pass (Navbar/Footer), not in any real Framer token or inlined CSS. Closest confirmed real dark value is darkBg #141414.",
+      "navBgDraft": "#0d0d0d",
+      "footerBgDraft": "#0a0a0a"
+    }
+  },
+  "fonts": {
+    "heading": "Plus Jakarta Sans",
+    "body": "Nunito Sans",
+    "label": "Nunito Sans",
+    "labelNote": "Correction vs. initial assumption: Fragment Mono is loaded site-wide but is only ever applied as the monospace font for <code> elements inside blog rich text. The one confirmed uppercase-label CSS preset found uses Nunito Sans at weight 500, not Fragment Mono.",
+    "unusedButLoaded": ["Fragment Mono", "Inter", "Inter Variable", "Inter Display"],
+    "weights": {
+      "Nunito Sans": [400, 500, 600, 700],
+      "Plus Jakarta Sans": [600, 700, 800],
+      "Fragment Mono": [400]
+    },
+    "headingSizesPx": [22, 26, 36, 38, 46, 72],
+    "headingSizeNote": "Desktop sizes pulled from real style-preset rules (--framer-font-size) using Plus Jakarta Sans; 72px is the confirmed hero H1 desktop size. Responsive/clamp shrinkage at the 810px/1380px breakpoints was not individually traced for every size.",
+    "bodySizePx": 16,
+    "localFontFiles": 22,
+    "localFontFilesPath": "reference-site/public/assets/fonts/"
+  },
+  "breakpoints": [
+    {
+      "px": 810,
+      "notes": "Below this: mobile. Nav becomes a full-height (100vh) vertical overlay menu at a frozen 390px width, flex-direction column, links stacked with padding 20px."
+    },
+    {
+      "px": 1380,
+      "notes": "810-1379px: tablet. Nav uses the same full-height vertical overlay pattern as mobile but at a frozen 768px width. At >=1380px: desktop horizontal nav bar, width 1300px, logo left / links center / contact button right."
+    }
+  ],
+  "breakpointsNote": "Correction vs. initial assumption: the real, verified boundaries are 810px and 1380px (confirmed via @media (max-width:809.98px), @media(min-width:810px) and (max-width:1379.98px), @media(min-width:1380px) across index.html and other pages). The previously-drafted Navbar.tsx's 900px breakpoint does not match the real CSS.",
+  "radii": {
+    "pill": 100,
+    "card": 20,
+    "medium": 15,
+    "small": 10,
+    "tiny": 6,
+    "hairline": 5
+  },
+  "shadows": {
+    "soft": "0 0.602187px 0.421531px -1px #0000004a, 0 2.28853px 1.60197px -2px #00000047, 0 10px 7px -3px #0003",
+    "note": "Only one concrete multi-layer shadow value was found in the real inlined CSS. Form-input focus shadows exist only as unresolved Framer CSS variables (var(--framer-input-box-shadow))."
+  },
+  "containerMaxWidth": 1300,
+  "containerMaxWidthNote": "Correction vs. initial assumption of 1200px. The real, most frequently repeated fixed content width in the inlined CSS is 1300px (e.g. desktop nav inner container). Secondary frozen widths of 768px (tablet) and 390px (mobile) also appear as per-breakpoint container widths.",
+  "motion": {
+    "smoothScroll": {
+      "library": "Lenis (class=\"lenis\" on <html>)",
+      "recommendation": "Reproduce the feel via CSS scroll-behavior: smooth or a lightweight smooth-scroll approach; do not necessarily install Lenis itself."
+    },
+    "heroTextReveal": "Per-word spans in H1/subtitle animate opacity + filter:blur(0px) + transform, staggered word-by-word on load/scroll (Framer JS-driven, not CSS @keyframes).",
+    "sectionFadeUp": "Section content wrappers use an initial inline state of opacity:0; transform:translateY(50px); animated in on scroll (JS-driven).",
+    "transitions": ["color .15s (links/text hover)"],
+    "keyframesFound": [],
+    "accordions": ["FAQ cards (About page, 4 items)", "Value cards (About page, 3 items) - both named with a *Close* variant suggesting an Open/Close accordion state"],
+    "tickerMarquee": "Ticker Section markup is duplicated (appears twice) on the homepage, consistent with a JS-driven seamless-loop marquee rather than a CSS keyframe animation.",
+    "darkModeStub": "@media (prefers-color-scheme: dark) exists on every page but its body is empty - no real dark mode is implemented anywhere in this export."
+  },
+  "videos": [
+    { "page": "/", "count": 2, "hosting": "remote (framerusercontent.com)", "attributes": ["loop", "muted", "playsinline"] },
+    { "page": "/admission", "count": 1, "hosting": "remote (framerusercontent.com)", "attributes": ["loop", "playsinline"] }
+  ],
+  "images": {
+    "totalLocalFiles": 171,
+    "localPath": "reference-site/public/assets/images/",
+    "note": "Filenames are content-hashed and not self-describing; per-page reference counts below are unique <img src> paths found in each page's HTML, not a partition of the 171 total (assets are reused across pages).",
+    "uniqueReferencesByPage": {
+      "index.html": 32,
+      "about.html": 27,
+      "teachers.html": 21,
+      "admission.html": 20,
+      "blogs.html": 20,
+      "programs.html": 15,
+      "pricing.html": 15,
+      "contact.html": 0,
+      "programs/little-explorer-program.html": 19,
+      "programs/creative-minds-program.html": 15,
+      "programs/happy-learners-program.html": 15,
+      "programs/smart-thinkers-program.html": 15,
+      "programs/bright-starters-program.html": 0,
+      "programs/growth-initiative.html": 0,
+      "blogs/creative-games-that-make-learning-fun-for-kids.html": 19,
+      "blogs/easy-learning-activities-for-curious-young-minds.html": 18,
+      "blogs/hands-on-projects-to-build-creativity-and-confidence.html": 19,
+      "blogs/how-art-and-play-support-your-child-e2-80-99s-development.html": 19,
+      "blogs/importing-contentcreative-play-ideas-for-early-childhood-development.html": 18,
+      "blogs/simple-crafts-that-inspire-imagination-and-learning.html": 19,
+      "blogs/the-importance-of-play-in-early-learningfun-ways-to-encourage-creativity-in-young-children.html": 0
+    }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "sourceFile": "reference-site/public/index.html",
+      "title": "RAHMA Model School | Inspiring Young Minds for a Bright Future",
+      "rendered": true,
+      "sections": ["Hero Section", "Ticker Section", "About Section", "Benefit Section", "Presentation Section (stats/counters)", "Program Section", "Feature Section", "Testimonial Section", "Pricing Section", "Blog Section", "CTA Section", "Footer"]
+    },
+    {
+      "path": "/about",
+      "sourceFile": "reference-site/public/about.html",
+      "title": "About Us | RAHMA Model School Rawat",
+      "rendered": true,
+      "sections": ["Banner Section", "Image Section", "Ticker Section", "Story Section (4-item timeline)", "Teacher Section (4 cards)", "Value Section (3 cards)", "FAQ Section (4 items)", "CTA Section", "Footer"]
+    },
+    {
+      "path": "/contact",
+      "sourceFile": "reference-site/public/contact.html",
+      "title": "Contact Us | RAHMA Model School Rawat",
+      "rendered": false,
+      "sections": []
+    },
+    {
+      "path": "/programs",
+      "sourceFile": "reference-site/public/programs.html",
+      "title": "Academic Programs | RAHMA Model School Rawat",
+      "rendered": true,
+      "sections": ["Banner Section", "Program Section (4 cards shown)", "CTA Section", "Footer"]
+    },
+    {
+      "path": "/admission",
+      "sourceFile": "reference-site/public/admission.html",
+      "title": "Admissions | RAHMA Model School Rawat",
+      "rendered": true,
+      "sections": ["Banner Section (with video)", "Step Section (3 steps)", "Application Section (form)", "Preview Section", "CTA Section", "Footer"]
+    },
+    {
+      "path": "/teachers",
+      "sourceFile": "reference-site/public/teachers.html",
+      "title": "Our Faculty | RAHMA Model School Rawat",
+      "rendered": true,
+      "sections": ["Banner Section", "Teacher Section (6 cards)", "CTA Section", "Footer"]
+    },
+    {
+      "path": "/pricing",
+      "sourceFile": "reference-site/public/pricing.html",
+      "title": "Fee Structure & Admissions | RAHMA Model School Rawat",
+      "rendered": true,
+      "sections": ["Pricing Section (10 list items)", "CTA Section", "Footer"]
+    },
+    {
+      "path": "/blogs",
+      "sourceFile": "reference-site/public/blogs.html",
+      "title": "Student Life & Activities | RAHMA Model School Rawat",
+      "rendered": true,
+      "sections": ["Banner Section", "Blog Section (6 cards)", "CTA Section", "Footer"],
+      "note": "Nav/footer label 'Student Life' points to this page; there is no separate /student-life page in the real export."
+    },
+    {
+      "path": "/programs/bright-starters-program",
+      "sourceFile": "reference-site/public/programs/bright-starters-program.html",
+      "rendered": false
+    },
+    {
+      "path": "/programs/creative-minds-program",
+      "sourceFile": "reference-site/public/programs/creative-minds-program.html",
+      "rendered": true
+    },
+    {
+      "path": "/programs/growth-initiative",
+      "sourceFile": "reference-site/public/programs/growth-initiative.html",
+      "rendered": false
+    },
+    {
+      "path": "/programs/happy-learners-program",
+      "sourceFile": "reference-site/public/programs/happy-learners-program.html",
+      "rendered": true
+    },
+    {
+      "path": "/programs/little-explorer-program",
+      "sourceFile": "reference-site/public/programs/little-explorer-program.html",
+      "rendered": true,
+      "note": "Fully-inlined CSS, second canonical design-token source alongside the homepage."
+    },
+    {
+      "path": "/programs/smart-thinkers-program",
+      "sourceFile": "reference-site/public/programs/smart-thinkers-program.html",
+      "rendered": true
+    },
+    {
+      "path": "/blogs/creative-games-that-make-learning-fun-for-kids",
+      "sourceFile": "reference-site/public/blogs/creative-games-that-make-learning-fun-for-kids.html",
+      "rendered": true
+    },
+    {
+      "path": "/blogs/easy-learning-activities-for-curious-young-minds",
+      "sourceFile": "reference-site/public/blogs/easy-learning-activities-for-curious-young-minds.html",
+      "rendered": true
+    },
+    {
+      "path": "/blogs/hands-on-projects-to-build-creativity-and-confidence",
+      "sourceFile": "reference-site/public/blogs/hands-on-projects-to-build-creativity-and-confidence.html",
+      "rendered": true
+    },
+    {
+      "path": "/blogs/how-art-and-play-support-your-child's-development",
+      "sourceFile": "reference-site/public/blogs/how-art-and-play-support-your-child-E2-80-99s-development.html",
+      "rendered": true,
+      "note": "Filename contains E2-80-99, the URL-encoded UTF-8 bytes for a right single quotation mark (').  Decoded slug/title uses a real apostrophe: \"child's\"."
+    },
+    {
+      "path": "/blogs/importing-contentcreative-play-ideas-for-early-childhood-development",
+      "sourceFile": "reference-site/public/blogs/importing-contentcreative-play-ideas-for-early-childhood-development.html",
+      "rendered": true
+    },
+    {
+      "path": "/blogs/simple-crafts-that-inspire-imagination-and-learning",
+      "sourceFile": "reference-site/public/blogs/simple-crafts-that-inspire-imagination-and-learning.html",
+      "rendered": true,
+      "note": "File exists but is not linked from blogs.html itself."
+    },
+    {
+      "path": "/blogs/the-importance-of-play-in-early-learningfun-ways-to-encourage-creativity-in-young-children",
+      "sourceFile": "reference-site/public/blogs/the-importance-of-play-in-early-learningfun-ways-to-encourage-creativity-in-young-children.html",
+      "rendered": false
+    }
+  ],
+  "notInThisExport": {
+    "facilities": "No facilities.html file and no dedicated /facilities page exist in the real Framer export. The word 'facilities' appears once, as plain body text on about.html, not as a page or nav item. reference-site/app/facilities/page.tsx is a draft invention with unverified content.",
+    "studentLifeAsSeparatePage": "No student-life.html file exists. The footer's 'Student Life' label links to blogs.html - it is an alternate name for the Blogs page/collection, not an independent route. reference-site/app/student-life/page.tsx is a draft invention with unverified content."
+  }
+}
