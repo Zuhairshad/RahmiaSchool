@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/*
+  Design tokens lifted directly from the Framer export's own CSS custom
+  properties (reference-site/public/index.html, the `body{--token-...}`
+  block). Framer's hashed token names are kept as a comment next to each
+  alias so the mapping back to the source is traceable.
+*/
+:root {
+  /* brand */
+  --color-brand-teal: #09d89a;      /* --token-69206787... */
+  --color-brand-purple: #3d2f6b;    /* --token-353a59cb... */
+  --color-brand-purple-deep: #520080; /* --token-dd4b7ded... */
+  --color-brand-gold: #fcb520;      /* --token-f36e6d71... */
+  --color-brand-gold-light: #f4da58; /* --token-faa35dbf... */
+
+  /* tints used as card/section backgrounds */
+  --color-tint-green: #d7fdcf;      /* --token-b67153af... */
+  --color-tint-purple: #ebe1fd;     /* --token-da36b686... */
+  --color-tint-cream: #feeecd;      /* --token-b0de641d... */
+  --color-bg-cream: #fcfaed;        /* --token-f08abcfd... */
+
+  /* neutrals */
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-body-text: #575757;
+  --color-dark-bg: #141414;         /* --token-0c2bd794... */
+  --color-dark-bg-deep: #0a0a0a;
+  --color-dark-surface: #1c1c1c;
+  --color-nav-bg: #0d0d0d;
+  --color-border-dark: #373737;
+  --color-gray-mid: #bababa;
+  --color-gray-soft: #9d9d9d;
+  --color-line: #d5d5d5;
+
+  /* fonts (real @font-face families declared by the Framer export) */
+  --font-body: var(--font-nunito-sans), "Nunito Sans", sans-serif;
+  --font-heading: var(--font-nunito-sans), "Nunito Sans", sans-serif;
+  --font-label: var(--font-fragment-mono), "Fragment Mono", monospace;
+
+  --container-max: 1200px;
+}
+
+@theme inline {
+  --color-brand-teal: var(--color-brand-teal);
+  --color-brand-purple: var(--color-brand-purple);
+  --color-brand-purple-deep: var(--color-brand-purple-deep);
+  --color-brand-gold: var(--color-brand-gold);
+  --color-brand-gold-light: var(--color-brand-gold-light);
+  --color-tint-green: var(--color-tint-green);
+  --color-tint-purple: var(--color-tint-purple);
+  --color-tint-cream: var(--color-tint-cream);
+  --color-bg-cream: var(--color-bg-cream);
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-body-text: var(--color-body-text);
+  --color-dark-bg: var(--color-dark-bg);
+  --color-dark-bg-deep: var(--color-dark-bg-deep);
+  --color-dark-surface: var(--color-dark-surface);
+  --color-nav-bg: var(--color-nav-bg);
+  --color-border-dark: var(--color-border-dark);
+  --color-gray-mid: var(--color-gray-mid);
+  --color-gray-soft: var(--color-gray-soft);
+  --color-line: var(--color-line);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-label: var(--font-label);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--color-bg-cream);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

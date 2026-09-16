@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+build
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+.DS_Store
+parity-artifacts/*.png
+parity-artifacts/*.json
+!parity-artifacts/.gitkeep
+test-results/
+playwright-report/
