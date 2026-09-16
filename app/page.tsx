@@ -126,9 +126,22 @@ export default function HomePage() {
       `}</style>
 
       {/* ── HERO ── */}
+      {/* Real reference has an autoplaying looped background video here
+          (reference-site/public/index.html, Hero Section) — downloaded and
+          self-hosted since the original CDN URL isn't reachable from every
+          environment. A dark gradient overlay keeps the white text legible
+          across every frame, since the real footage has bright moments. */}
       <section style={{ position: "relative", minHeight: 600, background: "var(--color-dark-bg)", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(120deg,#0d0d0d 50%,#1a2a18 100%)", opacity: 0.95 }} />
-        <div style={{ position: "absolute", right: 0, top: 0, width: "50%", height: "100%", background: "linear-gradient(135deg,#1a2a18,#0d1a0d)", opacity: 0.6 }} />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+        >
+          <source src="/assets/videos/hero-home.mp4" type="video/mp4" />
+        </video>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, rgba(13,13,13,0.75) 30%, rgba(13,13,13,0.15) 75%)" }} />
 
         <Container style={{ position: "relative", padding: "100px 32px 80px" }}>
           <div style={{ maxWidth: 600 }}>
@@ -165,14 +178,44 @@ export default function HomePage() {
               A nurturing space where children learn, play, and grow with confidence through a blend of creative
               activities and guided learning.
             </p>
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Button href="/contact" variant="solid">
-                Admissions Open
-              </Button>
-              <Button href="/programs" variant="outline">
-                View Programs
-              </Button>
-            </div>
+            {/* Real hero has exactly one button — white pill, black text, a
+                gold circular icon (reference: data-framer-name="Primary
+                Buttom 01" -> href="./contact.html") — not two buttons. */}
+            <Link
+              href="/contact"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                background: "#fff",
+                color: "#000",
+                fontWeight: 600,
+                fontSize: "0.95rem",
+                padding: "8px 8px 8px 22px",
+                borderRadius: 100,
+              }}
+            >
+              Admissions Open
+              <span
+                style={{
+                  width: 34,
+                  height: 34,
+                  borderRadius: "50%",
+                  background: "var(--color-brand-gold)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden>
+                  <path
+                    fill="#000"
+                    d="M11.133 15.55a.833.833 0 0 1-.591-1.383l4.166-4.125-4.166-4.125a.833.833 0 1 1 1.183-1.175l4.708 4.708a.833.833 0 0 1 0 1.183l-4.708 4.709a.83.83 0 0 1-.592.208"
+                  />
+                  <path fill="#000" d="M15.834 10.833H4.167a.833.833 0 1 1 0-1.667h11.667a.833.833 0 0 1 0 1.667" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </Container>
 
