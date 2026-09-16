@@ -13,7 +13,7 @@ export default function BlogsPage() {
     <div>
       <style>{`
         .blogs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        @media (max-width: 900px) { .blogs-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 810px) { .blogs-grid { grid-template-columns: 1fr; } }
       `}</style>
 
       {/* Header */}
@@ -21,9 +21,9 @@ export default function BlogsPage() {
         <Container>
           <SectionLabel>Our Blogs</SectionLabel>
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
               fontWeight: 800,
               color: "var(--color-ink)",
               lineHeight: 1.2,

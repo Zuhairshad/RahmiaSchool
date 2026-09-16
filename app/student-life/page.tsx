@@ -72,9 +72,9 @@ export default function StudentLifePage() {
             <div>
               <SectionLabel>Student Life</SectionLabel>
               <h1
+                className="hero-h1"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
                   fontWeight: 800,
                   color: "var(--color-ink)",
                   lineHeight: 1.2,
@@ -261,7 +261,7 @@ export default function StudentLifePage() {
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 810px) {
           .student-life-hero-grid { grid-template-columns: 1fr !important; }
           .student-life-hero-grid > div:last-child { max-width: 220px !important; justify-self: start !important; }
           .student-life-skills-grid { grid-template-columns: 1fr !important; }

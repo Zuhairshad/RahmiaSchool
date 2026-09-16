@@ -65,9 +65,9 @@ export default async function ProgramDetailPage({
           >
             <div>
               <h1
+                className="hero-h1"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
                   fontWeight: 800,
                   color: "var(--color-ink)",
                   lineHeight: 1.15,
@@ -245,7 +245,7 @@ export default async function ProgramDetailPage({
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 810px) {
           .program-hero-grid { grid-template-columns: 1fr !important; }
           .program-sections-grid { grid-template-columns: 1fr !important; }
           .program-related-grid { grid-template-columns: 1fr !important; }

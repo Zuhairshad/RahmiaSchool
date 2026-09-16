@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Nunito_Sans, Fragment_Mono } from "next/font/google";
+import { Nunito_Sans, Plus_Jakarta_Sans, Fragment_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +8,13 @@ import Footer from "@/components/layout/Footer";
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-nunito-sans",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-plus-jakarta-sans",
   display: "swap",
 });
 
@@ -26,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${nunitoSans.variable} ${fragmentMono.variable}`}>
+    <html lang="en" className={`${nunitoSans.variable} ${plusJakartaSans.variable} ${fragmentMono.variable}`}>
       <body>
         <Navbar />
         {children}

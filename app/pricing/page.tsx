@@ -10,7 +10,7 @@ export default function PricingPage() {
     <div>
       <style>{`
         .pricing-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
-        @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 810px) { .pricing-grid { grid-template-columns: 1fr; } }
       `}</style>
 
       {/* Header */}
@@ -20,9 +20,9 @@ export default function PricingPage() {
             <SectionLabel>Pricing Plans</SectionLabel>
           </div>
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
               fontWeight: 800,
               color: "var(--color-ink)",
               lineHeight: 1.2,

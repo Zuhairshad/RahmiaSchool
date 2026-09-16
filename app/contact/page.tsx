@@ -49,7 +49,7 @@ export default function ContactPage() {
     <div>
       <style>{`
         .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: start; }
-        @media (max-width: 900px) {
+        @media (max-width: 810px) {
           .contact-grid { grid-template-columns: 1fr; }
           .contact-form-grid { grid-template-columns: 1fr !important; }
         }
@@ -79,9 +79,9 @@ export default function ContactPage() {
             ✦ Contact
           </p>
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
               fontWeight: 800,
               color: "#fff",
               lineHeight: 1.2,

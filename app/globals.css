@@ -33,12 +33,19 @@
   --color-gray-soft: #9d9d9d;
   --color-line: #d5d5d5;
 
-  /* fonts (real @font-face families declared by the Framer export) */
+  /* fonts (real @font-face families + usage confirmed via the export's own
+     style-preset CSS rules — see docs/reference-analysis.md §3). Headings
+     use Plus Jakarta Sans; body copy AND small uppercase labels both use
+     Nunito Sans (weight 500 for labels) — Fragment Mono is only ever used
+     for <code> in blog rich text, never for eyebrow/label text. */
   --font-body: var(--font-nunito-sans), "Nunito Sans", sans-serif;
-  --font-heading: var(--font-nunito-sans), "Nunito Sans", sans-serif;
-  --font-label: var(--font-fragment-mono), "Fragment Mono", monospace;
+  --font-heading: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  --font-label: var(--font-nunito-sans), "Nunito Sans", sans-serif;
+  --font-code: var(--font-fragment-mono), "Fragment Mono", monospace;
 
-  --container-max: 1200px;
+  /* Real fixed content width confirmed in the export's inlined CSS
+     (desktop nav bar's inner container, repeated site-wide). */
+  --container-max: 1300px;
 }
 
 @theme inline {
@@ -65,6 +72,7 @@
   --font-body: var(--font-body);
   --font-heading: var(--font-heading);
   --font-label: var(--font-label);
+  --font-code: var(--font-code);
 }
 
 html,
@@ -104,4 +112,26 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+/*
+  Hero <h1> sizing. The real export's inlined CSS confirms the desktop
+  (>=1380px) hero H1 renders at exactly 72px in Plus Jakarta Sans. Tablet
+  and mobile step values are a reasonable inference from the export's
+  confirmed heading-size scale (22/26/36/38/46/72px) rather than an
+  independently-verified per-breakpoint measurement — see
+  docs/reference-analysis.md §3 and docs/parity-report.md.
+*/
+.hero-h1 {
+  font-size: 38px;
+}
+@media (min-width: 810px) {
+  .hero-h1 {
+    font-size: 46px;
+  }
+}
+@media (min-width: 1380px) {
+  .hero-h1 {
+    font-size: 72px;
+  }
 }

@@ -56,7 +56,7 @@ export default function AdmissionPage() {
         .admission-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .admission-app-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
         .admission-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 900px) {
+        @media (max-width: 810px) {
           .admission-steps-grid { grid-template-columns: 1fr; }
           .admission-app-grid { grid-template-columns: 1fr; }
           .admission-form-grid { grid-template-columns: 1fr; }
@@ -68,9 +68,9 @@ export default function AdmissionPage() {
         <Container>
           <SectionLabel>Admission</SectionLabel>
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
               fontWeight: 800,
               color: "var(--color-ink)",
               lineHeight: 1.2,

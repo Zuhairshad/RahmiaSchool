@@ -68,9 +68,9 @@ export default function FacilitiesPage() {
         <Container>
           <SectionLabel>Facilities</SectionLabel>
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
               fontWeight: 800,
               color: "var(--color-ink)",
               lineHeight: 1.2,

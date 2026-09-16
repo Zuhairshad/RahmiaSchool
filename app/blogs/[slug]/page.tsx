@@ -37,7 +37,7 @@ export default async function BlogPostPage({ params }: Props) {
       <style>{`
         .blog-hero-copy { max-width: 760px; margin: 0 auto; text-align: center; }
         .blog-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        @media (max-width: 900px) { .blog-related-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 810px) { .blog-related-grid { grid-template-columns: 1fr; } }
       `}</style>
 
       {/* Header */}
@@ -48,9 +48,9 @@ export default async function BlogPostPage({ params }: Props) {
               <SectionLabel>Blog Details</SectionLabel>
             </div>
             <h1
+              className="hero-h1"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
                 fontWeight: 800,
                 color: "var(--color-ink)",
                 lineHeight: 1.25,
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
                 src={post.heroImage}
                 alt={post.title}
                 fill
-                sizes="(max-width: 900px) 100vw, 1200px"
+                sizes="(max-width: 810px) 100vw, 1200px"
                 style={{ objectFit: "cover" }}
                 priority
               />

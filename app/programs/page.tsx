@@ -18,9 +18,9 @@ export default function ProgramsPage() {
         <Container>
           <SectionLabel>Our Programs</SectionLabel>
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(2rem, 4vw, 3.2rem)",
               fontWeight: 800,
               color: "var(--color-ink)",
               lineHeight: 1.2,
@@ -68,7 +68,7 @@ export default function ProgramsPage() {
                       alt={p.title}
                       fill
                       style={{ objectFit: "cover" }}
-                      sizes="(max-width: 900px) 100vw, 33vw"
+                      sizes="(max-width: 810px) 100vw, 33vw"
                     />
                     <span
                       style={{

@@ -1,17 +1,21 @@
 "use client";
 import Link from "next/link";
 
+/**
+ * Matches the real export's Footer Menu 01 links exactly (index.html):
+ * Home, About, Academic Programs, Contact, Student Life (-> blogs.html),
+ * Faculty, Fee Structure, Admissions. There is no "Facilities" footer link
+ * in the real site — see docs/reference-analysis.md §1.
+ */
 const footerLinks = [
   { href: "/", label: "Home" },
-  { href: "/blogs", label: "Blogs" },
   { href: "/about", label: "About" },
-  { href: "/teachers", label: "Teachers" },
-  { href: "/programs", label: "Programs" },
-  { href: "/pricing", label: "Price plan" },
-  { href: "/facilities", label: "Facilities" },
-  { href: "/admission", label: "Admission" },
+  { href: "/programs", label: "Academic Programs" },
   { href: "/contact", label: "Contact" },
-  { href: "/student-life", label: "Student Life" },
+  { href: "/blogs", label: "Student Life" },
+  { href: "/teachers", label: "Faculty" },
+  { href: "/pricing", label: "Fee Structure" },
+  { href: "/admission", label: "Admissions" },
 ];
 
 const socials = [

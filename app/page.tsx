@@ -116,7 +116,7 @@ export default function HomePage() {
         .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
         .collage-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 360px; margin: 32px auto 0; }
-        @media (max-width: 860px) {
+        @media (max-width: 810px) {
           .grid-4 { grid-template-columns: repeat(2, 1fr); }
           .split-2 { grid-template-columns: 1fr; }
         }
@@ -147,9 +147,9 @@ export default function HomePage() {
               Est. 2014 · Rawalpindi, Pakistan
             </span>
             <h1
+              className="hero-h1"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontSize: "clamp(2.2rem, 5vw, 3.6rem)",
                 fontWeight: 800,
                 color: "#fff",
                 lineHeight: 1.15,

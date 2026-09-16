@@ -95,7 +95,7 @@ export default function AboutPage() {
         .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .grid-auto-240 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-        @media (max-width: 860px) {
+        @media (max-width: 810px) {
           .split-2 { grid-template-columns: 1fr; }
         }
       `}</style>
@@ -106,9 +106,9 @@ export default function AboutPage() {
           <SectionLabel>About Us</SectionLabel>
           <div className="split-2" style={{ alignItems: "flex-start" }}>
             <h1
+              className="hero-h1"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontSize: "clamp(2rem, 4vw, 3.2rem)",
                 fontWeight: 800,
                 color: "var(--color-ink)",
                 lineHeight: 1.15,
