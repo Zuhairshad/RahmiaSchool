@@ -34,7 +34,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer style={{ background: "var(--color-dark-bg-deep)", color: "#fff" }}>
-      <div className="footer-grid" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 32px 40px", display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: 48, alignItems: "start" }}>
+      <div className="footer-grid" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 32px 40px", display: "grid", gap: 48, alignItems: "start" }}>
         <div>
           <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "1.4rem", color: "#fff", letterSpacing: "-0.01em", marginBottom: 16 }}>
             RAHMA

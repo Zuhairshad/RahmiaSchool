@@ -82,7 +82,7 @@ export default function ContactPage() {
             className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontWeight: 800,
+              fontWeight: 700,
               color: "#fff",
               lineHeight: 1.2,
             }}

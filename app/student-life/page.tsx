@@ -75,11 +75,10 @@ export default function StudentLifePage() {
                 className="hero-h1"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: "var(--color-ink)",
                   lineHeight: 1.2,
-                  letterSpacing: "-0.02em",
-                  maxWidth: 600,
+                    maxWidth: 600,
                 }}
               >
                 Education that goes{" "}
@@ -134,7 +133,7 @@ export default function StudentLifePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: 20,
             }}
           >

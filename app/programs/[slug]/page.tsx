@@ -68,11 +68,10 @@ export default async function ProgramDetailPage({
                 className="hero-h1"
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: "var(--color-ink)",
                   lineHeight: 1.15,
-                  letterSpacing: "-0.02em",
-                  maxWidth: 560,
+                    maxWidth: 560,
                 }}
               >
                 <span style={{ position: "relative", display: "inline-block" }}>

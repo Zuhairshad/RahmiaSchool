@@ -67,10 +67,9 @@ export default function TeachersPage() {
             className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontWeight: 800,
+              fontWeight: 700,
               color: "var(--color-ink)",
               lineHeight: 1.2,
-              letterSpacing: "-0.02em",
               maxWidth: 560,
             }}
           >
@@ -89,7 +88,7 @@ export default function TeachersPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
               gap: 20,
             }}
           >

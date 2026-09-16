@@ -135,3 +135,18 @@ img {
     font-size: 72px;
   }
 }
+
+/*
+  Footer's 3-column layout (brand+form / social icons / link grid) has no
+  room to coexist at narrow widths and was overflowing horizontally on
+  every page at mobile sizes before this rule existed.
+*/
+.footer-grid {
+  grid-template-columns: 1fr auto 1fr;
+}
+@media (max-width: 810px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px !important;
+  }
+}

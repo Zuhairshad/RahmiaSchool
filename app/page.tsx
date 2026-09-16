@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Container, SectionLabel, WavyUnderline, Button, StatTile } from "@/components/ui";
+import { Container, SectionLabel, WavyUnderline, Button, StatTile, BlogCard, PricingCard } from "@/components/ui";
+import { blogPosts } from "@/app/blogs/[slug]/data";
 
 export const metadata: Metadata = {
   title: "RAHMA Model School | Inspiring Young Minds for a Bright Future",
@@ -112,13 +113,15 @@ export default function HomePage() {
     <div>
       <style>{`
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+        .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px; }
         .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
         .collage-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 360px; margin: 32px auto 0; }
+        .pricing-teaser-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
         @media (max-width: 810px) {
           .grid-4 { grid-template-columns: repeat(2, 1fr); }
           .split-2 { grid-template-columns: 1fr; }
+          .pricing-teaser-grid { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -150,11 +153,10 @@ export default function HomePage() {
               className="hero-h1"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontWeight: 800,
+                fontWeight: 700,
                 color: "#fff",
                 lineHeight: 1.15,
                 marginBottom: 24,
-                letterSpacing: "-0.02em",
               }}
             >
               Building bright young minds
@@ -374,6 +376,90 @@ export default function HomePage() {
           <div className="grid-auto-320">
             {testimonials.map((t) => (
               <TestimonialCard key={t.name + t.role} {...t} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── PRICING TEASER ── */}
+      <section style={{ background: "var(--color-paper)", padding: "80px 32px" }}>
+        <Container>
+          <div style={{ marginBottom: 40, maxWidth: 560 }}>
+            <SectionLabel>Fee Structure</SectionLabel>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 800,
+                color: "var(--color-ink)",
+                lineHeight: 1.2,
+              }}
+            >
+              Plans built for{" "}
+              <span style={{ position: "relative", display: "inline-block" }}>
+                every family
+                <WavyUnderline />
+              </span>
+            </h2>
+          </div>
+          <div className="pricing-teaser-grid">
+            <PricingCard
+              title="Basic care"
+              description="Affordable, community-focused fee structure with merit and need-based scholarships available upon request."
+              price="$100.00"
+              variant="standard"
+              ctaHref="/pricing"
+              features={["Safe and nurturing environment", "Play-based learning activities", "Daily snacks included"]}
+            />
+            <PricingCard
+              title="Smart start"
+              description="Comprehensive academic programs covering all subjects, laboratory work, co-curriculars, and examination preparation."
+              price="$500.00"
+              variant="premium"
+              ctaHref="/pricing"
+              image="/assets/images/yJpmVxeiLLChpwpGjaX5dl1UO64-bd4e3ad9.avif"
+              imageWidth={840}
+              imageHeight={1308}
+              features={["Structured learning programs", "Interactive group activities", "Weekly progress reports"]}
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── BLOG TEASER ── */}
+      <section style={{ background: "var(--color-bg-cream)", padding: "80px 32px" }}>
+        <Container>
+          <div style={{ marginBottom: 40, maxWidth: 560 }}>
+            <SectionLabel>From the Blog</SectionLabel>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 800,
+                color: "var(--color-ink)",
+                lineHeight: 1.2,
+              }}
+            >
+              Stories from{" "}
+              <span style={{ position: "relative", display: "inline-block" }}>
+                student life
+                <WavyUnderline />
+              </span>
+            </h2>
+          </div>
+          <div className="grid-auto-320">
+            {blogPosts.slice(0, 3).map((post) => (
+              <BlogCard
+                key={post.slug}
+                slug={post.slug}
+                title={post.title}
+                author={post.author}
+                date={post.date}
+                tint={post.tint}
+                image={post.heroImage}
+                imageWidth={post.heroWidth}
+                imageHeight={post.heroHeight}
+              />
             ))}
           </div>
         </Container>

@@ -56,7 +56,7 @@ export default function FacilitiesPage() {
   return (
     <div>
       <style>{`
-        .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
         .collage-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         @media (max-width: 640px) {
           .collage-4 { grid-template-columns: repeat(2, 1fr); }
@@ -71,10 +71,9 @@ export default function FacilitiesPage() {
             className="hero-h1"
             style={{
               fontFamily: "var(--font-heading)",
-              fontWeight: 800,
+              fontWeight: 700,
               color: "var(--color-ink)",
               lineHeight: 1.2,
-              letterSpacing: "-0.02em",
               maxWidth: 560,
               marginBottom: 32,
             }}

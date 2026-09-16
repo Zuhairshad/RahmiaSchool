@@ -92,8 +92,8 @@ export default function AboutPage() {
   return (
     <div>
       <style>{`
-        .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .grid-auto-240 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px; }
+        .grid-auto-240 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px; }
         .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
         @media (max-width: 810px) {
           .split-2 { grid-template-columns: 1fr; }
@@ -109,10 +109,9 @@ export default function AboutPage() {
               className="hero-h1"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontWeight: 800,
+                fontWeight: 700,
                 color: "var(--color-ink)",
                 lineHeight: 1.15,
-                letterSpacing: "-0.02em",
               }}
             >
               A nurturing space for young{" "}

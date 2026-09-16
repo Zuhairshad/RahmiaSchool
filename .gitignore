@@ -6,7 +6,7 @@ build
 next-env.d.ts
 .env*.local
 .DS_Store
-parity-artifacts/*.png
+parity-artifacts/**/*.png
 parity-artifacts/*.json
 !parity-artifacts/.gitkeep
 test-results/
