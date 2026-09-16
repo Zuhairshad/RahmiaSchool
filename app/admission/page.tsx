@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Container, SectionLabel, WavyUnderline, Button, AdmissionForm } from "@/components/ui";
+import { Container, SectionLabel, WavyUnderline, Button, AdmissionForm, CtaImageRow } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Admissions",
@@ -207,6 +207,7 @@ export default function AdmissionPage() {
       {/* CTA */}
       <section style={{ background: "var(--color-brand-teal)", padding: "64px 0", textAlign: "center" }}>
         <Container>
+          <CtaImageRow />
           <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", fontWeight: 800, color: "#000", marginBottom: 16 }}>
             Join our learning community today
           </h2>
