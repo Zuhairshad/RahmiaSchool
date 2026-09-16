@@ -10,7 +10,7 @@ const steps = [
   {
     step: "STEP 01",
     bg: "var(--color-tint-green)",
-    icon: "📄",
+    icon: "/assets/images/y9YOOlFulKPlj13Zs9F86cn64-fd9ccbd3.svg",
     iconBg: "var(--color-brand-teal)",
     title: "Application Form",
     desc: "Fill out a simple admission form with your child's basic details to start the enrollment process quickly and easily.",
@@ -18,7 +18,7 @@ const steps = [
   {
     step: "STEP 02",
     bg: "var(--color-tint-purple)",
-    icon: "👥",
+    icon: "/assets/images/Jss21SlWGBoWTPdQOkC11KRPQ-f1b333bd.svg",
     iconBg: "var(--color-brand-purple)",
     title: "Parent Meeting",
     desc: "Attend a short discussion with our educators to understand your child's needs, learning goals, and future plans.",
@@ -26,7 +26,7 @@ const steps = [
   {
     step: "STEP 03",
     bg: "var(--color-tint-cream)",
-    icon: "✅",
+    icon: "/assets/images/zKWAqAmFwvEV7PKeGZLyshFIMH8-77559a5d.svg",
     iconBg: "var(--color-brand-gold)",
     title: "Confirmation Done",
     desc: "Once approved, complete the admission process and begin your child's learning journey with RAHMA Model School.",
@@ -105,12 +105,11 @@ export default function AdmissionPage() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "1.4rem",
                     marginBottom: 20,
                   }}
                   aria-hidden
                 >
-                  {s.icon}
+                  <Image src={s.icon} alt="" width={20} height={20} />
                 </div>
                 <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.05rem", color: "#000", marginBottom: 12 }}>
                   {s.title}
