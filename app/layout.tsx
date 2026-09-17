@@ -4,6 +4,7 @@ import { Nunito_Sans, Plus_Jakarta_Sans, Fragment_Mono } from "next/font/google"
 import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/layout/Footer";
+import AnimationObserver from "@/components/AnimationObserver";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${nunitoSans.variable} ${plusJakartaSans.variable} ${fragmentMono.variable}`}>
       <body>
+        <AnimationObserver />
         <Navbar />
         {children}
         <Footer />

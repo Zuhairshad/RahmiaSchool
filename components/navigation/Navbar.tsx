@@ -35,12 +35,21 @@ export default function Navbar() {
   return (
     <>
       <style>{`
-        .nav-link { color: rgba(255,255,255,0.7); font-size: 0.875rem; font-weight: 400; font-family: var(--font-body); transition: color 0.15s; }
+        .nav-link { color: rgba(255,255,255,0.75); font-size: 16px; font-weight: 600; line-height: 24px; font-family: var(--font-body); transition: color 0.15s; }
         .nav-link:hover, .nav-link.active { color: #fff; }
         @media (max-width: 1379px) { .nav-links { display: none !important; } .nav-mobile-btn { display: flex !important; } }
         @media (min-width: 1380px) { .nav-mobile-overlay { display: none !important; } }
       `}</style>
-      <nav style={{ position: "sticky", top: 0, zIndex: 1000, background: "var(--color-nav-bg)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <nav style={{
+        position: pathname === "/" ? "absolute" : "sticky",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: pathname === "/" ? "rgba(0,0,0,0.3)" : "var(--color-nav-bg)",
+        backdropFilter: pathname === "/" ? "blur(10px)" : "none",
+        borderBottom: pathname === "/" ? "none" : "1px solid rgba(255,255,255,0.06)",
+      }}>
         <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, color: "#fff", fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1rem", letterSpacing: "-0.01em" }}>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
@@ -51,7 +60,7 @@ export default function Navbar() {
 
           <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
             {primaryLinks.map((l) => (
-              <Link key={l.href} href={l.href} className={`nav-link${pathname === l.href ? " active" : ""}`}>
+              <Link key={l.href} href={l.href} className={`nav-link nav-link-underline${pathname === l.href ? " active" : ""}`}>
                 {l.label}
               </Link>
             ))}

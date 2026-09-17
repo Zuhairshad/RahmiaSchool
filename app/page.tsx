@@ -140,10 +140,12 @@ function ArrowButton({
   href,
   children,
   variant = "white",
+  className = "",
 }: {
   href: string;
   children: string;
   variant?: "white" | "purple" | "dark";
+  className?: string;
 }) {
   const styles: Record<string, { bg: string; text: string; circleBg: string; circleText: string }> = {
     white: { bg: "#fff", text: "#000", circleBg: "#fcb520", circleText: "#000" },
@@ -154,6 +156,7 @@ function ArrowButton({
   return (
     <Link
       href={href}
+      className={`arrow-btn${className ? " " + className : ""}`}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -282,7 +285,13 @@ export default function HomePage() {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        .hero-btn:hover { opacity: 0.9; }
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(28px); }
+          to   { opacity: 1; transform: none; }
+        }
+        .hero-h1-anim  { animation: heroFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.15s both; }
+        .hero-sub-anim { animation: heroFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.30s both; }
+        .hero-btn-anim { animation: heroFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.45s both; }
         .about-card { transition: transform 0.2s ease; }
         .about-card:hover { transform: translateY(-4px); }
         .program-card { transition: transform 0.2s ease; }
@@ -355,7 +364,7 @@ export default function HomePage() {
           <div style={{ maxWidth: 600, display: "flex", flexDirection: "column", gap: 40 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <h1
-                className="hero-h1"
+                className="hero-h1 hero-h1-anim"
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontWeight: 700,
@@ -367,6 +376,7 @@ export default function HomePage() {
                 Building bright young minds
               </h1>
               <p
+                className="hero-sub-anim"
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: 16,
@@ -379,7 +389,7 @@ export default function HomePage() {
                 A nurturing space where children learn, play, and grow with confidence through a blend of creative activities and guided learning.
               </p>
             </div>
-            <div>
+            <div className="hero-btn-anim">
               <ArrowButton href="/contact" variant="white">
                 Enroll now
               </ArrowButton>
@@ -399,12 +409,14 @@ export default function HomePage() {
         }}
       >
         <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 60 }}>
-          {/* Title row: heading on right, label top-right */}
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <div style={{ width: 650, display: "flex", flexDirection: "column", gap: 0 }}>
-              <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
-                <Eyebrow>About Us</Eyebrow>
-              </div>
+          {/* Title row: label LEFT, heading RIGHT — matches reference layout */}
+          <div style={{ display: "flex", alignItems: "flex-start" }}>
+            {/* Left spacer with eyebrow label */}
+            <div style={{ flex: 1 }}>
+              <Eyebrow>About Us</Eyebrow>
+            </div>
+            {/* Right: heading + icon circles */}
+            <div data-animate="" style={{ width: 650, flexShrink: 0 }}>
               <h2
                 style={{
                   fontFamily: "var(--font-heading)",
@@ -415,18 +427,24 @@ export default function HomePage() {
                   margin: 0,
                 }}
               >
-                A warm space for growing minds filled with care, nature, and discovery, where play becomes learning
+                A warm space for growing minds filled with care, nature, and discovery, where play becomes learning{" "}
+                <span style={{ display: "inline-flex", gap: 6, verticalAlign: "middle", marginLeft: 4 }}>
+                  <span style={{ display: "inline-flex", width: 40, height: 40, borderRadius: "50%", background: "#09d89a", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><circle cx="9" cy="7" r="4" stroke="#fff" strokeWidth="2"/></svg>
+                  </span>
+                  <span style={{ display: "inline-flex", width: 40, height: 40, borderRadius: "50%", background: "#520080", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><circle cx="12" cy="8" r="4" stroke="#fff" strokeWidth="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+                  </span>
+                  <span style={{ display: "inline-flex", width: 40, height: 40, borderRadius: "50%", background: "#fcb520", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" fill="#fff"/></svg>
+                  </span>
+                </span>
               </h2>
-              <div style={{ display: "flex", gap: 8, marginTop: 16 }}>
-                <span style={{ display: "inline-flex", width: 45, height: 45, borderRadius: "50%", background: "#d7fdcf", alignItems: "center", justifyContent: "center", fontSize: 22 }}>💚</span>
-                <span style={{ display: "inline-flex", width: 45, height: 45, borderRadius: "50%", background: "#ebe1fd", alignItems: "center", justifyContent: "center", fontSize: 22 }}>💜</span>
-                <span style={{ display: "inline-flex", width: 45, height: 45, borderRadius: "50%", background: "#feeecd", alignItems: "center", justifyContent: "center", fontSize: 22 }}>⭐</span>
-              </div>
             </div>
           </div>
 
           {/* Stats row */}
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div data-animate="" data-animate-delay="120" style={{ display: "flex", alignItems: "center" }}>
             {stats.map((stat, i) => (
               <div key={stat.label} style={{ display: "flex", alignItems: "center", flex: 1 }}>
                 {i > 0 && (
@@ -464,6 +482,8 @@ export default function HomePage() {
 
           {/* Cards row */}
           <div
+            data-animate=""
+            data-animate-delay="200"
             style={{
               display: "flex",
               gap: 24,
@@ -636,6 +656,7 @@ export default function HomePage() {
         >
           {/* Image + Content */}
           <div
+            data-animate=""
             style={{
               display: "grid",
               gridTemplateColumns: "580px 1fr",
@@ -736,6 +757,7 @@ export default function HomePage() {
 
           {/* Bottom: Guided by care + 2 info cards */}
           <div
+            data-animate=""
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 252px 252px",
@@ -755,7 +777,13 @@ export default function HomePage() {
                   margin: 0,
                 }}
               >
-                Guided by care and creativity
+                Guided by care and{" "}
+                <span style={{ position: "relative", display: "inline-block" }}>
+                  creativity
+                  <svg viewBox="0 0 220 14" aria-hidden style={{ position: "absolute", bottom: -4, left: 0, width: "100%", height: 12, overflow: "visible" }} preserveAspectRatio="none">
+                    <path d="M 4 10 Q 55 2 110 10 Q 165 18 216 10" fill="none" stroke="#fcb520" strokeWidth="4" strokeLinecap="round" />
+                  </svg>
+                </span>
               </h2>
               <p
                 style={{
@@ -777,8 +805,14 @@ export default function HomePage() {
             </div>
 
             {[
-              { bg: "#d7fdcf", value: "Expert Educators", sub: "Trained and passionate teachers dedicated to every child." },
-              { bg: "#ebe1fd", value: "Strong Community", sub: "A family-first environment built on trust and support." },
+              {
+                bg: "#d7fdcf", iconBg: "#09d89a", value: "Expert Educators", sub: "Trained and passionate teachers dedicated to every child.",
+                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><circle cx="9" cy="7" r="4" stroke="#fff" strokeWidth="2"/></svg>,
+              },
+              {
+                bg: "#ebe1fd", iconBg: "#520080", value: "Strong Community", sub: "A family-first environment built on trust and support.",
+                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><circle cx="9" cy="7" r="4" stroke="#fff" strokeWidth="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>,
+              },
             ].map((card) => (
               <div
                 key={card.value}
@@ -790,29 +824,19 @@ export default function HomePage() {
                   height: 234,
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "flex-end",
-                  gap: 12,
+                  justifyContent: "space-between",
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    fontSize: 20,
-                    fontWeight: 600,
-                    color: "#000",
-                  }}
-                >
-                  {card.value}
+                <div style={{ width: 50, height: 50, borderRadius: "50%", background: card.iconBg, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {card.icon}
                 </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: 16,
-                    lineHeight: "24px",
-                    color: "#575757",
-                  }}
-                >
-                  {card.sub}
+                <div>
+                  <div style={{ fontFamily: "var(--font-heading)", fontSize: 20, fontWeight: 600, color: "#000", marginBottom: 8 }}>
+                    {card.value}
+                  </div>
+                  <div style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: "24px", color: "#575757" }}>
+                    {card.sub}
+                  </div>
                 </div>
               </div>
             ))}
@@ -857,7 +881,7 @@ export default function HomePage() {
             margin: "0 auto",
           }}
         >
-          <div style={{ maxWidth: 515, display: "flex", flexDirection: "column", gap: 0 }}>
+          <div data-animate="" style={{ maxWidth: 515, display: "flex", flexDirection: "column", gap: 0 }}>
             <Eyebrow light>Our Campus</Eyebrow>
             <h2
               style={{
@@ -888,6 +912,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 60 }}>
           {/* Header row */}
           <div
+            data-animate=""
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -923,9 +948,11 @@ export default function HomePage() {
             }}
             className="programs-grid"
           >
-            {programs.map((p) => (
+            {programs.map((p, i) => (
               <div
                 key={p.num}
+                data-animate=""
+                data-animate-delay={String(i * 100)}
                 className="program-card"
                 style={{
                   background: p.bg,
@@ -1025,24 +1052,21 @@ export default function HomePage() {
                     </Link>
                   </div>
                 </div>
-                {/* Image side */}
-                <div
+                {/* Image side — fills full card height */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={p.image}
+                  alt={p.title}
                   style={{
                     width: "45%",
                     flexShrink: 0,
-                    position: "relative",
+                    objectFit: "cover",
+                    display: "block",
                     borderRadius: 14,
-                    overflow: "hidden",
-                    minHeight: 280,
+                    minHeight: 380,
+                    alignSelf: "stretch",
                   }}
-                >
-                  <Image
-                    src={p.image}
-                    alt={p.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
+                />
               </div>
             ))}
           </div>
@@ -1088,6 +1112,7 @@ export default function HomePage() {
         >
           {/* Left: heading + button */}
           <div
+            data-animate=""
             style={{
               position: "sticky",
               top: 80,
@@ -1146,9 +1171,11 @@ export default function HomePage() {
                 paddingBottom: 100,
               }}
             >
-              {features.slice(0, 2).map((f) => (
+              {features.slice(0, 2).map((f, i) => (
                 <div
                   key={f.title}
+                  data-animate=""
+                  data-animate-delay={String(i * 120)}
                   className="feature-card"
                   style={{
                     background: "var(--color-bg-cream)",
@@ -1206,9 +1233,11 @@ export default function HomePage() {
                 paddingTop: 100,
               }}
             >
-              {features.slice(2).map((f) => (
+              {features.slice(2).map((f, i) => (
                 <div
                   key={f.title}
+                  data-animate=""
+                  data-animate-delay={String(60 + i * 120)}
                   className="feature-card"
                   style={{
                     background: "var(--color-bg-cream)",
@@ -1269,7 +1298,7 @@ export default function HomePage() {
         }}
       >
         <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 48 }}>
-          <div style={{ maxWidth: 440 }}>
+          <div data-animate="" style={{ maxWidth: 440 }}>
             <Eyebrow>Testimonials</Eyebrow>
             <h2
               style={{
@@ -1296,9 +1325,11 @@ export default function HomePage() {
               paddingBottom: 8,
             }}
           >
-            {testimonials.map((t) => (
+            {testimonials.map((t, i) => (
               <div
                 key={t.name}
+                data-animate=""
+                data-animate-delay={String(i * 120)}
                 style={{
                   flex: "0 0 774px",
                   scrollSnapAlign: "start",
@@ -1411,7 +1442,7 @@ export default function HomePage() {
             gap: 48,
           }}
         >
-          <div style={{ maxWidth: 600 }}>
+          <div data-animate="" style={{ maxWidth: 600 }}>
             <Eyebrow>Our Blogs</Eyebrow>
             <h2
               style={{
@@ -1436,10 +1467,12 @@ export default function HomePage() {
             }}
             className="blog-grid"
           >
-            {blogPosts.slice(0, 3).map((post) => (
+            {blogPosts.slice(0, 3).map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blogs/${post.slug}`}
+                data-animate=""
+                data-animate-delay={String(i * 100)}
                 className="blog-card"
                 style={{
                   background: "#fff",
@@ -1565,6 +1598,7 @@ export default function HomePage() {
 
           {/* Content */}
           <div
+            data-animate=""
             style={{
               position: "relative",
               zIndex: 2,

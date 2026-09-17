@@ -149,3 +149,43 @@ img {
     gap: 32px !important;
   }
 }
+
+/* ── Scroll-triggered entrance animations ──────────────── */
+/* Only active when JS has loaded (AnimationObserver adds .js to <html>) */
+.js [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js [data-animate].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Arrow button hover ────────────────────────────────── */
+.arrow-btn {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.arrow-btn:hover {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+/* ── Nav link hover underline ──────────────────────────── */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.2s ease;
+}
+.nav-link-underline:hover::after {
+  width: 100%;
+}
