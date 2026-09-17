@@ -17,39 +17,44 @@ const facilities = [
     icon: "📚",
     bg: "var(--color-tint-green)",
     title: "Library",
+    image: "/assets/images/rahma-school-2.jpeg",
     desc: "Our library provides a peaceful learning environment with a wide collection of books, reference materials and educational resources to encourage reading habits and independent learning.",
   },
   {
     icon: "🔬",
     bg: "var(--color-tint-purple)",
     title: "Science Laboratory",
+    image: "/assets/images/rahma-kids-studying.jpeg",
     desc: "Our science laboratory provides practical learning opportunities where students perform experiments and develop scientific thinking, observation, and analytical skills.",
   },
   {
     icon: "💻",
     bg: "var(--color-tint-cream)",
     title: "Computer Laboratory",
+    image: "/assets/images/rahma-computer-lab.jpeg",
     desc: "The computer lab is equipped with modern computers and internet facilities that help students develop digital literacy and technology skills essential for today's world.",
   },
   {
     icon: "⚽",
     bg: "var(--color-tint-green)",
     title: "Sports Ground",
+    image: "/assets/images/rahma-sports-day.jpeg",
     desc: "Our spacious playground provides opportunities for physical education, sports competitions, and recreational activities that promote fitness, teamwork, and confidence.",
   },
   {
     icon: "🖥️",
     bg: "var(--color-tint-purple)",
     title: "Smart Classrooms",
+    image: "/assets/images/rahma-parent-partnership-2.jpeg",
     desc: "We use modern teaching techniques, multimedia presentations, and interactive learning resources to make classroom learning more engaging and effective.",
   },
 ];
 
 const campusPhotos = [
-  "/assets/images/bM5XLgck0nuZBUl800FPnYZLqM-49e6a37c.avif",
-  "/assets/images/FH7s1VpnmO3OdrrAkXKU3gealE-79d1a684.avif",
-  "/assets/images/IIm5NEuXpUdRszfB2rjqlZaHRdg-670fd09e.avif",
-  "/assets/images/BVDpVUwW5DNcCihlJOIQdRXDfwk-b896e0b5.avif",
+  "/assets/images/rahma-school.jpeg",
+  "/assets/images/rahma-computer-lab.jpeg",
+  "/assets/images/rahma-school-2.jpeg",
+  "/assets/images/rahma-kids-studying.jpeg",
 ];
 
 export default function FacilitiesPage() {
@@ -99,21 +104,11 @@ export default function FacilitiesPage() {
         <Container>
           <div className="grid-auto-320">
             {facilities.map((f) => (
-              <div key={f.title} style={{ background: f.bg, borderRadius: 20, padding: "32px 28px" }}>
+              <div key={f.title} style={{ background: f.bg, borderRadius: 20, padding: "28px 28px 32px" }}>
                 <div style={{ fontSize: "2.2rem", marginBottom: 16 }}>{f.icon}</div>
-                <div
-                  style={{
-                    height: 160,
-                    borderRadius: 12,
-                    marginBottom: 20,
-                    background:
-                      "linear-gradient(135deg, rgba(0,0,0,0.10), rgba(0,0,0,0.03))",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <span style={{ color: "rgba(0,0,0,0.25)", fontSize: "0.8rem", fontWeight: 600 }}>{f.title}</span>
+                <div style={{ height: 160, borderRadius: 12, marginBottom: 20, overflow: "hidden" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={f.image} alt={f.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 </div>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem", color: "var(--color-ink)", marginBottom: 10 }}>
                   {f.title}

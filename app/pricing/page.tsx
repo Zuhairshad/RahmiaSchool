@@ -17,7 +17,7 @@ export default function PricingPage() {
       <section style={{ background: "var(--color-paper)", padding: "72px 0 60px", textAlign: "center" }}>
         <Container>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <SectionLabel>Pricing Plans</SectionLabel>
+            <SectionLabel>Fee Structure</SectionLabel>
           </div>
           <h1
             className="hero-h1"
@@ -28,14 +28,15 @@ export default function PricingPage() {
               lineHeight: 1.2,
             }}
           >
-            Choose the right
-            <br />
-            plan{" "}
+            Affordable education for{" "}
             <span style={{ position: "relative", display: "inline-block" }}>
-              today
+              every family
               <WavyUnderline />
             </span>
           </h1>
+          <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 560, margin: "16px auto 0" }}>
+            RAHMA Model School is committed to making quality education accessible. Contact us directly for current fee details and information on merit and need-based scholarships.
+          </p>
         </Container>
       </section>
 
@@ -44,34 +45,34 @@ export default function PricingPage() {
         <Container>
           <div className="pricing-grid">
             <PricingCard
-              title="Basic care"
+              title="Preschool & Primary"
               description="Affordable, community-focused fee structure with merit and need-based scholarships available upon request."
-              price="$100.00"
+              price="Contact us"
               variant="standard"
-              ctaHref="/admission"
+              ctaHref="/contact"
               features={[
                 "Safe and nurturing environment",
-                "Play-based learning activities",
-                "Daily snacks included",
+                "Play-based & Montessori learning",
+                "Quran & Islamic studies",
                 "Creative arts and crafts",
                 "Regular progress updates",
               ]}
             />
             <PricingCard
-              title="Smart start"
+              title="Middle & High School"
               description="Comprehensive academic programs covering all subjects, laboratory work, co-curriculars, and examination preparation."
-              price="$500.00"
+              price="Contact us"
               variant="premium"
-              ctaHref="/admission"
+              ctaHref="/contact"
               image="/assets/images/yJpmVxeiLLChpwpGjaX5dl1UO64-bd4e3ad9.avif"
               imageWidth={840}
               imageHeight={1308}
               features={[
-                "Structured learning programs",
-                "Interactive group activities",
-                "Healthy meals and snacks",
-                "Weekly progress reports",
-                "Priority parent support",
+                "Full subject curriculum",
+                "Science lab & computer room",
+                "Co-curricular activities",
+                "Exam preparation support",
+                "Parent progress reports",
               ]}
             />
           </div>

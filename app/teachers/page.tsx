@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Container, SectionLabel, WavyUnderline, Button } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -11,49 +10,29 @@ export const metadata: Metadata = {
 type Teacher = {
   name: string;
   role: string;
-  image: string;
-  tint: string;
+  bg: string;
+  avatarBg: string;
+  initColor: string;
 };
 
-// Sourced from reference-site/public/teachers.html ("Desktop Team Card" blocks),
-// in source order, including the real per-card tint colors and photos.
+const tints = ["#d7fdcf", "#ebe1fd", "#feeecd"];
+const avatarColors = ["#09d89a", "#520080", "#f59e0b"];
+
+function getInitials(name: string) {
+  return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+}
+
 const teachers: Teacher[] = [
-  {
-    name: "Lt Col Ch. Muhammad Hafeez (R)",
-    role: "Education Advisor",
-    image: "/assets/images/9rYdv1MUNiSRhBTTroHff0Df518-988f37b3.avif",
-    tint: "var(--color-tint-green)",
-  },
-  {
-    name: "Madam Sadaf Shabir",
-    role: "Principal",
-    image: "/assets/images/Vi1ACTpArCU8a158EXq2wfU1gWY-a2326075.avif",
-    tint: "var(--color-tint-purple)",
-  },
-  {
-    name: "Senior Science Faculty",
-    role: "Physics & Chemistry Educator",
-    image: "/assets/images/nR7WcOdZTQDy43uWhtOnRMT0iA-5ac5f5ab.avif",
-    tint: "var(--color-tint-cream)",
-  },
-  {
-    name: "Senior Mathematics Faculty",
-    role: "Mathematics & Logic Educator",
-    image: "/assets/images/ZjZ4G0VsZ76Rs48VIacTqvdWFo-ec9c7da0.avif",
-    tint: "var(--color-tint-green)",
-  },
-  {
-    name: "Language & Debates Faculty",
-    role: "English & Urdu Mentor",
-    image: "/assets/images/IYAP5URMHNocCwB3ph59U4WMc-b2f2291a.avif",
-    tint: "var(--color-tint-purple)",
-  },
-  {
-    name: "Computer Science & IT Faculty",
-    role: "Digital Literacy & STEM",
-    image: "/assets/images/L0QtNwUAIGK0H1HvVR8UZqKTNbg-47b7d4d7.avif",
-    tint: "var(--color-tint-cream)",
-  },
+  { name: "Shabnam Kayani", role: "School Coordinator", bg: tints[0], avatarBg: tints[0], initColor: avatarColors[0] },
+  { name: "Rubab Zaitoon", role: "Mathematics Teacher", bg: tints[1], avatarBg: tints[1], initColor: avatarColors[1] },
+  { name: "Sajal Fatima", role: "Science Teacher", bg: tints[2], avatarBg: tints[2], initColor: avatarColors[2] },
+  { name: "Nida Jahan", role: "Montessori Teacher", bg: tints[0], avatarBg: tints[0], initColor: avatarColors[0] },
+  { name: "Muqadas Shahzadi", role: "Montessori Teacher", bg: tints[1], avatarBg: tints[1], initColor: avatarColors[1] },
+  { name: "Rimsha Bibi", role: "Islamiyat Teacher", bg: tints[2], avatarBg: tints[2], initColor: avatarColors[2] },
+  { name: "Alishba Shahzadi", role: "Urdu Teacher", bg: tints[0], avatarBg: tints[0], initColor: avatarColors[0] },
+  { name: "Sanam Shahzadi", role: "Computer Teacher", bg: tints[1], avatarBg: tints[1], initColor: avatarColors[1] },
+  { name: "Moin Ullah", role: "Quran Teacher", bg: tints[2], avatarBg: tints[2], initColor: avatarColors[2] },
+  { name: "Sadique Ullah", role: "Hifz Teacher", bg: tints[0], avatarBg: tints[0], initColor: avatarColors[0] },
 ];
 
 export default function TeachersPage() {
@@ -62,7 +41,7 @@ export default function TeachersPage() {
       {/* Header */}
       <section style={{ background: "var(--color-paper)", padding: "72px 32px 60px" }}>
         <Container>
-          <SectionLabel>Our Teachers</SectionLabel>
+          <SectionLabel>RAHMATES · Our Faculty</SectionLabel>
           <h1
             className="hero-h1"
             style={{
@@ -73,12 +52,15 @@ export default function TeachersPage() {
               maxWidth: 560,
             }}
           >
-            Meet dedicated educators{" "}
+            Meet the RAHMATES who{" "}
             <span style={{ position: "relative", display: "inline-block" }}>
-              today
+              educate &amp; inspire
               <WavyUnderline />
             </span>
           </h1>
+          <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 560, marginTop: 16 }}>
+            Our faculty are proud RAHMATES — a community of dedicated educators united by a shared commitment to academic excellence, moral values, and the growth of every student in their care.
+          </p>
         </Container>
       </section>
 
@@ -93,26 +75,14 @@ export default function TeachersPage() {
             }}
           >
             {teachers.map((t) => (
-              <div key={t.name} style={{ background: t.tint, borderRadius: 20, overflow: "hidden" }}>
-                <div style={{ position: "relative", height: 260 }}>
-                  <Image
-                    src={t.image}
-                    alt={t.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 810px) 100vw, 33vw"
-                  />
+              <div key={t.name} style={{ background: t.bg, borderRadius: 20, padding: "32px 24px 28px", display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
+                <div style={{ width: 88, height: 88, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
+                  <span style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.4rem", color: t.initColor }}>
+                    {getInitials(t.name)}
+                  </span>
                 </div>
-                <div style={{ padding: "20px 22px 24px" }}>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontWeight: 700,
-                      fontSize: "1rem",
-                      color: "var(--color-ink)",
-                      marginBottom: 4,
-                    }}
-                  >
+                <div>
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1rem", color: "var(--color-ink)", marginBottom: 4 }}>
                     {t.name}
                   </p>
                   <p style={{ color: "var(--color-body-text)", fontSize: "0.85rem" }}>{t.role}</p>
@@ -148,7 +118,7 @@ export default function TeachersPage() {
               marginBottom: 20,
             }}
           >
-            Our dedicated teachers combine subject mastery with patient mentorship, nurturing moral values alongside academic brilliance.
+            Our RAHMATES faculty combine subject mastery with patient mentorship, nurturing moral values alongside academic brilliance in every classroom.
           </h2>
           <Button href="/admission">Enroll now</Button>
         </Container>

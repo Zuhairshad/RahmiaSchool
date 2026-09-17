@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -21,7 +22,7 @@ const primaryLinks = [
 const allPagesLinks = [
   { href: "/admission", label: "Admission" },
   { href: "/pricing", label: "Fee Structure" },
-  { href: "/blogs", label: "Student Life" },
+  { href: "/student-life", label: "Student Life" },
   { href: "/facilities", label: "Facilities" },
 ];
 
@@ -51,11 +52,15 @@ export default function Navbar() {
         borderBottom: pathname === "/" ? "none" : "1px solid rgba(255,255,255,0.06)",
       }}>
         <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, color: "#fff", fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1rem", letterSpacing: "-0.01em" }}>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
-              <path d="M9 0l2 6.5H18l-5.5 4 2 6.5L9 13 4.5 17l2-6.5L1 6.5h7L9 0z" fill="var(--color-brand-teal)" />
-            </svg>
-            RAHMA
+          <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+            <Image
+              src="/assets/images/rahmia-logo.jpeg"
+              alt="RAHMA Model School"
+              width={120}
+              height={44}
+              style={{ objectFit: "contain", height: 44, width: "auto" }}
+              priority
+            />
           </Link>
 
           <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
@@ -83,18 +88,20 @@ export default function Navbar() {
               </button>
               {allPagesOpen && (
                 <div
-                  style={{ position: "absolute", top: "100%", right: 0, marginTop: 12, background: "#161616", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, padding: 8, minWidth: 180, boxShadow: "0 10px 30px rgba(0,0,0,0.4)" }}
+                  style={{ position: "absolute", top: "100%", right: 0, paddingTop: 12, zIndex: 10 }}
                 >
-                  {allPagesLinks.map((l) => (
-                    <Link
-                      key={l.href}
-                      href={l.href}
-                      className="nav-link"
-                      style={{ display: "block", padding: "8px 12px", borderRadius: 8, whiteSpace: "nowrap" }}
-                    >
-                      {l.label}
-                    </Link>
-                  ))}
+                  <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, padding: 8, minWidth: 180, boxShadow: "0 10px 30px rgba(0,0,0,0.4)" }}>
+                    {allPagesLinks.map((l) => (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="nav-link"
+                        style={{ display: "block", padding: "8px 12px", borderRadius: 8, whiteSpace: "nowrap" }}
+                      >
+                        {l.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

@@ -92,9 +92,33 @@ export default async function ProgramDetailPage({
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 28 }}>
+                <Pill label="Classes" value={program.classes} />
                 <Pill label="Ages" value={program.ageRange} />
-                <Pill label="Group size" value={program.groupSize} />
                 <Pill label="Schedule" value={program.programType} />
+              </div>
+
+              {/* Subjects */}
+              <div style={{ marginTop: 24 }}>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "#666", marginBottom: 10 }}>
+                  Subjects covered
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {program.subjects.map((s) => (
+                    <span
+                      key={s}
+                      style={{
+                        background: program.tintVar,
+                        padding: "5px 14px",
+                        borderRadius: 100,
+                        fontSize: "0.78rem",
+                        fontWeight: 600,
+                        color: "var(--color-ink)",
+                      }}
+                    >
+                      {s.split(" (")[0]}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div style={{ marginTop: 32 }}>

@@ -1,58 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container, SectionLabel, WavyUnderline, Button } from "@/components/ui";
+import ActivitiesSection from "@/components/student-life/ActivitiesSection";
 
 export const metadata: Metadata = {
   title: "Student Life",
   description:
     "At RAHMA Model School, education extends far beyond textbooks through an active Student Life Program.",
 };
-
-// Copy grounded in reference-site/public/index.html ("Co-Curricular & Sports" /
-// "Character Building" feature cards), reference-site/public/blogs.html (the
-// "Student Life Program" CTA line and "Annual Sports Day & Athletics
-// Competitions" post title) and reference-site/public/about.html (the
-// "honesty, integrity, respect, discipline, and compassion" values line).
-// There is no dedicated student-life.html in the export, so this page
-// combines those real fragments into full sections.
-const activities = [
-  {
-    icon: "\u{1F3A4}",
-    bg: "var(--color-tint-green)",
-    title: "Debate & Public Speaking",
-    desc: "Students take part in debates and discussions that build confidence, critical thinking, and clear communication in both English and Urdu.",
-  },
-  {
-    icon: "⚽",
-    bg: "var(--color-tint-purple)",
-    title: "Sports & Athletics",
-    desc: "Regular sports periods lead up to the Annual Sports Day & Athletics Competitions, with team games, races, and fitness challenges for every age group.",
-  },
-  {
-    icon: "\u{1F52C}",
-    bg: "var(--color-tint-cream)",
-    title: "Science Exhibitions",
-    desc: "Students build science models and classroom projects, presenting their work at school exhibitions that turn concepts into hands-on discovery.",
-  },
-  {
-    icon: "\u{1F3A8}",
-    bg: "var(--color-tint-green)",
-    title: "Arts & Creative Activities",
-    desc: "Drawing, craft work, and creative displays give students room to express themselves outside the regular classroom curriculum.",
-  },
-  {
-    icon: "\u{1F3DB}️",
-    bg: "var(--color-tint-purple)",
-    title: "Leadership & Co-Curricular Events",
-    desc: "Leadership events and co-curricular activities encourage students to take initiative and grow through holistic, real-world experience.",
-  },
-  {
-    icon: "\u{1F31F}",
-    bg: "var(--color-tint-cream)",
-    title: "Character & Moral Values",
-    desc: "Every activity reinforces honesty, integrity, respect, discipline, and compassion in every student, building responsible citizens.",
-  },
-];
 
 export default function StudentLifePage() {
   return (
@@ -70,7 +25,7 @@ export default function StudentLifePage() {
             className="student-life-hero-grid"
           >
             <div>
-              <SectionLabel>Student Life</SectionLabel>
+              <SectionLabel>RAHMATES · Student Life</SectionLabel>
               <h1
                 className="hero-h1"
                 style={{
@@ -96,9 +51,10 @@ export default function StudentLifePage() {
                   marginTop: 20,
                 }}
               >
-                At RAHMA Model School, education extends far beyond textbooks through an active Student Life
-                Program &mdash; students participate in debates, sports, science exhibitions, arts, and leadership
-                events for holistic growth.
+                At RAHMA Model School, education extends far beyond textbooks. We believe that every child
+                should have opportunities to explore, create, lead, and grow in a supportive environment.
+                Our Student Life Programme develops confidence, leadership, creativity, teamwork,
+                communication skills, and responsibility through varied educational and co-curricular activities.
               </p>
             </div>
             <div
@@ -115,8 +71,8 @@ export default function StudentLifePage() {
               }}
             >
               <Image
-                src="/assets/images/Q9Rn6EJi0zag5SQxsDKWNT8uZIg-3b62ea16.avif"
-                alt="Co-curricular life at RAHMA Model School"
+                src="/assets/images/rahma-co-curricular-2.jpeg"
+                alt="Co-curricular activities at RAHMA Model School"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="280px"
@@ -127,36 +83,7 @@ export default function StudentLifePage() {
         </Container>
       </section>
 
-      {/* Activities */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "48px 32px 80px" }}>
-        <Container>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
-              gap: 20,
-            }}
-          >
-            {activities.map((a) => (
-              <div key={a.title} style={{ background: a.bg, borderRadius: 20, padding: "28px" }}>
-                <div style={{ fontSize: "2rem", marginBottom: 14 }}>{a.icon}</div>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    fontWeight: 700,
-                    fontSize: "1.05rem",
-                    color: "var(--color-ink)",
-                    marginBottom: 10,
-                  }}
-                >
-                  {a.title}
-                </h2>
-                <p style={{ color: "var(--color-body-text)", fontSize: "0.875rem", lineHeight: 1.75 }}>{a.desc}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ActivitiesSection />
 
       {/* Personality development */}
       <section style={{ background: "var(--color-dark-bg)", padding: "72px 32px" }}>
@@ -196,17 +123,19 @@ export default function StudentLifePage() {
                 Building tomorrow&apos;s leaders today
               </h2>
               <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", lineHeight: 1.8 }}>
-                We promote Islamic values, discipline, honesty, respect, and responsibility to help students become
-                conscientious citizens &mdash; growing academically, morally, and socially.
+                Every RAHMATE carries values of honesty, discipline, respect, and faith — growing not just academically, but as responsible citizens who make a difference in their community and beyond.
               </p>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[
-                "Confidence & Leadership",
+                "Confidence & Public Speaking",
+                "Leadership Skills",
                 "Teamwork & Cooperation",
                 "Responsibility & Discipline",
-                "Respect & Social Skills",
+                "Respect & Positive Behaviour",
+                "Social Skills",
                 "Critical Thinking",
+                "Decision Making",
                 "Time Management",
               ].map((s) => (
                 <div
@@ -252,7 +181,7 @@ export default function StudentLifePage() {
             marginRight: "auto",
           }}
         >
-          At RAHMA Model School, education extends far beyond textbooks through an active Student Life Program.
+          Become a RAHMATE — join a school community where education, faith, and character shape every student&rsquo;s journey.
         </p>
         <Button href="/admission" variant="dark">
           Enroll now
