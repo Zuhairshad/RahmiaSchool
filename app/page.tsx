@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Container, SectionLabel, WavyUnderline, Button, StatTile, BlogCard, PricingCard } from "@/components/ui";
 import { blogPosts } from "@/app/blogs/[slug]/data";
+import PricingTabs from "@/components/home/PricingTabs";
 
 export const metadata: Metadata = {
   title: "RAHMA Model School | Inspiring Young Minds for a Bright Future",
@@ -10,11 +10,13 @@ export const metadata: Metadata = {
     "Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future.",
 };
 
+/* ── DATA ─────────────────────────────────────────────── */
+
 const stats = [
   { value: "210+", label: "Enrolled Students" },
   { value: "14+", label: "Qualified Teachers" },
-  { value: "13%", label: "Modern Classrooms" },
-  { value: "12+", label: "Years of Experience (Est. 2014)" },
+  { value: "98%", label: "Parent Satisfaction" },
+  { value: "12+", label: "Years of Excellence" },
 ];
 
 const programs = [
@@ -22,61 +24,69 @@ const programs = [
     num: "01",
     title: "Preschool & Junior Section",
     tag: "Play Group to Prep",
-    desc: "A playful early learning program combining phonics, basic mathematics, creative arts, and social interaction in a safe, loving environment.",
-    bg: "var(--color-tint-green)",
-    accent: "var(--color-brand-teal)",
-    image: { src: "/assets/images/i2ECgxjZP2t8RjEmI8skh28jRbQ-09736a12.avif", width: 1240, height: 848 },
+    tagColor: "#09d89a",
+    desc: "A playful early learning program combining phonics, mathematics, creative arts, and social interaction in a safe, loving environment.",
+    bg: "#d7fdcf",
+    image: "/assets/images/i2ECgxjZP2t8RjEmI8skh28jRbQ-09736a12.avif",
   },
   {
     num: "02",
     title: "Primary School (Class 1–5)",
     tag: "Grades 1–5",
-    desc: "Concept-based learning in core subjects with computer education, character building, and regular assessments.",
-    bg: "var(--color-tint-purple)",
-    accent: "var(--color-brand-purple)",
-    image: { src: "/assets/images/Sfm9js53gBOL3V13gpQtyyxQPf8-334437a4.avif", width: 1240, height: 848 },
+    tagColor: "#520080",
+    desc: "Concept-based learning in core subjects with computer education, character building, and continuous assessments to prepare every student.",
+    bg: "#ebe1fd",
+    image: "/assets/images/Sfm9js53gBOL3V13gpQtyyxQPf8-334437a4.avif",
   },
   {
     num: "03",
     title: "Middle & High School",
     tag: "Grades 6–12",
-    desc: "Analytical thinking, board exam preparation in Science & Arts, career guidance, and leadership skills.",
-    bg: "var(--color-tint-cream)",
-    accent: "var(--color-brand-gold)",
-    image: { src: "/assets/images/yZKDsRUleMx3BoVzta3YgXn9l5A-8b5af1ba.avif", width: 1240, height: 848 },
+    tagColor: "#fcb520",
+    desc: "Analytical thinking, board exam preparation in Science & Arts, career guidance, and leadership development for future-ready graduates.",
+    bg: "#feeecd",
+    image: "/assets/images/yZKDsRUleMx3BoVzta3YgXn9l5A-8b5af1ba.avif",
   },
 ];
 
-const whyChooseUs = [
+const features = [
   {
-    icon: "🛡️",
-    bg: "var(--color-tint-green)",
-    title: "Safe & Caring Environment",
-    desc: "A secure, friendly, and supportive atmosphere where children feel confident to learn and grow.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M12 2L9.5 9.5H2l6 4.4-2.3 7L12 16.8l6.3 4.1-2.3-7 6-4.4h-7.5L12 2z" fill="#fcb520" />
+      </svg>
+    ),
+    title: "Play Based Learning",
+    desc: "Children learn through interactive play, engaging activities, and exploration, turning every lesson into a joyful adventure.",
   },
   {
-    icon: "👩‍🏫",
-    bg: "var(--color-tint-purple)",
-    title: "Qualified & Dedicated Teachers",
-    desc: "Our experienced teachers are committed to provide quality education while nurturing every student's individual abilities.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="#09d89a" />
+      </svg>
+    ),
+    title: "Safe Environment",
+    desc: "A secure, friendly, and supportive atmosphere where children feel confident to learn, grow, and express themselves freely.",
   },
   {
-    icon: "🎓",
-    bg: "var(--color-tint-cream)",
-    title: "Academic Excellence",
-    desc: "Our structured curriculum develops strong academic foundations through concept-based learning and continuous assessments.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <circle cx="12" cy="8" r="4" fill="#520080" />
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="#520080" />
+      </svg>
+    ),
+    title: "Expert Teachers",
+    desc: "Our dedicated educators guide each child with patience and care, supporting their growth through personalized attention.",
   },
   {
-    icon: "🤝",
-    bg: "var(--color-tint-green)",
-    title: "Character Building",
-    desc: "We promote Islamic values, discipline, honesty, respect, and responsibility to help students become conscientious citizens.",
-  },
-  {
-    icon: "⚽",
-    bg: "var(--color-tint-purple)",
-    title: "Co-Curricular & Sports",
-    desc: "Students participate in debates, sports, science exhibitions, arts, and leadership events for holistic growth.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M7 3H4a1 1 0 00-1 1v3M17 3h3a1 1 0 011 1v3M3 17v3a1 1 0 001 1h3M17 21h3a1 1 0 001-1v-3" stroke="#fcb520" strokeWidth="2" strokeLinecap="round" />
+        <path d="M9 9h6M9 12h6M9 15h4" stroke="#09d89a" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+    title: "Creative Activities",
+    desc: "From art and music to storytelling and crafts, children explore their imagination while developing confidence and creativity.",
   },
 ];
 
@@ -84,566 +94,1532 @@ const testimonials = [
   {
     name: "Muhammad Rizwan",
     role: "School Parent",
-    text: "A wonderful school that balances academics and character. The teachers are caring, and my children love coming to school every single day.",
-    bg: "var(--color-brand-teal)",
+    text: "We're amazed at how much our son enjoys learning here. He looks forward to going every morning and comes home excited to share what he learned. The teachers are wonderful, making learning feel natural and fun.",
+    image: "/assets/images/ZjZ4G0VsZ76Rs48VIacTqvdWFo-ec9c7da0.avif",
   },
   {
     name: "Ayesha Malik",
     role: "Parent of Grade 5 Student",
-    text: "My child has grown so much in confidence and knowledge since joining Rahma Model School. The individual attention from teachers is truly remarkable.",
-    bg: "var(--color-brand-purple)",
+    text: "Our child has become more confident and curious since joining RAHMA. The teachers are incredibly supportive and truly understand how to engage young minds. We've seen incredible growth in both learning and social skills.",
+    image: "/assets/images/Vi1ACTpArCU8a158EXq2wfU1gWY-a2326075.avif",
+  },
+];
+
+const aboutCards = [
+  {
+    bg: "#d7fdcf",
+    value: "2500+",
+    label: "Happy Children Enrolled",
+    sublabel: "Growing with us every year",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#09d89a" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="9" cy="7" r="4" stroke="#09d89a" strokeWidth="2" />
+        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#09d89a" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    name: "Tariq Mehmood",
-    role: "Parent of High School Student",
-    text: "My child has grown so much in confidence and knowledge since joining Rahma Model School. The individual attention from teachers is truly remarkable.",
-    bg: "var(--color-brand-gold)",
+    bg: "#ebe1fd",
+    value: "85%",
+    label: "Learning Progress Rate",
+    sublabel: "Measured through continuous assessment",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M18 20V10M12 20V4M6 20v-6" stroke="#520080" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
   },
 ];
 
-const ctaCollage = [
-  "/assets/images/bM5XLgck0nuZBUl800FPnYZLqM-49e6a37c.avif",
-  "/assets/images/FH7s1VpnmO3OdrrAkXKU3gealE-79d1a684.avif",
-  "/assets/images/IIm5NEuXpUdRszfB2rjqlZaHRdg-670fd09e.avif",
-  "/assets/images/BVDpVUwW5DNcCihlJOIQdRXDfwk-b896e0b5.avif",
-];
+const TICKER_TEXT = "Where growth begins";
 
-export default function HomePage() {
-  return (
-    <div>
-      <style>{`
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
-        .grid-auto-260 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px; }
-        .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-        .collage-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 360px; margin: 32px auto 0; }
-        .pricing-teaser-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
-        @media (max-width: 810px) {
-          .grid-4 { grid-template-columns: repeat(2, 1fr); }
-          .split-2 { grid-template-columns: 1fr; }
-          .pricing-teaser-grid { grid-template-columns: 1fr; }
-        }
-      `}</style>
+/* ── INLINE ARROW BUTTON ─────────────────────────────── */
 
-      {/* ── HERO ── */}
-      {/* Real reference has an autoplaying looped background video here
-          (reference-site/public/index.html, Hero Section) — downloaded and
-          self-hosted since the original CDN URL isn't reachable from every
-          environment. A dark gradient overlay keeps the white text legible
-          across every frame, since the real footage has bright moments. */}
-      <section style={{ position: "relative", minHeight: 600, background: "var(--color-dark-bg)", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-        >
-          <source src="/assets/videos/hero-home.mp4" type="video/mp4" />
-        </video>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, rgba(13,13,13,0.75) 30%, rgba(13,13,13,0.15) 75%)" }} />
-
-        <Container style={{ position: "relative", padding: "100px 32px 80px" }}>
-          <div style={{ maxWidth: 600 }}>
-            <span
-              style={{
-                display: "inline-block",
-                background: "rgba(9,216,154,0.15)",
-                color: "var(--color-brand-teal)",
-                fontFamily: "var(--font-label)",
-                fontSize: "0.72rem",
-                fontWeight: 500,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                padding: "6px 14px",
-                borderRadius: 100,
-                marginBottom: 24,
-              }}
-            >
-              Est. 2014 · Rawalpindi, Pakistan
-            </span>
-            <h1
-              className="hero-h1"
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 700,
-                color: "#fff",
-                lineHeight: 1.15,
-                marginBottom: 24,
-              }}
-            >
-              Building bright young minds
-            </h1>
-            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.05rem", lineHeight: 1.75, marginBottom: 36, maxWidth: 480 }}>
-              A nurturing space where children learn, play, and grow with confidence through a blend of creative
-              activities and guided learning.
-            </p>
-            {/* Real hero has exactly one button — white pill, black text, a
-                gold circular icon (reference: data-framer-name="Primary
-                Buttom 01" -> href="./contact.html") — not two buttons. */}
-            <Link
-              href="/contact"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                background: "#fff",
-                color: "#000",
-                fontWeight: 600,
-                fontSize: "0.95rem",
-                padding: "8px 8px 8px 22px",
-                borderRadius: 100,
-              }}
-            >
-              Admissions Open
-              <span
-                style={{
-                  width: 34,
-                  height: 34,
-                  borderRadius: "50%",
-                  background: "var(--color-brand-gold)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden>
-                  <path
-                    fill="#000"
-                    d="M11.133 15.55a.833.833 0 0 1-.591-1.383l4.166-4.125-4.166-4.125a.833.833 0 1 1 1.183-1.175l4.708 4.708a.833.833 0 0 1 0 1.183l-4.708 4.709a.83.83 0 0 1-.592.208"
-                  />
-                  <path fill="#000" d="M15.834 10.833H4.167a.833.833 0 1 1 0-1.667h11.667a.833.833 0 0 1 0 1.667" />
-                </svg>
-              </span>
-            </Link>
-          </div>
-        </Container>
-
-        <div style={{ position: "absolute", right: 80, bottom: 60, opacity: 0.15 }} aria-hidden>
-          <svg width="120" height="120" viewBox="0 0 24 24">
-            <path
-              d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"
-              fill="var(--color-brand-teal)"
-            />
-          </svg>
-        </div>
-      </section>
-
-      {/* ── ABOUT STRIP ── */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "80px 32px" }}>
-        <Container>
-          <div className="split-2">
-            <div style={{ borderRadius: 20, overflow: "hidden", position: "relative", aspectRatio: "556/674" }}>
-              <Image
-                src="/assets/images/YnzL6DSOhiMqCKDM919QcZfvj98-d631f531.avif"
-                alt="Students at RAHMA Model School"
-                width={556}
-                height={674}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-            <div>
-              <SectionLabel>About Us</SectionLabel>
-              <h2
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                  fontWeight: 800,
-                  color: "var(--color-ink)",
-                  lineHeight: 1.2,
-                  marginBottom: 20,
-                }}
-              >
-                A warm space for{" "}
-                <span style={{ position: "relative", display: "inline-block" }}>
-                  growing minds
-                  <WavyUnderline />
-                </span>
-                , filled with care and discovery
-              </h2>
-              <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: 16 }}>
-                Welcome to RAHMA Model School, where quality education, strong moral values, and character
-                development come together to prepare students for a successful future.
-              </p>
-              <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: 28 }}>
-                We provide a safe, caring, and engaging learning environment that encourages every child to achieve
-                academic excellence while developing confidence, creativity, and leadership skills.
-              </p>
-              <Link href="/about" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--color-ink)", fontWeight: 700, fontSize: "0.9rem" }}>
-                Learn more →
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── STATS BAND ── */}
-      <section style={{ background: "var(--color-dark-bg)", padding: "72px 32px" }}>
-        <Container>
-          <div className="grid-4">
-            {stats.map((s) => (
-              <StatTile key={s.label} value={s.value} label={s.label} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── PROGRAMS ── */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "80px 32px" }}>
-        <Container>
-          <div style={{ marginBottom: 48, maxWidth: 560 }}>
-            <SectionLabel>Our Programs</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                fontWeight: 800,
-                color: "var(--color-ink)",
-                lineHeight: 1.2,
-              }}
-            >
-              Programs for growing{" "}
-              <span style={{ position: "relative", display: "inline-block" }}>
-                minds
-                <WavyUnderline />
-              </span>
-            </h2>
-          </div>
-          <div className="grid-auto-320">
-            {programs.map((p) => (
-              <ProgramCard key={p.title} {...p} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── WHY CHOOSE US ── */}
-      <section style={{ background: "var(--color-paper)", padding: "80px 32px" }}>
-        <Container>
-          <div style={{ marginBottom: 20, maxWidth: 640 }}>
-            <SectionLabel>Why Choose Us</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                fontWeight: 800,
-                color: "var(--color-ink)",
-                lineHeight: 1.2,
-                marginBottom: 16,
-              }}
-            >
-              What makes us the{" "}
-              <span style={{ position: "relative", display: "inline-block" }}>
-                right choice
-                <WavyUnderline />
-              </span>
-            </h2>
-            <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: 560 }}>
-              We provide a safe, disciplined, and nurturing environment that develops students academically,
-              morally, socially, and physically.
-            </p>
-          </div>
-
-          <div className="split-2" style={{ marginBottom: 40, alignItems: "stretch" }}>
-            <div style={{ borderRadius: 20, overflow: "hidden", position: "relative", aspectRatio: "566/900", maxHeight: 420 }}>
-              <Image
-                src="/assets/images/Q9Rn6EJi0zag5SQxsDKWNT8uZIg-3b62ea16.avif"
-                alt="Students engaged in classroom activities"
-                width={566}
-                height={900}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-            <div
-              style={{
-                background: "var(--color-dark-bg)",
-                borderRadius: 20,
-                padding: "40px 32px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                gap: 16,
-                height: "100%",
-              }}
-            >
-              <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.6rem", fontWeight: 800, color: "#fff", lineHeight: 1.25 }}>
-                Guided by care and creativity
-              </h3>
-              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.75 }}>
-                At RAHMA Model School, our mission is to prepare students to become confident, creative, and
-                responsible future leaders.
-              </p>
-              <div>
-                <Button href="/contact" variant="solid">
-                  Contact us
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid-auto-260">
-            {whyChooseUs.map((item) => (
-              <div key={item.title} style={{ background: item.bg, borderRadius: 20, padding: "32px 28px" }}>
-                <div style={{ fontSize: "2rem", marginBottom: 16 }}>{item.icon}</div>
-                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1rem", color: "var(--color-ink)", marginBottom: 10 }}>
-                  {item.title}
-                </h3>
-                <p style={{ color: "var(--color-body-text)", fontSize: "0.875rem", lineHeight: 1.7 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── TESTIMONIALS ── */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "80px 32px" }}>
-        <Container>
-          <div style={{ marginBottom: 48, textAlign: "center" }}>
-            <SectionLabel>Testimonials</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                fontWeight: 800,
-                color: "var(--color-ink)",
-                lineHeight: 1.2,
-              }}
-            >
-              Stories from{" "}
-              <span style={{ position: "relative", display: "inline-block" }}>
-                happy parents
-                <WavyUnderline />
-              </span>
-            </h2>
-          </div>
-          <div className="grid-auto-320">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name + t.role} {...t} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── PRICING TEASER ── */}
-      <section style={{ background: "var(--color-paper)", padding: "80px 32px" }}>
-        <Container>
-          <div style={{ marginBottom: 40, maxWidth: 560 }}>
-            <SectionLabel>Fee Structure</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                fontWeight: 800,
-                color: "var(--color-ink)",
-                lineHeight: 1.2,
-              }}
-            >
-              Plans built for{" "}
-              <span style={{ position: "relative", display: "inline-block" }}>
-                every family
-                <WavyUnderline />
-              </span>
-            </h2>
-          </div>
-          <div className="pricing-teaser-grid">
-            <PricingCard
-              title="Basic care"
-              description="Affordable, community-focused fee structure with merit and need-based scholarships available upon request."
-              price="$100.00"
-              variant="standard"
-              ctaHref="/pricing"
-              features={["Safe and nurturing environment", "Play-based learning activities", "Daily snacks included"]}
-            />
-            <PricingCard
-              title="Smart start"
-              description="Comprehensive academic programs covering all subjects, laboratory work, co-curriculars, and examination preparation."
-              price="$500.00"
-              variant="premium"
-              ctaHref="/pricing"
-              image="/assets/images/yJpmVxeiLLChpwpGjaX5dl1UO64-bd4e3ad9.avif"
-              imageWidth={840}
-              imageHeight={1308}
-              features={["Structured learning programs", "Interactive group activities", "Weekly progress reports"]}
-            />
-          </div>
-        </Container>
-      </section>
-
-      {/* ── BLOG TEASER ── */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "80px 32px" }}>
-        <Container>
-          <div style={{ marginBottom: 40, maxWidth: 560 }}>
-            <SectionLabel>From the Blog</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                fontWeight: 800,
-                color: "var(--color-ink)",
-                lineHeight: 1.2,
-              }}
-            >
-              Stories from{" "}
-              <span style={{ position: "relative", display: "inline-block" }}>
-                student life
-                <WavyUnderline />
-              </span>
-            </h2>
-          </div>
-          <div className="grid-auto-320">
-            {blogPosts.slice(0, 3).map((post) => (
-              <BlogCard
-                key={post.slug}
-                slug={post.slug}
-                title={post.title}
-                author={post.author}
-                date={post.date}
-                tint={post.tint}
-                image={post.heroImage}
-                imageWidth={post.heroWidth}
-                imageHeight={post.heroHeight}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── CTA ── */}
-      <section style={{ background: "var(--color-brand-teal)", padding: "72px 32px", textAlign: "center" }}>
-        <Container style={{ maxWidth: 640 }}>
-          <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 800, color: "var(--color-ink)", marginBottom: 16 }}>
-            Join our learning community today
-          </h2>
-          <p style={{ color: "rgba(0,0,0,0.65)", fontSize: "1rem", lineHeight: 1.7, marginBottom: 24 }}>
-            Support your child&rsquo;s growth with a nurturing environment designed for learning, creativity, and
-            confidence.
-          </p>
-          <Button href="/contact" variant="dark">
-            Admissions Open
-          </Button>
-          <div className="collage-4">
-            {ctaCollage.map((src) => (
-              <div key={src} style={{ borderRadius: 12, overflow: "hidden", position: "relative", aspectRatio: "1/1" }}>
-                <Image src={src} alt="RAHMA Model School campus life" width={512} height={512} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-    </div>
-  );
-}
-
-function ProgramCard({
-  num,
-  title,
-  tag,
-  desc,
-  bg,
-  accent,
-  image,
+function ArrowButton({
+  href,
+  children,
+  variant = "white",
 }: {
-  num: string;
-  title: string;
-  tag: string;
-  desc: string;
-  bg: string;
-  accent: string;
-  image: { src: string; width: number; height: number };
+  href: string;
+  children: string;
+  variant?: "white" | "purple" | "dark";
 }) {
+  const styles: Record<string, { bg: string; text: string; circleBg: string; circleText: string }> = {
+    white: { bg: "#fff", text: "#000", circleBg: "#fcb520", circleText: "#000" },
+    purple: { bg: "#520080", text: "#fff", circleBg: "#fff", circleText: "#520080" },
+    dark: { bg: "#000", text: "#fff", circleBg: "#520080", circleText: "#fff" },
+  };
+  const s = styles[variant];
   return (
-    <div style={{ background: bg, borderRadius: 20, padding: "24px 24px 28px", display: "flex", flexDirection: "column", gap: 12 }}>
-      <div style={{ borderRadius: 14, position: "relative", aspectRatio: "1240/848", overflow: "hidden" }}>
-        <Image
-          src={image.src}
-          alt={title}
-          width={image.width}
-          height={image.height}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-        <span
-          style={{
-            position: "absolute",
-            top: 12,
-            left: 12,
-            background: accent,
-            color: "#fff",
-            fontSize: "0.65rem",
-            fontWeight: 700,
-            padding: "4px 10px",
-            borderRadius: 100,
-            letterSpacing: "0.05em",
-          }}
-        >
-          {tag.toUpperCase()}
-        </span>
-        <span
-          style={{
-            position: "absolute",
-            bottom: 12,
-            right: 12,
-            fontFamily: "var(--font-heading)",
-            color: "#fff",
-            fontWeight: 800,
-            fontSize: "1.4rem",
-            textShadow: "0 1px 6px rgba(0,0,0,0.5)",
-          }}
-        >
-          {num}
-        </span>
-      </div>
-      <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.05rem", color: "var(--color-ink)" }}>{title}</h3>
-      <p style={{ color: "var(--color-body-text)", fontSize: "0.875rem", lineHeight: 1.7 }}>{desc}</p>
-      <Link href="/programs" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--color-ink)", fontWeight: 700, fontSize: "0.85rem", marginTop: 4 }}>
-        View details →
-      </Link>
+    <Link
+      href={href}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 20,
+        padding: "9px 11px 9px 20px",
+        borderRadius: 50,
+        background: s.bg,
+        color: s.text,
+        fontFamily: "var(--font-body)",
+        fontWeight: 600,
+        fontSize: 16,
+        lineHeight: "24px",
+        textDecoration: "none",
+      }}
+    >
+      {children}
+      <span
+        style={{
+          width: 35,
+          height: 35,
+          borderRadius: "50%",
+          background: s.circleBg,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+        }}
+      >
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden>
+          <path
+            fill={s.circleText}
+            d="M11.133 15.55a.833.833 0 01-.591-1.383l4.166-4.125-4.166-4.125a.833.833 0 111.183-1.175l4.708 4.708a.833.833 0 010 1.183l-4.708 4.709a.83.83 0 01-.592.208"
+          />
+          <path fill={s.circleText} d="M15.834 10.833H4.167a.833.833 0 110-1.667h11.667a.833.833 0 010 1.667" />
+        </svg>
+      </span>
+    </Link>
+  );
+}
+
+/* ── EYEBROW LABEL ───────────────────────────────────── */
+
+function Eyebrow({ children, light = false }: { children: string; light?: boolean }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
+      <span style={{ color: light ? "rgba(255,255,255,0.5)" : "#888", fontSize: 16, lineHeight: "24px" }}>→</span>
+      <span
+        style={{
+          fontFamily: "var(--font-body)",
+          fontSize: 16,
+          fontWeight: 500,
+          lineHeight: "24px",
+          textTransform: "uppercase",
+          letterSpacing: "0.05em",
+          color: light ? "#fff" : "#000",
+        }}
+      >
+        {children}
+      </span>
     </div>
   );
 }
 
-function TestimonialCard({ name, role, text, bg }: { name: string; role: string; text: string; bg: string }) {
+/* ── TICKER STRIP ────────────────────────────────────── */
+
+function TickerStrip() {
+  const items = Array.from({ length: 8 }, (_, i) => i);
   return (
     <div
       style={{
-        background: "var(--color-paper)",
-        borderRadius: 20,
-        padding: 28,
-        boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
+        background: "#d7fdcf",
+        padding: "20px 0",
+        overflow: "hidden",
         display: "flex",
-        flexDirection: "column",
-        gap: 16,
       }}
     >
-      <div style={{ display: "flex", gap: 4 }}>
-        {Array.from({ length: 5 }).map((_, i) => (
-          <span key={i} style={{ color: "var(--color-brand-gold)", fontSize: "0.9rem" }}>
-            ★
-          </span>
+      <div
+        style={{
+          display: "flex",
+          width: "max-content",
+          animation: "ticker-scroll 20s linear infinite",
+        }}
+      >
+        {[...items, ...items].map((_, i) => (
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              padding: "0 24px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 16,
+                fontWeight: 500,
+                lineHeight: "24px",
+                color: "#000",
+              }}
+            >
+              {TICKER_TEXT}
+            </span>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden>
+              <path
+                d="M20 4l2.5 7.5H30l-6.5 4.7 2.5 7.6-6.5-4.3-6.5 4.3 2.5-7.6L9 11.5h7.5L20 4z"
+                fill="#09d89a"
+              />
+            </svg>
+          </div>
         ))}
       </div>
-      <p style={{ color: "#444", fontSize: "0.9rem", lineHeight: 1.75, flex: 1 }}>&ldquo;{text}&rdquo;</p>
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+    </div>
+  );
+}
+
+/* ── PAGE ────────────────────────────────────────────── */
+
+export default function HomePage() {
+  return (
+    <>
+      <style>{`
+        @keyframes ticker-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .hero-btn:hover { opacity: 0.9; }
+        .about-card { transition: transform 0.2s ease; }
+        .about-card:hover { transform: translateY(-4px); }
+        .program-card { transition: transform 0.2s ease; }
+        .program-card:hover { transform: translateY(-4px); }
+        .feature-card { transition: transform 0.2s ease; }
+        .feature-card:hover { transform: translateY(-4px); }
+        .blog-card { transition: transform 0.2s ease; }
+        .blog-card:hover { transform: translateY(-4px); }
+      `}</style>
+
+      {/* ── 1. HERO ── */}
+      <section
+        style={{
+          position: "relative",
+          height: 900,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "flex-end",
+          justifyContent: "center",
+          padding: "400px 30px 120px",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background image */}
+        <Image
+          src="/assets/images/i2ECgxjZP2t8RjEmI8skh28jRbQ-09736a12.avif"
+          alt=""
+          fill
+          priority
+          style={{ objectFit: "cover", zIndex: 0 }}
+        />
+        {/* Dark overlay */}
         <div
           style={{
-            width: 40,
-            height: 40,
-            borderRadius: "50%",
-            background: bg,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#fff",
-            fontWeight: 700,
-            fontSize: "0.9rem",
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.1)",
+            zIndex: 1,
+          }}
+        />
+        {/* Decorative icon */}
+        <div
+          style={{
+            position: "absolute",
+            left: 60,
+            top: "50%",
+            transform: "translateY(-50%) rotate(-15deg)",
+            zIndex: 2,
+            opacity: 0.18,
+          }}
+          aria-hidden
+        >
+          <svg width="341" height="341" viewBox="0 0 100 100" fill="none">
+            <path
+              d="M50 5l8 24H82L62 44l8 24-20-14-20 14 8-24L18 29h24L50 5z"
+              fill="#ffffff"
+            />
+          </svg>
+        </div>
+        {/* Content */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 5,
+            width: "100%",
+            maxWidth: 1300,
+            margin: "0 auto",
           }}
         >
-          {name.charAt(0)}
+          <div style={{ maxWidth: 600, display: "flex", flexDirection: "column", gap: 40 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              <h1
+                className="hero-h1"
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontWeight: 700,
+                  lineHeight: "1.1",
+                  color: "#fff",
+                  margin: 0,
+                }}
+              >
+                Building bright young minds
+              </h1>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 16,
+                  fontWeight: 400,
+                  lineHeight: "24px",
+                  color: "rgba(255,255,255,0.85)",
+                  margin: 0,
+                }}
+              >
+                A nurturing space where children learn, play, and grow with confidence through a blend of creative activities and guided learning.
+              </p>
+            </div>
+            <div>
+              <ArrowButton href="/contact" variant="white">
+                Enroll now
+              </ArrowButton>
+            </div>
+          </div>
         </div>
-        <div>
-          <div style={{ fontWeight: 700, fontSize: "0.875rem", color: "var(--color-ink)" }}>{name}</div>
-          <div style={{ color: "#888", fontSize: "0.78rem" }}>{role}</div>
+      </section>
+
+      {/* ── 2. TICKER ── */}
+      <TickerStrip />
+
+      {/* ── 3. ABOUT ── */}
+      <section
+        style={{
+          background: "var(--color-bg-cream)",
+          padding: "120px 30px",
+        }}
+      >
+        <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 60 }}>
+          {/* Title row: heading on right, label top-right */}
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <div style={{ width: 650, display: "flex", flexDirection: "column", gap: 0 }}>
+              <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
+                <Eyebrow>About Us</Eyebrow>
+              </div>
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 44,
+                  fontWeight: 600,
+                  lineHeight: "52.8px",
+                  color: "#000",
+                  margin: 0,
+                }}
+              >
+                A warm space for growing minds filled with care, nature, and discovery, where play becomes learning
+              </h2>
+              <div style={{ display: "flex", gap: 8, marginTop: 16 }}>
+                <span style={{ display: "inline-flex", width: 45, height: 45, borderRadius: "50%", background: "#d7fdcf", alignItems: "center", justifyContent: "center", fontSize: 22 }}>💚</span>
+                <span style={{ display: "inline-flex", width: 45, height: 45, borderRadius: "50%", background: "#ebe1fd", alignItems: "center", justifyContent: "center", fontSize: 22 }}>💜</span>
+                <span style={{ display: "inline-flex", width: 45, height: 45, borderRadius: "50%", background: "#feeecd", alignItems: "center", justifyContent: "center", fontSize: 22 }}>⭐</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats row */}
+          <div style={{ display: "flex", alignItems: "center" }}>
+            {stats.map((stat, i) => (
+              <div key={stat.label} style={{ display: "flex", alignItems: "center", flex: 1 }}>
+                {i > 0 && (
+                  <div
+                    style={{ width: 1, height: 86, background: "#d5d5d5", marginRight: 24, flexShrink: 0 }}
+                  />
+                )}
+                <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: 44,
+                      fontWeight: 600,
+                      lineHeight: "52.8px",
+                      color: "#000",
+                    }}
+                  >
+                    {stat.value}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 16,
+                      fontWeight: 400,
+                      lineHeight: "24px",
+                      color: "#575757",
+                    }}
+                  >
+                    {stat.label}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Cards row */}
+          <div
+            style={{
+              display: "flex",
+              gap: 24,
+              alignItems: "stretch",
+              height: 390,
+            }}
+          >
+            {/* Small card 1 */}
+            {aboutCards.map((card, i) => (
+              i === 0 && (
+                <div
+                  key={card.label}
+                  className="about-card"
+                  style={{
+                    width: 252,
+                    flexShrink: 0,
+                    background: card.bg,
+                    borderRadius: 20,
+                    padding: 40,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {card.icon}
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-heading)",
+                        fontSize: 36,
+                        fontWeight: 600,
+                        lineHeight: "46.8px",
+                        color: "#000",
+                        marginBottom: 8,
+                      }}
+                    >
+                      {card.value}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757" }}>
+                      {card.label}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757", opacity: 0.7 }}>
+                      {card.sublabel}
+                    </div>
+                  </div>
+                </div>
+              )
+            ))}
+
+            {/* Center image */}
+            <div
+              style={{
+                flex: 1,
+                borderRadius: 20,
+                overflow: "hidden",
+                minWidth: 200,
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/images/hdvC95xzzw7mdnfgjDPZ1OZh5tY-d2baf33c.avif"
+                alt="Students at RAHMA Model School"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+
+            {/* Small card 2 */}
+            {aboutCards.map((card, i) => (
+              i === 1 && (
+                <div
+                  key={card.label}
+                  className="about-card"
+                  style={{
+                    width: 252,
+                    flexShrink: 0,
+                    background: card.bg,
+                    borderRadius: 20,
+                    padding: 40,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {card.icon}
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-heading)",
+                        fontSize: 36,
+                        fontWeight: 600,
+                        lineHeight: "46.8px",
+                        color: "#000",
+                        marginBottom: 8,
+                      }}
+                    >
+                      {card.value}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757" }}>
+                      {card.label}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757", opacity: 0.7 }}>
+                      {card.sublabel}
+                    </div>
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* ── 4. BENEFIT / WHY CHOOSE US ── */}
+      <section
+        style={{
+          background: "#fff",
+          padding: "120px 30px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Decorative background blob */}
+        <div
+          style={{
+            position: "absolute",
+            right: -200,
+            top: -100,
+            width: 600,
+            height: 600,
+            borderRadius: "50%",
+            background: "#feeecd",
+            opacity: 0.4,
+            zIndex: 0,
+          }}
+          aria-hidden
+        />
+        <div
+          style={{
+            maxWidth: 1300,
+            margin: "0 auto",
+            position: "relative",
+            zIndex: 1,
+            display: "flex",
+            flexDirection: "column",
+            gap: 80,
+          }}
+        >
+          {/* Image + Content */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "580px 1fr",
+              gap: 80,
+              alignItems: "flex-start",
+            }}
+            className="benefit-grid"
+          >
+            {/* Left: image */}
+            <div
+              style={{
+                position: "relative",
+                height: 800,
+                borderRadius: 20,
+                overflow: "hidden",
+                minHeight: 400,
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/images/srN544ojqUDpLVTA78un36pcUo-cd8b31be.avif"
+                alt="RAHMA teachers and students"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+
+            {/* Right: content */}
+            <div style={{ paddingTop: 40, display: "flex", flexDirection: "column", gap: 48 }}>
+              <div>
+                <Eyebrow>Why Choose Us</Eyebrow>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontSize: 56,
+                    fontWeight: 700,
+                    lineHeight: "64.4px",
+                    color: "#000",
+                    margin: "0 0 24px",
+                  }}
+                >
+                  What makes us the right choice
+                </h2>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 16,
+                    lineHeight: "24px",
+                    color: "#575757",
+                    margin: 0,
+                  }}
+                >
+                  We nurture a caring and inspiring space where children feel safe, explore freely, build confidence, and grow through joyful, everyday learning experiences.
+                </p>
+              </div>
+
+              {/* Feature list */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                {[
+                  { title: "Caring space", desc: "A safe and supportive place where children feel valued." },
+                  { title: "Fun learning", desc: "Engaging activities where children learn naturally." },
+                  { title: "Child-first focus", desc: "Every activity designed around each child's pace and interests." },
+                ].map((item, i) => (
+                  <div
+                    key={item.title}
+                    style={{
+                      borderTop: "1px solid #d5d5d5",
+                      padding: "20px 0",
+                    }}
+                  >
+                    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                      <span
+                        style={{
+                          fontFamily: "var(--font-heading)",
+                          fontSize: 16,
+                          fontWeight: 600,
+                          color: "#000",
+                        }}
+                      >
+                        {item.title}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 16,
+                          lineHeight: "24px",
+                          color: "#575757",
+                        }}
+                      >
+                        {item.desc}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+                <div style={{ borderTop: "1px solid #d5d5d5" }} />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom: Guided by care + 2 info cards */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 252px 252px",
+              gap: 24,
+              alignItems: "center",
+            }}
+            className="benefit-bottom-grid"
+          >
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 44,
+                  fontWeight: 600,
+                  lineHeight: "52.8px",
+                  color: "#000",
+                  margin: 0,
+                }}
+              >
+                Guided by care and creativity
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 16,
+                  lineHeight: "24px",
+                  color: "#575757",
+                  margin: 0,
+                  maxWidth: 480,
+                }}
+              >
+                We nurture young minds through thoughtful care and creative learning experiences, helping every child grow with confidence, curiosity, and a strong sense of independence.
+              </p>
+              <div>
+                <ArrowButton href="/contact" variant="purple">
+                  Contact us
+                </ArrowButton>
+              </div>
+            </div>
+
+            {[
+              { bg: "#d7fdcf", value: "Expert Educators", sub: "Trained and passionate teachers dedicated to every child." },
+              { bg: "#ebe1fd", value: "Strong Community", sub: "A family-first environment built on trust and support." },
+            ].map((card) => (
+              <div
+                key={card.value}
+                className="about-card"
+                style={{
+                  background: card.bg,
+                  borderRadius: 20,
+                  padding: 40,
+                  height: 234,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                  gap: 12,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontSize: 20,
+                    fontWeight: 600,
+                    color: "#000",
+                  }}
+                >
+                  {card.value}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 16,
+                    lineHeight: "24px",
+                    color: "#575757",
+                  }}
+                >
+                  {card.sub}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. PRESENTATION SECTION ── */}
+      <section
+        style={{
+          position: "relative",
+          height: 793,
+          display: "flex",
+          alignItems: "flex-end",
+          padding: "500px 30px 120px",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background image with pseudo-parallax */}
+        <Image
+          src="/assets/images/Sfm9js53gBOL3V13gpQtyyxQPf8-334437a4.avif"
+          alt=""
+          fill
+          style={{ objectFit: "cover", zIndex: 0 }}
+        />
+        {/* Dark overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.3)",
+            zIndex: 1,
+          }}
+        />
+        {/* Content */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            maxWidth: 1300,
+            width: "100%",
+            margin: "0 auto",
+          }}
+        >
+          <div style={{ maxWidth: 515, display: "flex", flexDirection: "column", gap: 0 }}>
+            <Eyebrow light>Our Campus</Eyebrow>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: 56,
+                fontWeight: 700,
+                lineHeight: "64.4px",
+                color: "#fff",
+                margin: 0,
+              }}
+            >
+              Discover our learning space
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. TICKER (2nd) ── */}
+      <TickerStrip />
+
+      {/* ── 7. PROGRAMS ── */}
+      <section
+        style={{
+          background: "var(--color-bg-cream)",
+          padding: "120px 30px",
+        }}
+      >
+        <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 60 }}>
+          {/* Header row */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+            }}
+          >
+            <div style={{ maxWidth: 440 }}>
+              <Eyebrow>Our Programs</Eyebrow>
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 56,
+                  fontWeight: 700,
+                  lineHeight: "64.4px",
+                  color: "#000",
+                  margin: 0,
+                }}
+              >
+                Programs for growing minds
+              </h2>
+            </div>
+            <ArrowButton href="/programs" variant="purple">
+              View all programs
+            </ArrowButton>
+          </div>
+
+          {/* Program cards: 2×2 grid */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 20,
+            }}
+            className="programs-grid"
+          >
+            {programs.map((p) => (
+              <div
+                key={p.num}
+                className="program-card"
+                style={{
+                  background: p.bg,
+                  borderRadius: 20,
+                  padding: 10,
+                  display: "flex",
+                  gap: 0,
+                  overflow: "hidden",
+                }}
+              >
+                {/* Content side */}
+                <div
+                  style={{
+                    flex: 1,
+                    padding: "30px 30px 30px 30px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 16,
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                    {/* Number */}
+                    <div
+                      style={{
+                        width: 35,
+                        height: 35,
+                        borderRadius: "50%",
+                        background: "rgba(0,0,0,0.08)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontFamily: "var(--font-heading)",
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "#000",
+                      }}
+                    >
+                      {p.num}
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-heading)",
+                        fontSize: 20,
+                        fontWeight: 700,
+                        lineHeight: "1.3",
+                        color: "#000",
+                        margin: 0,
+                      }}
+                    >
+                      {p.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16,
+                        lineHeight: "24px",
+                        color: "#575757",
+                        margin: 0,
+                      }}
+                    >
+                      {p.desc}
+                    </p>
+                  </div>
+                  {/* Age tag + link */}
+                  <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        background: p.tagColor,
+                        color: "#fff",
+                        fontFamily: "var(--font-body)",
+                        fontSize: 12,
+                        fontWeight: 600,
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        padding: "4px 12px",
+                        borderRadius: 50,
+                      }}
+                    >
+                      {p.tag}
+                    </span>
+                    <Link
+                      href="/programs"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 6,
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16,
+                        fontWeight: 600,
+                        color: "#000",
+                        textDecoration: "none",
+                      }}
+                    >
+                      View details →
+                    </Link>
+                  </div>
+                </div>
+                {/* Image side */}
+                <div
+                  style={{
+                    width: "45%",
+                    flexShrink: 0,
+                    position: "relative",
+                    borderRadius: 14,
+                    overflow: "hidden",
+                    minHeight: 280,
+                  }}
+                >
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. FEATURE ── */}
+      <section
+        style={{
+          background: "#fff",
+          padding: "120px 30px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Decorative blob */}
+        <div
+          style={{
+            position: "absolute",
+            left: -150,
+            bottom: -100,
+            width: 500,
+            height: 500,
+            borderRadius: "50%",
+            background: "#d7fdcf",
+            opacity: 0.35,
+            zIndex: 0,
+          }}
+          aria-hidden
+        />
+        <div
+          style={{
+            maxWidth: 1300,
+            margin: "0 auto",
+            position: "relative",
+            zIndex: 1,
+            display: "grid",
+            gridTemplateColumns: "490px 1fr",
+            gap: 80,
+            alignItems: "flex-start",
+          }}
+          className="feature-layout"
+        >
+          {/* Left: heading + button */}
+          <div
+            style={{
+              position: "sticky",
+              top: 80,
+              display: "flex",
+              flexDirection: "column",
+              gap: 32,
+            }}
+          >
+            <div>
+              <Eyebrow>Features</Eyebrow>
+              <h2
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 56,
+                  fontWeight: 700,
+                  lineHeight: "64.4px",
+                  color: "#000",
+                  margin: "0 0 24px",
+                }}
+              >
+                Little moments that shine
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 16,
+                  lineHeight: "24px",
+                  color: "#575757",
+                  margin: 0,
+                }}
+              >
+                A closer look at what makes our learning environment special — every activity is designed to inspire curiosity, creativity, and confidence in young minds.
+              </p>
+            </div>
+            <div>
+              <ArrowButton href="/contact" variant="purple">
+                Enroll now
+              </ArrowButton>
+            </div>
+          </div>
+
+          {/* Right: staggered 2-col feature cards */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 20,
+            }}
+          >
+            {/* Left col: padded down at bottom */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 20,
+                paddingBottom: 100,
+              }}
+            >
+              {features.slice(0, 2).map((f) => (
+                <div
+                  key={f.title}
+                  className="feature-card"
+                  style={{
+                    background: "var(--color-bg-cream)",
+                    borderRadius: 20,
+                    padding: 30,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 16,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: 10,
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {f.icon}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: 20,
+                      fontWeight: 700,
+                      color: "#000",
+                      margin: 0,
+                    }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 16,
+                      lineHeight: "24px",
+                      color: "#575757",
+                      margin: 0,
+                    }}
+                  >
+                    {f.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+            {/* Right col: padded down at top */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 20,
+                paddingTop: 100,
+              }}
+            >
+              {features.slice(2).map((f) => (
+                <div
+                  key={f.title}
+                  className="feature-card"
+                  style={{
+                    background: "var(--color-bg-cream)",
+                    borderRadius: 20,
+                    padding: 30,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 16,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: 10,
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {f.icon}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: 20,
+                      fontWeight: 700,
+                      color: "#000",
+                      margin: 0,
+                    }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 16,
+                      lineHeight: "24px",
+                      color: "#575757",
+                      margin: 0,
+                    }}
+                  >
+                    {f.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. TESTIMONIALS ── */}
+      <section
+        style={{
+          background: "var(--color-bg-cream)",
+          padding: "120px 30px 60px",
+        }}
+      >
+        <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 48 }}>
+          <div style={{ maxWidth: 440 }}>
+            <Eyebrow>Testimonials</Eyebrow>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: 56,
+                fontWeight: 700,
+                lineHeight: "64.4px",
+                color: "#000",
+                margin: 0,
+              }}
+            >
+              Stories from happy parents
+            </h2>
+          </div>
+
+          {/* Testimonial cards: overflow scroll */}
+          <div
+            style={{
+              display: "flex",
+              gap: 20,
+              overflowX: "auto",
+              scrollSnapType: "x mandatory",
+              scrollbarWidth: "none",
+              paddingBottom: 8,
+            }}
+          >
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                style={{
+                  flex: "0 0 774px",
+                  scrollSnapAlign: "start",
+                  borderRadius: 20,
+                  background: "#fff",
+                  display: "flex",
+                  overflow: "hidden",
+                }}
+              >
+                {/* Image */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  style={{ width: 342, flexShrink: 0, objectFit: "cover", display: "block" }}
+                />
+                {/* Content */}
+                <div
+                  style={{
+                    flex: 1,
+                    padding: "40px 40px 40px 40px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    gap: 24,
+                  }}
+                >
+                  <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                    {/* Stars */}
+                    <div style={{ display: "flex", gap: 4 }}>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span key={i} style={{ color: "#fcb520", fontSize: 20 }}>★</span>
+                      ))}
+                    </div>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16,
+                        lineHeight: "24px",
+                        color: "#575757",
+                        margin: 0,
+                      }}
+                    >
+                      &ldquo;{t.text}&rdquo;
+                    </p>
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16,
+                        fontWeight: 600,
+                        color: "#000",
+                      }}
+                    >
+                      {t.name}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16,
+                        color: "#575757",
+                      }}
+                    >
+                      {t.role}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 10. PRICING ── */}
+      <PricingTabs />
+
+      {/* ── 11. BLOG ── */}
+      <section
+        style={{
+          background: "#fff",
+          padding: "120px 30px 60px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Decorative blob */}
+        <div
+          style={{
+            position: "absolute",
+            right: -100,
+            top: 50,
+            width: 400,
+            height: 400,
+            borderRadius: "50%",
+            background: "#feeecd",
+            opacity: 0.3,
+            zIndex: 0,
+          }}
+          aria-hidden
+        />
+        <div
+          style={{
+            maxWidth: 1300,
+            margin: "0 auto",
+            position: "relative",
+            zIndex: 1,
+            display: "flex",
+            flexDirection: "column",
+            gap: 48,
+          }}
+        >
+          <div style={{ maxWidth: 600 }}>
+            <Eyebrow>Our Blogs</Eyebrow>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: 56,
+                fontWeight: 700,
+                lineHeight: "64.4px",
+                color: "#000",
+                margin: 0,
+              }}
+            >
+              Insights for early learning and growth
+            </h2>
+          </div>
+
+          {/* Blog cards: 3-col */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 20,
+            }}
+            className="blog-grid"
+          >
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blogs/${post.slug}`}
+                className="blog-card"
+                style={{
+                  background: "#fff",
+                  borderRadius: 20,
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  textDecoration: "none",
+                  border: "1px solid #f0f0f0",
+                }}
+              >
+                {/* Image */}
+                <div
+                  style={{
+                    position: "relative",
+                    height: 280,
+                    borderRadius: "20px 20px 0 0",
+                    overflow: "hidden",
+                  }}
+                >
+                  <Image
+                    src={post.heroImage}
+                    alt={post.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                {/* Content */}
+                <div
+                  style={{
+                    padding: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 12,
+                    flex: 1,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 12,
+                      fontFamily: "var(--font-body)",
+                      fontSize: 16,
+                      color: "#575757",
+                    }}
+                  >
+                    <span>{post.author}</span>
+                    <span>·</span>
+                    <span>{post.date}</span>
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: 20,
+                      fontWeight: 700,
+                      lineHeight: "1.3",
+                      color: "#000",
+                      margin: 0,
+                    }}
+                  >
+                    {post.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 12. CTA ── */}
+      <section
+        style={{
+          background: "#fff",
+          padding: "60px 30px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1300,
+            margin: "0 auto",
+            background: "var(--color-bg-cream)",
+            borderRadius: 20,
+            padding: "80px 30px",
+            position: "relative",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 32,
+            textAlign: "center",
+          }}
+        >
+          {/* Decorative blobs */}
+          <div
+            style={{ position: "absolute", left: -80, top: -80, width: 280, height: 280, borderRadius: "50%", background: "#feeecd", opacity: 0.6, zIndex: 0 }}
+            aria-hidden
+          />
+          <div
+            style={{ position: "absolute", right: -80, bottom: -80, width: 280, height: 280, borderRadius: "50%", background: "#d7fdcf", opacity: 0.6, zIndex: 0 }}
+            aria-hidden
+          />
+          {/* Floating avatar images */}
+          <div
+            style={{ position: "absolute", left: 80, top: 60, width: 70, height: 70, borderRadius: "50%", overflow: "hidden", border: "3px solid #fff", zIndex: 1 }}
+          >
+            <Image src="/assets/images/bM5XLgck0nuZBUl800FPnYZLqM-49e6a37c.avif" alt="" fill style={{ objectFit: "cover" }} />
+          </div>
+          <div
+            style={{ position: "absolute", left: 40, bottom: 80, width: 60, height: 60, borderRadius: "50%", overflow: "hidden", border: "3px solid #fff", zIndex: 1 }}
+          >
+            <Image src="/assets/images/FH7s1VpnmO3OdrrAkXKU3gealE-79d1a684.avif" alt="" fill style={{ objectFit: "cover" }} />
+          </div>
+          <div
+            style={{ position: "absolute", right: 80, top: 60, width: 70, height: 70, borderRadius: "50%", overflow: "hidden", border: "3px solid #fff", zIndex: 1 }}
+          >
+            <Image src="/assets/images/IIm5NEuXpUdRszfB2rjqlZaHRdg-670fd09e.avif" alt="" fill style={{ objectFit: "cover" }} />
+          </div>
+          <div
+            style={{ position: "absolute", right: 40, bottom: 80, width: 60, height: 60, borderRadius: "50%", overflow: "hidden", border: "3px solid #fff", zIndex: 1 }}
+          >
+            <Image src="/assets/images/C5awbluBJPV4EhKVcTbPsA5i4-f26ae8c5.avif" alt="" fill style={{ objectFit: "cover" }} />
+          </div>
+
+          {/* Content */}
+          <div
+            style={{
+              position: "relative",
+              zIndex: 2,
+              maxWidth: 600,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 20,
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: 56,
+                fontWeight: 700,
+                lineHeight: "64.4px",
+                color: "#000",
+                margin: 0,
+              }}
+            >
+              Join our learning community today
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 16,
+                lineHeight: "24px",
+                color: "#575757",
+                margin: 0,
+              }}
+            >
+              Support your child&rsquo;s growth with a nurturing environment designed for learning, creativity, and confidence.
+            </p>
+            <ArrowButton href="/contact" variant="purple">
+              Enroll now
+            </ArrowButton>
+          </div>
+        </div>
+      </section>
+
+      {/* ── RESPONSIVE ── */}
+      <style>{`
+        @media (max-width: 1379px) {
+          .benefit-grid { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
+          .benefit-grid > div:first-child { height: 500px !important; }
+          .programs-grid { grid-template-columns: 1fr !important; }
+          .feature-layout { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 809px) {
+          .benefit-grid { grid-template-columns: 1fr !important; }
+          .benefit-grid > div:first-child { height: 400px !important; }
+          .benefit-bottom-grid { grid-template-columns: 1fr !important; }
+          .blog-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </>
   );
 }
