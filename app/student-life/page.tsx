@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Container, SectionLabel, WavyUnderline, Button } from "@/components/ui";
+import { Container, SectionLabel, WavyUnderline } from "@/components/ui";
 import ActivitiesSection from "@/components/student-life/ActivitiesSection";
 
 export const metadata: Metadata = {
@@ -86,7 +86,7 @@ export default function StudentLifePage() {
       <ActivitiesSection />
 
       {/* Personality development */}
-      <section style={{ background: "var(--color-dark-bg)", padding: "72px 32px" }}>
+      <section style={{ background: "var(--color-bg-cream)", padding: "72px 32px" }}>
         <Container>
           <div
             style={{
@@ -115,18 +115,18 @@ export default function StudentLifePage() {
                   fontFamily: "var(--font-heading)",
                   fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
                   fontWeight: 800,
-                  color: "#fff",
+                  color: "var(--color-ink)",
                   lineHeight: 1.3,
                   marginBottom: 16,
                 }}
               >
                 Building tomorrow&apos;s leaders today
               </h2>
-              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", lineHeight: 1.8 }}>
+              <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8 }}>
                 Every RAHMATE carries values of honesty, discipline, respect, and faith — growing not just academically, but as responsible citizens who make a difference in their community and beyond.
               </p>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
               {[
                 "Confidence & Public Speaking",
                 "Leadership Skills",
@@ -141,16 +141,17 @@ export default function StudentLifePage() {
                 <div
                   key={s}
                   style={{
-                    background: "rgba(255,255,255,0.05)",
+                    background: "#fff",
                     borderRadius: 12,
                     padding: "16px",
                     display: "flex",
                     alignItems: "center",
                     gap: 10,
+                    border: "1px solid rgba(0,0,0,0.06)",
                   }}
                 >
                   <span style={{ color: "var(--color-brand-teal)", fontWeight: 700, fontSize: "1rem" }}>&#10003;</span>
-                  <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.85rem" }}>{s}</span>
+                  <span style={{ color: "var(--color-body-text)", fontSize: "0.85rem" }}>{s}</span>
                 </div>
               ))}
             </div>
@@ -158,37 +159,8 @@ export default function StudentLifePage() {
         </Container>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: "var(--color-brand-teal)", padding: "64px 32px", textAlign: "center" }}>
-        <h2
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "1.8rem",
-            fontWeight: 800,
-            color: "#000",
-            marginBottom: 16,
-          }}
-        >
-          Join our learning community today
-        </h2>
-        <p
-          style={{
-            color: "rgba(0,0,0,0.6)",
-            fontSize: "0.95rem",
-            marginBottom: 28,
-            maxWidth: 560,
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          Become a RAHMATE — join a school community where education, faith, and character shape every student&rsquo;s journey.
-        </p>
-        <Button href="/admission" variant="dark">
-          Enroll now
-        </Button>
-      </section>
 
-      <style>{`
+<style>{`
         @media (max-width: 810px) {
           .student-life-hero-grid { grid-template-columns: 1fr !important; }
           .student-life-hero-grid > div:last-child { max-width: 220px !important; justify-self: start !important; }

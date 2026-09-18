@@ -24,7 +24,7 @@ export default function PresentationSection() {
       }}
     >
       <Image
-        src="/assets/images/rahma-campus.jpeg"
+        src="/assets/images/rahma-computer-lab-2.png"
         alt="RAHMA Model School computer lab"
         fill
         style={{ objectFit: "cover", zIndex: 0 }}

@@ -14,7 +14,7 @@ const timeline = [
   { year: "2014", text: "Established in Bagga Sheikhan, Near Rawat, with a vision of affordable quality education" },
   { year: "2017", text: "Expanded curriculum and introduced modern, concept-based teaching methodologies" },
   { year: "2020", text: "Smart classrooms, computer laboratory, and science facilities launched" },
-  { year: "2024+", text: "210+ students, 14 qualified teachers, 13 classrooms — and growing every year" },
+  { year: "2024+", text: "218 students, 14 qualified teachers, 13 classrooms — and growing every year" },
 ];
 
 export default function StorySection() {

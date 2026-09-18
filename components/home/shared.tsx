@@ -3,7 +3,7 @@ import Link from "next/link";
 /* ── DATA ─────────────────────────────────────────────── */
 
 export const stats = [
-  { value: "210+", label: "Enrolled Students" },
+  { value: "218", label: "Enrolled Students" },
   { value: "14", label: "Qualified Teachers" },
   { value: "13", label: "Classrooms" },
   { value: "12+", label: "Years of Excellence" },
@@ -98,7 +98,7 @@ export const testimonials = [
 export const aboutCards = [
   {
     bg: "#d7fdcf",
-    value: "210+",
+    value: "218",
     label: "Students Enrolled",
     sublabel: "Growing with us every year",
     icon: (

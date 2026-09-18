@@ -31,7 +31,7 @@ const facilities = [
     icon: "💻",
     bg: "var(--color-tint-cream)",
     title: "Computer Laboratory",
-    image: "/assets/images/rahma-computer-lab.jpeg",
+    image: "/assets/images/rahma-computer-lab-2.png",
     desc: "The computer lab is equipped with modern computers and internet facilities that help students develop digital literacy and technology skills essential for today's world.",
   },
   {
@@ -48,11 +48,18 @@ const facilities = [
     image: "/assets/images/rahma-parent-partnership-2.jpeg",
     desc: "We use modern teaching techniques, multimedia presentations, and interactive learning resources to make classroom learning more engaging and effective.",
   },
+  {
+    icon: "🛡️",
+    bg: "var(--color-tint-cream)",
+    title: "Safe & Caring Environment",
+    image: "/assets/images/rahma-safe-caring.png",
+    desc: "We prioritise every child's health and well-being through regular health camps, medical checkups, and a supportive school culture where every student feels safe, valued, and cared for.",
+  },
 ];
 
 const campusPhotos = [
   "/assets/images/rahma-school.jpeg",
-  "/assets/images/rahma-computer-lab.jpeg",
+  "/assets/images/rahma-computer-lab-2.png",
   "/assets/images/rahma-school-2.jpeg",
   "/assets/images/rahma-kids-studying.jpeg",
 ];
