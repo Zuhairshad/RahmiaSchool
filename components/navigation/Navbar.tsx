@@ -108,14 +108,13 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/contact"
-            style={{ display: "flex", alignItems: "center", gap: 10, background: "var(--color-dark-surface)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 100, padding: "7px 12px 7px 16px", color: "#fff", fontSize: "0.875rem", fontWeight: 500 }}
+            href="/donate"
+            style={{ display: "flex", alignItems: "center", gap: 10, background: "#09d89a", border: "none", borderRadius: 100, padding: "7px 12px 7px 16px", color: "#000", fontSize: "0.875rem", fontWeight: 600 }}
           >
-            Contact us
-            <span style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#2d2d2d,#111)", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.15)" }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-                <circle cx="7" cy="5" r="2.5" fill="rgba(255,255,255,0.6)" />
-                <path d="M2 12c0-2.8 2.2-4.5 5-4.5s5 1.7 5 4.5" stroke="rgba(255,255,255,0.6)" strokeWidth="1.3" strokeLinecap="round" />
+            Donate now
+            <span style={{ width: 28, height: 28, borderRadius: "50%", background: "rgba(0,0,0,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#000" />
               </svg>
             </span>
           </Link>
