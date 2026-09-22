@@ -150,7 +150,7 @@ export default function PricingTabs() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "252px 1fr",
+            gridTemplateColumns: "1fr 1.8fr",
             gap: 20,
             alignItems: "stretch",
           }}

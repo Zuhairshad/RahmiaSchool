@@ -9,7 +9,7 @@ export default function PricingPage() {
   return (
     <div>
       <style>{`
-        .pricing-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
         @media (max-width: 810px) { .pricing-grid { grid-template-columns: 1fr; } }
       `}</style>
 

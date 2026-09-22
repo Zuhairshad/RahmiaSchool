@@ -83,7 +83,7 @@ export default function PricingCard({
           >
             {price}
           </span>
-          <span style={{ color: "#888", fontSize: "0.875rem" }}> {period}</span>
+          {price !== "Contact us" && <span style={{ color: "#888", fontSize: "0.875rem" }}> {period}</span>}
         </div>
         <Link
           href={ctaHref}
@@ -91,33 +91,32 @@ export default function PricingCard({
             display: "inline-flex",
             alignItems: "center",
             gap: 8,
-            background: isPremium ? "var(--color-brand-purple)" : "rgba(0,0,0,0.1)",
-            color: isPremium ? "#fff" : "#000",
+            background: isPremium ? "transparent" : "var(--color-brand-purple)",
+            color: isPremium ? "var(--color-brand-purple)" : "#fff",
+            border: isPremium ? "1.5px solid var(--color-brand-purple)" : "none",
             fontWeight: 700,
-            padding: isPremium ? "12px 24px" : "11px 24px",
+            padding: "12px 24px",
             borderRadius: 100,
             fontSize: "0.875rem",
             marginBottom: 28,
           }}
         >
           Get started today
-          {isPremium && (
-            <span
-              style={{
-                width: 22,
-                height: 22,
-                borderRadius: "50%",
-                background: "#fff",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--color-brand-purple)",
-                fontSize: "0.75rem",
-              }}
-            >
-              →
-            </span>
-          )}
+          <span
+            style={{
+              width: 22,
+              height: 22,
+              borderRadius: "50%",
+              background: isPremium ? "var(--color-brand-purple)" : "#fff",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: isPremium ? "#fff" : "var(--color-brand-purple)",
+              fontSize: "0.75rem",
+            }}
+          >
+            →
+          </span>
         </Link>
         <p
           style={{
@@ -134,7 +133,7 @@ export default function PricingCard({
         <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
           {features.map((f) => (
             <li key={f} style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "#444" }}>
-              <span style={{ color: isPremium ? "var(--color-brand-purple)" : "var(--color-brand-teal)", fontWeight: 700 }}>✓</span>
+              <span style={{ color: "var(--color-brand-purple)", fontWeight: 700 }}>✓</span>
               {f}
             </li>
           ))}
