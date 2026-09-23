@@ -60,6 +60,7 @@ export default function ProgramsSection() {
                 <div className="program-card-inner" style={{ display: "flex", flex: 1, gap: 0 }}>
                   {/* Content side — 600px max width */}
                   <div
+                    className="program-card-content"
                     style={{
                       width: 600,
                       flexShrink: 0,

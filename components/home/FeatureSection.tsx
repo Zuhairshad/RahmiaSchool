@@ -55,7 +55,7 @@ export default function FeatureSection() {
         </motion.div>
 
         {/* Staggered 2-col cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div className="feature-cards-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           {/* Left col — padded bottom */}
           <div style={{ display: "flex", flexDirection: "column", gap: 20, paddingBottom: 100 }}>
             {features.slice(0, 2).map((f, i) => (

@@ -72,7 +72,11 @@ export default function HomePage() {
           .programs-heading { font-size: 32px !important; line-height: 1.2 !important; }
           .program-card-link { height: auto !important; }
           .program-card-inner { flex-direction: column !important; }
+          .program-card-content { width: 100% !important; flex-shrink: 1 !important; }
           .program-card-image { display: none !important; }
+
+          /* ── Feature section ── */
+          .feature-cards-grid { grid-template-columns: 1fr !important; }
 
           /* ── Teachers / Testimonials section ── */
           .teachers-heading { font-size: 32px !important; line-height: 1.2 !important; }
