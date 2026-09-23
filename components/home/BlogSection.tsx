@@ -64,6 +64,7 @@ export default function BlogSection() {
         >
           <Eyebrow>Our Blogs</Eyebrow>
           <h2
+            className="blog-heading"
             style={{
               fontFamily: "var(--font-heading)",
               fontSize: 56,

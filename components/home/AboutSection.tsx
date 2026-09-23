@@ -26,7 +26,7 @@ export default function AboutSection() {
     <section style={{ background: "var(--color-bg-cream)", padding: "120px 30px" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 60 }}>
         {/* Title row */}
-        <div style={{ display: "flex", alignItems: "flex-start" }}>
+        <div className="about-title-row" style={{ display: "flex", alignItems: "flex-start" }}>
           <div style={{ flex: 1 }}>
             <Eyebrow>About Us</Eyebrow>
           </div>
@@ -35,6 +35,7 @@ export default function AboutSection() {
             whileInView="show"
             viewport={{ once: true, amount: 0 }}
             variants={fadeUp}
+            className="about-heading-wrapper"
             style={{ width: 650, flexShrink: 0 }}
           >
             <h2
@@ -69,6 +70,7 @@ export default function AboutSection() {
           whileInView="show"
           viewport={{ once: true, amount: 0 }}
           variants={{ hidden: fadeUp.hidden, show: () => fadeUp.show(0.12) }}
+          className="about-stats-row"
           style={{ display: "flex", alignItems: "center" }}
         >
           {stats.map((stat, i) => (
@@ -94,6 +96,7 @@ export default function AboutSection() {
           whileInView="show"
           viewport={{ once: true, amount: 0 }}
           variants={{ hidden: fadeUp.hidden, show: () => fadeUp.show(0.2) }}
+          className="about-cards-row"
           style={{ display: "flex", gap: 24, alignItems: "stretch", height: 390 }}
         >
           {/* Card 1 */}

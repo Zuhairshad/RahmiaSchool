@@ -8,9 +8,11 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export default function HeroSection() {
   return (
     <section
+      className="hero-section"
       style={{
         position: "relative",
-        height: 1020,
+        minHeight: 1020,
+        height: "auto",
         display: "flex",
         flexDirection: "row",
         alignItems: "flex-end",

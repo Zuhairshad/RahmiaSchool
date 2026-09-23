@@ -25,7 +25,7 @@ export default function ProgramsSection() {
         >
           <div style={{ maxWidth: 440 }}>
             <Eyebrow>Our Programs</Eyebrow>
-            <h2 style={{ fontFamily: "var(--font-heading)", fontSize: 56, fontWeight: 700, lineHeight: "64.4px", color: "#000", margin: 0 }}>
+            <h2 className="programs-heading" style={{ fontFamily: "var(--font-heading)", fontSize: 56, fontWeight: 700, lineHeight: "64.4px", color: "#000", margin: 0 }}>
               Programs for growing minds
             </h2>
           </div>
@@ -44,6 +44,7 @@ export default function ProgramsSection() {
             >
               <Link
                 href="/programs"
+                className="program-card-link"
                 style={{
                   display: "flex",
                   background: p.bg,
@@ -56,7 +57,7 @@ export default function ProgramsSection() {
                 }}
               >
                 {/* Content + Image wrapper */}
-                <div style={{ display: "flex", flex: 1, gap: 0 }}>
+                <div className="program-card-inner" style={{ display: "flex", flex: 1, gap: 0 }}>
                   {/* Content side — 600px max width */}
                   <div
                     style={{
@@ -164,6 +165,7 @@ export default function ProgramsSection() {
                   <img
                     src={p.image}
                     alt={p.title}
+                    className="program-card-image"
                     style={{
                       flex: 1,
                       maxWidth: 610,

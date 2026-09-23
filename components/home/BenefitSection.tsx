@@ -127,6 +127,7 @@ export default function BenefitSection() {
         {/* ─── Row 1: Image + Content ─── */}
         <motion.div
           {...fadeUp()}
+          className="benefit-row-1"
           style={{
             display: "flex",
             flexDirection: "row",
@@ -136,6 +137,7 @@ export default function BenefitSection() {
         >
           {/* Image Wrapper — 580 × 800, borderRadius 20 */}
           <div
+            className="benefit-image-wrapper"
             style={{
               position: "relative",
               width: 580,
@@ -271,6 +273,7 @@ export default function BenefitSection() {
         {/* ─── Row 2: Title & Ticker ─── */}
         <motion.div
           {...fadeUp(0.1)}
+          className="benefit-row-2"
           style={{
             display: "flex",
             flexDirection: "row",
@@ -281,6 +284,7 @@ export default function BenefitSection() {
         >
           {/* Title Wrapper — left side, max 515px, gap 24px */}
           <div
+            className="benefit-row2-title"
             style={{
               maxWidth: 515,
               width: 515,
@@ -355,6 +359,7 @@ export default function BenefitSection() {
             }
           `}</style>
           <div
+            className="benefit-ticker-wrapper"
             style={{
               flex: 1,
               minWidth: 0,

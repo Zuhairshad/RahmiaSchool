@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
         >
           <div style={{ maxWidth: 440 }}>
             <Eyebrow>Our Faculty</Eyebrow>
-            <h2 style={{ fontFamily: "var(--font-heading)", fontSize: 56, fontWeight: 700, lineHeight: "64.4px", color: "#000", margin: 0 }}>
+            <h2 className="teachers-heading" style={{ fontFamily: "var(--font-heading)", fontSize: 56, fontWeight: 700, lineHeight: "64.4px", color: "#000", margin: 0 }}>
               Meet our dedicated teachers
             </h2>
           </div>
@@ -89,6 +89,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={spring(i * 0.12)}
               viewport={{ once: true, amount: 0 }}
+              className="teacher-card"
               style={{
                 flex: "0 0 774px",
                 scrollSnapAlign: "start",
@@ -102,6 +103,7 @@ export default function TestimonialsSection() {
             >
               {/* Coloured panel with initials */}
               <div
+                className="teacher-card-panel"
                 style={{
                   width: 342,
                   flexShrink: 0,

@@ -126,7 +126,7 @@ export default function StudentLifePage() {
                 Every RAHMATE carries values of honesty, discipline, respect, and faith — growing not just academically, but as responsible citizens who make a difference in their community and beyond.
               </p>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+            <div className="student-life-skills-inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
               {[
                 "Confidence & Public Speaking",
                 "Leadership Skills",
@@ -165,6 +165,7 @@ export default function StudentLifePage() {
           .student-life-hero-grid { grid-template-columns: 1fr !important; }
           .student-life-hero-grid > div:last-child { max-width: 220px !important; justify-self: start !important; }
           .student-life-skills-grid { grid-template-columns: 1fr !important; }
+          .student-life-skills-inner { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
     </div>

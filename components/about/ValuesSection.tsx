@@ -45,6 +45,7 @@ export default function ValuesSection() {
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={spring()}
         viewport={{ once: true, amount: 0 }}
+        className="values-row"
         style={{
           maxWidth: 1300,
           margin: "0 auto",
@@ -201,6 +202,7 @@ export default function ValuesSection() {
 
         {/* RIGHT COLUMN */}
         <div
+          className="values-image"
           style={{
             width: 590,
             flexShrink: 0,

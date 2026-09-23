@@ -220,7 +220,7 @@ export function TickerStrip() {
         background: "#d7fdcf",
         padding: "20px 0",
         overflow: "hidden",
-        display: "flex",
+        width: "100%",
       }}
     >
       <div

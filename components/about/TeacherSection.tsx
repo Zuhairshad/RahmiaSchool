@@ -99,6 +99,7 @@ export default function TeacherSection() {
 
         {/* Cards grid */}
         <div
+          className="about-teacher-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(5, 1fr)",

@@ -20,6 +20,7 @@ export default function BannerSection() {
   return (
     <section style={{ background: "#ffffff", padding: "200px 30px 120px 30px" }}>
       <div
+        className="about-banner-row"
         style={{
           maxWidth: 1300,
           margin: "0 auto",
@@ -73,6 +74,7 @@ export default function BannerSection() {
 
           {/* H1 with gold ellipse underline on "minds" */}
           <h1
+            className="about-banner-h1"
             style={{
               fontFamily: "var(--font-heading)",
               fontSize: 72,

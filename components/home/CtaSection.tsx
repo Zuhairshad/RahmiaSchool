@@ -15,6 +15,7 @@ export default function CtaSection() {
   return (
     <section style={{ background: "#fff", padding: "60px 30px", overflow: "hidden" }}>
       <div
+        className="cta-inner"
         style={{
           maxWidth: 1300,
           margin: "0 auto",
@@ -188,6 +189,7 @@ export default function CtaSection() {
             }}
           >
             <h2
+              className="cta-heading"
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: 56,

@@ -14,9 +14,11 @@ const spring = (delay = 0): Record<string, unknown> => ({
 export default function PresentationSection() {
   return (
     <section
+      className="presentation-section"
       style={{
         position: "relative",
-        height: 793,
+        minHeight: 793,
+        height: "auto",
         display: "flex",
         alignItems: "flex-end",
         padding: "500px 30px 120px",

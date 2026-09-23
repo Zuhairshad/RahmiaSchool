@@ -90,7 +90,7 @@ export default function PricingTabs() {
     >
       <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 48 }}>
         {/* Header + tab toggle */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <div className="pricing-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div style={{ maxWidth: 440 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
               <span style={{ color: "#888", fontSize: 16 }}>→</span>
@@ -99,6 +99,7 @@ export default function PricingTabs() {
               </span>
             </div>
             <h2
+              className="pricing-heading"
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: 56,
@@ -148,6 +149,7 @@ export default function PricingTabs() {
 
         {/* Cards */}
         <div
+          className="pricing-cards-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1.8fr",
@@ -223,6 +225,7 @@ export default function PricingTabs() {
 
           {/* Large card */}
           <div
+            className="pricing-large-card-inner"
             style={{
               background: "#feeecd",
               borderRadius: 20,
@@ -293,6 +296,7 @@ export default function PricingTabs() {
 
             {/* Right image */}
             <div
+              className="pricing-image-panel"
               style={{
                 width: "38%",
                 flexShrink: 0,
