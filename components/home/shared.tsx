@@ -24,7 +24,7 @@ export const programs = [
     title: "Primary School (Class 1–5)",
     tag: "Grades 1–5",
     tagColor: "#520080",
-    desc: "Strong academics and character development through concept-based and interactive teaching — covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge.",
+    desc: "Strong academics and character development through concept-based and interactive teaching, covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge.",
     bg: "#ebe1fd",
     image: "/assets/images/Sfm9js53gBOL3V13gpQtyyxQPf8-334437a4.avif",
   },

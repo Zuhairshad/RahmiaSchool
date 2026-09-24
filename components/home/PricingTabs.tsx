@@ -309,6 +309,7 @@ export default function PricingTabs() {
                 src="/assets/images/yJpmVxeiLLChpwpGjaX5dl1UO64-bd4e3ad9.avif"
                 alt="RAHMA Model School"
                 fill
+                sizes="(max-width: 810px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
             </div>

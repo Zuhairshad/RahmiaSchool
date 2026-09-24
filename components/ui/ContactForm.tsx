@@ -100,7 +100,7 @@ export default function ContactForm() {
           <input
             id="contact-name"
             name="name"
-            placeholder="John Doe"
+            placeholder="Muhammad Ahmed"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -111,7 +111,7 @@ export default function ContactForm() {
           <label style={labelStyle} htmlFor="contact-phone">
             Phone number
           </label>
-          <input id="contact-phone" name="phone" placeholder="+92 300 0000000" style={fieldStyle} />
+          <input id="contact-phone" name="phone" placeholder="+92 3XX XXXXXXX" style={fieldStyle} />
         </div>
       </div>
       <div className="contact-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -119,7 +119,7 @@ export default function ContactForm() {
           <label style={labelStyle} htmlFor="contact-email">
             Email address
           </label>
-          <input id="contact-email" name="email" type="email" required placeholder="john.doe@example.com" style={fieldStyle} />
+          <input id="contact-email" name="email" type="email" required placeholder="muhammadahmed@gmail.com" style={fieldStyle} />
         </div>
         <div>
           <label style={labelStyle} htmlFor="contact-program">
@@ -140,7 +140,7 @@ export default function ContactForm() {
         <textarea
           id="contact-message"
           name="message"
-          placeholder="Enter your message..."
+          placeholder="Assalam o Alaikum, I would like to enquire about..."
           rows={4}
           required
           style={{ ...fieldStyle, resize: "vertical" }}

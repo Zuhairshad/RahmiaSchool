@@ -22,15 +22,19 @@ export default function AboutPage() {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
+        @media (max-width: 1200px) {
+          .about-teacher-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
         @media (max-width: 810px) {
           .about-banner-row { flex-direction: column !important; gap: 32px !important; align-items: flex-start !important; }
           .about-banner-h1 { font-size: 40px !important; line-height: 1.2 !important; }
-          .about-teacher-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .about-teacher-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+          .about-teacher-avatar { height: 130px !important; }
+          .about-teacher-card { border-radius: 14px !important; }
+          .about-teacher-name { font-size: 13px !important; }
+          .about-teacher-role { font-size: 12px !important; }
           .values-row { flex-direction: column !important; gap: 40px !important; }
           .values-image { width: 100% !important; flex-shrink: 1 !important; height: 280px !important; }
-        }
-        @media (max-width: 1200px) {
-          .about-teacher-grid { grid-template-columns: repeat(3, 1fr) !important; }
         }
       `}</style>
       <BannerSection />

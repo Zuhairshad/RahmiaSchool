@@ -96,6 +96,7 @@ export default function CtaSection() {
             src="/assets/images/bM5XLgck0nuZBUl800FPnYZLqM-49e6a37c.avif"
             alt=""
             fill
+            sizes="80px"
             style={{ objectFit: "cover" }}
           />
         </div>
@@ -119,6 +120,7 @@ export default function CtaSection() {
             src="/assets/images/FH7s1VpnmO3OdrrAkXKU3gealE-79d1a684.avif"
             alt=""
             fill
+            sizes="70px"
             style={{ objectFit: "cover" }}
           />
         </div>
@@ -142,6 +144,7 @@ export default function CtaSection() {
             src="/assets/images/IIm5NEuXpUdRszfB2rjqlZaHRdg-670fd09e.avif"
             alt=""
             fill
+            sizes="80px"
             style={{ objectFit: "cover" }}
           />
         </div>
@@ -165,6 +168,7 @@ export default function CtaSection() {
             src="/assets/images/C5awbluBJPV4EhKVcTbPsA5i4-f26ae8c5.avif"
             alt=""
             fill
+            sizes="60px"
             style={{ objectFit: "cover" }}
           />
         </div>

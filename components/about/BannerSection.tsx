@@ -85,35 +85,7 @@ export default function BannerSection() {
             }}
           >
             A nurturing space for young{" "}
-            <span style={{ position: "relative", display: "inline-block" }}>
-              minds
-              <svg
-                aria-hidden
-                viewBox="0 0 264 106"
-                fill="none"
-                style={{
-                  position: "absolute",
-                  bottom: -14,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 264,
-                  height: 106,
-                  overflow: "visible",
-                  zIndex: 1,
-                  pointerEvents: "none",
-                }}
-              >
-                <ellipse
-                  cx="132"
-                  cy="53"
-                  rx="128"
-                  ry="49"
-                  stroke="#fcb520"
-                  strokeWidth="5"
-                  fill="none"
-                />
-              </svg>
-            </span>
+            minds
           </h1>
         </motion.div>
 
@@ -148,7 +120,7 @@ export default function BannerSection() {
               margin: 0,
             }}
           >
-            Welcome to RAHMA Model School — where quality education, strong moral values, and character development come together to prepare students for a successful future. We provide a safe, caring environment that encourages every child to achieve their full potential.
+            Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future. We provide a safe, caring environment that encourages every child to achieve their full potential.
           </p>
         </motion.div>
       </div>

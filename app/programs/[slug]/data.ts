@@ -31,7 +31,7 @@ export const programs: Record<string, Program> = {
     ageRange: "3–5 years",
     groupSize: "Small groups",
     programType: "Full day",
-    classes: "Prep · Nursery · KG",
+    classes: "Nursery · KG · Prep",
     subjects: [
       "English (Reading & Writing)",
       "Urdu",
@@ -87,7 +87,7 @@ export const programs: Record<string, Program> = {
     ageRange: "6–11 years",
     groupSize: "Structured classes",
     programType: "Full day",
-    classes: "Class 1 · Class 2 · Class 3 · Class 4 · Class 5",
+    classes: "Classes 1–5",
     subjects: [
       "English (Grammar, Comprehension & Composition)",
       "Urdu (Grammar & Literature)",
@@ -117,7 +117,7 @@ export const programs: Record<string, Program> = {
       },
       {
         heading: "Islamiat & Moral Education",
-        body: "Islamiat is a core subject from Class 1 onwards. Students study Quranic verses with translation, Hadith, Islamic history, and the lives of the Prophets. Moral values — honesty, respect, gratitude, and discipline — are integrated into every classroom interaction.",
+        body: "Islamiat is a core subject from Class 1 onwards. Students study Quranic verses with translation, Hadith, Islamic history, and the lives of the Prophets. Moral values, honesty, respect, gratitude, and discipline, are integrated into every classroom interaction.",
       },
       {
         heading: "Computer Studies",
@@ -144,7 +144,7 @@ export const programs: Record<string, Program> = {
     ageRange: "12–14 years",
     groupSize: "Subject-based classes",
     programType: "Full day",
-    classes: "Class 6 · Class 7",
+    classes: "Classes 6–7",
     subjects: [
       "English (Advanced Grammar, Essay & Literature)",
       "Urdu (Advanced Grammar & Composition)",

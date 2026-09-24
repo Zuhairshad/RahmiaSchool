@@ -34,7 +34,7 @@ const calendarMonths = [
     month: "June 2026",
     events: [
       { date: "20 Jun", event: "Parent–Teacher Meeting (PTM)" },
-      { date: "—", event: "Summer Holidays Begin" },
+      { date: ", ", event: "Summer Holidays Begin" },
     ],
   },
   {
@@ -140,7 +140,7 @@ export default function ProgramsPage() {
             </span>
           </h1>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 620, marginTop: 16 }}>
-            From Montessori to Middle School, RAHMA Model School offers a structured, values-driven curriculum covering Prep through Class 7 — preparing every RAHMATE for academic excellence and lifelong character.
+            From Montessori to Middle School, RAHMA Model School offers a structured, values-driven curriculum covering Prep through Class 7, preparing every RAHMATE for academic excellence and lifelong character.
           </p>
         </Container>
       </section>
@@ -274,7 +274,7 @@ export default function ProgramsPage() {
             Our curriculum includes
           </h2>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 600, marginBottom: 40 }}>
-            A national curriculum delivered through concept-based teaching — every subject builds academic skill, critical thinking, and Islamic character simultaneously.
+            A national curriculum delivered through concept-based teaching, every subject builds academic skill, critical thinking, and Islamic character simultaneously.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 16 }}>
@@ -325,7 +325,7 @@ export default function ProgramsPage() {
             Activity &amp; Examination Calendar
           </h2>
           <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", lineHeight: 1.8, maxWidth: 580, marginBottom: 48 }}>
-            Prep Classes to Class 7 — full academic year schedule including term exams, assessments, competitions, and co-curricular events.
+            Prep Classes to Class 7, full academic year schedule including term exams, assessments, competitions, and co-curricular events.
           </p>
 
           <div

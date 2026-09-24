@@ -5,7 +5,7 @@ import { Container, SectionLabel, WavyUnderline, Button } from "@/components/ui"
 export const metadata: Metadata = {
   title: "Facilities | RAHMA Model School",
   description:
-    "Equipped with modern science and computer laboratories, a peaceful library, smart classrooms, and spacious sports grounds — explore the facilities at RAHMA Model School.",
+    "Equipped with modern science and computer laboratories, a peaceful library, a safe caring environment, and spacious sports grounds, explore the facilities at RAHMA Model School.",
 };
 
 // Note: the Framer export (reference-site/public) does not include a dedicated
@@ -42,11 +42,11 @@ const facilities = [
     desc: "Our spacious playground provides opportunities for physical education, sports competitions, and recreational activities that promote fitness, teamwork, and confidence.",
   },
   {
-    icon: "🖥️",
+    icon: "🤝",
     bg: "var(--color-tint-purple)",
-    title: "Smart Classrooms",
+    title: "Parent–School Partnership",
     image: "/assets/images/rahma-parent-partnership-2.jpeg",
-    desc: "We use modern teaching techniques, multimedia presentations, and interactive learning resources to make classroom learning more engaging and effective.",
+    desc: "We believe parents are partners in every child's education. Regular PTMs, progress reports, and open communication keep families closely involved in their child's learning journey.",
   },
   {
     icon: "🛡️",

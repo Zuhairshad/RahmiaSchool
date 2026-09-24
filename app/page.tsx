@@ -5,10 +5,10 @@ import AboutSection from "@/components/home/AboutSection";
 import BenefitSection from "@/components/home/BenefitSection";
 import PresentationSection from "@/components/home/PresentationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
-import FeatureSection from "@/components/home/FeatureSection";
+import VisionSection from "@/components/home/VisionSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import PricingTabs from "@/components/home/PricingTabs";
-import BlogSection from "@/components/home/BlogSection";
+// import BlogSection from "@/components/home/BlogSection";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function HomePage() {
           .benefit-grid { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
           .benefit-grid > div:first-child { height: 500px !important; }
           .programs-grid { grid-template-columns: 1fr !important; }
-          .feature-layout { grid-template-columns: 1fr !important; }
+          .vision-layout { flex-direction: column !important; gap: 48px !important; }
         }
         @media (max-width: 810px) {
           /* ── Benefit section (existing) ── */
@@ -77,8 +77,11 @@ export default function HomePage() {
           .program-card-content { width: 100% !important; flex-shrink: 1 !important; }
           .program-card-image { display: none !important; }
 
-          /* ── Feature section ── */
-          .feature-cards-grid { grid-template-columns: 1fr !important; }
+          /* ── Vision section ── */
+          .vision-layout { flex-direction: column !important; gap: 40px !important; }
+          .vision-photo-col { width: 100% !important; margin-top: 0 !important; max-height: 500px; overflow: hidden; }
+          .vision-photo-col img { margin-top: 0 !important; object-fit: cover; width: 100% !important; height: 500px !important; }
+          .vision-stats { grid-template-columns: 1fr 1fr !important; }
 
           /* ── Teachers / Testimonials section ── */
           .teachers-heading { font-size: 32px !important; line-height: 1.2 !important; }
@@ -114,11 +117,12 @@ export default function HomePage() {
       <BenefitSection />
       <PresentationSection />
       <TickerStrip />
+      <VisionSection />
+
       <ProgramsSection />
-      <FeatureSection />
       <TestimonialsSection />
       <PricingTabs />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <CtaSection />
     </>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
  * Matches the real export's Footer Menu 01 links exactly (index.html):
  * Home, About, Academic Programs, Contact, Student Life (-> blogs.html),
  * Faculty, Fee Structure, Admissions. There is no "Facilities" footer link
- * in the real site — see docs/reference-analysis.md §1.
+ * in the real site, see docs/reference-analysis.md §1.
  */
 const footerLinks = [
   { href: "/", label: "Home" },
@@ -91,7 +91,7 @@ export default function Footer() {
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", position: "relative" }}>
         <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "20px 32px", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.8rem", textAlign: "center" }}>
-            RAHMA Model School © RAHMA Model School — 2026
+            RAHMA Model School © RAHMA Model School, 2026
           </p>
         </div>
         <div style={{ position: "absolute", right: 32, bottom: 0, opacity: 0.12 }} aria-hidden>

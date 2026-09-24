@@ -14,7 +14,7 @@ const timeline = [
   { year: "2014", text: "Established in Bagga Sheikhan, Near Rawat, with a vision of affordable quality education" },
   { year: "2017", text: "Expanded curriculum and introduced modern, concept-based teaching methodologies" },
   { year: "2020", text: "Smart classrooms, computer laboratory, and science facilities launched" },
-  { year: "2024+", text: "218 students, 14 qualified teachers, 13 classrooms — and growing every year" },
+  { year: "2024+", text: "218 students, 14 qualified teachers, 13 classrooms, and growing every year" },
 ];
 
 export default function StorySection() {
@@ -49,7 +49,7 @@ export default function StorySection() {
             />
           </div>
 
-          {/* Stat card — icon top-right, number + text bottom-left */}
+          {/* Stat card, icon top-right, number + text bottom-left */}
           <div
             style={{
               background: "#ebe1fd",
@@ -63,7 +63,7 @@ export default function StorySection() {
               justifyContent: "space-between",
             }}
           >
-            {/* Bar chart icon — top right */}
+            {/* Bar chart icon, top right */}
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <div
                 style={{
@@ -84,7 +84,7 @@ export default function StorySection() {
               </div>
             </div>
 
-            {/* Decorative organic blob — bottom right */}
+            {/* Decorative organic blob, bottom right */}
             <svg
               aria-hidden
               viewBox="0 0 260 180"
@@ -105,7 +105,7 @@ export default function StorySection() {
               />
             </svg>
 
-            {/* Number + description — bottom */}
+            {/* Number + description, bottom */}
             <div style={{ position: "relative", zIndex: 1 }}>
               <p
                 style={{
@@ -170,7 +170,7 @@ export default function StorySection() {
             </p>
           </div>
 
-          {/* Teal asterisk divider — matches reference */}
+          {/* Teal asterisk divider, matches reference */}
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="#09d89a" strokeWidth="2.2" strokeLinecap="round" />

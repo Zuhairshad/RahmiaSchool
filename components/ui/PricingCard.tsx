@@ -140,15 +140,13 @@ export default function PricingCard({
         </ul>
       </div>
       {image && (
-        <div style={{ position: "relative", height: 200 }}>
-          <Image
-            src={image}
-            alt={`${title} classroom`}
-            width={imageWidth}
-            height={imageHeight}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
+        <Image
+          src={image}
+          alt={`${title} classroom`}
+          width={imageWidth}
+          height={imageHeight}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
       )}
     </div>
   );

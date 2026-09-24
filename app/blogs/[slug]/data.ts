@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         paragraphs: [
-          "Young children are naturally curious, always exploring, asking questions, and trying to understand the world around them. Easy learning activities help channel this curiosity into meaningful development by combining fun, discovery, and education. These activities do not require complex tools or advanced planning—simple everyday experiences can become powerful learning opportunities. When children learn through enjoyable activities, they develop confidence, creativity, and a positive attitude toward education that stays with them throughout their lives.",
+          "Young children are naturally curious, always exploring, asking questions, and trying to understand the world around them. Easy learning activities help channel this curiosity into meaningful development by combining fun, discovery, and education. These activities do not require complex tools or advanced planning, simple everyday experiences can become powerful learning opportunities. When children learn through enjoyable activities, they develop confidence, creativity, and a positive attitude toward education that stays with them throughout their lives.",
         ],
       },
       {
@@ -329,7 +329,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Encouraging Lifelong Creativity",
         paragraphs: [
-          "Creative play is not just about entertainment—it is a powerful foundation for lifelong learning and development. When children engage in imaginative, hands-on, and interactive play experiences, they build essential skills such as communication, problem-solving, collaboration, and emotional understanding. These experiences help children grow into confident, independent, and creative thinkers who are well-prepared for future academic and life challenges.",
+          "Creative play is not just about entertainment, it is a powerful foundation for lifelong learning and development. When children engage in imaginative, hands-on, and interactive play experiences, they build essential skills such as communication, problem-solving, collaboration, and emotional understanding. These experiences help children grow into confident, independent, and creative thinkers who are well-prepared for future academic and life challenges.",
         ],
       },
     ],
@@ -349,7 +349,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         paragraphs: [
-          "Simple craft activities are one of the most effective ways to encourage imagination and early learning in children because they combine creativity, hands-on exploration, and skill development in a fun and engaging way. When children cut, glue, color, build, and design, they are not just making something beautiful—they are also developing important cognitive, emotional, and physical abilities. These activities help children think creatively, improve focus, and build confidence in their ideas. With everyday materials like paper, cardboard, colors, and natural items, crafts can turn any learning moment into an exciting experience that supports overall childhood development.",
+          "Simple craft activities are one of the most effective ways to encourage imagination and early learning in children because they combine creativity, hands-on exploration, and skill development in a fun and engaging way. When children cut, glue, color, build, and design, they are not just making something beautiful, they are also developing important cognitive, emotional, and physical abilities. These activities help children think creatively, improve focus, and build confidence in their ideas. With everyday materials like paper, cardboard, colors, and natural items, crafts can turn any learning moment into an exciting experience that supports overall childhood development.",
         ],
       },
       {
@@ -423,7 +423,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         paragraphs: [
-          "Play is not a break from learning — for young children, it is how learning happens. Long before children can sit through a formal lesson, they are already testing ideas, negotiating rules, and solving problems through games of their own invention. Recognizing play as serious developmental work, rather than simple entertainment, changes how parents and educators can support a child's growth. The activities below are easy to set up at home or in the classroom and are chosen for how directly they build creativity, confidence, and the habit of curious thinking.",
+          "Play is not a break from learning, for young children, it is how learning happens. Long before children can sit through a formal lesson, they are already testing ideas, negotiating rules, and solving problems through games of their own invention. Recognizing play as serious developmental work, rather than simple entertainment, changes how parents and educators can support a child's growth. The activities below are easy to set up at home or in the classroom and are chosen for how directly they build creativity, confidence, and the habit of curious thinking.",
         ],
       },
       {
@@ -435,7 +435,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Everyday Materials as Creative Tools",
         paragraphs: [
-          "Some of the richest play experiences come from ordinary household items rather than store-bought toys. Cardboard boxes, kitchen containers, fabric scraps, and buttons can become anything a child imagines, which is precisely the point: open-ended materials force children to supply their own ideas instead of following a single intended use. This kind of play strengthens flexible thinking and shows children that creativity does not require anything special — just curiosity and a willingness to experiment.",
+          "Some of the richest play experiences come from ordinary household items rather than store-bought toys. Cardboard boxes, kitchen containers, fabric scraps, and buttons can become anything a child imagines, which is precisely the point: open-ended materials force children to supply their own ideas instead of following a single intended use. This kind of play strengthens flexible thinking and shows children that creativity does not require anything special, just curiosity and a willingness to experiment.",
         ],
       },
       {
@@ -453,7 +453,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Encouraging a Playful Mindset at Home",
         paragraphs: [
-          "Parents do not need to plan elaborate activities to support playful learning — following a child's lead, asking open-ended questions during play, and resisting the urge to correct every “wrong” answer go a long way. When children sense that their ideas are welcome, they take more creative risks, try more solutions, and build the resilience to keep experimenting even when a first attempt does not work. That confidence, built one game at a time, is exactly what carries a child successfully into formal schooling.",
+          "Parents do not need to plan elaborate activities to support playful learning, following a child's lead, asking open-ended questions during play, and resisting the urge to correct every “wrong” answer go a long way. When children sense that their ideas are welcome, they take more creative risks, try more solutions, and build the resilience to keep experimenting even when a first attempt does not work. That confidence, built one game at a time, is exactly what carries a child successfully into formal schooling.",
         ],
       },
     ],

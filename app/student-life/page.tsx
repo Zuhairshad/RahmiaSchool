@@ -123,7 +123,7 @@ export default function StudentLifePage() {
                 Building tomorrow&apos;s leaders today
               </h2>
               <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8 }}>
-                Every RAHMATE carries values of honesty, discipline, respect, and faith — growing not just academically, but as responsible citizens who make a difference in their community and beyond.
+                Every RAHMATE carries values of honesty, discipline, respect, and faith, growing not just academically, but as responsible citizens who make a difference in their community and beyond.
               </p>
             </div>
             <div className="student-life-skills-inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>

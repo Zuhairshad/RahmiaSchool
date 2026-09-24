@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties, type FormEvent } from "react";
+import { useState, useRef, type CSSProperties } from "react";
 
 const programs = [
   "Junior Section (Play Group, Nursery, Prep)",
@@ -30,15 +30,43 @@ const labelStyle: CSSProperties = {
 };
 
 export default function AdmissionForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [childName, setChildName] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+
+    const fd = new FormData(e.currentTarget);
+    const body = {
+      guardian: fd.get("guardian"),
+      childName: fd.get("childName"),
+      childAge: fd.get("childAge"),
+      phone: fd.get("phone"),
+      email: fd.get("email"),
+      program: fd.get("program"),
+      notes: fd.get("notes"),
+    };
+
+    try {
+      const res = await fetch("/api/admission", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <div style={{ textAlign: "center", padding: "24px 8px" }}>
         <div
@@ -61,14 +89,14 @@ export default function AdmissionForm() {
           Application received{childName ? ` for ${childName}` : ""}!
         </h3>
         <p style={{ color: "var(--color-body-text)", fontSize: "0.875rem", lineHeight: 1.6 }}>
-          Thank you for applying to RAHMA Model School. Our admissions team will contact you within two business days
-          to schedule a parent meeting.
+          Thank you for applying to RAHMA Model School. Our admissions team will contact you within two business days to schedule a parent meeting.
         </p>
         <button
           type="button"
           onClick={() => {
-            setSubmitted(false);
+            setStatus("idle");
             setChildName("");
+            formRef.current?.reset();
           }}
           style={{
             marginTop: 20,
@@ -89,13 +117,13 @@ export default function AdmissionForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <form ref={formRef} onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
       <div className="admission-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
         <div>
           <label style={labelStyle} htmlFor="admission-guardian">
             Parent / Guardian Name
           </label>
-          <input id="admission-guardian" name="guardian" required placeholder="Full name" style={fieldStyle} />
+          <input id="admission-guardian" name="guardian" required placeholder="Muhammad Ahmed" style={fieldStyle} />
         </div>
         <div>
           <label style={labelStyle} htmlFor="admission-child">
@@ -112,6 +140,7 @@ export default function AdmissionForm() {
           />
         </div>
       </div>
+
       <div className="admission-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
         <div>
           <label style={labelStyle} htmlFor="admission-age">
@@ -123,9 +152,24 @@ export default function AdmissionForm() {
           <label style={labelStyle} htmlFor="admission-phone">
             Phone Number
           </label>
-          <input id="admission-phone" name="phone" required placeholder="+92 300 0000000" style={fieldStyle} />
+          <input id="admission-phone" name="phone" required placeholder="+92 3XX XXXXXXX" style={fieldStyle} />
         </div>
       </div>
+
+      <div>
+        <label style={labelStyle} htmlFor="admission-email">
+          Email Address
+        </label>
+        <input
+          id="admission-email"
+          name="email"
+          type="email"
+          required
+          placeholder="muhammadahmed@gmail.com"
+          style={fieldStyle}
+        />
+      </div>
+
       <div>
         <label style={labelStyle} htmlFor="admission-program">
           Program of Interest
@@ -137,6 +181,7 @@ export default function AdmissionForm() {
           ))}
         </select>
       </div>
+
       <div>
         <label style={labelStyle} htmlFor="admission-notes">
           Additional Information
@@ -149,22 +194,31 @@ export default function AdmissionForm() {
           style={{ ...fieldStyle, resize: "vertical" }}
         />
       </div>
+
+      {status === "error" && (
+        <p style={{ color: "#e53e3e", fontSize: "0.85rem", margin: 0 }}>
+          Something went wrong. Please try again or call us directly.
+        </p>
+      )}
+
       <button
         type="submit"
+        disabled={status === "loading"}
         style={{
-          background: "var(--color-brand-teal)",
+          background: status === "loading" ? "#a0e8d8" : "var(--color-brand-teal)",
           color: "#000",
           fontWeight: 700,
           padding: "14px 32px",
           borderRadius: 100,
           fontSize: "0.95rem",
           border: "none",
-          cursor: "pointer",
+          cursor: status === "loading" ? "not-allowed" : "pointer",
           alignSelf: "flex-start",
           fontFamily: "var(--font-body)",
+          transition: "background 0.2s",
         }}
       >
-        Submit Application
+        {status === "loading" ? "Sending…" : "Submit Application"}
       </button>
     </form>
   );

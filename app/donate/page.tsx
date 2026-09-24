@@ -136,7 +136,7 @@ export default function DonatePage() {
                   <path d="M2 10h20" stroke="#000" strokeWidth="2" />
                 </svg>
                 <span style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.95rem", color: "#000" }}>
-                  Bank Islami — Saddar, Rawalpindi
+                  Bank Islami, Saddar, Rawalpindi
                 </span>
               </div>
 
@@ -204,7 +204,7 @@ export default function DonatePage() {
             marginBottom: 16,
           }}
         >
-          Support a RAHMATE — Support a Future
+          Support a RAHMATE, Support a Future
         </h2>
         <p
           style={{

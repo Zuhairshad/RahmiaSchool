@@ -64,9 +64,6 @@ export default function PricingPage() {
               price="Contact us"
               variant="premium"
               ctaHref="/contact"
-              image="/assets/images/yJpmVxeiLLChpwpGjaX5dl1UO64-bd4e3ad9.avif"
-              imageWidth={840}
-              imageHeight={1308}
               features={[
                 "Full subject curriculum",
                 "Science lab & computer room",

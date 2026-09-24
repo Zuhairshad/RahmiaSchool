@@ -24,6 +24,7 @@ const allPagesLinks = [
   { href: "/pricing", label: "Fee Structure" },
   { href: "/student-life", label: "Student Life" },
   { href: "/facilities", label: "Facilities" },
+  // { href: "/blogs", label: "Blog" },
 ];
 
 const allLinksForOverlay = [...primaryLinks, ...allPagesLinks];
@@ -56,8 +57,9 @@ export default function Navbar() {
             <Image
               src="/assets/images/rahmia-logo.jpeg"
               alt="RAHMA Model School"
-              width={120}
-              height={44}
+              width={0}
+              height={0}
+              sizes="120px"
               style={{ objectFit: "contain", height: 44, width: "auto" }}
               priority
             />

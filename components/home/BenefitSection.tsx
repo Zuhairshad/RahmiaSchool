@@ -196,29 +196,6 @@ export default function BenefitSection() {
                     >
                       What makes us the right choice
                     </h2>
-                    {/* Ellipse SVG — underline/oval around last two words */}
-                    <svg
-                      aria-hidden
-                      viewBox="0 0 184 74"
-                      fill="none"
-                      style={{
-                        position: "absolute",
-                        width: 184,
-                        height: 74,
-                        right: 0,
-                        bottom: -10,
-                        overflow: "hidden",
-                        zIndex: 1,
-                        transform: "translate(-92px, -37px)",
-                      }}
-                    >
-                      <path
-                        d="M4 37C4 17.67 45.34 2 96 2C146.66 2 180 17.67 180 37C180 56.33 146.66 72 96 72C45.34 72 4 56.33 4 37Z"
-                        stroke="#fcb520"
-                        strokeWidth="5"
-                        fill="none"
-                      />
-                    </svg>
                   </div>
                 </div>
 
@@ -308,28 +285,7 @@ export default function BenefitSection() {
                 }}
               >
                 Guided by care and{" "}
-                <span style={{ position: "relative", display: "inline-block" }}>
-                  creativity
-                  {/* Ellipse SVG around "creativity" */}
-                  <svg
-                    viewBox="0 0 202 81"
-                    aria-hidden
-                    style={{
-                      position: "absolute",
-                      bottom: -14,
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      width: 202,
-                      height: 81,
-                      overflow: "visible",
-                      zIndex: 1,
-                      pointerEvents: "none",
-                    }}
-                    fill="none"
-                  >
-                    <ellipse cx="101" cy="40.5" rx="97" ry="36.5" stroke="#fcb520" strokeWidth="5" />
-                  </svg>
-                </span>
+                creativity
               </h2>
             </div>
 

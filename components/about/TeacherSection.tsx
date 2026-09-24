@@ -114,6 +114,7 @@ export default function TeacherSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={spring((i % 5) * 0.08)}
               viewport={{ once: true, amount: 0 }}
+              className="about-teacher-card"
               style={{
                 background: "#ffffff",
                 borderRadius: 20,
@@ -124,6 +125,7 @@ export default function TeacherSection() {
             >
               {/* Avatar area */}
               <div
+                className="about-teacher-avatar"
                 style={{
                   background: avatarBgs[i],
                   height: 180,
@@ -157,8 +159,9 @@ export default function TeacherSection() {
                 </div>
               </div>
               {/* Card content */}
-              <div style={{ padding: "20px 20px 24px" }}>
+              <div style={{ padding: "16px 16px 20px" }}>
                 <p
+                  className="about-teacher-name"
                   style={{
                     fontFamily: "var(--font-heading)",
                     fontSize: 16,
@@ -171,6 +174,7 @@ export default function TeacherSection() {
                   {teacher.name}
                 </p>
                 <p
+                  className="about-teacher-role"
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: 14,
