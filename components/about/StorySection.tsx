@@ -19,7 +19,7 @@ const timeline = [
 
 export default function StorySection() {
   return (
-    <section className="section-padded" style={{ background: "var(--color-bg-cream)", padding: "120px 30px" }}>
+    <section className="section-padded" style={{ background: "var(--color-bg-cream)", padding: "120px 30px", overflowX: "hidden" }}>
       <div
         style={{
           maxWidth: 1300,

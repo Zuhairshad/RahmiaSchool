@@ -47,7 +47,7 @@ export default function HomePage() {
           .blog-grid { grid-template-columns: 1fr !important; }
 
           /* ── Hero ── */
-          .hero-section { min-height: 100svh !important; padding: 80px 20px 60px !important; }
+          .hero-section { min-height: 800px !important; padding: 80px 20px 60px !important; }
           .hero-pill-label { font-size: 10px !important; letter-spacing: 0.08em !important; }
           .hero-h1 { font-size: 36px !important; }
 
@@ -82,8 +82,12 @@ export default function HomePage() {
 
           /* ── Teachers / Testimonials section ── */
           .teachers-heading { font-size: 32px !important; line-height: 1.2 !important; }
-          .teacher-card { flex: 0 0 85vw !important; max-width: 774px !important; gap: 20px !important; padding-right: 20px !important; }
-          .teacher-card-panel { width: 120px !important; }
+          .teacher-card { flex: 0 0 85vw !important; max-width: 774px !important; gap: 0 !important; padding: 0 !important; }
+          .teacher-card-panel { display: none !important; }
+          .teacher-card-content { padding: 28px 24px !important; }
+
+          /* ── CTA section ── */
+          .cta-avatar { display: none !important; }
 
           /* ── Pricing section ── */
           .pricing-header { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
@@ -99,6 +103,9 @@ export default function HomePage() {
           /* ── CTA section ── */
           .cta-inner { padding: 60px 20px !important; }
           .cta-heading { font-size: 32px !important; line-height: 1.2 !important; }
+        }
+        @media (min-width: 420px) and (max-width: 810px) {
+          .hero-section { min-height: 900px !important; }
         }
       `}</style>
       <HeroSection />

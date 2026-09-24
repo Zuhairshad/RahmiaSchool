@@ -178,6 +178,7 @@ img {
 }
 @media (max-width: 810px) {
   .section-padded { padding: 60px 20px !important; }
+  .footer-socials { flex-direction: row !important; justify-content: center !important; flex-wrap: wrap !important; }
 }
 
 /* ── Nav link hover underline ──────────────────────────── */

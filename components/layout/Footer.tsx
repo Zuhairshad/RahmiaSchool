@@ -64,7 +64,7 @@ export default function Footer() {
           </form>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, paddingTop: 4 }}>
+        <div className="footer-socials" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, paddingTop: 4 }}>
           {socials.map((s) => (
             <a
               key={s.label}

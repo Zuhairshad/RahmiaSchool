@@ -79,6 +79,7 @@ export default function CtaSection() {
 
         {/* Avatar — top-left (larger) */}
         <div
+          className="cta-avatar"
           style={{
             position: "absolute",
             left: 80,
@@ -101,6 +102,7 @@ export default function CtaSection() {
 
         {/* Avatar — bottom-left (smaller) */}
         <div
+          className="cta-avatar"
           style={{
             position: "absolute",
             left: 40,
@@ -123,6 +125,7 @@ export default function CtaSection() {
 
         {/* Avatar — top-right (larger) */}
         <div
+          className="cta-avatar"
           style={{
             position: "absolute",
             right: 80,
@@ -145,6 +148,7 @@ export default function CtaSection() {
 
         {/* Avatar — bottom-right (smaller) */}
         <div
+          className="cta-avatar"
           style={{
             position: "absolute",
             right: 40,
