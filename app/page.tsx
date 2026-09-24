@@ -47,7 +47,9 @@ export default function HomePage() {
           .blog-grid { grid-template-columns: 1fr !important; }
 
           /* ── Hero ── */
-          .hero-section { min-height: 600px !important; padding: 80px 20px 60px !important; }
+          .hero-section { min-height: 100svh !important; padding: 80px 20px 60px !important; }
+          .hero-pill-label { font-size: 10px !important; letter-spacing: 0.08em !important; }
+          .hero-h1 { font-size: 36px !important; }
 
           /* ── Presentation section ── */
           .presentation-section { padding: 200px 20px 60px !important; min-height: 0 !important; }
