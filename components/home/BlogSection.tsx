@@ -16,6 +16,7 @@ const spring = (delay = 0): Record<string, unknown> => ({
 export default function BlogSection() {
   return (
     <section
+      className="section-padded"
       style={{
         background: "#fff",
         padding: "120px 30px 60px",

@@ -34,7 +34,7 @@ const teachers = [
 
 export default function TestimonialsSection() {
   return (
-    <section style={{ background: "var(--color-bg-cream)", padding: "120px 30px 60px" }}>
+    <section className="section-padded" style={{ background: "var(--color-bg-cream)", padding: "120px 30px 60px" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 80 }}>
 
         {/* Header */}

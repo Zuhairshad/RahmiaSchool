@@ -12,7 +12,7 @@ const spring = (delay = 0): Record<string, unknown> => ({
 
 export default function FeatureSection() {
   return (
-    <section style={{ background: "#fff", padding: "120px 30px", position: "relative", overflow: "hidden" }}>
+    <section className="section-padded" style={{ background: "#fff", padding: "120px 30px", position: "relative", overflow: "hidden" }}>
       <div
         style={{ position: "absolute", left: -150, bottom: -100, width: 500, height: 500, borderRadius: "50%", background: "#d7fdcf", opacity: 0.35, zIndex: 0 }}
         aria-hidden

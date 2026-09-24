@@ -109,6 +109,7 @@ export default function Navbar() {
 
           <Link
             href="/donate"
+            className="nav-cta-btn"
             style={{ display: "flex", alignItems: "center", gap: 10, background: "#09d89a", border: "none", borderRadius: 100, padding: "7px 12px 7px 16px", color: "#000", fontSize: "0.875rem", fontWeight: 600 }}
           >
             Donate now

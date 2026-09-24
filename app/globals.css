@@ -172,6 +172,14 @@ img {
   transform: scale(1.02);
 }
 
+/* ── Mobile overrides ──────────────────────────────────── */
+@media (max-width: 1379px) {
+  .nav-cta-btn { display: none !important; }
+}
+@media (max-width: 810px) {
+  .section-padded { padding: 60px 20px !important; }
+}
+
 /* ── Nav link hover underline ──────────────────────────── */
 .nav-link-underline {
   position: relative;

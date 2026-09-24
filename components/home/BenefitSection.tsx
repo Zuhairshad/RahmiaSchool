@@ -79,6 +79,7 @@ const tickerCards = [
 export default function BenefitSection() {
   return (
     <section
+      className="section-padded"
       style={{
         background: "#fff",
         paddingTop: 120,

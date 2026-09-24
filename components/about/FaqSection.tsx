@@ -39,6 +39,7 @@ export default function FaqSection() {
 
   return (
     <section
+      className="section-padded"
       style={{
         background: "#fff",
         padding: "120px 30px",

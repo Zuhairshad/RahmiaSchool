@@ -23,7 +23,7 @@ const fadeUp = {
 
 export default function AboutSection() {
   return (
-    <section style={{ background: "var(--color-bg-cream)", padding: "120px 30px" }}>
+    <section className="section-padded" style={{ background: "var(--color-bg-cream)", padding: "120px 30px" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", display: "flex", flexDirection: "column", gap: 60 }}>
         {/* Title row */}
         <div className="about-title-row" style={{ display: "flex", alignItems: "flex-start" }}>

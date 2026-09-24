@@ -36,6 +36,7 @@ function getInitials(name: string) {
 export default function TeacherSection() {
   return (
     <section
+      className="section-padded"
       style={{
         background: "var(--color-bg-cream)",
         padding: "120px 30px",
