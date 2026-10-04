@@ -34,7 +34,7 @@ function VideoCard({ video, index }: { video: (typeof VIDEOS)[number]; index: nu
       style={{
         position: "relative",
         width: "100%",
-        aspectRatio: "9 / 16",
+        aspectRatio: "4 / 5",
         borderRadius: 24,
         overflow: "hidden",
         background: "#050807",
@@ -43,6 +43,15 @@ function VideoCard({ video, index }: { video: (typeof VIDEOS)[number]; index: nu
       }}
     >
       {playing ? (
+        <>
+          {/* Blurred poster fills the sides so the portrait video isn't cropped or boxed in black. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={video.poster}
+            alt=""
+            aria-hidden
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "blur(28px) brightness(0.45)", transform: "scale(1.15)" }}
+          />
         <video
           src={video.src}
           poster={video.poster}
@@ -50,8 +59,9 @@ function VideoCard({ video, index }: { video: (typeof VIDEOS)[number]; index: nu
           autoPlay
           playsInline
           preload="auto"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", background: "#000" }}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
         />
+        </>
       ) : (
         <>
           {/* Poster sits faintly behind the glyph field. */}
@@ -199,7 +209,7 @@ export default function HifzVideoSection() {
 
         <div
           className="hifz-video-grid"
-          style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 380px))", justifyContent: "center", gap: 40, width: "100%" }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 580px))", justifyContent: "center", gap: 40, width: "100%" }}
         >
           {VIDEOS.map((v, i) => (
             <VideoCard key={v.src} video={v} index={i} />

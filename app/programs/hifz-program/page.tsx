@@ -97,7 +97,8 @@ export default function HifzProgramPage() {
 
           /* Videos */
           .hifz-video-section { padding: 60px 20px !important; }
-          .hifz-video-grid { grid-template-columns: minmax(0, 340px) !important; gap: 28px !important; }
+          .hifz-video-grid { grid-template-columns: minmax(0, 420px) !important; gap: 28px !important; }
+          .hifz-video-card { aspect-ratio: 9 / 16 !important; }
           .hifz-video-title { font-size: 24px !important; }
           .video-play-btn { width: 68px !important; height: 68px !important; }
 

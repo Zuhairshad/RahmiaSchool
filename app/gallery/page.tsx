@@ -20,7 +20,7 @@ export default function GalleryPage() {
           .gallery-banner-h1 { font-size: 40px !important; line-height: 1.2 !important; }
         }
       `}</style>
-      <GalleryBanner count={galleryPhotos.length} />
+      <GalleryBanner />
       <GalleryGrid photos={galleryPhotos} categories={galleryCategories} />
       <CtaSection />
     </>

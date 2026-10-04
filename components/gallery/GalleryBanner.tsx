@@ -11,7 +11,7 @@ const spring = (delay = 0): Record<string, unknown> => ({
   delay,
 });
 
-export default function GalleryBanner({ count }: { count: number }) {
+export default function GalleryBanner() {
   return (
     <section className="gallery-banner" style={{ background: "#ffffff", padding: "120px 30px 56px" }}>
       <div
@@ -88,31 +88,6 @@ export default function GalleryBanner({ count }: { count: number }) {
           viewport={{ once: true, amount: 0 }}
           style={{ maxWidth: 370, display: "flex", flexDirection: "column", gap: 16 }}
         >
-          <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-            <span
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: 44,
-                fontWeight: 700,
-                lineHeight: 1,
-                color: "var(--color-brand-purple-deep)",
-              }}
-            >
-              {count}
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "#888",
-              }}
-            >
-              moments captured
-            </span>
-          </div>
           <p
             style={{
               fontFamily: "var(--font-body)",
