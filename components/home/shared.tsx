@@ -17,7 +17,8 @@ export const programs = [
     tagColor: "#09d89a",
     desc: "Learning through play and hands-on activities, focusing on colours, shapes, numbers, social skills, and building reading and writing readiness in a safe, loving environment.",
     bg: "#d7fdcf",
-    image: "/assets/images/i2ECgxjZP2t8RjEmI8skh28jRbQ-09736a12.avif",
+    image: "/assets/images/rahma-kids-studying.jpeg",
+    imagePosition: "center 45%",
   },
   {
     num: "02",
@@ -26,16 +27,18 @@ export const programs = [
     tagColor: "#520080",
     desc: "Strong academics and character development through concept-based and interactive teaching, covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge.",
     bg: "#ebe1fd",
-    image: "/assets/images/Sfm9js53gBOL3V13gpQtyyxQPf8-334437a4.avif",
+    image: "/assets/images/rahma-kid-writing.jpeg",
+    imagePosition: "center 30%",
   },
   {
     num: "03",
-    title: "Middle & High School (Class 6–10)",
-    tag: "Grades 6–10",
+    title: "Middle School (Class 6–7)",
+    tag: "Grades 6–7",
     tagColor: "#fcb520",
-    desc: "Deeper understanding, analytical thinking, and board exam preparation in Science and Arts subjects, with career counselling and leadership development for future-ready graduates.",
+    desc: "Advanced subject learning, analytical thinking, project-based assignments, and leadership opportunities that prepare students with confidence for higher classes.",
     bg: "#feeecd",
-    image: "/assets/images/yZKDsRUleMx3BoVzta3YgXn9l5A-8b5af1ba.avif",
+    image: "/assets/images/gallery/g-28.jpeg",
+    imagePosition: "center 35%",
   },
 ];
 
