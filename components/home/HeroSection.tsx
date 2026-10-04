@@ -74,7 +74,7 @@ export default function HeroSection() {
                 color: "rgba(255,255,255,0.9)",
                 textTransform: "uppercase",
               }}>
-                Where Education and Faith Build Character
+                RAHMA Model School · Home of the RAHMATES
               </span>
             </motion.div>
             <motion.h1
@@ -90,7 +90,7 @@ export default function HeroSection() {
                 margin: 0,
               }}
             >
-              Building bright young minds
+              Where Education and Faith Build Character
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 28 }}

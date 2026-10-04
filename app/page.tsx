@@ -12,7 +12,7 @@ import PricingTabs from "@/components/home/PricingTabs";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
-  title: "RAHMA Model School | Inspiring Young Minds for a Bright Future",
+  title: "RAHMA Model School | Where Education and Faith Build Character",
   description:
     "Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future.",
 };

@@ -55,6 +55,7 @@ export default function StudentLifePage() {
                 should have opportunities to explore, create, lead, and grow in a supportive environment.
                 Our Student Life Programme develops confidence, leadership, creativity, teamwork,
                 communication skills, and responsibility through varied educational and co-curricular activities.
+                Together, our students, teachers and staff are proudly known as RAHMATES.
               </p>
             </div>
             <div

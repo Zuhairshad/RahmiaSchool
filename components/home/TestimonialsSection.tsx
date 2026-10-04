@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
           style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20 }}
         >
           <div style={{ maxWidth: 440 }}>
-            <Eyebrow>Our Faculty</Eyebrow>
+            <Eyebrow>RAHMATES · Our Faculty</Eyebrow>
             <h2 className="teachers-heading" style={{ fontFamily: "var(--font-heading)", fontSize: 56, fontWeight: 700, lineHeight: "64.4px", color: "#000", margin: 0 }}>
               Meet our dedicated teachers
             </h2>

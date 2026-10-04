@@ -4,6 +4,7 @@ import BannerSection from "@/components/about/BannerSection";
 import FullImageSection from "@/components/about/FullImageSection";
 import StorySection from "@/components/about/StorySection";
 import TeacherSection from "@/components/about/TeacherSection";
+import VideoSection from "@/components/about/VideoSection";
 import ValuesSection from "@/components/about/ValuesSection";
 import FaqSection from "@/components/about/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
@@ -40,6 +41,7 @@ export default function AboutPage() {
       <BannerSection />
       <FullImageSection />
       <TickerStrip />
+      <VideoSection />
       <StorySection />
       <TeacherSection />
       <ValuesSection />

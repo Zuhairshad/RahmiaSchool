@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container, SectionLabel, WavyUnderline, Button, AdmissionForm, CtaImageRow } from "@/components/ui";
+import { HIFZ_PROGRAM } from "@/lib/admission";
 
 export const metadata: Metadata = {
   title: "Admissions",
@@ -49,7 +50,9 @@ const infoCards = [
   },
 ];
 
-export default function AdmissionPage() {
+export default async function AdmissionPage({ searchParams }: { searchParams: Promise<{ program?: string }> }) {
+  const { program } = await searchParams;
+  const defaultProgram = program === "hifz" ? HIFZ_PROGRAM : "";
   return (
     <div>
       <style>{`
@@ -164,10 +167,10 @@ export default function AdmissionPage() {
                 Start Learning Journey
               </h3>
               <p style={{ color: "#888", fontSize: "0.85rem", marginBottom: 24, lineHeight: 1.6 }}>
-                Fill out the form with your child&apos;s details so we can understand their needs and support their
-                early learning growth.
+                Fill out the form with your child&apos;s details so we can understand their needs and welcome them
+                as a RAHMATE.
               </p>
-              <AdmissionForm />
+              <AdmissionForm defaultProgram={defaultProgram} />
             </div>
           </div>
         </Container>

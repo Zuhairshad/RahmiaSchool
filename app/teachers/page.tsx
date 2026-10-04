@@ -20,8 +20,8 @@ const spring = (delay = 0) => ({
 
 const leadership = [
   {
-    name: "Lt Col Chaudhry Muhammad Hafeez",
-    role: "Founder & Visioner",
+    name: "Lt Col (R) Chaudhry Muhammad Hafeez",
+    role: "Educational Advisor",
     tint: "#feeecd", color: "#f59e0b",
     bio: "Founded RAHMA Model School in 2012 with a mission to bring quality education to Pakistan's most underserved children, starting from a small hut near Rawalpindi Railway Station.",
     grades: "All Departments",
@@ -132,7 +132,7 @@ const teachers = [
     role: "Montessori Teacher",
     tint: tints[1], color: initColors[1],
     bio: "Creating a joyful, structured environment where every young child feels seen, heard, and ready to learn.",
-    grades: "Nursery – KG",
+    grades: "Nursery – Prep",
     experience: "5+ Years",
     highlights: [
       "Child-led Montessori learning",

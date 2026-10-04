@@ -18,7 +18,7 @@ const values = [
   },
   {
     title: "Islamic & Moral Values",
-    desc: "We instil integrity, honesty, respect, discipline, and compassion in every student, preparing them to become responsible and conscientious citizens.",
+    desc: "We instil integrity, honesty, respect, discipline, and compassion in every RAHMATE, preparing them to become responsible and conscientious citizens.",
   },
   {
     title: "Discipline & Leadership",

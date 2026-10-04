@@ -207,7 +207,7 @@ export default function CtaSection() {
                 margin: 0,
               }}
             >
-              Join our learning community today
+              Become a RAHMATE today
             </h2>
             <p
               style={{

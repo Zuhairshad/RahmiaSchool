@@ -44,7 +44,7 @@ export default function VisionSection() {
             >
               <Image
                 src="/assets/images/the vision col shb photo.jpeg"
-                alt="Lt Col Chaudhry Muhammad Hafeez"
+                alt="Lt Col (R) Chaudhry Muhammad Hafeez"
                 width={531}
                 height={742}
                 style={{ width: "100%", height: "auto", display: "block", marginTop: "-110px" }}
@@ -60,10 +60,10 @@ export default function VisionSection() {
               }}
             >
               <div style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.95rem", color: "#fff", marginBottom: 3 }}>
-                Lt Col Chaudhry Muhammad Hafeez
+                Lt Col (R) Chaudhry Muhammad Hafeez
               </div>
               <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--color-brand-teal)", fontWeight: 600 }}>
-                Founder &amp; Visioner, RAHMA Model School
+                Educational Advisor, RAHMA Model School
               </div>
             </div>
           </motion.div>
@@ -101,6 +101,21 @@ export default function VisionSection() {
                 {para}
               </p>
             ))}
+
+            <p
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "1.3rem",
+                fontWeight: 700,
+                lineHeight: 1.4,
+                color: "#000",
+                margin: "8px 0 28px",
+                paddingLeft: 18,
+                borderLeft: "4px solid var(--color-brand-teal)",
+              }}
+            >
+              Where Education and Faith Build Character
+            </p>
 
             <div>
               <ArrowButton href="/donate" variant="purple">Support the vision</ArrowButton>

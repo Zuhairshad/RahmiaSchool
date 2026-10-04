@@ -13,6 +13,10 @@ const spring = (delay = 0): Record<string, unknown> => ({
 
 const faqs = [
   {
+    q: "Who are the RAHMATES?",
+    a: "RAHMATES is the name shared by every student, teacher, and staff member of RAHMA Model School. It reflects one community, united by our belief that education and faith build character, and the values of honesty, discipline, respect, and compassion that every RAHMATE carries.",
+  },
+  {
     q: "What age groups do you accept?",
     a: "We welcome children from early toddlers to preschool age, with carefully designed programs that match each stage of development. Our activities are tailored to support social and academic growth at every level.",
   },
