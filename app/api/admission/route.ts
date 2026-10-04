@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import {
   MAX_PHOTO_BYTES,
@@ -33,8 +33,10 @@ function safeFilename(value: string) {
 }
 
 export async function POST(req: Request) {
-  const GMAIL_USER = process.env.GMAIL_USER ?? "";
-  const TO_EMAIL = process.env.ADMISSION_TO_EMAIL || GMAIL_USER;
+  const TO_EMAIL = process.env.ADMISSION_TO_EMAIL ?? "";
+  // onboarding@resend.dev only delivers to the Resend account's own address;
+  // set ADMISSION_FROM_EMAIL to an address on a verified domain to send anywhere.
+  const FROM_EMAIL = process.env.ADMISSION_FROM_EMAIL || "RAHMA Admissions <onboarding@resend.dev>";
   try {
     const fd = await req.formData();
     const field = (name: string) => {
@@ -99,16 +101,13 @@ export async function POST(req: Request) {
       });
     }
 
-    // Sent through Gmail SMTP using a Google App Password (not the account password).
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: { user: GMAIL_USER, pass: process.env.GMAIL_APP_PASSWORD },
-    });
+    // Instantiated per request so a missing key doesn't break the build.
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     try {
-      await transporter.sendMail({
-        from: `"RAHMA Admissions" <${GMAIL_USER}>`,
-        to: TO_EMAIL,
+      const { error } = await resend.emails.send({
+        from: FROM_EMAIL,
+        to: [TO_EMAIL],
         replyTo: f.email,
         subject: `New Admission Application – ${f.childName}`,
         attachments,
@@ -141,6 +140,7 @@ export async function POST(req: Request) {
         </div>
       `,
       });
+      if (error) throw error;
     } catch (error) {
       console.error("Email send error:", error);
       return NextResponse.json(
