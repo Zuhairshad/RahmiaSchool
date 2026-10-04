@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { WavyUnderline } from "@/components/ui";
 import { Button, SectionLabel, Container } from "@/components/ui";
@@ -22,6 +23,7 @@ const leadership = [
   {
     name: "Lt Col (R) Chaudhry Muhammad Hafeez",
     role: "Educational Advisor",
+    photo: "/assets/images/leader-col-hafeez.jpeg",
     tint: "#feeecd", color: "#f59e0b",
     bio: "Founded RAHMA Model School in 2012 with a mission to bring quality education to Pakistan's most underserved children, starting from a small hut near Rawalpindi Railway Station.",
     grades: "All Departments",
@@ -52,6 +54,7 @@ const leadership = [
   {
     name: "Muhammad Shuaib",
     role: "Administrator & Finance Officer",
+    photo: "/assets/images/admin-shuaib.jpeg",
     tint: "#d7fdcf", color: "#09d89a",
     bio: "Managing the administrative and financial operations of RAHMA Model School with 24 years of dedicated service and expertise in institutional management.",
     grades: "Administration",
@@ -277,8 +280,12 @@ export default function TeachersPage() {
                   className="faculty-card-panel"
                   style={{ width: 280, flexShrink: 0, background: t.tint, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 20, borderRadius: "20px 0 0 20px", padding: "40px 24px" }}
                 >
-                  <div style={{ width: 120, height: 120, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 24px rgba(0,0,0,0.12)" }}>
-                    <span style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "2.2rem", color: t.color }}>{getInitials(t.name)}</span>
+                  <div style={{ position: "relative", width: 120, height: 120, borderRadius: "50%", overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 24px rgba(0,0,0,0.12)" }}>
+                    {"photo" in t && t.photo ? (
+                      <Image src={t.photo} alt={t.name} fill sizes="120px" style={{ objectFit: "cover", objectPosition: "center" }} />
+                    ) : (
+                      <span style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "2.2rem", color: t.color }}>{getInitials(t.name)}</span>
+                    )}
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
                     <span style={{ background: "rgba(255,255,255,0.75)", borderRadius: 50, padding: "4px 16px", fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#000", textAlign: "center" }}>{t.grades}</span>

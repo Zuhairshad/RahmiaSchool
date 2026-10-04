@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Eyebrow } from "@/components/home/shared";
 
@@ -10,7 +11,9 @@ const spring = (delay = 0): Record<string, unknown> => ({
   delay,
 });
 
-const teachers = [
+const teachers: { name: string; role: string; photo?: string }[] = [
+  { name: "Lt Col (R) Chaudhry Muhammad Hafeez", role: "Educational Advisor", photo: "/assets/images/leader-col-hafeez.jpeg" },
+  { name: "Muhammad Shuaib", role: "Administrator & Finance Officer", photo: "/assets/images/admin-shuaib.jpeg" },
   { name: "Shabnam Kayani",    role: "Coordinator" },
   { name: "Rubab Zaitoon",     role: "Maths Teacher" },
   { name: "Sajal Fatima",      role: "Science Teacher" },
@@ -103,7 +106,7 @@ export default function TeacherSection() {
           className="about-teacher-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
+            gridTemplateColumns: "repeat(6, 1fr)",
             gap: 24,
           }}
         >
@@ -127,7 +130,7 @@ export default function TeacherSection() {
               <div
                 className="about-teacher-avatar"
                 style={{
-                  background: avatarBgs[i],
+                  background: avatarBgs[i % avatarBgs.length],
                   height: 180,
                   display: "flex",
                   alignItems: "center",
@@ -136,8 +139,10 @@ export default function TeacherSection() {
               >
                 <div
                   style={{
-                    width: 80,
-                    height: 80,
+                    position: "relative",
+                    overflow: "hidden",
+                    width: teacher.photo ? 120 : 80,
+                    height: teacher.photo ? 120 : 80,
                     borderRadius: "50%",
                     background: "#fff",
                     display: "flex",
@@ -146,16 +151,20 @@ export default function TeacherSection() {
                     boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                   }}
                 >
+                  {teacher.photo ? (
+                    <Image src={teacher.photo} alt={teacher.name} fill sizes="120px" style={{ objectFit: "cover" }} />
+                  ) : (
                   <span
                     style={{
                       fontFamily: "var(--font-heading)",
                       fontSize: 28,
                       fontWeight: 700,
-                      color: avatarColors[i],
+                      color: avatarColors[i % avatarColors.length],
                     }}
                   >
                     {getInitials(teacher.name)}
                   </span>
+                  )}
                 </div>
               </div>
               {/* Card content */}

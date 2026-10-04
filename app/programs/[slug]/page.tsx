@@ -6,7 +6,8 @@ import { Container, SectionLabel, WavyUnderline, Button } from "@/components/ui"
 import { programs, programOrder } from "./data";
 
 export function generateStaticParams() {
-  return programOrder.map((slug) => ({ slug }));
+  // hifz-program has its own dedicated route (app/programs/hifz-program).
+  return programOrder.filter((slug) => slug !== "hifz-program").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
