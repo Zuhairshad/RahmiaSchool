@@ -11,8 +11,10 @@ const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/programs", label: "Academic Programs" },
+  { href: "/programs/hifz-program", label: "Hifz Program" },
   { href: "/contact", label: "Contact" },
   { href: "/blogs", label: "Student Life" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/teachers", label: "Faculty" },
   { href: "/pricing", label: "Fee Structure" },
   { href: "/admission", label: "Admissions" },
@@ -39,8 +41,11 @@ export default function Footer() {
           <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "1.4rem", color: "#fff", letterSpacing: "-0.01em", marginBottom: 16 }}>
             RAHMA
           </p>
+          <p style={{ color: "var(--color-brand-teal)", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 12 }}>
+            Where Education and Faith Build Character
+          </p>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.875rem", lineHeight: 1.75, marginBottom: 28, maxWidth: 280 }}>
-            We provide a safe, caring, and engaging learning environment for students from Preschool to High School in Rawalpindi.
+            We provide a safe, caring, and engaging learning environment for our RAHMATES, from Preschool to High School in Rawalpindi.
           </p>
           <form style={{ display: "flex", gap: 0 }} onSubmit={(e) => e.preventDefault()}>
             <input

@@ -16,6 +16,7 @@ const primaryLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/programs", label: "Programs" },
+  { href: "/programs/hifz-program", label: "Hifz Program", highlight: true },
   { href: "/teachers", label: "Faculty" },
 ];
 
@@ -24,6 +25,7 @@ const allPagesLinks = [
   { href: "/pricing", label: "Fee Structure" },
   { href: "/student-life", label: "Student Life" },
   { href: "/facilities", label: "Facilities" },
+  { href: "/gallery", label: "Gallery" },
   // { href: "/blogs", label: "Blog" },
 ];
 
@@ -39,6 +41,8 @@ export default function Navbar() {
       <style>{`
         .nav-link { color: rgba(255,255,255,0.75); font-size: 16px; font-weight: 600; line-height: 24px; font-family: var(--font-body); transition: color 0.15s; }
         .nav-link:hover, .nav-link.active { color: #fff; }
+        .nav-link-hifz { color: var(--color-brand-gold); display: inline-flex; align-items: center; gap: 6px; }
+        .nav-link-hifz:hover, .nav-link-hifz.active { color: var(--color-brand-gold-light); }
         @media (max-width: 1379px) { .nav-links { display: none !important; } .nav-mobile-btn { display: flex !important; } }
         @media (min-width: 1380px) { .nav-mobile-overlay { display: none !important; } }
       `}</style>
@@ -67,7 +71,12 @@ export default function Navbar() {
 
           <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
             {primaryLinks.map((l) => (
-              <Link key={l.href} href={l.href} className={`nav-link nav-link-underline${pathname === l.href ? " active" : ""}`}>
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`nav-link nav-link-underline${l.highlight ? " nav-link-hifz" : ""}${pathname === l.href ? " active" : ""}`}
+              >
+                {l.highlight && <span aria-hidden>★</span>}
                 {l.label}
               </Link>
             ))}
@@ -157,8 +166,16 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{ display: "block", color: pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)", padding: "16px 0", fontSize: "1.05rem", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+              style={{
+                display: "block",
+                color: "highlight" in l ? "var(--color-brand-gold)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)",
+                fontWeight: "highlight" in l ? 700 : undefined,
+                padding: "16px 0",
+                fontSize: "1.05rem",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
+              }}
             >
+              {"highlight" in l && "★ "}
               {l.label}
             </Link>
           ))}

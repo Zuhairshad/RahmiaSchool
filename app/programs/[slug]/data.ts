@@ -12,11 +12,19 @@ export type Program = {
   groupSize: string;
   programType: string;
   classes: string;
+  classAges?: { name: string; ages: string }[];
+  /** Replaces the default Classes / Ages / Schedule pills in the page header. */
+  pills?: { label: string; value: string }[];
+  /** Short highlight shown above the title. */
+  badge?: string;
+  enrollHref?: string;
   subjects: string[];
   accentVar: string;
   tintVar: string;
   textOnAccent: "light" | "dark";
   image: { src: string; width: number; height: number };
+  /** CSS object-position used when the image is cropped with object-fit: cover (keeps faces in frame). */
+  imagePosition?: string;
   sections: ProgramSection[];
 };
 
@@ -25,17 +33,23 @@ export const programs: Record<string, Program> = {
     slug: "montessori-programme",
     title: "Montessori Programme",
     tagline:
-      "Play-based, activity-driven early learning for Prep, Nursery, and KG with a focus on language, numeracy, Islamic values, and creative development.",
+      "Play-based, activity-driven early learning for Play Group, Nursery, and Prep with a focus on language, numeracy, Islamic values, and creative development.",
     description:
-      "RAHMA Model School's Montessori Programme provides a nurturing foundation for children in Prep, Nursery, and KG. Through hands-on activities, guided play, and structured exploration, young learners develop language, numeracy, social, and moral skills in a warm classroom environment. Islamic values, basic Quranic learning, and character habits are woven into daily routines so that every child grows academically, spiritually, and socially from the very first day.",
-    ageRange: "3–5 years",
+      "RAHMA Model School's Montessori Programme provides a nurturing foundation for children in Play Group, Nursery, and Prep. Through hands-on activities, guided play, and structured exploration, young learners develop language, numeracy, social, and moral skills in a warm classroom environment. Islamic values, basic Quranic learning, and character habits are woven into daily routines so that every child grows academically, spiritually, and socially from the very first day. Here, our youngest RAHMATES take their first steps in learning.",
+    ageRange: "3–6 years",
     groupSize: "Small groups",
     programType: "Full day",
-    classes: "Nursery · KG · Prep",
+    classes: "Play Group · Nursery · Prep",
+    classAges: [
+      { name: "Play Group", ages: "3–4 years" },
+      { name: "Nursery", ages: "4–5 years" },
+      { name: "Prep", ages: "5–6 years" },
+    ],
     subjects: [
       "English (Reading & Writing)",
       "Urdu",
       "Mathematics (Numbers & Shapes)",
+      "Science",
       "General Knowledge",
       "Islamic Studies & Nazra Quran",
       "Drawing & Colouring",
@@ -44,7 +58,8 @@ export const programs: Record<string, Program> = {
     accentVar: "var(--color-brand-teal)",
     tintVar: "var(--color-tint-green)",
     textOnAccent: "dark",
-    image: { src: "/assets/images/rahma-kids-studying.jpeg", width: 1024, height: 700 },
+    image: { src: "/assets/images/rahma-kids-studying.jpeg", width: 3120, height: 4160 },
+    imagePosition: "center 45%",
     sections: [
       {
         heading: "Learning Through Play",
@@ -52,7 +67,7 @@ export const programs: Record<string, Program> = {
       },
       {
         heading: "Early Literacy & Numeracy",
-        body: "We introduce English and Urdu alphabets, phonics, basic reading, writing strokes, and number concepts through age-appropriate worksheets, storytelling, and interactive activities. By KG, children read simple sentences and solve basic arithmetic with confidence.",
+        body: "We introduce English and Urdu alphabets, phonics, basic reading, writing strokes, and number concepts through age-appropriate worksheets, storytelling, and interactive activities. By Prep, children read simple sentences and solve basic arithmetic with confidence.",
       },
       {
         heading: "Islamic Foundation",
@@ -83,7 +98,7 @@ export const programs: Record<string, Program> = {
     tagline:
       "Strong academic foundations through concept-based learning in core subjects, regular assessments, and a rich co-curricular programme.",
     description:
-      "The Primary School programme at RAHMA Model School covers Class 1 through Class 5, offering a comprehensive, concept-based curriculum aligned with national educational standards. Students study a broad range of subjects, participate in regular assessments, and take part in co-curricular activities including debates, science exhibitions, sports, and arts. Our qualified teachers use interactive teaching methods, group work, and project-based tasks to ensure every student not only understands the syllabus but develops a genuine love for learning.",
+      "The Primary School programme at RAHMA Model School covers Class 1 through Class 5, offering a comprehensive, concept-based curriculum aligned with national educational standards. Students study a broad range of subjects, participate in regular assessments, and take part in co-curricular activities including debates, science exhibitions, sports, and arts. Our qualified teachers use interactive teaching methods, group work, and project-based tasks to ensure every student not only understands the syllabus but develops a genuine love for learning, growing into a confident RAHMATE.",
     ageRange: "6–11 years",
     groupSize: "Structured classes",
     programType: "Full day",
@@ -101,7 +116,8 @@ export const programs: Record<string, Program> = {
     accentVar: "var(--color-brand-purple-deep)",
     tintVar: "var(--color-tint-purple)",
     textOnAccent: "light",
-    image: { src: "/assets/images/rahma-kid-writing.jpeg", width: 1024, height: 700 },
+    image: { src: "/assets/images/rahma-kid-writing.jpeg", width: 720, height: 1280 },
+    imagePosition: "center 30%",
     sections: [
       {
         heading: "Concept-Based Learning",
@@ -140,7 +156,7 @@ export const programs: Record<string, Program> = {
     tagline:
       "Advanced subject learning, analytical thinking, project-based assignments, and robust preparation for higher classes.",
     description:
-      "RAHMA Model School's Middle School programme covers Class 6 and Class 7, offering an academically rigorous curriculum that builds on primary school foundations and prepares students for higher-level study. At this stage, students engage with more complex subject matter, undertake research-based projects, develop strong writing and analytical skills, and take on greater academic responsibility. Co-curricular activities such as the science fair, model-making competitions, debate events, and school trips enrich the academic experience and develop leadership, creativity, and character.",
+      "RAHMA Model School's Middle School programme covers Class 6 and Class 7, offering an academically rigorous curriculum that builds on primary school foundations and prepares students for higher-level study. At this stage, students engage with more complex subject matter, undertake research-based projects, develop strong writing and analytical skills, and take on greater academic responsibility. Co-curricular activities such as the science fair, model-making competitions, debate events, and school trips enrich the academic experience and develop leadership, creativity, and character, preparing every RAHMATE for the next stage of their education.",
     ageRange: "12–14 years",
     groupSize: "Subject-based classes",
     programType: "Full day",
@@ -151,13 +167,16 @@ export const programs: Record<string, Program> = {
       "Mathematics (Algebra, Geometry & Arithmetic)",
       "General Science (Biology, Chemistry & Physics concepts)",
       "Social Studies & Pakistan Studies",
+      "History",
+      "Geography",
       "Islamiat & Quran",
       "Computer Studies",
     ],
     accentVar: "var(--color-brand-gold)",
     tintVar: "var(--color-tint-cream)",
     textOnAccent: "dark",
-    image: { src: "/assets/images/rahma-parent-partnership-2.jpeg", width: 1024, height: 700 },
+    image: { src: "/assets/images/gallery/g-28.jpeg", width: 1350, height: 1800 },
+    imagePosition: "center 35%",
     sections: [
       {
         heading: "Advanced Academic Curriculum",
@@ -189,10 +208,69 @@ export const programs: Record<string, Program> = {
       },
     ],
   },
+  "hifz-program": {
+    slug: "hifz-program",
+    title: "Hifz with Understanding",
+    badge: "Only at RAHMA Model School in the entire area",
+    tagline:
+      "Memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 9. Worldly education and the best Quranic training under one roof.",
+    description:
+      "Alhamdulillah! RAHMA Model School is the only institution in our area offering Hifz with Understanding. Our goal is not just to make children memorize the Quran, but to help them understand its meaning, message, and apply it in their practical lives.\n\nWe enroll students for Hifz in Grade 4. This is a well-structured 4-year Hifz Program. During these 4 years, your child completes the Hifz along with regular school education. By the time your child reaches Grade 9, they become a complete Hafiz-e-Quran and then continue their education regularly from Grade 9 onwards without any academic loss.\n\nThis means your child does not have to leave school for Hifz. Your child becomes a Hafiz or Hafiza and continues the journey to become a Doctor, Engineer, or Scholar.",
+    ageRange: "Grades 4–8",
+    groupSize: "Supervised by a certified Qari Sahib",
+    programType: "With regular school",
+    classes: "Grades 4–8",
+    pills: [
+      { label: "Admission", value: "Grade 4" },
+      { label: "Duration", value: "4 years" },
+      { label: "Hafiz by", value: "Grade 9" },
+    ],
+    enrollHref: "/admission?program=hifz#apply-form",
+    subjects: [
+      "Hifz-ul-Quran",
+      "Urdu Translation",
+      "Tafseer",
+      "Tajweed & Qiraat",
+      "Sabaq, Sabqi & Manzil",
+      "Regular School Subjects",
+    ],
+    accentVar: "var(--color-brand-teal)",
+    tintVar: "var(--color-tint-green)",
+    textOnAccent: "dark",
+    image: { src: "/assets/images/rahma-character-1.jpeg", width: 780, height: 1040 },
+    imagePosition: "center 10%",
+    sections: [
+      {
+        heading: "Admission in Grade 4",
+        body: "Grade 4 is the ideal age to start Hifz. Your child is mature enough to memorize and understand easily.",
+      },
+      {
+        heading: "Hifz with Translation & Tafseer",
+        body: "Your child does not just memorize, but also learns the easy Urdu translation and basic meaning of every verse.",
+      },
+      {
+        heading: "Tajweed & Qiraat with the Best Teachers",
+        body: "Hifz under the supervision of a certified and experienced Qari Sahib, with correct pronunciation and Tajweed. Our well-mannered Qari Sahib deals with children with great affection and love and is familiar with modern teaching methods.",
+      },
+      {
+        heading: "No Academic Loss",
+        body: "During these 4 years, your child's regular school education (Grade 4 to Grade 8) continues side by side, so there is no need to leave school for Hifz.",
+      },
+      {
+        heading: "Daily Revision System",
+        body: "A perfect system of Sabaq, Sabqi, and Manzil so your child never forgets what they have memorized.",
+      },
+      {
+        heading: "Why is Hifz Important?",
+        body: "Memorizing the Quran is the greatest honor in this world and the hereafter. When your child preserves the Quran in their heart, Allah will crown you, the parents, with a crown of light on the Day of Judgment. Our Hifz program ensures both worldly education and success in the hereafter.",
+      },
+    ],
+  },
 };
 
 export const programOrder = [
   "montessori-programme",
   "primary-school",
   "middle-school",
+  "hifz-program",
 ];

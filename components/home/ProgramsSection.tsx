@@ -11,6 +11,15 @@ const spring = (delay = 0): Record<string, unknown> => ({
   delay,
 });
 
+// object-position per card (keyed by program num) so faces stay inside the
+// object-fit: cover crop. The card image is near-square while the photos are
+// ~3:2 landscape, so the crop is mostly horizontal.
+const imagePositions: Record<string, string> = {
+  "01": "50% 30%", // teacher + child, faces at ~38% / ~63% across
+  "02": "40% 30%", // man at left (~25%), girl at right (~70%)
+  "03": "50% 30%", // two children centered
+};
+
 export default function ProgramsSection() {
   return (
     <section className="section-padded" style={{ background: "var(--color-bg-cream)", padding: "120px 30px" }}>
@@ -171,6 +180,7 @@ export default function ProgramsSection() {
                       flex: 1,
                       maxWidth: 610,
                       objectFit: "cover",
+                      objectPosition: imagePositions[p.num] ?? "center",
                       display: "block",
                       borderRadius: 12,
                       alignSelf: "stretch",

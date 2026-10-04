@@ -7,7 +7,7 @@ import { programs, programOrder } from "./[slug]/data";
 export const metadata: Metadata = {
   title: "Academic Programs | RAHMA Model School",
   description:
-    "RAHMA Model School offers Montessori, Primary (Class 1–5), and Middle School (Class 6–7) programmes grounded in a comprehensive national curriculum and Islamic values.",
+    "RAHMA Model School offers Montessori, Primary (Class 1–5), Middle School (Class 6–7), and Hifz with Understanding programmes grounded in a comprehensive national curriculum and Islamic values.",
 };
 
 const calendarMonths = [
@@ -140,7 +140,7 @@ export default function ProgramsPage() {
             </span>
           </h1>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 620, marginTop: 16 }}>
-            From Montessori to Middle School, RAHMA Model School offers a structured, values-driven curriculum covering Prep through Class 7, preparing every RAHMATE for academic excellence and lifelong character.
+            From Montessori to Middle School, RAHMA Model School offers a structured, values-driven curriculum covering Prep through Class 7, along with our Hifz Program with Understanding, preparing every RAHMATE for academic excellence and lifelong character.
           </p>
         </Container>
       </section>
@@ -151,7 +151,7 @@ export default function ProgramsPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
               gap: 24,
             }}
           >
@@ -168,12 +168,12 @@ export default function ProgramsPage() {
                     flexDirection: "column",
                   }}
                 >
-                  <div style={{ position: "relative", height: 220 }}>
+                  <div style={{ position: "relative", aspectRatio: "4 / 3" }}>
                     <Image
                       src={p.image.src}
                       alt={p.title}
                       fill
-                      style={{ objectFit: "cover" }}
+                      style={{ objectFit: "cover", objectPosition: p.imagePosition ?? "center" }}
                       sizes="(max-width: 810px) 100vw, 33vw"
                     />
                     <span

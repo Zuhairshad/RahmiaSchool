@@ -64,6 +64,22 @@ export default async function ProgramDetailPage({
             className="program-hero-grid"
           >
             <div>
+              {program.badge && (
+                <span
+                  style={{
+                    display: "inline-block",
+                    background: program.tintVar,
+                    color: "var(--color-ink)",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    padding: "6px 14px",
+                    borderRadius: 100,
+                    marginBottom: 16,
+                  }}
+                >
+                  ★ {program.badge}
+                </span>
+              )}
               <h1
                 className="hero-h1"
                 style={{
@@ -92,10 +108,42 @@ export default async function ProgramDetailPage({
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 28 }}>
-                <Pill label="Classes" value={program.classes} />
-                <Pill label="Ages" value={program.ageRange} />
-                <Pill label="Schedule" value={program.programType} />
+                {(
+                  program.pills ?? [
+                    { label: "Classes", value: program.classes },
+                    { label: "Ages", value: program.ageRange },
+                    { label: "Schedule", value: program.programType },
+                  ]
+                ).map((pill) => (
+                  <Pill key={pill.label} label={pill.label} value={pill.value} />
+                ))}
               </div>
+
+              {program.classAges && (
+                <div style={{ marginTop: 24 }}>
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "#666", marginBottom: 10 }}>
+                    Classes by age
+                  </p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                    {program.classAges.map((c) => (
+                      <div
+                        key={c.name}
+                        style={{
+                          background: program.tintVar,
+                          borderRadius: 14,
+                          padding: "10px 16px",
+                          minWidth: 120,
+                        }}
+                      >
+                        <div style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.9rem", color: "var(--color-ink)" }}>
+                          {c.name}
+                        </div>
+                        <div style={{ fontSize: "0.8rem", color: "var(--color-body-text)", marginTop: 2 }}>{c.ages}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Subjects */}
               <div style={{ marginTop: 24 }}>
@@ -122,7 +170,7 @@ export default async function ProgramDetailPage({
               </div>
 
               <div style={{ marginTop: 32 }}>
-                <Button href="/admission" style={{ background: program.accentVar, color: program.textOnAccent === "light" ? "#fff" : "#000" }}>
+                <Button href={program.enrollHref ?? "/admission"} style={{ background: program.accentVar, color: program.textOnAccent === "light" ? "#fff" : "#000" }}>
                   Join now
                 </Button>
               </div>
@@ -142,7 +190,7 @@ export default async function ProgramDetailPage({
                 alt={program.title}
                 width={program.image.width}
                 height={program.image.height}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: program.imagePosition ?? "center" }}
                 priority
               />
             </div>
@@ -153,17 +201,21 @@ export default async function ProgramDetailPage({
       {/* Intro + sections */}
       <section style={{ background: "var(--color-bg-cream)", padding: "56px 32px 80px" }}>
         <Container>
-          <p
-            style={{
-              color: "var(--color-body-text)",
-              fontSize: "1.05rem",
-              lineHeight: 1.9,
-              maxWidth: 800,
-              marginBottom: 48,
-            }}
-          >
-            {program.description}
-          </p>
+          <div style={{ maxWidth: 800, marginBottom: 48 }}>
+            {program.description.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                style={{
+                  color: "var(--color-body-text)",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.9,
+                  marginTop: i === 0 ? 0 : 18,
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
 
           <div
             style={{
@@ -262,7 +314,7 @@ export default async function ProgramDetailPage({
         <p style={{ color: "rgba(0,0,0,0.6)", fontSize: "0.95rem", marginBottom: 28 }}>
           Start the admission process today and secure your child&apos;s spot.
         </p>
-        <Button href="/admission" variant="dark">
+        <Button href={program.enrollHref ?? "/admission"} variant="dark">
           Start Admission
         </Button>
       </section>
@@ -270,6 +322,8 @@ export default async function ProgramDetailPage({
       <style>{`
         @media (max-width: 810px) {
           .program-hero-grid { grid-template-columns: 1fr !important; }
+          .program-hero-grid > * { min-width: 0; }
+          .program-hero-grid .hero-h1 { font-size: 34px !important; }
           .program-sections-grid { grid-template-columns: 1fr !important; }
           .program-related-grid { grid-template-columns: 1fr !important; }
         }
