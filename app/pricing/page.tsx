@@ -59,8 +59,8 @@ export default function PricingPage() {
               ]}
             />
             <PricingCard
-              title="Middle School & Hifz"
-              description="Class 6–7 and our Hifz with Understanding program: a full subject curriculum, co-curriculars and Quranic training under one roof."
+              title="Middle, High School & Hifz"
+              description="Class 6–10 and our Hifz with Understanding program: a full subject curriculum, co-curriculars and Quranic training under one roof."
               price="Contact us"
               variant="premium"
               ctaHref="/contact"

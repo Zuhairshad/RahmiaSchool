@@ -36,8 +36,8 @@ export const programs = [
   },
   {
     num: "03",
-    title: "Middle School (Class 6–7)",
-    tag: "Grades 6–7",
+    title: "Middle School (Class 6–8)",
+    tag: "Grades 6–8",
     tagColor: "#fcb520",
     desc: "Advanced subject learning, analytical thinking, project-based assignments, and leadership opportunities that prepare students with confidence for higher classes.",
     bg: "#feeecd",
@@ -45,6 +45,18 @@ export const programs = [
     imageWidth: 1350,
     imageHeight: 1800,
     imagePosition: "center 35%",
+  },
+  {
+    num: "04",
+    title: "High School (Class 9–10)",
+    tag: "Grades 9–10",
+    tagColor: "#520080",
+    desc: "Focused Matric (SSC) preparation with strong concepts in science, mathematics and languages, regular tests and revision, and leadership roles as the school's senior students.",
+    bg: "#ebe1fd",
+    image: "/assets/images/gallery/g-32.jpeg",
+    imageWidth: 1800,
+    imageHeight: 1350,
+    imagePosition: "center 40%",
   },
 ];
 

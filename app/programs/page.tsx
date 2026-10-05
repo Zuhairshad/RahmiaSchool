@@ -7,7 +7,7 @@ import { programs, programOrder } from "./[slug]/data";
 export const metadata: Metadata = {
   title: "Academic Programs | RAHMA Model School",
   description:
-    "RAHMA Model School offers Montessori, Primary (Class 1–5), Middle School (Class 6–7), and Hifz with Understanding programmes grounded in a comprehensive national curriculum and Islamic values.",
+    "RAHMA Model School offers Montessori, Primary (Class 1–5), Middle School (Class 6–8), High School (Class 9–10), and Hifz with Understanding programmes grounded in a comprehensive national curriculum and Islamic values.",
 };
 
 const calendarMonths = [
@@ -140,7 +140,7 @@ export default function ProgramsPage() {
             </span>
           </h1>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 620, marginTop: 16 }}>
-            From Montessori to Middle School, RAHMA Model School offers a structured, values-driven curriculum covering Prep through Class 7, along with our Hifz Program with Understanding, preparing every RAHMATE for academic excellence and lifelong character.
+            From Montessori to High School, RAHMA Model School offers a structured, values-driven curriculum covering Prep through Class 10, along with our Hifz Program with Understanding, preparing every RAHMATE for academic excellence and lifelong character.
           </p>
         </Container>
       </section>
@@ -325,7 +325,7 @@ export default function ProgramsPage() {
             Activity &amp; Examination Calendar
           </h2>
           <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", lineHeight: 1.8, maxWidth: 580, marginBottom: 48 }}>
-            Prep Classes to Class 7, full academic year schedule including term exams, assessments, competitions, and co-curricular events.
+            Prep Classes to Class 10, full academic year schedule including term exams, assessments, competitions, and co-curricular events.
           </p>
 
           <div
