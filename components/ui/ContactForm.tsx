@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, type CSSProperties, type FormEvent } from "react";
+import { RULES } from "@/lib/admission";
+import { CONTACT_LIMITS, CONTACT_PROGRAMS } from "@/lib/contact";
+import { filterName, filterPhone } from "@/lib/input-filters";
+import { useFieldErrors } from "./useFieldErrors";
 
-const programs = [
-  "Little Explorer Program",
-  "Creative Minds Program",
-  "Happy Learners Program",
-  "Smart Thinkers Program",
-  "Middle School Program",
-  "Bright Starters Program",
-];
+const FIELD_MESSAGES: Record<string, string> = {
+  name: "Letters only (no numbers or symbols).",
+  phone: "Enter a Pakistani mobile number, e.g. 03001234567 or +92 300 1234567.",
+  email: "Enter a valid email address, e.g. name@gmail.com.",
+  message: "Please write your message.",
+};
+
 
 const fieldStyle: CSSProperties = {
   width: "100%",
@@ -33,11 +36,33 @@ const labelStyle: CSSProperties = {
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [name, setName] = useState("");
+  const { field, errorFor, borderFor, validateAll, reset } = useFieldErrors(FIELD_MESSAGES);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    if (!validateAll(e.currentTarget)) return;
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(e.currentTarget))),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json().catch(() => null);
+        setError(data?.error ?? "Something went wrong. Please try again or call us.");
+      }
+    } catch {
+      setError("Could not send your message. Please check your connection and try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -71,6 +96,7 @@ export default function ContactForm() {
           onClick={() => {
             setSubmitted(false);
             setName("");
+            reset();
           }}
           style={{
             marginTop: 20,
@@ -91,7 +117,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+    <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div className="contact-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         <div>
           <label style={labelStyle} htmlFor="contact-name">
@@ -99,19 +125,33 @@ export default function ContactForm() {
           </label>
           <input
             id="contact-name"
-            name="name"
+            {...field("name")}
             placeholder="Muhammad Ahmed"
             required
+            maxLength={CONTACT_LIMITS.name}
+            pattern={RULES.name.pattern}
+            autoComplete="name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            style={fieldStyle}
+            onChange={(e) => setName(filterName(e.target.value))}
+            style={{ ...fieldStyle, ...borderFor("name") }}
           />
+          {errorFor("name")}
         </div>
         <div>
           <label style={labelStyle} htmlFor="contact-phone">
             Phone number
           </label>
-          <input id="contact-phone" name="phone" placeholder="+92 3XX XXXXXXX" style={fieldStyle} />
+          <input
+            id="contact-phone"
+            {...field("phone", filterPhone)}
+            type="tel"
+            maxLength={CONTACT_LIMITS.phone}
+            pattern={RULES.phone.pattern}
+            autoComplete="tel"
+            placeholder="+92 3XX XXXXXXX"
+            style={{ ...fieldStyle, ...borderFor("phone") }}
+          />
+          {errorFor("phone")}
         </div>
       </div>
       <div className="contact-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -119,7 +159,18 @@ export default function ContactForm() {
           <label style={labelStyle} htmlFor="contact-email">
             Email address
           </label>
-          <input id="contact-email" name="email" type="email" required placeholder="muhammadahmed@gmail.com" style={fieldStyle} />
+          <input
+            id="contact-email"
+            {...field("email")}
+            type="email"
+            required
+            maxLength={CONTACT_LIMITS.email}
+            pattern={RULES.email.pattern}
+            autoComplete="email"
+            placeholder="muhammadahmed@gmail.com"
+            style={{ ...fieldStyle, ...borderFor("email") }}
+          />
+          {errorFor("email")}
         </div>
         <div>
           <label style={labelStyle} htmlFor="contact-program">
@@ -127,7 +178,7 @@ export default function ContactForm() {
           </label>
           <select id="contact-program" name="program" defaultValue="" style={{ ...fieldStyle, appearance: "none" }}>
             <option value="">Select your program</option>
-            {programs.map((p) => (
+            {CONTACT_PROGRAMS.map((p) => (
               <option key={p}>{p}</option>
             ))}
           </select>
@@ -139,15 +190,23 @@ export default function ContactForm() {
         </label>
         <textarea
           id="contact-message"
-          name="message"
+          {...field("message")}
           placeholder="Assalam o Alaikum, I would like to enquire about..."
           rows={4}
           required
-          style={{ ...fieldStyle, resize: "vertical" }}
+          maxLength={CONTACT_LIMITS.message}
+          style={{ ...fieldStyle, resize: "vertical", ...borderFor("message") }}
         />
+        {errorFor("message")}
       </div>
+      {error && (
+        <p role="alert" style={{ color: "#c0392b", fontSize: "0.85rem", margin: 0 }}>
+          {error}
+        </p>
+      )}
       <button
         type="submit"
+        disabled={sending}
         style={{
           background: "var(--color-brand-teal)",
           color: "#000",
@@ -156,12 +215,13 @@ export default function ContactForm() {
           borderRadius: 100,
           fontSize: "0.9rem",
           border: "none",
-          cursor: "pointer",
+          cursor: sending ? "wait" : "pointer",
+          opacity: sending ? 0.7 : 1,
           alignSelf: "flex-start",
           fontFamily: "var(--font-body)",
         }}
       >
-        Send Message
+        {sending ? "Sending…" : "Send Message"}
       </button>
     </form>
   );

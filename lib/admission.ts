@@ -37,6 +37,19 @@ export const RULES = {
     pattern: "\\d{5}-?\\d{7}-?\\d",
     title: "13-digit CNIC, e.g. 37405-1234567-1 / 13 ہندسوں کا شناختی کارڈ نمبر",
   },
+  school: {
+    // Must contain at least one letter, so a bare number like "123" is rejected.
+    pattern: "(?=.*\\p{L})[\\p{L}\\p{M}\\d .,'\\(\\)\\/#&\\-\\u060C\\u06D4\\u200C]{2,100}",
+    title: "School name and class, e.g. ABC School, Class 2 / اسکول کا نام اور کلاس",
+  },
+  address: {
+    pattern: "(?=.*\\p{L})[\\s\\S]{10,200}",
+    title: "Full address with house, street, area and city / مکمل پتہ",
+  },
+  email: {
+    pattern: "[^\\s@]+@[^\\s@]+\\.[^\\s@]+",
+    title: "Email address, e.g. name@gmail.com / ای میل ایڈریس",
+  },
   income: {
     pattern: "\\d[\\d,]{0,11}",
     title: "Amount in rupees using digits only, e.g. 40000 / صرف ہندسے، مثلاً 40000",
@@ -94,10 +107,12 @@ export function validateAdmission(f: AdmissionFields): string | null {
   if (!matches(RULES.phone, f.phone)) return bilingual("Please enter a valid Pakistani mobile number.", "براہ کرم درست موبائل نمبر لکھیں۔");
   if (f.email.length > LIMITS.email || !EMAIL_RE.test(f.email)) return bilingual("Please enter a valid email address.", "براہ کرم درست ای میل ایڈریس لکھیں۔");
 
-  if (f.address.length < LIMITS.address.min || f.address.length > LIMITS.address.max) {
+  if (!matches(RULES.address, f.address) || f.address.length > LIMITS.address.max) {
     return bilingual(`Residential address must be ${LIMITS.address.min}–${LIMITS.address.max} characters.`, `رہائشی پتہ ${LIMITS.address.min} سے ${LIMITS.address.max} حروف کا ہونا چاہیے۔`);
   }
-  if (f.previousSchool.length > LIMITS.previousSchool) return bilingual("Previous school / class is too long.", "سابقہ اسکول / کلاس بہت طویل ہے۔");
+  if (f.previousSchool && !matches(RULES.school, f.previousSchool)) {
+    return bilingual("Please enter the previous school's name and class, e.g. ABC School, Class 2.", "براہ کرم سابقہ اسکول کا نام اور کلاس لکھیں، مثلاً ABC اسکول، کلاس 2۔");
+  }
   if (f.monthlyIncome && !matches(RULES.income, f.monthlyIncome)) {
     return bilingual("Monthly income should contain digits only.", "ماہانہ آمدنی میں صرف ہندسے لکھیں۔");
   }
@@ -105,7 +120,7 @@ export function validateAdmission(f: AdmissionFields): string | null {
   if (f.hasSibling !== "Yes" && f.hasSibling !== "No") return bilingual("Please tell us if a sibling is already enrolled.", "براہ کرم بتائیں کہ کیا کوئی بہن بھائی پہلے سے داخل ہے۔");
   if (
     f.hasSibling === "Yes" &&
-    (f.siblingDetails.length < LIMITS.siblingDetails.min || f.siblingDetails.length > LIMITS.siblingDetails.max)
+    (!matches(RULES.school, f.siblingDetails) || f.siblingDetails.length < LIMITS.siblingDetails.min || f.siblingDetails.length > LIMITS.siblingDetails.max)
   ) {
     return bilingual("Please enter the enrolled sibling's name and class.", "براہ کرم داخل بہن بھائی کا نام اور کلاس لکھیں۔");
   }

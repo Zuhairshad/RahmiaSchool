@@ -159,11 +159,11 @@ export default function ContactPage() {
             {/* Form */}
             <div style={{ background: "var(--color-bg-cream)", borderRadius: 20, padding: "36px 32px" }}>
               <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem", color: "#000", marginBottom: 6 }}>
-                Start Learning Journey
+                Send us a message
               </h3>
               <p style={{ color: "#888", fontSize: "0.85rem", marginBottom: 24, lineHeight: 1.6 }}>
-                Fill out the form with your child&apos;s details so we can understand their needs and support their
-                early learning growth.
+                Have a question about admissions, fees or our programs? Send us a message and our team will get back to
+                you.
               </p>
               <ContactForm />
             </div>
