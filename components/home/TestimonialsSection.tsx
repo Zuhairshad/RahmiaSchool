@@ -41,7 +41,7 @@ const teachers = [
   },
   {
     name: "Rubab Zaitoon",
-    role: "Mathematics Teacher",
+    role: "Maths Teacher",
     tint: tints[1], color: initColors[1],
     bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction.",
     grades: "Classes 6–10",

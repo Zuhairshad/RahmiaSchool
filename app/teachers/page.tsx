@@ -37,6 +37,21 @@ const leadership = [
     ],
   },
   {
+    name: "Sadaf Shabbir",
+    role: "Principal",
+    tint: "#d7fdcf", color: "#09d89a",
+    bio: "Leading RAHMA Model School with vision and care, setting the academic direction and ensuring every child receives a quality, values-based education.",
+    grades: "All Classes",
+    experience: "Principal",
+    highlights: [
+      "School leadership & academic direction",
+      "Curriculum planning & standards",
+      "Staff leadership & development",
+      "Student achievement & welfare",
+      "Parent & community partnership",
+    ],
+  },
+  {
     name: "Madam Tehmina Shaheen",
     role: "Vice Principal",
     tint: "#ebe1fd", color: "#520080",
@@ -87,7 +102,7 @@ const teachers = [
   },
   {
     name: "Rubab Zaitoon",
-    role: "Mathematics Teacher",
+    role: "Maths Teacher",
     tint: tints[1], color: initColors[1],
     bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction.",
     grades: "Classes 6–10",
