@@ -18,6 +18,8 @@ export const programs = [
     desc: "Learning through play and hands-on activities, focusing on colours, shapes, numbers, social skills, and building reading and writing readiness in a safe, loving environment.",
     bg: "#d7fdcf",
     image: "/assets/images/rahma-kids-studying.jpeg",
+    imageWidth: 3120,
+    imageHeight: 4160,
     imagePosition: "center 45%",
   },
   {
@@ -28,6 +30,8 @@ export const programs = [
     desc: "Strong academics and character development through concept-based and interactive teaching, covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge.",
     bg: "#ebe1fd",
     image: "/assets/images/rahma-kid-writing.jpeg",
+    imageWidth: 720,
+    imageHeight: 1280,
     imagePosition: "center 30%",
   },
   {
@@ -38,6 +42,8 @@ export const programs = [
     desc: "Advanced subject learning, analytical thinking, project-based assignments, and leadership opportunities that prepare students with confidence for higher classes.",
     bg: "#feeecd",
     image: "/assets/images/gallery/g-28.jpeg",
+    imageWidth: 1350,
+    imageHeight: 1800,
     imagePosition: "center 35%",
   },
 ];

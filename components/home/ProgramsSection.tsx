@@ -163,25 +163,23 @@ export default function ProgramsSection() {
                   </div>
 
                   {/* Image side — 610px max width, fills remaining space */}
-                  <div
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    width={p.imageWidth}
+                    height={p.imageHeight}
+                    sizes="610px"
                     className="program-card-image"
                     style={{
                       flex: 1,
                       maxWidth: 610,
-                      position: "relative",
+                      objectFit: "cover",
+                      objectPosition: p.imagePosition,
+                      display: "block",
                       borderRadius: 12,
-                      overflow: "hidden",
                       alignSelf: "stretch",
                     }}
-                  >
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      fill
-                      sizes="610px"
-                      style={{ objectFit: "cover", objectPosition: p.imagePosition }}
-                    />
-                  </div>
+                  />
                 </div>
               </Link>
             </motion.div>
