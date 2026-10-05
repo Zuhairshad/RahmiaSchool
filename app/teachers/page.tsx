@@ -37,7 +37,7 @@ const leadership = [
     ],
   },
   {
-    name: "Sadaf Shabbir",
+    name: "Madam Sadaf Shabbir",
     role: "Principal",
     tint: "#d7fdcf", color: "#09d89a",
     bio: "Leading RAHMA Model School with vision and care, setting the academic direction and ensuring every child receives a quality, values-based education.",
@@ -243,7 +243,10 @@ export default function TeachersPage() {
       <style>{`
         @media (max-width: 810px) {
           .faculty-card-panel { display: none !important; }
-          .faculty-card-content { padding: 28px 24px !important; }
+          .faculty-card-content { padding: 28px 24px !important; min-width: 0; }
+          .faculty-highlights { grid-template-columns: 1fr !important; }
+          /* Container already adds side padding; don't double it on phones. */
+          .faculty-section { padding-left: 0 !important; padding-right: 0 !important; }
           .faculty-card { min-height: 0 !important; }
         }
       `}</style>
@@ -275,7 +278,7 @@ export default function TeachersPage() {
       </section>
 
       {/* Leadership cards */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "60px 32px 0" }}>
+      <section className="faculty-section" style={{ background: "var(--color-bg-cream)", padding: "60px 32px 0" }}>
         <Container>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#888", marginBottom: 20 }}>
             &#10022; School Leadership
@@ -312,7 +315,7 @@ export default function TeachersPage() {
                     <span style={{ display: "inline-block", background: t.tint, color: t.color, fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "5px 14px", borderRadius: 50, alignSelf: "flex-start" }}>{t.role}</span>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: "26px", color: "#575757", margin: 0 }}>&ldquo;{t.bio}&rdquo;</p>
                     <div style={{ height: 1, background: "#ebebeb" }} />
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 32px" }}>
+                    <div className="faculty-highlights" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 32px" }}>
                       {t.highlights.map((h) => (
                         <div key={h} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                           <span style={{ width: 20, height: 20, borderRadius: "50%", background: t.tint, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -338,7 +341,7 @@ export default function TeachersPage() {
       </section>
 
       {/* Teacher cards */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "0 32px 80px" }}>
+      <section className="faculty-section" style={{ background: "var(--color-bg-cream)", padding: "0 32px 80px" }}>
         <Container>
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {teachers.map((t, i) => (
@@ -448,7 +451,7 @@ export default function TeachersPage() {
                       &ldquo;{t.bio}&rdquo;
                     </p>
                     <div style={{ height: 1, background: "#ebebeb" }} />
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 32px" }}>
+                    <div className="faculty-highlights" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 32px" }}>
                       {t.highlights.map((h) => (
                         <div key={h} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                           <span style={{
