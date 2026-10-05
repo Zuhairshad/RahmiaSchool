@@ -6,8 +6,8 @@ import { fadeUp } from "./shared";
 
 const STATS = [
   { value: "Grade 4", label: "Admission into the Hifz class" },
-  { value: "4 Years", label: "A well-structured program" },
-  { value: "Grade 9", label: "A complete Hafiz-e-Quran" },
+  { value: "5 Years", label: "A well-structured program" },
+  { value: "Grade 8", label: "A complete Hafiz-e-Quran" },
   { value: "Zero", label: "Academic loss along the way" },
 ];
 

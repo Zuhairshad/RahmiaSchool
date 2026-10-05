@@ -213,17 +213,17 @@ export const programs: Record<string, Program> = {
     title: "Hifz with Understanding",
     badge: "Only at RAHMA Model School in the entire area",
     tagline:
-      "Memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 9. Worldly education and the best Quranic training under one roof.",
+      "Memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 8. Worldly education and the best Quranic training under one roof.",
     description:
-      "Alhamdulillah! RAHMA Model School is the only institution in our area offering Hifz with Understanding. Our goal is not just to make children memorize the Quran, but to help them understand its meaning, message, and apply it in their practical lives.\n\nWe enroll students for Hifz in Grade 4. This is a well-structured 4-year Hifz Program. During these 4 years, your child completes the Hifz along with regular school education. By the time your child reaches Grade 9, they become a complete Hafiz-e-Quran and then continue their education regularly from Grade 9 onwards without any academic loss.\n\nThis means your child does not have to leave school for Hifz. Your child becomes a Hafiz or Hafiza and continues the journey to become a Doctor, Engineer, or Scholar.",
+      "Alhamdulillah! RAHMA Model School is the only institution in our area offering Hifz with Understanding. Our goal is not just to make children memorize the Quran, but to help them understand its meaning, message, and apply it in their practical lives.\n\nWe enroll students for Hifz in Grade 4. This is a well-structured 5-year Hifz Program. During these 5 years, your child completes the Hifz along with regular school education. By the end of Grade 8, they become a complete Hafiz-e-Quran and then continue their education regularly from Grade 9 onwards without any academic loss.\n\nThis means your child does not have to leave school for Hifz. Your child becomes a Hafiz or Hafiza and continues the journey to become a Doctor, Engineer, or Scholar.",
     ageRange: "Grades 4–8",
     groupSize: "Supervised by a certified Qari Sahib",
     programType: "With regular school",
     classes: "Grades 4–8",
     pills: [
       { label: "Admission", value: "Grade 4" },
-      { label: "Duration", value: "4 years" },
-      { label: "Hafiz by", value: "Grade 9" },
+      { label: "Duration", value: "5 years" },
+      { label: "Hafiz by", value: "Grade 8" },
     ],
     enrollHref: "/admission?program=hifz#apply-form",
     subjects: [
@@ -254,7 +254,7 @@ export const programs: Record<string, Program> = {
       },
       {
         heading: "No Academic Loss",
-        body: "During these 4 years, your child's regular school education (Grade 4 to Grade 8) continues side by side, so there is no need to leave school for Hifz.",
+        body: "During these 5 years, your child's regular school education (Grade 4 to Grade 8) continues side by side, so there is no need to leave school for Hifz.",
       },
       {
         heading: "Daily Revision System",

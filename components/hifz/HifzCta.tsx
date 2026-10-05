@@ -82,7 +82,7 @@ export default function HifzCta({ enrollHref }: { enrollHref: string }) {
             Give your child the honour of the Quran
           </h2>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.7, color: "#3f3f3f", margin: 0 }}>
-            Hafiz-e-Quran by Grade 9, with a full school education along the way. The only school in our area offering Hifz with Understanding.
+            Hafiz-e-Quran by Grade 8, with a full school education along the way. The only school in our area offering Hifz with Understanding.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
             <ArrowButton href={enrollHref} variant="purple">

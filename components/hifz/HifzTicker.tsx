@@ -3,7 +3,7 @@ const ITEMS = [
   "Urdu Translation & Tafseer",
   "Tajweed with a certified Qari Sahib",
   "Sabaq · Sabqi · Manzil",
-  "Hafiz by Grade 9",
+  "Hafiz by Grade 8",
   "No academic loss",
 ];
 
