@@ -6,12 +6,12 @@ import Link from "next/link";
 
 const plans = {
   monthly: {
-    basic: { price: "PKR 1,200", period: "/month" },
-    premium: { price: "PKR 2,800", period: "/month" },
+    basic: { price: "PKR 2,500", period: "/month" },
+    premium: { price: "PKR 3,000", period: "/month" },
   },
   annual: {
-    basic: { price: "PKR 12,000", period: "/year" },
-    premium: { price: "PKR 28,000", period: "/year" },
+    basic: { price: "PKR 25,000", period: "/year" },
+    premium: { price: "PKR 30,000", period: "/year" },
   },
 };
 
