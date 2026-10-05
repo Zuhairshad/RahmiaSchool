@@ -22,13 +22,18 @@ const STEPS = [
   },
   {
     tag: "Year 4",
+    title: "Strengthening the memory",
+    body: "Memorization moves steadily forward while earlier Paras are revised every day, so each part stays firm.",
+  },
+  {
+    tag: "Year 5",
     title: "Completing the Hifz",
     body: "The Hifz is completed and strengthened through steady revision, with regular school continuing side by side.",
   },
   {
-    tag: "Grade 9",
+    tag: "Grade 8",
     title: "Hafiz-e-Quran",
-    body: "Your child is a complete Hafiz or Hafiza and continues Grade 9 onwards with no academic loss.",
+    body: "Your child finishes Grade 8 as a complete Hafiz or Hafiza and continues Grade 9 onwards with no academic loss.",
     final: true,
   },
 ];
@@ -78,7 +83,7 @@ export default function HifzJourney() {
         <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 64 }}>
           <div className="hifz-journey-head" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 40 }}>
             <div style={{ maxWidth: 640 }}>
-              <Eyebrow light>The 4-year journey</Eyebrow>
+              <Eyebrow light>The 5-year journey</Eyebrow>
               <h2
                 className="hifz-h2"
                 style={{ fontFamily: "var(--font-heading)", fontSize: 52, fontWeight: 700, lineHeight: 1.12, color: "#fff", margin: 0 }}

@@ -11,7 +11,7 @@ const FAQS = [
   },
   {
     q: "Will my child fall behind in regular studies?",
-    a: "No. Regular school education from Grade 4 to Grade 8 continues side by side with Hifz. By Grade 9 your child is a complete Hafiz-e-Quran and carries on from Grade 9 onwards without any academic loss.",
+    a: "No. Regular school education from Grade 4 to Grade 8 continues side by side with Hifz. By the end of Grade 8 your child is a complete Hafiz-e-Quran and carries on from Grade 9 onwards without any academic loss.",
   },
   {
     q: "Does my child only memorize, or also understand?",

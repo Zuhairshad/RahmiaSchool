@@ -295,7 +295,7 @@ export default function HifzHero({ program }: { program: HifzProgram }) {
             }}
           >
             <div style={{ fontFamily: "var(--font-label)", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#fcd27a" }}>
-              Grade 9
+              Grade 8
             </div>
             <div style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 15 }}>Hafiz-e-Quran</div>
           </div>
