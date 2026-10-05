@@ -152,15 +152,15 @@ export const programs: Record<string, Program> = {
 
   "middle-school": {
     slug: "middle-school",
-    title: "Middle School (Class 6–7)",
+    title: "Middle School (Class 6–8)",
     tagline:
       "Advanced subject learning, analytical thinking, project-based assignments, and robust preparation for higher classes.",
     description:
-      "RAHMA Model School's Middle School programme covers Class 6 and Class 7, offering an academically rigorous curriculum that builds on primary school foundations and prepares students for higher-level study. At this stage, students engage with more complex subject matter, undertake research-based projects, develop strong writing and analytical skills, and take on greater academic responsibility. Co-curricular activities such as the science fair, model-making competitions, debate events, and school trips enrich the academic experience and develop leadership, creativity, and character, preparing every RAHMATE for the next stage of their education.",
-    ageRange: "12–14 years",
+      "RAHMA Model School's Middle School programme covers Class 6, Class 7 and Class 8, offering an academically rigorous curriculum that builds on primary school foundations and prepares students for higher-level study. At this stage, students engage with more complex subject matter, undertake research-based projects, develop strong writing and analytical skills, and take on greater academic responsibility. Co-curricular activities such as the science fair, model-making competitions, debate events, and school trips enrich the academic experience and develop leadership, creativity, and character, preparing every RAHMATE for the next stage of their education.",
+    ageRange: "11–14 years",
     groupSize: "Subject-based classes",
     programType: "Full day",
-    classes: "Classes 6–7",
+    classes: "Classes 6–8",
     subjects: [
       "English (Advanced Grammar, Essay & Literature)",
       "Urdu (Advanced Grammar & Composition)",
@@ -180,7 +180,7 @@ export const programs: Record<string, Program> = {
     sections: [
       {
         heading: "Advanced Academic Curriculum",
-        body: "Class 6 and 7 students study a demanding curriculum that introduces algebra, geometry, introductory chemistry, biology and physics concepts, advanced Urdu and English composition, and Pakistan Studies. Lessons go beyond textbooks through class discussions, research tasks, and analytical exercises.",
+        body: "Class 6 to 8 students study a demanding curriculum that introduces algebra, geometry, introductory chemistry, biology and physics concepts, advanced Urdu and English composition, and Pakistan Studies. Lessons go beyond textbooks through class discussions, research tasks, and analytical exercises.",
       },
       {
         heading: "Research & Project-Based Learning",
@@ -205,6 +205,60 @@ export const programs: Record<string, Program> = {
       {
         heading: "Assessment Structure",
         body: "Middle school students sit two formal term examinations and final exams each year, alongside regular monthly assessments and assignment evaluations. Parent–teacher meetings held twice a year provide structured feedback and allow teachers and families to support each student's progress together.",
+      },
+    ],
+  },
+  "high-school": {
+    slug: "high-school",
+    title: "High School (Class 9–10)",
+    tagline:
+      "Focused preparation for the Matric (SSC) examinations, with strong concepts in science, mathematics and languages, alongside Islamic values and character.",
+    description:
+      "RAHMA Model School's High School programme covers Class 9 and Class 10, the two years that lead to the Secondary School Certificate (Matric) examinations. Building on the foundations laid in Middle School, students study the core Matric curriculum with an emphasis on clear concepts, regular practice and exam readiness. Teachers follow each student's progress closely through tests and revision, while Islamic studies, co-curricular activities and leadership roles continue to shape confident, responsible young RAHMATES. For students who complete their Hifz by Grade 8, High School is where their regular education carries on without any academic loss.",
+    ageRange: "14–16 years",
+    groupSize: "Subject-based classes",
+    programType: "Full day",
+    classes: "Classes 9–10",
+    subjects: [
+      "English (Grammar, Composition & Literature)",
+      "Urdu (Grammar, Composition & Literature)",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology / Computer Science",
+      "Islamiat",
+      "Pakistan Studies",
+      "Translation of the Holy Quran",
+    ],
+    accentVar: "var(--color-brand-purple-deep)",
+    tintVar: "var(--color-tint-purple)",
+    textOnAccent: "light",
+    image: { src: "/assets/images/gallery/g-32.jpeg", width: 1800, height: 1350 },
+    imagePosition: "center 40%",
+    sections: [
+      {
+        heading: "Matric Curriculum",
+        body: "Class 9 and 10 students follow the national Secondary School Certificate (Matric) curriculum. Physics, Chemistry, Mathematics and the languages are taught with a focus on understanding concepts rather than rote memorisation, so students can apply what they learn in the board examinations and beyond.",
+      },
+      {
+        heading: "Examination Preparation",
+        body: "Regular chapter tests, monthly assessments and full-length practice papers build familiarity with the board examination format. Structured revision and past-paper practice in the run-up to the examinations help every student walk into the exam hall prepared and confident.",
+      },
+      {
+        heading: "Science & Computer Practicals",
+        body: "Science and computer lessons are supported by practical sessions in the school's science lab and computer room, giving students hands-on experience that strengthens the theory they learn in class.",
+      },
+      {
+        heading: "Islamic Studies & Character",
+        body: "Islamiat and the translation of the Holy Quran remain core subjects, helping students understand the message of the Quran and carry its values into their daily lives. Discussions on ethics, responsibility and service are part of everyday classroom culture.",
+      },
+      {
+        heading: "Leadership & Co-Curricular Activities",
+        body: "As the school's senior students, High School RAHMATES take on prefect and leadership responsibilities and set an example for younger students. They continue to take part in debates, competitions, sports and school trips that build confidence and teamwork.",
+      },
+      {
+        heading: "Assessment Structure",
+        body: "High school students sit two formal term examinations and final exams each year, alongside regular monthly tests. Parent–teacher meetings held twice a year keep families informed and involved in each student's preparation.",
       },
     ],
   },
@@ -272,5 +326,6 @@ export const programOrder = [
   "montessori-programme",
   "primary-school",
   "middle-school",
+  "high-school",
   "hifz-program",
 ];

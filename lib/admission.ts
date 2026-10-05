@@ -7,7 +7,8 @@ export const HIFZ_PROGRAM = "Hifz with Understanding (Grade 4 – 8)";
 export const ADMISSION_PROGRAMS = [
   "Montessori Programme (Play Group, Nursery, Prep)",
   "Primary School (Class 1 – 5)",
-  "Middle School (Class 6 – 7)",
+  "Middle School (Class 6 – 8)",
+  "High School (Class 9 – 10)",
   HIFZ_PROGRAM,
 ];
 
