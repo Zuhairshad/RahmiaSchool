@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Eyebrow, stats, aboutCards } from "./shared";
 
@@ -126,12 +127,13 @@ export default function AboutSection() {
           </div>
 
           {/* Center image */}
-          <div style={{ flex: 1, borderRadius: 20, overflow: "hidden", minWidth: 200 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div style={{ flex: 1, borderRadius: 20, overflow: "hidden", minWidth: 200, position: "relative" }}>
+            <Image
               src="/assets/images/rahma-parent-partnership-2.jpeg"
               alt="Teacher and students at RAHMA Model School"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              fill
+              sizes="(max-width: 810px) 100vw, 500px"
+              style={{ objectFit: "cover" }}
             />
           </div>
 

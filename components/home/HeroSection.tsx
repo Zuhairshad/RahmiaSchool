@@ -25,7 +25,8 @@ export default function HeroSection() {
         src="/assets/images/hero-image-final.png"
         alt="RAHMA Model School building"
         fill
-        priority
+        preload
+        sizes="100vw"
         style={{ objectFit: "cover", objectPosition: "center", zIndex: 0 }}
       />
       <div

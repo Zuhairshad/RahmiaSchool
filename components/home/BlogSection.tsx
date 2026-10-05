@@ -120,6 +120,7 @@ export default function BlogSection() {
                     src={post.heroImage}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 810px) 100vw, 50vw"
                     style={{ objectFit: "cover" }}
                   />
                 </div>

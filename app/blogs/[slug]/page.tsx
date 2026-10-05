@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
                 fill
                 sizes="(max-width: 810px) 100vw, 1200px"
                 style={{ objectFit: "cover" }}
-                priority
+                preload
               />
             ) : (
               <div

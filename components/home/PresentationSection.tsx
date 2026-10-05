@@ -29,6 +29,7 @@ export default function PresentationSection() {
         src="/assets/images/rahma-computer-lab-2.png"
         alt="RAHMA Model School computer lab"
         fill
+        sizes="100vw"
         style={{ objectFit: "cover", zIndex: 0 }}
       />
       <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.3)", zIndex: 1 }} />

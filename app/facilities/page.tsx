@@ -113,9 +113,8 @@ export default function FacilitiesPage() {
             {facilities.map((f) => (
               <div key={f.title} style={{ background: f.bg, borderRadius: 20, padding: "28px 28px 32px" }}>
                 <div style={{ fontSize: "2.2rem", marginBottom: 16 }}>{f.icon}</div>
-                <div style={{ height: 160, borderRadius: 12, marginBottom: 20, overflow: "hidden" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={f.image} alt={f.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <div style={{ height: 160, borderRadius: 12, marginBottom: 20, overflow: "hidden", position: "relative" }}>
+                  <Image src={f.image} alt={f.title} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 400px" style={{ objectFit: "cover" }} />
                 </div>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem", color: "var(--color-ink)", marginBottom: 10 }}>
                   {f.title}

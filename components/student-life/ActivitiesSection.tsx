@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const spring = () => ({
@@ -96,15 +97,12 @@ export default function ActivitiesSection() {
               }}
             >
               {/* Full-bleed background image */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={a.image}
                 alt={a.title}
+                fill
+                sizes="(max-width: 1300px) 100vw, 1300px"
                 style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
                   objectPosition: a.objectPosition,
                 }}

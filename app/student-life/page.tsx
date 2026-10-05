@@ -77,7 +77,7 @@ export default function StudentLifePage() {
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="280px"
-                priority
+                preload
               />
             </div>
           </div>

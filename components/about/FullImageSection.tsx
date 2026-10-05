@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function FullImageSection() {
@@ -15,15 +16,12 @@ export default function FullImageSection() {
         overflow: "hidden",
       }}
     >
-      <img
+      <Image
         src="/assets/images/rahma-about-hero.png"
         alt="RAHMA Model School aerial view"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          display: "block",
-        }}
+        fill
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
       />
       {/* Semi-transparent overlay */}
       <div

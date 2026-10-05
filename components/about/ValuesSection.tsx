@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eyebrow } from "@/components/home/shared";
@@ -210,18 +211,15 @@ export default function ValuesSection() {
             borderRadius: 20,
             overflow: "hidden",
             height: 680,
+            position: "relative",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/assets/images/rahma-kid-writing.jpeg"
             alt="RAHMA students in class"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
+            fill
+            sizes="(max-width: 810px) 100vw, 590px"
+            style={{ objectFit: "cover" }}
           />
         </div>
       </motion.div>

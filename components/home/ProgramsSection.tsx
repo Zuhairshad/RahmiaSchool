@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Eyebrow, ArrowButton, programs } from "./shared";
@@ -162,21 +163,25 @@ export default function ProgramsSection() {
                   </div>
 
                   {/* Image side — 610px max width, fills remaining space */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={p.image}
-                    alt={p.title}
+                  <div
                     className="program-card-image"
                     style={{
                       flex: 1,
                       maxWidth: 610,
-                      objectFit: "cover",
-                      objectPosition: p.imagePosition,
-                      display: "block",
+                      position: "relative",
                       borderRadius: 12,
+                      overflow: "hidden",
                       alignSelf: "stretch",
                     }}
-                  />
+                  >
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      sizes="610px"
+                      style={{ objectFit: "cover", objectPosition: p.imagePosition }}
+                    />
+                  </div>
                 </div>
               </Link>
             </motion.div>

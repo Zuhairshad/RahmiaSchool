@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import GlyphField from "@/components/ui/GlyphField";
@@ -45,12 +46,13 @@ function VideoCard({ video, index }: { video: (typeof VIDEOS)[number]; index: nu
       {playing ? (
         <>
           {/* Blurred poster fills the sides so the portrait video isn't cropped or boxed in black. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={video.poster}
             alt=""
             aria-hidden
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "blur(28px) brightness(0.45)", transform: "scale(1.15)" }}
+            fill
+            sizes="(max-width: 810px) 100vw, 900px"
+            style={{ objectFit: "cover", filter: "blur(28px) brightness(0.45)", transform: "scale(1.15)" }}
           />
         <video
           src={video.src}
@@ -65,12 +67,13 @@ function VideoCard({ video, index }: { video: (typeof VIDEOS)[number]; index: nu
       ) : (
         <>
           {/* Poster sits faintly behind the glyph field. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={video.poster}
             alt=""
             aria-hidden
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.22, filter: "grayscale(0.3)" }}
+            fill
+            sizes="(max-width: 810px) 100vw, 900px"
+            style={{ objectFit: "cover", opacity: 0.22, filter: "grayscale(0.3)" }}
           />
           <GlyphField glyphs={ARABIC_GLYPHS} />
           <div

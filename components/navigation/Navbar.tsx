@@ -65,7 +65,7 @@ export default function Navbar() {
               height={0}
               sizes="120px"
               style={{ objectFit: "contain", height: 44, width: "auto" }}
-              priority
+              preload
             />
           </Link>
 

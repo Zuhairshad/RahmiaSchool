@@ -192,7 +192,7 @@ export default async function ProgramDetailPage({
                 width={program.image.width}
                 height={program.image.height}
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: program.imagePosition ?? "center" }}
-                priority
+                preload
               />
             </div>
           </div>

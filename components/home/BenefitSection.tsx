@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { Eyebrow, ArrowButton } from "./shared";
@@ -149,11 +150,12 @@ export default function BenefitSection() {
               flexShrink: 0,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/assets/images/rahma-kids-studying-2.jpeg"
               alt="RAHMA students studying in class"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              fill
+              sizes="(max-width: 810px) 100vw, 640px"
+              style={{ objectFit: "cover" }}
             />
           </div>
 
