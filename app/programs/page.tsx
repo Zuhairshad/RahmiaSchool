@@ -288,6 +288,7 @@ export default function ProgramsPage() {
               { subject: "Computer Studies", desc: "Digital literacy, MS Office, and internet fundamentals" },
               { subject: "General Knowledge", desc: "Current affairs, world knowledge, and critical awareness" },
               { subject: "Geography", desc: "Physical and human geography, maps, landforms, and environmental awareness" },
+              { subject: "History", desc: "Key events, civilisations, and personalities from Islamic, subcontinent, and world history" },
             ].map((item, i) => (
               <div
                 key={item.subject}
