@@ -59,8 +59,8 @@ export default function PricingPage() {
               ]}
             />
             <PricingCard
-              title="Middle & High School"
-              description="Comprehensive academic programs covering all subjects, laboratory work, co-curriculars, and examination preparation."
+              title="Middle School & Hifz"
+              description="Class 6–7 and our Hifz with Understanding program: a full subject curriculum, co-curriculars and Quranic training under one roof."
               price="Contact us"
               variant="premium"
               ctaHref="/contact"
@@ -68,7 +68,7 @@ export default function PricingPage() {
                 "Full subject curriculum",
                 "Science lab & computer room",
                 "Co-curricular activities",
-                "Exam preparation support",
+                "Hifz with Urdu translation & Tajweed",
                 "Parent progress reports",
               ]}
             />
