@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 // classrooms, sports grounds) rather than a page-specific source document.
 const facilities = [
   {
+    icon: "📚",
+    bg: "var(--color-tint-green)",
+    title: "Library",
+    image: "/assets/images/rahma-library.jpeg",
+    desc: "Our peaceful library offers storybooks, Islamic literature, reference books and encyclopedias, with regular reading sessions that build vocabulary, imagination, and a lifelong love of reading.",
+  },
+  {
     icon: "🔬",
     bg: "var(--color-tint-purple)",
     title: "Science Laboratory",
@@ -50,8 +57,6 @@ const facilities = [
   },
 ];
 
-const libraryHighlights = ["Storybooks", "Islamic literature", "Reference books", "Encyclopedias", "Educational resources"];
-
 const campusPhotos = [
   "/assets/images/rahma-school.jpeg",
   "/assets/images/rahma-computer-lab-2.png",
@@ -65,10 +70,6 @@ export default function FacilitiesPage() {
       <style>{`
         .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
         .collage-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-        .library-feature { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
-        @media (max-width: 900px) {
-          .library-feature { grid-template-columns: 1fr; gap: 28px; padding: 20px !important; }
-        }
         @media (max-width: 640px) {
           .collage-4 { grid-template-columns: repeat(2, 1fr); }
         }
@@ -108,45 +109,6 @@ export default function FacilitiesPage() {
       {/* ── FACILITIES GRID ── */}
       <section style={{ background: "var(--color-bg-cream)", padding: "60px 32px 80px" }}>
         <Container>
-          {/* Library spotlight */}
-          <div className="library-feature" style={{ background: "var(--color-tint-green)", borderRadius: 24, padding: 28, marginBottom: 20 }}>
-            <div style={{ borderRadius: 16, overflow: "hidden", position: "relative", aspectRatio: "16 / 10" }}>
-              <Image
-                src="/assets/images/rahma-library.jpeg"
-                alt="Bookshelves in the RAHMA Model School library, filled with English and Urdu storybooks"
-                fill
-                sizes="(max-width: 900px) 100vw, 640px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div>
-              <div style={{ fontSize: "2.2rem", marginBottom: 12 }}>📚</div>
-              <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.8rem", color: "var(--color-ink)", marginBottom: 16, lineHeight: 1.2 }}>
-                Library
-              </h2>
-              <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: 14 }}>
-                The RAHMA Model School Library provides a peaceful and inspiring learning environment where students develop a love for
-                reading and lifelong learning. Our library offers a wide collection of age-appropriate books, including storybooks,
-                Islamic literature, reference materials, encyclopedias, and educational resources.
-              </p>
-              <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: 20 }}>
-                Regular reading sessions, book exploration activities, and guided library periods help students strengthen their reading
-                habits, expand their vocabulary, improve comprehension, and enhance their imagination. Our library nurtures curiosity,
-                independent learning, and a passion for knowledge in every child.
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {libraryHighlights.map((item) => (
-                  <span
-                    key={item}
-                    style={{ background: "#fff", borderRadius: 999, padding: "6px 14px", fontSize: "0.8rem", fontWeight: 600, color: "var(--color-ink)" }}
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
           <div className="grid-auto-320">
             {facilities.map((f) => (
               <div key={f.title} style={{ background: f.bg, borderRadius: 20, padding: "28px 28px 32px" }}>
