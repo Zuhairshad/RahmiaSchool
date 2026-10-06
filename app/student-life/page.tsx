@@ -165,8 +165,11 @@ export default function StudentLifePage() {
         @media (max-width: 810px) {
           .student-life-hero-grid { grid-template-columns: 1fr !important; }
           .student-life-hero-grid > div:last-child { max-width: 220px !important; justify-self: start !important; }
-          .student-life-skills-grid { grid-template-columns: 1fr !important; }
-          .student-life-skills-inner { grid-template-columns: 1fr 1fr !important; }
+          .student-life-skills-grid { grid-template-columns: minmax(0, 1fr) !important; }
+          .student-life-skills-inner { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+        }
+        @media (max-width: 380px) {
+          .student-life-skills-inner { grid-template-columns: minmax(0, 1fr) !important; }
         }
       `}</style>
     </div>

@@ -124,6 +124,11 @@ img {
 .hero-h1 {
   font-size: 48px;
 }
+@media (max-width: 380px) {
+  .hero-h1 {
+    font-size: 40px;
+  }
+}
 @media (min-width: 810px) {
   .hero-h1 {
     font-size: 60px;
@@ -145,7 +150,8 @@ img {
 }
 @media (max-width: 810px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) lets the column shrink below its content's width on narrow phones. */
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px !important;
   }
 }

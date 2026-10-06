@@ -53,7 +53,7 @@ export default function Footer() {
               required
               placeholder="Enter your email"
               aria-label="Email address"
-              style={{ flex: 1, padding: "12px 16px", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRight: "none", borderRadius: "100px 0 0 100px", color: "#fff", fontSize: "0.875rem", outline: "none" }}
+              style={{ flex: 1, minWidth: 0, padding: "12px 16px", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRight: "none", borderRadius: "100px 0 0 100px", color: "#fff", fontSize: "0.875rem", outline: "none" }}
             />
             <button
               type="submit"

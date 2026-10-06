@@ -22,7 +22,7 @@ export default function ProgramsSection() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={spring()}
           viewport={{ once: true, amount: 0.5 }}
-          style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}
+          style={{ display: "flex", flexWrap: "wrap", rowGap: 24, columnGap: 24, justifyContent: "space-between", alignItems: "flex-end" }}
         >
           <div style={{ maxWidth: 440 }}>
             <Eyebrow>Our Programs</Eyebrow>
