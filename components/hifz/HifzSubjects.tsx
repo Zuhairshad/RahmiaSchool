@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import { Eyebrow, ArrowButton } from "@/components/home/shared";
 import { fadeUp } from "./shared";
 
-// Regular-school photos, all shown at their natural aspect ratio (no cropping).
+// Hifz class photos, all shown at their natural aspect ratio (no cropping).
 const PHOTOS = [
-  { src: "/assets/images/gallery/g-26.jpeg", width: 1012, height: 1800, alt: "A RAHMATE in hijab focused on her classwork" },
-  { src: "/assets/images/rahma-kids-studying.jpeg", width: 3120, height: 4160, alt: "Students working together at their classroom tables" },
-  { src: "/assets/images/gallery/g-30.jpeg", width: 810, height: 1800, alt: "Boys reading their books in class" },
-  { src: "/assets/images/gallery/g-24.jpeg", width: 1012, height: 1800, alt: "A school prefect writing at his desk" },
+  { src: "/assets/images/hifz-hero-class.jpeg", width: 1600, height: 1204, alt: "Hifz students seated before their Qari Sahib" },
+  { src: "/assets/images/hifz-class.jpeg", width: 1600, height: 1600, alt: "Hifz students in their classroom" },
+  { src: "/assets/images/hifz-hero-teacher.jpeg", width: 1600, height: 1204, alt: "Qari Sahib teaching with the smart screen" },
 ];
 
 const SUBJECT_NOTES: Record<string, string> = {
@@ -100,7 +99,7 @@ export default function HifzSubjects({ subjects, enrollHref }: { subjects: strin
                 alt={p.alt}
                 width={p.width}
                 height={p.height}
-                sizes="(max-width: 810px) 50vw, 340px"
+                sizes="(max-width: 810px) 50vw, 460px"
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
             </div>

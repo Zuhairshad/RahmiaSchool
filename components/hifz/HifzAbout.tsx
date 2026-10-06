@@ -11,8 +11,17 @@ const STATS = [
   { value: "Zero", label: "Academic loss along the way" },
 ];
 
-// Two RAHMATES making dua (780x1040, shown uncropped).
-const PHOTO = { src: "/assets/images/rahma-character-3.jpeg", width: 780, height: 1040 };
+// Hifz class photos: one wide on top, two square crops below.
+const MAIN_PHOTO = {
+  src: "/assets/images/hifz-hero-class.jpeg",
+  width: 1600,
+  height: 1204,
+  alt: "Hifz students seated before their Qari Sahib",
+};
+const SMALL_PHOTOS = [
+  { src: "/assets/images/hifz-class.jpeg", alt: "Hifz students in their classroom", position: "center" },
+  { src: "/assets/images/hifz-hero-teacher.jpeg", alt: "Qari Sahib teaching with the smart screen", position: "80% center" },
+];
 
 export default function HifzAbout({ description }: { description: string }) {
   const paragraphs = description.split("\n\n");
@@ -92,15 +101,39 @@ export default function HifzAbout({ description }: { description: string }) {
                 background: "var(--color-tint-purple)",
               }}
             />
-            <div style={{ position: "relative", borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}>
-              <Image
-                src={PHOTO.src}
-                alt="Two RAHMATES raising their hands in dua"
-                width={PHOTO.width}
-                height={PHOTO.height}
-                sizes="(max-width: 810px) 90vw, 420px"
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
+            <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}>
+                <Image
+                  src={MAIN_PHOTO.src}
+                  alt={MAIN_PHOTO.alt}
+                  width={MAIN_PHOTO.width}
+                  height={MAIN_PHOTO.height}
+                  sizes="(max-width: 810px) 90vw, 420px"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                {SMALL_PHOTOS.map((photo) => (
+                  <div
+                    key={photo.src}
+                    style={{
+                      position: "relative",
+                      aspectRatio: "1 / 1",
+                      borderRadius: 20,
+                      overflow: "hidden",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.10)",
+                    }}
+                  >
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(max-width: 810px) 45vw, 210px"
+                      style={{ objectFit: "cover", objectPosition: photo.position }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
