@@ -8,7 +8,9 @@ import { GhostButton, PlayIcon, type HifzProgram } from "./shared";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 // Photo of a young RAHMATE in prayer with a classmate reciting the Quran (780x1040, shown uncropped).
-const HERO_PHOTO = { src: "/assets/images/rahma-character-2.jpeg", width: 780, height: 1040 };
+// The Qari Sahib teaching the Hifz class; the second photo overlaps its lower corner.
+const HERO_PHOTO = { src: "/assets/images/hifz-hero-class.jpeg", width: 1600, height: 1204 };
+const HERO_PHOTO_2 = { src: "/assets/images/hifz-hero-teacher.jpeg", width: 1600, height: 1204 };
 
 export default function HifzHero({ program }: { program: HifzProgram }) {
   return (
@@ -24,7 +26,7 @@ export default function HifzHero({ program }: { program: HifzProgram }) {
         background: "var(--color-dark-bg-deep)",
       }}
     >
-      {/* Blurred photo wash fills the viewport like the home hero, without stretching a portrait photo. */}
+      {/* Blurred photo wash fills the viewport like the home hero. */}
       <Image
         src={HERO_PHOTO.src}
         alt=""
@@ -209,44 +211,71 @@ export default function HifzHero({ program }: { program: HifzProgram }) {
           className="hifz-hero-photo"
           style={{ position: "relative", justifySelf: "end", width: "100%", maxWidth: 440 }}
         >
-          {/* Offset teal frame behind the photo */}
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              inset: 0,
-              transform: "translate(18px, 18px)",
-              borderRadius: 28,
-              border: "2px solid rgba(9,216,154,0.45)",
-            }}
-          />
+          {/* Main photo with its offset teal frame (the frame outlines this photo only) */}
+          <div style={{ position: "relative" }}>
+            {/* Offset teal frame behind the photo */}
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                inset: 0,
+                transform: "translate(18px, 18px)",
+                borderRadius: 28,
+                border: "2px solid rgba(9,216,154,0.45)",
+              }}
+            />
+            <div
+              style={{
+                position: "relative",
+                borderRadius: 28,
+                overflow: "hidden",
+                boxShadow: "0 40px 100px rgba(0,0,0,0.5)",
+                border: "1px solid rgba(255,255,255,0.12)",
+              }}
+            >
+              <Image
+                src={HERO_PHOTO.src}
+                alt="The Qari Sahib teaching the Hifz class at RAHMA Model School"
+                width={HERO_PHOTO.width}
+                height={HERO_PHOTO.height}
+                preload
+                sizes="(max-width: 810px) 90vw, 440px"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          </div>
+
+          {/* Second photo, smaller, overlapping the first one's lower-right corner */}
           <div
             style={{
               position: "relative",
-              borderRadius: 28,
+              width: "72%",
+              marginLeft: "auto",
+              marginTop: -56,
+              marginRight: -18,
+              borderRadius: 22,
               overflow: "hidden",
-              boxShadow: "0 40px 100px rgba(0,0,0,0.5)",
-              border: "1px solid rgba(255,255,255,0.12)",
+              border: "4px solid var(--color-dark-bg-deep)",
+              boxShadow: "0 30px 70px rgba(0,0,0,0.55)",
             }}
           >
             <Image
-              src={HERO_PHOTO.src}
-              alt="Young RAHMATES at prayer while a classmate recites from the Quran"
-              width={HERO_PHOTO.width}
-              height={HERO_PHOTO.height}
-              preload
-              sizes="(max-width: 810px) 90vw, 440px"
+              src={HERO_PHOTO_2.src}
+              alt="The Hifz teacher using the classroom's smart screen"
+              width={HERO_PHOTO_2.width}
+              height={HERO_PHOTO_2.height}
+              sizes="(max-width: 810px) 65vw, 320px"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
 
-          {/* Floating revision chip */}
+          {/* Floating revision chip: over the curtain at the main photo's top-left, clear of the people and the second photo */}
           <div
             className="hifz-hero-chip"
             style={{
               position: "absolute",
               left: -48,
-              bottom: 56,
+              top: 60,
               background: "#fff",
               borderRadius: 18,
               padding: "14px 18px",
