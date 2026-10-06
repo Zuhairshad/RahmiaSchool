@@ -292,6 +292,9 @@ export const programs: Record<string, Program> = {
     accentVar: "var(--color-brand-teal)",
     tintVar: "var(--color-tint-green)",
     textOnAccent: "dark",
+    // Hifz class students during an academic lesson.
+    image: { src: "/assets/images/hifz-class.jpeg", width: 1600, height: 1600 },
+    imagePosition: "center 60%",
     sections: [
       {
         heading: "Admission in Grade 4",

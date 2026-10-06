@@ -82,6 +82,10 @@ export const programs: HomeProgram[] = [
     desc: "Memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 8. Worldly education and the best Quranic training under one roof.",
     bg: "#d7fdcf",
     href: "/programs/hifz-program",
+    image: "/assets/images/hifz-class.jpeg",
+    imageWidth: 1600,
+    imageHeight: 1600,
+    imagePosition: "center 60%",
   },
 ];
 
