@@ -168,19 +168,20 @@ export default function ProgramsPage() {
                     flexDirection: "column",
                   }}
                 >
-                  <div style={{ position: "relative", aspectRatio: "4 / 3" }}>
-                    <Image
-                      src={p.image.src}
-                      alt={p.title}
-                      fill
-                      style={{ objectFit: "cover", objectPosition: p.imagePosition ?? "center" }}
-                      sizes="(max-width: 810px) 100vw, 33vw"
-                    />
+                  <div style={p.image ? { position: "relative", aspectRatio: "4 / 3" } : { padding: "24px 24px 0" }}>
+                    {p.image && (
+                      <Image
+                        src={p.image.src}
+                        alt={p.title}
+                        fill
+                        style={{ objectFit: "cover", objectPosition: p.imagePosition ?? "center" }}
+                        sizes="(max-width: 810px) 100vw, 33vw"
+                      />
+                    )}
+                    {/* Classes badge: over the photo, or at the top of the card when there's none. */}
                     <span
                       style={{
-                        position: "absolute",
-                        top: 14,
-                        left: 14,
+                        ...(p.image ? { position: "absolute", top: 14, left: 14 } : { display: "inline-block" }),
                         background: p.accentVar,
                         color: p.textOnAccent === "light" ? "#fff" : "#000",
                         fontSize: "0.65rem",

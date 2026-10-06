@@ -44,7 +44,7 @@ export default function ProgramsSection() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <Link
-                href="/programs"
+                href={p.href ?? "/programs"}
                 className="program-card-link"
                 style={{
                   display: "flex",
@@ -163,23 +163,25 @@ export default function ProgramsSection() {
                   </div>
 
                   {/* Image side — 610px max width, fills remaining space */}
-                  <Image
-                    src={p.image}
-                    alt={p.title}
-                    width={p.imageWidth}
-                    height={p.imageHeight}
-                    sizes="610px"
-                    className="program-card-image"
-                    style={{
-                      flex: 1,
-                      maxWidth: 610,
-                      objectFit: "cover",
-                      objectPosition: p.imagePosition,
-                      display: "block",
-                      borderRadius: 12,
-                      alignSelf: "stretch",
-                    }}
-                  />
+                  {p.image && (
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      width={p.imageWidth}
+                      height={p.imageHeight}
+                      sizes="610px"
+                      className="program-card-image"
+                      style={{
+                        flex: 1,
+                        maxWidth: 610,
+                        objectFit: "cover",
+                        objectPosition: p.imagePosition,
+                        display: "block",
+                        borderRadius: 12,
+                        alignSelf: "stretch",
+                      }}
+                    />
+                  )}
                 </div>
               </Link>
             </motion.div>

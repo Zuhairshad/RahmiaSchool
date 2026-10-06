@@ -9,7 +9,23 @@ export const stats = [
   { value: "12+", label: "Years of Excellence" },
 ];
 
-export const programs = [
+type HomeProgram = {
+  num: string;
+  title: string;
+  tag: string;
+  tagColor: string;
+  desc: string;
+  bg: string;
+  /** Where the card links; defaults to the programmes overview. */
+  href?: string;
+  /** Optional photo on the right of the card (hidden on phones). */
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imagePosition?: string;
+};
+
+export const programs: HomeProgram[] = [
   {
     num: "01",
     title: "Preschool (Play Group – Nursery – Prep)",
@@ -57,6 +73,15 @@ export const programs = [
     imageWidth: 1800,
     imageHeight: 1350,
     imagePosition: "center 40%",
+  },
+  {
+    num: "05",
+    title: "Hifz with Understanding",
+    tag: "Grades 4–8",
+    tagColor: "#09d89a",
+    desc: "Memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 8. Worldly education and the best Quranic training under one roof.",
+    bg: "#d7fdcf",
+    href: "/programs/hifz-program",
   },
 ];
 

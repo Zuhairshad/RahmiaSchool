@@ -22,7 +22,8 @@ export type Program = {
   accentVar: string;
   tintVar: string;
   textOnAccent: "light" | "dark";
-  image: { src: string; width: number; height: number };
+  /** Card/header photo. Optional: a programme without one shows its details only. */
+  image?: { src: string; width: number; height: number };
   /** CSS object-position used when the image is cropped with object-fit: cover (keeps faces in frame). */
   imagePosition?: string;
   sections: ProgramSection[];
@@ -291,8 +292,6 @@ export const programs: Record<string, Program> = {
     accentVar: "var(--color-brand-teal)",
     tintVar: "var(--color-tint-green)",
     textOnAccent: "dark",
-    image: { src: "/assets/images/rahma-character-1.jpeg", width: 780, height: 1040 },
-    imagePosition: "center 10%",
     sections: [
       {
         heading: "Admission in Grade 4",

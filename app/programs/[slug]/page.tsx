@@ -177,24 +177,26 @@ export default async function ProgramDetailPage({
               </div>
             </div>
 
-            <div
-              style={{
-                position: "relative",
-                borderRadius: 24,
-                overflow: "hidden",
-                background: program.tintVar,
-                aspectRatio: "1024 / 700",
-              }}
-            >
-              <Image
-                src={program.image.src}
-                alt={program.title}
-                width={program.image.width}
-                height={program.image.height}
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: program.imagePosition ?? "center" }}
-                preload
-              />
-            </div>
+            {program.image && (
+              <div
+                style={{
+                  position: "relative",
+                  borderRadius: 24,
+                  overflow: "hidden",
+                  background: program.tintVar,
+                  aspectRatio: "1024 / 700",
+                }}
+              >
+                <Image
+                  src={program.image.src}
+                  alt={program.title}
+                  width={program.image.width}
+                  height={program.image.height}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: program.imagePosition ?? "center" }}
+                  preload
+                />
+              </div>
+            )}
           </div>
         </Container>
       </section>
