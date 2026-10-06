@@ -9,6 +9,7 @@ const PHOTOS = [
   { src: "/assets/images/hifz-hero-class.jpeg", width: 1600, height: 1204, alt: "Hifz students seated before their Qari Sahib" },
   { src: "/assets/images/hifz-class.jpeg", width: 1600, height: 1600, alt: "Hifz students in their classroom" },
   { src: "/assets/images/hifz-hero-teacher.jpeg", width: 1600, height: 1204, alt: "Qari Sahib teaching with the smart screen" },
+  { src: "/assets/images/hifz-teacher-desk.jpeg", width: 1600, height: 1600, alt: "A teacher explaining a lesson to Hifz students at their desk" },
 ];
 
 const SUBJECT_NOTES: Record<string, string> = {
@@ -99,7 +100,7 @@ export default function HifzSubjects({ subjects, enrollHref }: { subjects: strin
                 alt={p.alt}
                 width={p.width}
                 height={p.height}
-                sizes="(max-width: 810px) 50vw, 460px"
+                sizes="(max-width: 810px) 50vw, 360px"
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
             </div>
