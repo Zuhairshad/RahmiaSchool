@@ -119,8 +119,14 @@ const tintColors = ["var(--color-tint-green)", "var(--color-tint-purple)", "var(
 export default function ProgramsPage() {
   return (
     <div style={{ fontFamily: "var(--font-body)" }}>
+      <style>{`
+        /* Container already adds side padding; don't double it on phones. */
+        @media (max-width: 810px) {
+          .programs-section { padding-left: 0 !important; padding-right: 0 !important; }
+        }
+      `}</style>
       {/* Header */}
-      <section style={{ background: "var(--color-paper)", padding: "72px 32px 60px" }}>
+      <section className="programs-section" style={{ background: "var(--color-paper)", padding: "72px 32px 60px" }}>
         <Container>
           <SectionLabel>Academic Programmes</SectionLabel>
           <h1
@@ -146,7 +152,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Programme Cards */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "60px 32px 80px" }}>
+      <section className="programs-section" style={{ background: "var(--color-bg-cream)", padding: "60px 32px 80px" }}>
         <Container>
           <div
             style={{
@@ -259,7 +265,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Curriculum Overview */}
-      <section style={{ background: "var(--color-paper)", padding: "72px 32px" }}>
+      <section className="programs-section" style={{ background: "var(--color-paper)", padding: "72px 32px" }}>
         <Container>
           <SectionLabel>Curriculum</SectionLabel>
           <h2
@@ -310,7 +316,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Academic Calendar 2026–27 */}
-      <section style={{ background: "var(--color-dark-bg)", padding: "72px 32px" }}>
+      <section className="programs-section" style={{ background: "var(--color-dark-bg)", padding: "72px 32px" }}>
         <Container>
           <p style={{ color: "var(--color-brand-teal)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>
             &#10022; Academic Year 2026–27
@@ -388,7 +394,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "var(--color-brand-teal)", padding: "64px 32px", textAlign: "center" }}>
+      <section className="programs-section" style={{ background: "var(--color-brand-teal)", padding: "64px 32px", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", fontWeight: 800, color: "#000", marginBottom: 16 }}>
           Enroll your child today
         </h2>
