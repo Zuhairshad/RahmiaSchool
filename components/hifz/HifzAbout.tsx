@@ -11,8 +11,8 @@ const STATS = [
   { value: "Zero", label: "Academic loss along the way" },
 ];
 
-// Two RAHMATES making dua (780x1040, shown uncropped).
-const PHOTO = { src: "/assets/images/rahma-character-3.jpeg", width: 780, height: 1040 };
+// The Hifz class teacher during a lesson with two students (1600x1600, shown uncropped).
+const PHOTO = { src: "/assets/images/hifz-class-teacher.jpeg", width: 1600, height: 1600 };
 
 export default function HifzAbout({ description }: { description: string }) {
   const paragraphs = description.split("\n\n");
@@ -95,7 +95,7 @@ export default function HifzAbout({ description }: { description: string }) {
             <div style={{ position: "relative", borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}>
               <Image
                 src={PHOTO.src}
-                alt="Two RAHMATES raising their hands in dua"
+                alt="The Hifz class teacher explaining a lesson to two students"
                 width={PHOTO.width}
                 height={PHOTO.height}
                 sizes="(max-width: 810px) 90vw, 420px"
