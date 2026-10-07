@@ -61,7 +61,10 @@ export default function HifzProgramPage() {
           .hifz-hero-h1 { font-size: 42px !important; }
           .hifz-hero-badge { font-size: 10px !important; letter-spacing: 0.08em !important; }
           .hifz-hero-tagline { font-size: 16px !important; }
+          .hifz-hero-pills { grid-template-columns: 1fr 1fr !important; }
           .hifz-hero-pills > div { padding: 14px 12px !important; }
+          .hifz-hero-pills > div:nth-child(odd) { border-left: none !important; }
+          .hifz-hero-pills > div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.12); }
           .hifz-hero-pill-value { font-size: 18px !important; }
           .hifz-hero-photo { justify-self: center !important; max-width: 340px !important; margin-right: 18px; }
 

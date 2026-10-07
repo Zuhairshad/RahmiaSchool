@@ -21,11 +21,11 @@ const spring = (delay = 0) => ({
 
 const leadership = [
   {
-    name: "Lt Col (R) Chaudhry Muhammad Hafeez",
+    name: "Lt Col Chaudhry Muhammad Hafeez (R)",
     role: "Educational Advisor",
     photo: "/assets/images/leader-col-hafeez.jpeg",
     tint: "#feeecd", color: "#f59e0b",
-    bio: "Founded RAHMA Model School in 2012 with a mission to bring quality education to Pakistan's most underserved children, starting from a small hut near Rawalpindi Railway Station.",
+    bio: "Founded RAHMA Model School in 2012 with a mission to bring quality education to Pakistan's most underserved children, starting from a small hut near Rawalpindi Railway Station",
     grades: "All Departments",
     experience: "Est. 2012",
     highlights: [
@@ -40,7 +40,7 @@ const leadership = [
     name: "Madam Sadaf Shabbir",
     role: "Principal",
     tint: "#d7fdcf", color: "#09d89a",
-    bio: "Leading RAHMA Model School with vision and care, setting the academic direction and ensuring every child receives a quality, values-based education.",
+    bio: "Leading RAHMA Model School with vision and care, setting the academic direction and ensuring every child receives a quality, values-based education",
     grades: "All Classes",
     experience: "Principal",
     highlights: [
@@ -55,7 +55,7 @@ const leadership = [
     name: "Madam Tehmina Shaheen",
     role: "Vice Principal",
     tint: "#ebe1fd", color: "#520080",
-    bio: "Overseeing the academic and administrative operations of RAHMA Model School with dedication, ensuring educational quality and a nurturing environment for every student.",
+    bio: "Overseeing the academic and administrative operations of RAHMA Model School with dedication, ensuring educational quality and a nurturing environment for every student",
     grades: "All Classes",
     experience: "Vice Principal",
     highlights: [
@@ -71,7 +71,7 @@ const leadership = [
     role: "Administrator & Finance Officer",
     photo: "/assets/images/admin-shuaib.jpeg",
     tint: "#d7fdcf", color: "#09d89a",
-    bio: "Managing the administrative and financial operations of RAHMA Model School with 24 years of dedicated service and expertise in institutional management.",
+    bio: "Managing the administrative and financial operations of RAHMA Model School with 24 years of dedicated service and expertise in institutional management",
     grades: "Administration",
     experience: "24 Years",
     highlights: [
@@ -89,7 +89,7 @@ const teachers = [
     name: "Shabnam Kayani",
     role: "School Coordinator",
     tint: tints[0], color: initColors[0],
-    bio: "Leading our school community with warmth, structure and a commitment to every child's growth.",
+    bio: "Leading our school community with warmth, structure and a commitment to every child's growth",
     grades: "All Classes",
     experience: "8+ Years",
     highlights: [
@@ -104,7 +104,7 @@ const teachers = [
     name: "Rubab Zaitoon",
     role: "Maths Teacher",
     tint: tints[1], color: initColors[1],
-    bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction.",
+    bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction",
     grades: "Classes 6–10",
     experience: "6+ Years",
     highlights: [
@@ -119,7 +119,7 @@ const teachers = [
     name: "Sajal Fatima",
     role: "Science Teacher",
     tint: tints[2], color: initColors[2],
-    bio: "Sparking curiosity and critical thinking through discovery-based learning in every lesson.",
+    bio: "Sparking curiosity and critical thinking through discovery-based learning in every lesson",
     grades: "Classes 6–10",
     experience: "5+ Years",
     highlights: [
@@ -134,7 +134,7 @@ const teachers = [
     name: "Nida Jahan",
     role: "Montessori Teacher",
     tint: tints[0], color: initColors[0],
-    bio: "Guiding young minds through child-led exploration, nurturing independence from the very first step.",
+    bio: "Guiding young minds through child-led exploration, nurturing independence from the very first step",
     grades: "Play Group – Prep",
     experience: "7+ Years",
     highlights: [
@@ -149,7 +149,7 @@ const teachers = [
     name: "Muqadas Shahzadi",
     role: "Montessori Teacher",
     tint: tints[1], color: initColors[1],
-    bio: "Creating a joyful, structured environment where every young child feels seen, heard, and ready to learn.",
+    bio: "Creating a joyful, structured environment where every young child feels seen, heard, and ready to learn",
     grades: "Nursery – Prep",
     experience: "5+ Years",
     highlights: [
@@ -164,7 +164,7 @@ const teachers = [
     name: "Rimsha Bibi",
     role: "Islamiyat Teacher",
     tint: tints[2], color: initColors[2],
-    bio: "Bringing the beauty of Islam into everyday learning, helping students grow in faith, knowledge and character.",
+    bio: "Bringing the beauty of Islam into everyday learning, helping students grow in faith, knowledge and character",
     grades: "All Classes",
     experience: "4+ Years",
     highlights: [
@@ -179,7 +179,7 @@ const teachers = [
     name: "Alishba Shahzadi",
     role: "Urdu Teacher",
     tint: tints[0], color: initColors[0],
-    bio: "Instilling a love for language and literature rooted in our rich cultural and literary heritage.",
+    bio: "Instilling a love for language and literature rooted in our rich cultural and literary heritage",
     grades: "Classes 1–8",
     experience: "4+ Years",
     highlights: [
@@ -194,7 +194,7 @@ const teachers = [
     name: "Sanam Shahzadi",
     role: "Computer Teacher",
     tint: tints[1], color: initColors[1],
-    bio: "Equipping students with modern digital skills and a confident foundation in technology for the future.",
+    bio: "Equipping students with modern digital skills and a confident foundation in technology for the future",
     grades: "Classes 3–10",
     experience: "3+ Years",
     highlights: [
@@ -209,7 +209,7 @@ const teachers = [
     name: "Moin Ullah",
     role: "Quran Teacher",
     tint: tints[2], color: initColors[2],
-    bio: "Building a lifelong connection with the Quran through tajweed, memorisation and reflection.",
+    bio: "Building a lifelong connection with the Quran through tajweed, memorisation and reflection",
     grades: "All Classes",
     experience: "10+ Years",
     highlights: [
@@ -224,7 +224,7 @@ const teachers = [
     name: "Sadique Ullah",
     role: "Hifz Teacher",
     tint: tints[0], color: initColors[0],
-    bio: "Guiding students through the sacred journey of Quran memorisation with patience, discipline and care.",
+    bio: "Guiding students through the sacred journey of Quran memorisation with patience, discipline and care",
     grades: "All Classes",
     experience: "8+ Years",
     highlights: [
@@ -272,7 +272,7 @@ export default function TeachersPage() {
             </span>
           </h1>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 560, marginTop: 16 }}>
-            Our faculty are proud RAHMATES, a community of dedicated educators united by a shared commitment to academic excellence, moral values, and the growth of every student in their care.
+            Our faculty are proud RAHMATES, a community of dedicated educators united by a shared commitment to academic excellence, moral values, and the growth of every student in their care
           </p>
         </Container>
       </section>
@@ -487,7 +487,7 @@ export default function TeachersPage() {
             &#10022; Join our learning community today
           </p>
           <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 800, color: "#fff", lineHeight: 1.3, marginBottom: 20 }}>
-            Our RAHMATES faculty combine subject mastery with patient mentorship, nurturing moral values alongside academic brilliance in every classroom.
+            Our RAHMATES faculty combine subject mastery with patient mentorship, nurturing moral values alongside academic brilliance in every classroom
           </h2>
           <Button href="/admission">Enroll now</Button>
         </Container>

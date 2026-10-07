@@ -120,7 +120,7 @@ export default function BannerSection() {
               margin: 0,
             }}
           >
-            Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future. We provide a safe, caring environment that encourages every child to achieve their full potential.
+            Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future. We provide a safe, caring environment that encourages every child to achieve their full potential
           </p>
         </motion.div>
       </div>

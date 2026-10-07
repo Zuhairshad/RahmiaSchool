@@ -151,7 +151,7 @@ export default function AdmissionForm({ defaultProgram = "" }: { defaultProgram?
           Application received{childName ? ` for ${childName}` : ""}!
         </h3>
         <p style={{ color: "var(--color-body-text)", fontSize: "0.875rem", lineHeight: 1.6 }}>
-          Thank you for applying to RAHMA Model School. Our admissions team will contact you within two business days to schedule a parent meeting.
+          Thank you for applying to RAHMA Model School. Our admissions team will contact you within two business days to schedule a parent meeting
         </p>
         <p
           lang="ur"
@@ -418,7 +418,7 @@ export default function AdmissionForm({ defaultProgram = "" }: { defaultProgram?
           style={{ ...fieldStyle, padding: "10px 14px" }}
         />
         <p style={hintStyle}>
-          JPG, PNG or PDF, up to 4 MB.{" "}
+          JPG, PNG or PDF, up to 4 MB{" "}
           <span lang="ur" dir="rtl" className={nastaliq.className}>
             زیادہ سے زیادہ سائز چار ایم بی
           </span>

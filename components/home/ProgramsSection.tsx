@@ -162,18 +162,18 @@ export default function ProgramsSection() {
                     </div>
                   </div>
 
-                  {/* Image side — 610px max width, fills remaining space */}
+                  {/* Image side — fills the rest of the card */}
                   {p.image && (
                     <Image
                       src={p.image}
                       alt={p.title}
                       width={p.imageWidth}
                       height={p.imageHeight}
-                      sizes="610px"
+                      sizes="(max-width: 1300px) 60vw, 700px"
                       className="program-card-image"
                       style={{
                         flex: 1,
-                        maxWidth: 610,
+                        minWidth: 0,
                         objectFit: "cover",
                         objectPosition: p.imagePosition,
                         display: "block",

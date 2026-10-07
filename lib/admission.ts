@@ -94,39 +94,39 @@ export type AdmissionFields = {
 
 /** Returns a user-facing error message, or null when every field is valid. */
 export function validateAdmission(f: AdmissionFields): string | null {
-  if (!matches(RULES.name, f.guardian)) return bilingual("Please enter a valid parent / guardian name.", "براہ کرم سرپرست کا درست نام لکھیں۔");
-  if (!matches(RULES.cnic, f.guardianCnic)) return bilingual("Please enter a valid 13-digit guardian CNIC.", "براہ کرم سرپرست کا 13 ہندسوں والا درست شناختی کارڈ نمبر لکھیں۔");
-  if (!matches(RULES.name, f.childName)) return bilingual("Please enter a valid child's name.", "براہ کرم بچے کا درست نام لکھیں۔");
-  if (!GENDERS.includes(f.gender)) return bilingual("Please select the child's gender.", "براہ کرم بچے کی جنس منتخب کریں۔");
+  if (!matches(RULES.name, f.guardian)) return bilingual("Please enter a valid parent / guardian name", "براہ کرم سرپرست کا درست نام لکھیں۔");
+  if (!matches(RULES.cnic, f.guardianCnic)) return bilingual("Please enter a valid 13-digit guardian CNIC", "براہ کرم سرپرست کا 13 ہندسوں والا درست شناختی کارڈ نمبر لکھیں۔");
+  if (!matches(RULES.name, f.childName)) return bilingual("Please enter a valid child's name", "براہ کرم بچے کا درست نام لکھیں۔");
+  if (!GENDERS.includes(f.gender)) return bilingual("Please select the child's gender", "براہ کرم بچے کی جنس منتخب کریں۔");
 
   const age = Number(f.childAge);
   if (!Number.isInteger(age) || age < MIN_AGE || age > MAX_AGE) {
     return bilingual(`Child's age must be a whole number between ${MIN_AGE} and ${MAX_AGE}.`, `بچے کی عمر ${MIN_AGE} سے ${MAX_AGE} سال کے درمیان ہونی چاہیے۔`);
   }
 
-  if (!matches(RULES.phone, f.phone)) return bilingual("Please enter a valid Pakistani mobile number.", "براہ کرم درست موبائل نمبر لکھیں۔");
-  if (f.email.length > LIMITS.email || !EMAIL_RE.test(f.email)) return bilingual("Please enter a valid email address.", "براہ کرم درست ای میل ایڈریس لکھیں۔");
+  if (!matches(RULES.phone, f.phone)) return bilingual("Please enter a valid Pakistani mobile number", "براہ کرم درست موبائل نمبر لکھیں۔");
+  if (f.email.length > LIMITS.email || !EMAIL_RE.test(f.email)) return bilingual("Please enter a valid email address", "براہ کرم درست ای میل ایڈریس لکھیں۔");
 
   if (!matches(RULES.address, f.address) || f.address.length > LIMITS.address.max) {
-    return bilingual(`Residential address must be ${LIMITS.address.min}–${LIMITS.address.max} characters.`, `رہائشی پتہ ${LIMITS.address.min} سے ${LIMITS.address.max} حروف کا ہونا چاہیے۔`);
+    return bilingual(`Residential address must be ${LIMITS.address.min}–${LIMITS.address.max} characters`, `رہائشی پتہ ${LIMITS.address.min} سے ${LIMITS.address.max} حروف کا ہونا چاہیے۔`);
   }
   if (f.previousSchool && !matches(RULES.school, f.previousSchool)) {
-    return bilingual("Please enter the previous school's name and class, e.g. ABC School, Class 2.", "براہ کرم سابقہ اسکول کا نام اور کلاس لکھیں، مثلاً ABC اسکول، کلاس 2۔");
+    return bilingual("Please enter the previous school's name and class, e.g. ABC School, Class 2", "براہ کرم سابقہ اسکول کا نام اور کلاس لکھیں، مثلاً ABC اسکول، کلاس 2۔");
   }
   if (f.monthlyIncome && !matches(RULES.income, f.monthlyIncome)) {
-    return bilingual("Monthly income should contain digits only.", "ماہانہ آمدنی میں صرف ہندسے لکھیں۔");
+    return bilingual("Monthly income should contain digits only", "ماہانہ آمدنی میں صرف ہندسے لکھیں۔");
   }
 
-  if (f.hasSibling !== "Yes" && f.hasSibling !== "No") return bilingual("Please tell us if a sibling is already enrolled.", "براہ کرم بتائیں کہ کیا کوئی بہن بھائی پہلے سے داخل ہے۔");
+  if (f.hasSibling !== "Yes" && f.hasSibling !== "No") return bilingual("Please tell us if a sibling is already enrolled", "براہ کرم بتائیں کہ کیا کوئی بہن بھائی پہلے سے داخل ہے۔");
   if (
     f.hasSibling === "Yes" &&
     (!matches(RULES.school, f.siblingDetails) || f.siblingDetails.length < LIMITS.siblingDetails.min || f.siblingDetails.length > LIMITS.siblingDetails.max)
   ) {
-    return bilingual("Please enter the enrolled sibling's name and class.", "براہ کرم داخل بہن بھائی کا نام اور کلاس لکھیں۔");
+    return bilingual("Please enter the enrolled sibling's name and class", "براہ کرم داخل بہن بھائی کا نام اور کلاس لکھیں۔");
   }
 
-  if (!ADMISSION_PROGRAMS.includes(f.program)) return bilingual("Please select a program.", "براہ کرم پروگرام منتخب کریں۔");
-  if (f.notes.length > LIMITS.notes) return bilingual(`Additional information must be under ${LIMITS.notes} characters.`, `اضافی معلومات ${LIMITS.notes} حروف سے کم ہونی چاہیے۔`);
+  if (!ADMISSION_PROGRAMS.includes(f.program)) return bilingual("Please select a program", "براہ کرم پروگرام منتخب کریں۔");
+  if (f.notes.length > LIMITS.notes) return bilingual(`Additional information must be under ${LIMITS.notes} characters`, `اضافی معلومات ${LIMITS.notes} حروف سے کم ہونی چاہیے۔`);
 
   return null;
 }

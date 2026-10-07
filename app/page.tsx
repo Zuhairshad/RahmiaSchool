@@ -6,7 +6,6 @@ import BenefitSection from "@/components/home/BenefitSection";
 import PresentationSection from "@/components/home/PresentationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import VisionSection from "@/components/home/VisionSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
 import PricingTabs from "@/components/home/PricingTabs";
 // import BlogSection from "@/components/home/BlogSection";
 import CtaSection from "@/components/home/CtaSection";
@@ -14,7 +13,7 @@ import CtaSection from "@/components/home/CtaSection";
 export const metadata: Metadata = {
   title: "RAHMA Model School | Where Education and Faith Build Character",
   description:
-    "Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future.",
+    "Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future",
 };
 
 export default function HomePage() {
@@ -83,11 +82,6 @@ export default function HomePage() {
           .vision-photo-col img { margin-top: 0 !important; object-fit: cover; width: 100% !important; height: 500px !important; }
           .vision-stats { grid-template-columns: 1fr 1fr !important; }
 
-          /* ── Teachers / Testimonials section ── */
-          .teachers-heading { font-size: 32px !important; line-height: 1.2 !important; }
-          .teacher-card { flex: 0 0 85vw !important; max-width: 774px !important; gap: 0 !important; padding: 0 !important; }
-          .teacher-card-panel { display: none !important; }
-          .teacher-card-content { padding: 28px 24px !important; }
 
           /* ── CTA section ── */
           .cta-avatar { display: none !important; }
@@ -120,7 +114,6 @@ export default function HomePage() {
       <VisionSection />
 
       <ProgramsSection />
-      <TestimonialsSection />
       <PricingTabs />
       {/* <BlogSection /> */}
       <CtaSection />

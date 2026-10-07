@@ -7,31 +7,31 @@ import { spring } from "./shared";
 const FAQS = [
   {
     q: "When can my child join the Hifz program?",
-    a: "We enroll students for Hifz in Grade 4. It is the ideal age to start: your child is mature enough to memorize well and to understand what they are learning.",
+    a: "We enroll boys for Hifz in Grade 4. It is the ideal age to start: your child is mature enough to memorize well and to understand what they are learning",
   },
   {
     q: "Will my child fall behind in regular studies?",
-    a: "No. Regular school education from Grade 4 to Grade 8 continues side by side with Hifz. By the end of Grade 8 your child is a complete Hafiz-e-Quran and carries on from Grade 9 onwards without any academic loss.",
+    a: "No. Regular school education from Grade 4 to Grade 8 continues side by side with Hifz. By the end of Grade 8 your child is a complete Hafiz-e-Quran and carries on from Grade 9 onwards without any academic loss",
   },
   {
     q: "Does my child only memorize, or also understand?",
-    a: "That is what makes this Hifz with Understanding. Along with memorization, your child learns the easy Urdu translation and the basic Tafseer of every verse, so the message of the Quran stays with them for life.",
+    a: "That is what makes this Hifz with Understanding. Along with memorization, your child learns the easy Urdu translation and the basic Tafseer of every verse, so the message of the Quran stays with them for life",
   },
   {
     q: "Who teaches the Hifz class?",
-    a: "Hifz is done under the supervision of a certified and experienced Qari Sahib, with correct pronunciation and Tajweed. Our Qari Sahib treats children with great affection and is familiar with modern teaching methods.",
+    a: "Hifz is done under the supervision of a certified and experienced Qari Sahib, with correct pronunciation and Tajweed. Our Qari Sahib treats children with great affection and is familiar with modern teaching methods",
   },
   {
     q: "How do you make sure memorization is not forgotten?",
-    a: "Through a daily Sabaq, Sabqi and Manzil system. Sabaq is the new lesson of the day, Sabqi is the revision of recent lessons, and Manzil is the regular revision of older portions, so every part stays firmly in memory.",
+    a: "Through a daily Sabaq, Sabqi and Manzil system. Sabaq is the new lesson of the day, Sabqi is the revision of recent lessons, and Manzil is the regular revision of older portions, so every part stays firmly in memory",
   },
   {
-    q: "Is the program for both boys and girls?",
-    a: "Yes. Your child becomes a Hafiz or Hafiza while continuing their regular schooling at RAHMA Model School.",
+    q: "Is the Hifz program for boys and girls?",
+    a: "The Hifz program is for boys only. Your son becomes a Hafiz while continuing his regular schooling at RAHMA Model School",
   },
   {
     q: "How do I apply?",
-    a: "Fill in the admission form on our Admission page and choose the Hifz program, or contact the school office and we will guide you through the next steps.",
+    a: "Fill in the admission form on our Admission page and choose the Hifz program, or contact the school office and we will guide you through the next steps",
   },
 ];
 

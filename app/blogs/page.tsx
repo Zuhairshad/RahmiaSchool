@@ -5,7 +5,7 @@ import { blogPosts } from "./[slug]/data";
 export const metadata: Metadata = {
   title: "Our Blogs",
   description:
-    "Explore stories and insights from RAHMA Model School about creative play, hands-on projects, and early childhood learning in Rawalpindi, Pakistan.",
+    "Explore stories and insights from RAHMA Model School about creative play, hands-on projects, and early childhood learning in Rawalpindi, Pakistan",
 };
 
 export default function BlogsPage() {

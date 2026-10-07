@@ -12,7 +12,7 @@ const spring = (delay = 0): Record<string, unknown> => ({
 });
 
 const teachers: { name: string; role: string; photo?: string }[] = [
-  { name: "Lt Col (R) Chaudhry Muhammad Hafeez", role: "Educational Advisor", photo: "/assets/images/leader-col-hafeez.jpeg" },
+  { name: "Lt Col Chaudhry Muhammad Hafeez (R)", role: "Educational Advisor", photo: "/assets/images/leader-col-hafeez.jpeg" },
   { name: "Madam Sadaf Shabbir", role: "Principal" },
   { name: "Madam Tehmina Shaheen", role: "Vice Principal" },
   { name: "Muhammad Shuaib", role: "Administrator & Finance Officer", photo: "/assets/images/admin-shuaib.jpeg" },

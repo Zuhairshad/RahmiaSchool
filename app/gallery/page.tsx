@@ -7,7 +7,7 @@ import { galleryCategories, galleryPhotos } from "@/lib/gallery";
 export const metadata: Metadata = {
   title: { absolute: "Gallery | RAHMA Model School" },
   description:
-    "Photos from RAHMA Model School: celebrations, classrooms, study trips, sports days and community events.",
+    "Photos from RAHMA Model School: celebrations, classrooms, study trips, sports days and community events",
 };
 
 export default function GalleryPage() {

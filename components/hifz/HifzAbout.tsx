@@ -49,7 +49,7 @@ export default function HifzAbout({ description }: { description: string }) {
             }}
           >
             Not just memorizing the Quran, but{" "}
-            <span style={{ color: "var(--color-brand-teal)" }}>understanding its message</span> and living it every day.
+            <span style={{ color: "var(--color-brand-teal)" }}>understanding its message</span> and living it every day
           </motion.h2>
         </div>
 
@@ -87,7 +87,7 @@ export default function HifzAbout({ description }: { description: string }) {
                 borderLeft: "4px solid var(--color-brand-teal)",
               }}
             >
-              Worldly education and the best Quranic training, under one roof.
+              Worldly education and the best Quranic training, under one roof
             </p>
           </motion.div>
 

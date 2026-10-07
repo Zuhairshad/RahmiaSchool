@@ -22,18 +22,18 @@ export default function HeroSection() {
       }}
     >
       <Image
-        src="/assets/images/hero-image-final.png"
+        src="/assets/images/hero-daylight.png"
         alt="RAHMA Model School building"
         fill
         preload
         sizes="100vw"
-        style={{ objectFit: "cover", objectPosition: "center", zIndex: 0 }}
+        style={{ objectFit: "cover", objectPosition: "center", zIndex: 0, filter: "brightness(1.15) saturate(1.05)" }}
       />
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15) 100%)",
+          background: "linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 45%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 55%)",
           zIndex: 1,
         }}
       />
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 color: "rgba(255,255,255,0.9)",
                 textTransform: "uppercase",
               }}>
-                RAHMA Model School · Home of the RAHMATES
+                Home of the RAHMATES
               </span>
             </motion.div>
             <motion.h1
@@ -106,7 +106,7 @@ export default function HeroSection() {
                 margin: 0,
               }}
             >
-              Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future.
+              Welcome to RAHMA Model School, Rawat, Rawalpindi, where quality education, strong moral values, and character development come together to prepare students for a successful future
             </motion.p>
           </div>
           <motion.div

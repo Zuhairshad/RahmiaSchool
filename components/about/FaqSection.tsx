@@ -14,27 +14,27 @@ const spring = (delay = 0): Record<string, unknown> => ({
 const faqs = [
   {
     q: "Who are the RAHMATES?",
-    a: "RAHMATES is the name shared by every student, teacher, and staff member of RAHMA Model School. It reflects one community, united by our belief that education and faith build character, and the values of honesty, discipline, respect, and compassion that every RAHMATE carries.",
+    a: "RAHMATES is the name shared by every student, teacher, and staff member of RAHMA Model School. It reflects one community, united by our belief that education and faith build character, and the values of honesty, discipline, respect, and compassion that every RAHMATE carries",
   },
   {
     q: "What age groups do you accept?",
-    a: "We welcome children from early toddlers to preschool age, with carefully designed programs that match each stage of development. Our activities are tailored to support social and academic growth at every level.",
+    a: "We welcome children from early toddlers to preschool age, with carefully designed programs that match each stage of development. Our activities are tailored to support social and academic growth at every level",
   },
   {
     q: "What is your teaching approach?",
-    a: "Our teaching approach combines guided learning, creative play, and hands-on activities to foster curiosity, build confidence, develop essential skills, and support every child's individual growth and success.",
+    a: "Our teaching approach combines guided learning, creative play, and hands-on activities to foster curiosity, build confidence, develop essential skills, and support every child's individual growth and success",
   },
   {
     q: "How do you ensure child safety?",
-    a: "We ensure child safety through trained staff, secure facilities, supervised activities, strict safety policies, and a nurturing environment that prioritizes every child's well-being and protection.",
+    a: "We ensure child safety through trained staff, secure facilities, supervised activities, strict safety policies, and a nurturing environment that prioritizes every child's well-being and protection",
   },
   {
     q: "What are your class sizes?",
-    a: "Our class sizes are kept small to ensure personalized attention, meaningful interaction, and a supportive learning environment where every child can actively participate and thrive.",
+    a: "Our class sizes are kept small to ensure personalized attention, meaningful interaction, and a supportive learning environment where every child can actively participate and thrive",
   },
   {
     q: "Do You Offer Parent Updates?",
-    a: "Yes, we provide regular parent communication updates through meetings, progress reports, and direct communication to keep families informed about their child's growth, learning, and development.",
+    a: "Yes, we provide regular parent communication updates through meetings, progress reports, and direct communication to keep families informed about their child's growth, learning, and development",
   },
 ];
 

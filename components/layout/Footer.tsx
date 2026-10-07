@@ -45,7 +45,7 @@ export default function Footer() {
             Where Education and Faith Build Character
           </p>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.875rem", lineHeight: 1.75, marginBottom: 28, maxWidth: 280 }}>
-            We provide a safe, caring, and engaging learning environment for our RAHMATES, from Montessori to High School in Rawalpindi.
+            We provide a safe, caring, and engaging learning environment for our RAHMATES, from Montessori to High School in Rawalpindi
           </p>
           <form style={{ display: "flex", gap: 0 }} onSubmit={(e) => e.preventDefault()}>
             <input

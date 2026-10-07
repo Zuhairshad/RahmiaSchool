@@ -98,7 +98,7 @@ export default function GalleryBanner() {
             }}
           >
             Celebrations, classrooms, study trips and sports days: a look at the everyday moments that make
-            RAHMA Model School a joyful place to learn and grow.
+            RAHMA Model School a joyful place to learn and grow
           </p>
         </motion.div>
       </div>

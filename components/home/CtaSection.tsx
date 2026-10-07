@@ -219,7 +219,7 @@ export default function CtaSection() {
               }}
             >
               Support your child&rsquo;s growth with a nurturing environment
-              designed for learning, creativity, and confidence.
+              designed for learning, creativity, and confidence
             </p>
           </div>
           <ArrowButton href="/contact" variant="purple">Enroll now</ArrowButton>

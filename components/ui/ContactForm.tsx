@@ -7,10 +7,10 @@ import { filterName, filterPhone } from "@/lib/input-filters";
 import { useFieldErrors } from "./useFieldErrors";
 
 const FIELD_MESSAGES: Record<string, string> = {
-  name: "Letters only (no numbers or symbols).",
-  phone: "Enter a Pakistani mobile number, e.g. 03001234567 or +92 300 1234567.",
-  email: "Enter a valid email address, e.g. name@gmail.com.",
-  message: "Please write your message.",
+  name: "Letters only (no numbers or symbols)",
+  phone: "Enter a Pakistani mobile number, e.g. 03001234567 or +92 300 1234567",
+  email: "Enter a valid email address, e.g. name@gmail.com",
+  message: "Please write your message",
 };
 
 
@@ -56,10 +56,10 @@ export default function ContactForm() {
         setSubmitted(true);
       } else {
         const data = await res.json().catch(() => null);
-        setError(data?.error ?? "Something went wrong. Please try again or call us.");
+        setError(data?.error ?? "Something went wrong. Please try again or call us");
       }
     } catch {
-      setError("Could not send your message. Please check your connection and try again.");
+      setError("Could not send your message. Please check your connection and try again");
     } finally {
       setSending(false);
     }
@@ -89,7 +89,7 @@ export default function ContactForm() {
         </h3>
         <p style={{ color: "var(--color-body-text)", fontSize: "0.875rem", lineHeight: 1.6 }}>
           Our team will get back to you within one business day. In the meantime, feel free to explore our admission
-          process or give us a call.
+          process or give us a call
         </p>
         <button
           type="button"

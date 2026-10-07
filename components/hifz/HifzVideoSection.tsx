@@ -206,7 +206,7 @@ export default function HifzVideoSection() {
             See where your child will learn
           </h2>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", margin: 0 }}>
-            A calm, dedicated classroom for Hifz, Tajweed and daily revision, right inside RAHMA Model School.
+            A calm, dedicated classroom for Hifz, Tajweed and daily revision, right inside RAHMA Model School
           </p>
         </motion.div>
 

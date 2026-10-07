@@ -131,7 +131,7 @@ export default function StorySection() {
                   maxWidth: 210,
                 }}
               >
-                Over 12 years of trusted academic excellence and moral leadership in Rawat.
+                Over 12 years of trusted academic excellence and moral leadership in Rawat
               </p>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function StorySection() {
                 margin: 0,
               }}
             >
-              RAHMA Model School was established in 2014 with a vision of providing affordable, high-quality education rooted in knowledge, character, and care. Since then, we have continuously improved our educational standards, learning environment, and co-curricular opportunities.
+              RAHMA Model School was established in 2014 with a vision of providing affordable, high-quality education rooted in knowledge, character, and care. Since then, we have continuously improved our educational standards, learning environment, and co-curricular opportunities
             </p>
           </div>
 

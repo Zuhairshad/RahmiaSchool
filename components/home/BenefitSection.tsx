@@ -22,20 +22,20 @@ const fadeUp = (delay = 0) => ({
 
 // Feature list items in the right column
 const featureItems = [
-  { title: "Safe & Caring Environment", desc: "We provide a secure, friendly, and supportive atmosphere where children feel confident to learn and grow." },
-  { title: "Academic Excellence", desc: "Structured curriculum through concept-based learning, regular assessments, and modern teaching methods." },
-  { title: "Character Building", desc: "We promote Islamic values, discipline, honesty, respect, and responsibility in every student." },
+  { title: "Safe & Caring Environment", desc: "We provide a secure, friendly, and supportive atmosphere where children feel confident to learn and grow" },
+  { title: "Academic Excellence", desc: "Structured curriculum through concept-based learning, regular assessments, and modern teaching methods" },
+  { title: "Character Building", desc: "We promote Islamic values, discipline, honesty, respect, and responsibility in every student" },
 ];
 
 // Stat cards (Benefit Card 01/02) — no background color, side by side with vertical divider
 const statCards = [
   {
     value: "Safe & Caring Environment",
-    sub: "A secure, friendly, and supportive atmosphere where children feel confident to learn and grow.",
+    sub: "A secure, friendly, and supportive atmosphere where children feel confident to learn and grow",
   },
   {
     value: "Qualified & Dedicated Teachers",
-    sub: "Passionate and trained educators committed to nurturing every child's potential and love for learning.",
+    sub: "Passionate and trained educators committed to nurturing every child's potential and love for learning",
   },
 ];
 
@@ -45,7 +45,7 @@ const tickerCards = [
     bg: "#d7fdcf",
     iconBg: "#09d89a",
     title: "Qualified & Dedicated Teachers",
-    sub: "Our experienced teachers are committed to providing quality education while nurturing every student's individual abilities, moral values, and lifelong learning habits.",
+    sub: "Our experienced teachers are committed to providing quality education while nurturing every student's individual abilities, moral values, and lifelong learning habits",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden>
         <circle cx="18" cy="12" r="6" stroke="#fff" strokeWidth="2.5" />
@@ -57,7 +57,7 @@ const tickerCards = [
     bg: "#ebe1fd",
     iconBg: "#520080",
     title: "Co-Curricular Activities",
-    sub: "Students participate in debates, sports, arts, science exhibitions, and educational events to develop leadership, communication skills, and lasting confidence.",
+    sub: "Students participate in debates, sports, arts, science exhibitions, and educational events to develop leadership, communication skills, and lasting confidence",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden>
         <path d="M18 4l2.94 5.95L27 11.27l-4.5 4.39.94 6.19L18 19.22l-5.44 2.63.94-6.19L9 11.27l6.06-1.32L18 4z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -68,7 +68,7 @@ const tickerCards = [
     bg: "#feeecd",
     iconBg: "#fcb520",
     title: "Safe & Caring Environment",
-    sub: "A secure, friendly, and supportive atmosphere where children feel confident to learn and grow at their own pace.",
+    sub: "A secure, friendly, and supportive atmosphere where children feel confident to learn and grow at their own pace",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden>
         <path d="M18 4l12 5.33V18c0 7.18-5.12 13.89-12 15.67C11.12 31.89 6 25.18 6 18V9.33L18 4z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -211,7 +211,7 @@ export default function BenefitSection() {
                     margin: 0,
                   }}
                 >
-                  We provide a safe, caring, and engaging learning environment that encourages every child to achieve academic excellence while developing confidence, creativity, and strong moral character.
+                  We provide a safe, caring, and engaging learning environment that encourages every child to achieve academic excellence while developing confidence, creativity, and strong moral character
                 </p>
               </div>
 
@@ -301,7 +301,7 @@ export default function BenefitSection() {
                 margin: 0,
               }}
             >
-              At RAHMA Model School, we are committed to creating future leaders through quality education, modern teaching methods, and a caring school culture rooted in Islamic values.
+              At RAHMA Model School, we are committed to creating future leaders through quality education, modern teaching methods, and a caring school culture rooted in Islamic values
             </p>
 
             {/* Contact button */}

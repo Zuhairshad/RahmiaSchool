@@ -315,7 +315,7 @@ export default async function ProgramDetailPage({
           Ready to enroll your child?
         </h2>
         <p style={{ color: "rgba(0,0,0,0.6)", fontSize: "0.95rem", marginBottom: 28 }}>
-          Start the admission process today and secure your child&apos;s spot.
+          Start the admission process today and secure your child&apos;s spot
         </p>
         <Button href={program.enrollHref ?? "/admission"} variant="dark">
           Start Admission

@@ -34,7 +34,7 @@ export default function HifzSubjects({ subjects, enrollHref }: { subjects: strin
               </h2>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.75, color: "#575757", margin: 0 }}>
-              Every day blends Quran memorization, meaning and Tajweed with the regular curriculum, so your child becomes a Hafiz or Hafiza and stays on track to become a Doctor, Engineer or Scholar.
+              Every day blends Quran memorization, meaning and Tajweed with the regular curriculum, so your child becomes a Hafiz and stays on track to become a Doctor, Engineer or Scholar
             </p>
             <div>
               <ArrowButton href={enrollHref} variant="purple">

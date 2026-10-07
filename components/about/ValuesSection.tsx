@@ -15,19 +15,19 @@ const spring = (delay = 0): Record<string, unknown> => ({
 const values = [
   {
     title: "Excellence in Education",
-    desc: "We are committed to providing quality education through qualified teachers, modern teaching methods, and continuous assessment that develops strong academic foundations.",
+    desc: "We are committed to providing quality education through qualified teachers, modern teaching methods, and continuous assessment that develops strong academic foundations",
   },
   {
     title: "Islamic & Moral Values",
-    desc: "We instil integrity, honesty, respect, discipline, and compassion in every RAHMATE, preparing them to become responsible and conscientious citizens.",
+    desc: "We instil integrity, honesty, respect, discipline, and compassion in every RAHMATE, preparing them to become responsible and conscientious citizens",
   },
   {
     title: "Discipline & Leadership",
-    desc: "We nurture discipline, self-control, and leadership qualities that empower students to take initiative and face future challenges with confidence.",
+    desc: "We nurture discipline, self-control, and leadership qualities that empower students to take initiative and face future challenges with confidence",
   },
   {
     title: "Creativity & Innovation",
-    desc: "We encourage creativity, critical thinking, and innovation through co-curricular activities, science exhibitions, arts, and technology integration in learning.",
+    desc: "We encourage creativity, critical thinking, and innovation through co-curricular activities, science exhibitions, arts, and technology integration in learning",
   },
 ];
 

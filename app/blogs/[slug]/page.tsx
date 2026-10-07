@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: Props) {
             Join our learning community today
           </h2>
           <p style={{ color: "rgba(0,0,0,0.6)", fontSize: "0.95rem", marginBottom: 28 }}>
-            At RAHMA Model School, education extends far beyond textbooks through an active Student Life Program.
+            At RAHMA Model School, education extends far beyond textbooks through an active Student Life Program
           </p>
           <Button href="/admission" variant="dark">
             Enroll now

@@ -6,7 +6,7 @@ import ActivitiesSection from "@/components/student-life/ActivitiesSection";
 export const metadata: Metadata = {
   title: "Student Life",
   description:
-    "At RAHMA Model School, education extends far beyond textbooks through an active Student Life Program.",
+    "At RAHMA Model School, education extends far beyond textbooks through an active Student Life Program",
 };
 
 export default function StudentLifePage() {
@@ -55,7 +55,7 @@ export default function StudentLifePage() {
                 should have opportunities to explore, create, lead, and grow in a supportive environment.
                 Our Student Life Programme develops confidence, leadership, creativity, teamwork,
                 communication skills, and responsibility through varied educational and co-curricular activities.
-                Together, our students, teachers and staff are proudly known as RAHMATES.
+                Together, our students, teachers and staff are proudly known as RAHMATES
               </p>
             </div>
             <div
@@ -124,7 +124,7 @@ export default function StudentLifePage() {
                 Building tomorrow&apos;s leaders today
               </h2>
               <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8 }}>
-                Every RAHMATE carries values of honesty, discipline, respect, and faith, growing not just academically, but as responsible citizens who make a difference in their community and beyond.
+                Every RAHMATE carries values of honesty, discipline, respect, and faith, growing not just academically, but as responsible citizens who make a difference in their community and beyond
               </p>
             </div>
             <div className="student-life-skills-inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>

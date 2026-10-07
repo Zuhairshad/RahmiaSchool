@@ -44,7 +44,7 @@ export default function VisionSection() {
             >
               <Image
                 src="/assets/images/the vision col shb photo.jpeg"
-                alt="Lt Col (R) Chaudhry Muhammad Hafeez"
+                alt="Lt Col Chaudhry Muhammad Hafeez (R)"
                 width={531}
                 height={742}
                 style={{ width: "100%", height: "auto", display: "block", marginTop: "-110px" }}
@@ -60,7 +60,7 @@ export default function VisionSection() {
               }}
             >
               <div style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.95rem", color: "#fff", marginBottom: 3 }}>
-                Lt Col (R) Chaudhry Muhammad Hafeez
+                Lt Col Chaudhry Muhammad Hafeez (R)
               </div>
               <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--color-brand-teal)", fontWeight: 600 }}>
                 Educational Advisor, RAHMA Model School
@@ -93,9 +93,9 @@ export default function VisionSection() {
             </h2>
 
             {[
-              "Primary education coverage is on the rise in Pakistan; however, challenges with access still persist. According to government statistics, an estimated 22.6 million children aged 5–16 remain out of school, constituting 44% of all children in this age bracket.",
-              "Pakistan ranks second in South Asia for having the highest number of Out-Of-School Children (OOSC) at the primary level, with over half of them being girls. A significant portion of these OOSC comes from the poorest, marginalised, and socially excluded groups residing in makeshift tarpaulin huts in slums.",
-              "In Rawalpindi/Islamabad alone, approximately 15,000 children from such backgrounds are not enrolled in schools. In response, RAHMA began offering education to these children in 2012, establishing a school within a slum near Rawalpindi Railway Station. What started in a small hut became the first-ever school built for these children.",
+              "Primary education coverage is on the rise in Pakistan; however, challenges with access still persist. According to government statistics, an estimated 22.6 million children aged 5–16 remain out of school, constituting 44% of all children in this age bracket",
+              "Pakistan ranks second in South Asia for having the highest number of Out-Of-School Children (OOSC) at the primary level, with over half of them being girls. A significant portion of these OOSC comes from the poorest, marginalised, and socially excluded groups residing in makeshift tarpaulin huts in slums",
+              "In Rawalpindi/Islamabad alone, approximately 15,000 children from such backgrounds are not enrolled in schools. In response, RAHMA began offering education to these children in 2012, establishing a school within a slum near Rawalpindi Railway Station. What started in a small hut became the first-ever school built for these children",
             ].map((para, i) => (
               <p key={i} style={{ fontFamily: "var(--font-body)", fontSize: "1.15rem", lineHeight: 1.85, color: "#575757", margin: "0 0 20px" }}>
                 {para}
@@ -118,7 +118,7 @@ export default function VisionSection() {
             </p>
 
             <div>
-              <ArrowButton href="/donate" variant="purple">Support the vision</ArrowButton>
+              <ArrowButton href="/donate" variant="purple">Assist in Sadqa Jaria</ArrowButton>
             </div>
           </motion.div>
         </div>

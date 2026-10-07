@@ -472,7 +472,7 @@ export async function buildAdmissionPdf(f: AdmissionFields, upload: Upload | nul
     dateStyle: "long",
     timeStyle: "short",
   });
-  const footer = `Submitted online via the RAHMA Model School website on ${submitted} (PKT).`;
+  const footer = `Submitted online via the RAHMA Model School website on ${submitted} (PKT)`;
   page.drawText(footer, {
     x: (PAGE_W - regular.widthOfTextAtSize(footer, 7.5)) / 2,
     y: y - 14,

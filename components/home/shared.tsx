@@ -31,7 +31,7 @@ export const programs: HomeProgram[] = [
     title: "Preschool (Play Group – Nursery – Prep)",
     tag: "Play Group to Prep",
     tagColor: "#09d89a",
-    desc: "Learning through play and hands-on activities, focusing on colours, shapes, numbers, social skills, and building reading and writing readiness in a safe, loving environment.",
+    desc: "Learning through play and hands-on activities, focusing on colours, shapes, numbers, social skills, and building reading and writing readiness in a safe, loving environment",
     bg: "#d7fdcf",
     image: "/assets/images/rahma-kids-studying.jpeg",
     imageWidth: 3120,
@@ -43,7 +43,7 @@ export const programs: HomeProgram[] = [
     title: "Primary School (Class 1–5)",
     tag: "Grades 1–5",
     tagColor: "#520080",
-    desc: "Strong academics and character development through concept-based and interactive teaching, covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge.",
+    desc: "Strong academics and character development through concept-based and interactive teaching, covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge",
     bg: "#ebe1fd",
     image: "/assets/images/rahma-kid-writing.jpeg",
     imageWidth: 720,
@@ -55,7 +55,7 @@ export const programs: HomeProgram[] = [
     title: "Middle School (Class 6–8)",
     tag: "Grades 6–8",
     tagColor: "#fcb520",
-    desc: "Advanced subject learning, analytical thinking, project-based assignments, and leadership opportunities that prepare students with confidence for higher classes.",
+    desc: "Advanced subject learning, analytical thinking, project-based assignments, and leadership opportunities that prepare students with confidence for higher classes",
     bg: "#feeecd",
     image: "/assets/images/gallery/g-28.jpeg",
     imageWidth: 1350,
@@ -67,7 +67,7 @@ export const programs: HomeProgram[] = [
     title: "High School (Class 9–10)",
     tag: "Grades 9–10",
     tagColor: "#520080",
-    desc: "Focused Matric (SSC) preparation with strong concepts in science, mathematics and languages, regular tests and revision, and leadership roles as the school's senior students.",
+    desc: "Focused Matric (SSC) preparation with strong concepts in science, mathematics and languages, regular tests and revision, and leadership roles as the school's senior students",
     bg: "#ebe1fd",
     image: "/assets/images/gallery/g-32.jpeg",
     imageWidth: 1800,
@@ -77,9 +77,9 @@ export const programs: HomeProgram[] = [
   {
     num: "05",
     title: "Hifz with Understanding",
-    tag: "Grades 4–8",
+    tag: "Boys · Grades 4–8",
     tagColor: "#09d89a",
-    desc: "Memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 8. Worldly education and the best Quranic training under one roof.",
+    desc: "Boys memorize the Quran with its Urdu translation, meaning and Tajweed alongside regular school, from Grade 4 to Hafiz by Grade 8. Worldly education and the best Quranic training under one roof",
     bg: "#d7fdcf",
     href: "/programs/hifz-program",
     image: "/assets/images/hifz-class.jpeg",
@@ -97,7 +97,7 @@ export const features = [
       </svg>
     ),
     title: "Play-Based Learning",
-    desc: "Children learn through interactive play, engaging activities, and exploration that build social skills and a love of learning from the earliest years.",
+    desc: "Children learn through interactive play, engaging activities, and exploration that build social skills and a love of learning from the earliest years",
   },
   {
     icon: (
@@ -106,7 +106,7 @@ export const features = [
       </svg>
     ),
     title: "Safe & Caring Environment",
-    desc: "We provide a secure, friendly, and supportive atmosphere where every child feels confident to learn, grow, and reach their full potential.",
+    desc: "We provide a secure, friendly, and supportive atmosphere where every child feels confident to learn, grow, and reach their full potential",
   },
   {
     icon: (
@@ -116,7 +116,7 @@ export const features = [
       </svg>
     ),
     title: "Qualified & Dedicated Teachers",
-    desc: "Our experienced RAHMATES teachers use interactive, student-centred teaching methods to make learning enjoyable, meaningful, and effective for every child.",
+    desc: "Our experienced RAHMATES teachers use interactive, student-centred teaching methods to make learning enjoyable, meaningful, and effective for every child",
   },
   {
     icon: (
@@ -126,7 +126,7 @@ export const features = [
       </svg>
     ),
     title: "Co-Curricular Activities",
-    desc: "Students participate in debates, sports, science exhibitions, arts, and educational events that develop leadership, communication, and confidence.",
+    desc: "Students participate in debates, sports, science exhibitions, arts, and educational events that develop leadership, communication, and confidence",
   },
 ];
 
@@ -134,13 +134,13 @@ export const testimonials = [
   {
     name: "Muhammad Rizwan",
     role: "School Parent",
-    text: "A wonderful school that balances academics and character. My child has grown so much in confidence and knowledge since joining RAHMA Model School. The teachers are caring and the environment is truly excellent.",
+    text: "A wonderful school that balances academics and character. My child has grown so much in confidence and knowledge since joining RAHMA Model School. The teachers are caring and the environment is truly excellent",
     image: "/assets/images/ZjZ4G0VsZ76Rs48VIacTqvdWFo-ec9c7da0.avif",
   },
   {
     name: "Ayesha Malik",
     role: "Parent of Grade 5 Student",
-    text: "Our child has become more confident and curious since joining RAHMA. The teachers are incredibly supportive and truly care about every student's academic, moral, and social development. We couldn't be happier.",
+    text: "Our child has become more confident and curious since joining RAHMA. The teachers are incredibly supportive and truly care about every student's academic, moral, and social development. We couldn't be happier",
     image: "/assets/images/Vi1ACTpArCU8a158EXq2wfU1gWY-a2326075.avif",
   },
 ];
@@ -172,7 +172,15 @@ export const aboutCards = [
   },
 ];
 
-export const TICKER_TEXT = "Where growth begins";
+export const TICKER_ITEMS = [
+  "Where growth begins",
+  "Home of the RAHMATES",
+  "Montessori to Matric",
+  "Hifz with Understanding",
+  "Quality education with Islamic values",
+  "Concept-based learning",
+  "Debates, sports & science exhibitions",
+];
 
 /* ── ARROW BUTTON ────────────────────────────────────── */
 
@@ -263,7 +271,7 @@ export function Eyebrow({ children, light = false }: { children: string; light?:
 /* ── TICKER STRIP ────────────────────────────────────── */
 
 export function TickerStrip() {
-  const items = Array.from({ length: 8 }, (_, i) => i);
+  const loop = [...TICKER_ITEMS, ...TICKER_ITEMS];
   return (
     <div
       style={{
@@ -277,12 +285,13 @@ export function TickerStrip() {
         style={{
           display: "flex",
           width: "max-content",
-          animation: "ticker-scroll 20s linear infinite",
+          animation: "ticker-scroll 45s linear infinite",
         }}
       >
-        {[...items, ...items].map((_, i) => (
+        {loop.map((text, i) => (
           <div
             key={i}
+            aria-hidden={i >= TICKER_ITEMS.length}
             style={{
               display: "flex",
               alignItems: "center",
@@ -300,7 +309,7 @@ export function TickerStrip() {
                 color: "#000",
               }}
             >
-              {TICKER_TEXT}
+              {text}
             </span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" stroke="#09d89a" strokeWidth="2.5" strokeLinecap="round" />

@@ -28,7 +28,7 @@ const teachers = [
     name: "Shabnam Kayani",
     role: "School Coordinator",
     tint: tints[0], color: initColors[0],
-    bio: "Leading our school community with warmth, structure and a commitment to every child's growth.",
+    bio: "Leading our school community with warmth, structure and a commitment to every child's growth",
     grades: "All Classes",
     experience: "8+ Years",
     highlights: [
@@ -43,7 +43,7 @@ const teachers = [
     name: "Rubab Zaitoon",
     role: "Maths Teacher",
     tint: tints[1], color: initColors[1],
-    bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction.",
+    bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction",
     grades: "Classes 6–10",
     experience: "6+ Years",
     highlights: [
@@ -58,7 +58,7 @@ const teachers = [
     name: "Sajal Fatima",
     role: "Science Teacher",
     tint: tints[2], color: initColors[2],
-    bio: "Sparking curiosity and critical thinking through discovery-based learning in every lesson.",
+    bio: "Sparking curiosity and critical thinking through discovery-based learning in every lesson",
     grades: "Classes 6–10",
     experience: "5+ Years",
     highlights: [
@@ -73,7 +73,7 @@ const teachers = [
     name: "Nida Jahan",
     role: "Montessori Teacher",
     tint: tints[0], color: initColors[0],
-    bio: "Guiding young minds through child-led exploration, nurturing independence from the very first step.",
+    bio: "Guiding young minds through child-led exploration, nurturing independence from the very first step",
     grades: "Play Group – Prep",
     experience: "7+ Years",
     highlights: [
@@ -88,7 +88,7 @@ const teachers = [
     name: "Alishba Shahzadi",
     role: "Urdu Teacher",
     tint: tints[1], color: initColors[1],
-    bio: "Instilling a love for language and literature rooted in our rich cultural and literary heritage.",
+    bio: "Instilling a love for language and literature rooted in our rich cultural and literary heritage",
     grades: "Classes 1–8",
     experience: "4+ Years",
     highlights: [
@@ -103,7 +103,7 @@ const teachers = [
     name: "Moin Ullah",
     role: "Quran Teacher",
     tint: tints[2], color: initColors[2],
-    bio: "Building a lifelong connection with the Quran through tajweed, memorisation and reflection.",
+    bio: "Building a lifelong connection with the Quran through tajweed, memorisation and reflection",
     grades: "All Classes",
     experience: "10+ Years",
     highlights: [

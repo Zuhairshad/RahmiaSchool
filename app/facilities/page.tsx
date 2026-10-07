@@ -5,7 +5,7 @@ import { Container, SectionLabel, WavyUnderline, Button } from "@/components/ui"
 export const metadata: Metadata = {
   title: "Facilities | RAHMA Model School",
   description:
-    "Equipped with modern science and computer laboratories, a peaceful library, a safe caring environment, and spacious sports grounds, explore the facilities at RAHMA Model School.",
+    "Equipped with modern science and computer laboratories, a peaceful library, a safe caring environment, and spacious sports grounds, explore the facilities at RAHMA Model School",
 };
 
 // Note: the Framer export (reference-site/public) does not include a dedicated
@@ -18,42 +18,42 @@ const facilities = [
     bg: "var(--color-tint-green)",
     title: "Library",
     image: "/assets/images/rahma-library.jpeg",
-    desc: "Our peaceful library offers storybooks, Islamic literature, reference books and encyclopedias, with regular reading sessions that build vocabulary, imagination, and a lifelong love of reading.",
+    desc: "Our peaceful library offers storybooks, Islamic literature, reference books and encyclopedias, with regular reading sessions that build vocabulary, imagination, and a lifelong love of reading",
   },
   {
     icon: "🔬",
     bg: "var(--color-tint-purple)",
     title: "Science Laboratory",
     image: "/assets/images/rahma-kids-studying.jpeg",
-    desc: "Our science laboratory provides practical learning opportunities where students perform experiments and develop scientific thinking, observation, and analytical skills.",
+    desc: "Our science laboratory provides practical learning opportunities where students perform experiments and develop scientific thinking, observation, and analytical skills",
   },
   {
     icon: "💻",
     bg: "var(--color-tint-cream)",
     title: "Computer Laboratory",
     image: "/assets/images/rahma-computer-lab-2.png",
-    desc: "The computer lab is equipped with modern computers and internet facilities that help students develop digital literacy and technology skills essential for today's world.",
+    desc: "The computer lab is equipped with modern computers and internet facilities that help students develop digital literacy and technology skills essential for today's world",
   },
   {
     icon: "⚽",
     bg: "var(--color-tint-green)",
     title: "Sports Ground",
     image: "/assets/images/rahma-sports-day.jpeg",
-    desc: "Our spacious playground provides opportunities for physical education, sports competitions, and recreational activities that promote fitness, teamwork, and confidence.",
+    desc: "Our spacious playground provides opportunities for physical education, sports competitions, and recreational activities that promote fitness, teamwork, and confidence",
   },
   {
     icon: "🤝",
     bg: "var(--color-tint-purple)",
     title: "Parent–School Partnership",
     image: "/assets/images/rahma-parent-partnership-2.jpeg",
-    desc: "We believe parents are partners in every child's education. Regular PTMs, progress reports, and open communication keep families closely involved in their child's learning journey.",
+    desc: "We believe parents are partners in every child's education. Regular PTMs, progress reports, and open communication keep families closely involved in their child's learning journey",
   },
   {
     icon: "🛡️",
     bg: "var(--color-tint-cream)",
     title: "Safe & Caring Environment",
     image: "/assets/images/rahma-safe-caring.png",
-    desc: "We prioritise every child's health and well-being through regular health camps, medical checkups, and a supportive school culture where every student feels safe, valued, and cared for.",
+    desc: "We prioritise every child's health and well-being through regular health camps, medical checkups, and a supportive school culture where every student feels safe, valued, and cared for",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function FacilitiesPage() {
             Come see our campus
           </h2>
           <p style={{ color: "rgba(0,0,0,0.6)", fontSize: "0.95rem", marginBottom: 28 }}>
-            Schedule a visit and see where our RAHMATES learn, play, and grow.
+            Schedule a visit and see where our RAHMATES learn, play, and grow
           </p>
           <Button href="/contact" variant="dark">
             Book a Visit

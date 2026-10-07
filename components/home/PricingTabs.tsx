@@ -192,7 +192,7 @@ export default function PricingTabs() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#575757", margin: "0 0 12px" }}>
-                Affordable community-focused fee structure with scholarships available.
+                Affordable community-focused fee structure with scholarships available
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {basicFeatures.map((f) => (

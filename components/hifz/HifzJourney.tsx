@@ -8,32 +8,32 @@ const STEPS = [
   {
     tag: "Year 1",
     title: "Admission in Grade 4",
-    body: "Your child joins the Hifz class and starts with correct pronunciation and Tajweed under the Qari Sahib, while Grade 4 studies carry on.",
+    body: "Your child joins the Hifz class and starts with correct pronunciation and Tajweed under the Qari Sahib, while Grade 4 studies carry on",
   },
   {
     tag: "Year 2",
     title: "Building the rhythm",
-    body: "Daily Sabaq, Sabqi and Manzil become a habit, and every new lesson comes with its easy Urdu translation.",
+    body: "Daily Sabaq, Sabqi and Manzil become a habit, and every new lesson comes with its easy Urdu translation",
   },
   {
     tag: "Year 3",
     title: "Growing in understanding",
-    body: "Memorization continues with the basic Tafseer of each verse, so the meaning stays in the heart alongside the words.",
+    body: "Memorization continues with the basic Tafseer of each verse, so the meaning stays in the heart alongside the words",
   },
   {
     tag: "Year 4",
     title: "Strengthening the memory",
-    body: "Memorization moves steadily forward while earlier Paras are revised every day, so each part stays firm.",
+    body: "Memorization moves steadily forward while earlier Paras are revised every day, so each part stays firm",
   },
   {
     tag: "Year 5",
     title: "Completing the Hifz",
-    body: "The Hifz is completed and strengthened through steady revision, with regular school continuing side by side.",
+    body: "The Hifz is completed and strengthened through steady revision, with regular school continuing side by side",
   },
   {
     tag: "Grade 8",
     title: "Hafiz-e-Quran",
-    body: "Your child finishes Grade 8 as a complete Hafiz or Hafiza and continues Grade 9 onwards with no academic loss.",
+    body: "Your child finishes Grade 8 as a complete Hafiz and continues Grade 9 onwards with no academic loss",
     final: true,
   },
 ];
@@ -105,7 +105,7 @@ export default function HifzJourney() {
                 maxWidth: 400,
               }}
             >
-              Your child does not have to leave school for Hifz. Grades 4 to 8 continue as normal, and the Quran is preserved in the heart along the way.
+              Your child does not have to leave school for Hifz. Grades 4 to 8 continue as normal, and the Quran is preserved in the heart along the way
             </p>
           </div>
 

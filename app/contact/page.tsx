@@ -122,7 +122,7 @@ export default function ContactPage() {
               </h2>
               <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8, marginBottom: 32 }}>
                 Get in touch with our team for any questions, support, or detailed information about our programs and
-                admission process.
+                admission process
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                 {contactCards.map((c) => (
@@ -163,7 +163,7 @@ export default function ContactPage() {
               </h3>
               <p style={{ color: "#888", fontSize: "0.85rem", marginBottom: 24, lineHeight: 1.6 }}>
                 Have a question about admissions, fees or our programs? Send us a message and our team will get back to
-                you.
+                you
               </p>
               <ContactForm />
             </div>

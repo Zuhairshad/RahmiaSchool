@@ -12,7 +12,7 @@ import CtaSection from "@/components/home/CtaSection";
 export const metadata: Metadata = {
   title: "About Us | RAHMA Model School Rawat",
   description:
-    "Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future.",
+    "Welcome to RAHMA Model School, where quality education, strong moral values, and character development come together to prepare students for a successful future",
 };
 
 export default function AboutPage() {

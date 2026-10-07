@@ -4,12 +4,22 @@ import { Container, Button } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Donate | RAHMA Model School",
   description:
-    "Support a deserving child's education at RAHMA Model School. Your contribution helps orphaned and underprivileged RAHMATES learn, grow, and build a better future.",
+    "Support a deserving child's education at RAHMA Model School. Your contribution helps orphaned and underprivileged RAHMATES learn, grow, and build a better future",
 };
 
 export default function DonatePage() {
   return (
     <div style={{ fontFamily: "var(--font-body)" }}>
+      <style>{`
+        @media (max-width: 600px) {
+          .donate-details-section { padding: 56px 0 !important; }
+          .donate-details-section > div { padding: 0 16px !important; }
+          .donate-bank-head { padding: 16px 20px !important; }
+          .donate-bank-rows { padding: 8px 20px !important; }
+          .donate-bank-row { flex-direction: column !important; gap: 6px !important; }
+          .donate-bank-row > span { min-width: 0 !important; text-align: left !important; }
+        }
+      `}</style>
 
       {/* ── Hero ── */}
       <section
@@ -77,14 +87,14 @@ export default function DonatePage() {
             >
               At Rahma Model School, every child deserves quality education regardless of financial
               circumstances. Your generous donation supports orphaned and underprivileged RAHMATES
-              in their journey of learning and character building.
+              in their journey of learning and character building
             </p>
           </div>
         </Container>
       </section>
 
       {/* ── Donation Details ── */}
-      <section style={{ background: "var(--color-paper)", padding: "80px 32px" }}>
+      <section className="donate-details-section" style={{ background: "var(--color-paper)", padding: "80px 32px" }}>
         <Container>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
             <p
@@ -123,6 +133,7 @@ export default function DonatePage() {
             >
               {/* Header strip */}
               <div
+                className="donate-bank-head"
                 style={{
                   background: "#09d89a",
                   padding: "18px 32px",
@@ -141,7 +152,7 @@ export default function DonatePage() {
               </div>
 
               {/* Detail rows */}
-              <div style={{ padding: "32px" }}>
+              <div className="donate-bank-rows" style={{ padding: "32px" }}>
                 {[
                   { label: "Account Name", value: "Ch. M. Hafeez &/OR Ch. M. Hameed" },
                   { label: "Account No.", value: "301700161280265" },
@@ -151,6 +162,7 @@ export default function DonatePage() {
                 ].map((row, i, arr) => (
                   <div
                     key={row.label}
+                    className="donate-bank-row"
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
@@ -180,6 +192,8 @@ export default function DonatePage() {
                         fontWeight: 600,
                         fontFamily: row.label === "Account No." || row.label === "IBAN" ? "monospace" : "inherit",
                         textAlign: "right",
+                        minWidth: 0,
+                        overflowWrap: "anywhere",
                         letterSpacing: row.label === "Account No." || row.label === "IBAN" ? "0.05em" : "normal",
                       }}
                     >
@@ -216,7 +230,7 @@ export default function DonatePage() {
             marginRight: "auto",
           }}
         >
-          Every contribution, big or small, makes a real difference in the life of a deserving child.
+          Every contribution, big or small, makes a real difference in the life of a deserving child
         </p>
         <Button href="/contact" variant="dark">
           Get in touch

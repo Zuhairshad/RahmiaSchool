@@ -128,7 +128,7 @@ export default function GalleryGrid({
         )}
 
         {visible.length === 0 ? (
-          <p className="gallery-empty">No photos in this category yet.</p>
+          <p className="gallery-empty">No photos in this category yet</p>
         ) : (
           <div className="gallery-masonry" key={filter}>
             {visible.map((photo, i) => (

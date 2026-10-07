@@ -14,7 +14,7 @@ const steps = [
     icon: "/assets/images/y9YOOlFulKPlj13Zs9F86cn64-fd9ccbd3.svg",
     iconBg: "var(--color-brand-teal)",
     title: "Application Form",
-    desc: "Fill out a simple admission form with your child's basic details to start the enrollment process quickly and easily.",
+    desc: "Fill out a simple admission form with your child's basic details to start the enrollment process quickly and easily",
   },
   {
     step: "STEP 02",
@@ -22,7 +22,7 @@ const steps = [
     icon: "/assets/images/Jss21SlWGBoWTPdQOkC11KRPQ-f1b333bd.svg",
     iconBg: "var(--color-brand-purple)",
     title: "Parent Meeting",
-    desc: "Attend a short discussion with our educators to understand your child's needs, learning goals, and future plans.",
+    desc: "Attend a short discussion with our educators to understand your child's needs, learning goals, and future plans",
   },
   {
     step: "STEP 03",
@@ -30,7 +30,7 @@ const steps = [
     icon: "/assets/images/zKWAqAmFwvEV7PKeGZLyshFIMH8-77559a5d.svg",
     iconBg: "var(--color-brand-gold)",
     title: "Confirmation Done",
-    desc: "Once approved, complete the admission process and begin your child's learning journey with RAHMA Model School.",
+    desc: "Once approved, complete the admission process and begin your child's learning journey with RAHMA Model School",
   },
 ];
 
@@ -38,13 +38,13 @@ const infoCards = [
   {
     bg: "var(--color-tint-green)",
     title: "General Inquiry",
-    desc: "Have questions about our programs or classes? We're here to help anytime.",
+    desc: "Have questions about our programs or classes? We're here to help anytime",
     value: "+92 331 5947506",
   },
   {
     bg: "var(--color-tint-purple)",
     title: "Opening Hours",
-    desc: "Check our opening hours and plan your visit at a time that works best for you.",
+    desc: "Check our opening hours and plan your visit at a time that works best for you",
     value: "Monday – Friday: 8:00 am – 2:00 pm",
     value2: "Saturday: 8:00 am – 1:00 pm · Sunday: Closed",
   },
@@ -143,7 +143,7 @@ export default async function AdmissionPage({ searchParams }: { searchParams: Pr
                 Simple Admission Form
               </h2>
               <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8, marginBottom: 32 }}>
-                Quickly submit your child&apos;s admission form to start the enrollment process without any hassle.
+                Quickly submit your child&apos;s admission form to start the enrollment process without any hassle
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                 {infoCards.map((c) => (
@@ -168,7 +168,7 @@ export default async function AdmissionPage({ searchParams }: { searchParams: Pr
               </h3>
               <p style={{ color: "#888", fontSize: "0.85rem", marginBottom: 24, lineHeight: 1.6 }}>
                 Fill out the form with your child&apos;s details so we can understand their needs and welcome them
-                as a RAHMATE.
+                as a RAHMATE
               </p>
               <AdmissionForm defaultProgram={defaultProgram} />
             </div>
@@ -214,7 +214,7 @@ export default async function AdmissionPage({ searchParams }: { searchParams: Pr
           </h2>
           <p style={{ color: "rgba(0,0,0,0.6)", fontSize: "0.95rem", marginBottom: 28 }}>
             At RAHMA Model School, we welcome aspiring learners to experience quality education and moral character
-            development.
+            development
           </p>
           <Button href="#apply-form" variant="dark">
             Enroll now
