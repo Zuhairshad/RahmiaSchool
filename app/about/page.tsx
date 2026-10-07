@@ -35,7 +35,7 @@ export default function AboutPage() {
           .about-teacher-name { font-size: 13px !important; }
           .about-teacher-role { font-size: 12px !important; }
           .values-row { flex-direction: column !important; gap: 40px !important; }
-          .values-image { width: 100% !important; flex-shrink: 1 !important; height: 280px !important; }
+          .values-image { width: 100% !important; flex-shrink: 1 !important; height: 360px !important; }
         }
       `}</style>
       <BannerSection />

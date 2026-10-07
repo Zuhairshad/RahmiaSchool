@@ -219,7 +219,7 @@ export default function ValuesSection() {
             alt="RAHMA students in class"
             fill
             sizes="(max-width: 810px) 100vw, 590px"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "center 28%" }}
           />
         </div>
       </motion.div>
