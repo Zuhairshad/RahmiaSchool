@@ -145,28 +145,42 @@ export const testimonials = [
   },
 ];
 
+// The two cards beside the photo in the home About section. They show what
+// the school offers rather than repeating the numbers in the stats row above.
 export const aboutCards = [
   {
     bg: "#d7fdcf",
-    value: "218",
-    label: "Students Enrolled",
-    sublabel: "Growing with us every year",
+    accent: "#09d89a",
+    ink: "#067a56",
+    title: "Montessori to Matric",
+    desc: "Play Group to Class 10, all under one roof",
+    href: "/programs",
+    // Rising steps, one per stage of schooling.
+    steps: [
+      { label: "Pre", height: 22 },
+      { label: "1–5", height: 36 },
+      { label: "6–8", height: 50 },
+      { label: "9–10", height: 64 },
+    ],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#09d89a" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="9" cy="7" r="4" stroke="#09d89a" strokeWidth="2" />
-        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#09d89a" strokeWidth="2" strokeLinecap="round" />
+        <path d="M22 10L12 5 2 10l10 5 10-5z" stroke="#09d89a" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" stroke="#09d89a" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
   {
     bg: "#ebe1fd",
-    value: "14",
-    label: "Qualified Teachers",
-    sublabel: "Dedicated to every child's success",
+    accent: "#520080",
+    ink: "#520080",
+    title: "Hifz with Understanding",
+    desc: "Hafiz by Grade 8, without leaving school",
+    href: "/programs/hifz-program",
+    // Grade 4 to Grade 8, the five years of the Hifz program.
+    grades: ["4", "5", "6", "7", "8"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M18 20V10M12 20V4M6 20v-6" stroke="#520080" strokeWidth="2" strokeLinecap="round" />
+        <path d="M2 4h6a4 4 0 014 4v13a3 3 0 00-3-3H2V4zM22 4h-6a4 4 0 00-4 4v13a3 3 0 013-3h7V4z" stroke="#520080" strokeWidth="2" strokeLinejoin="round" />
       </svg>
     ),
   },

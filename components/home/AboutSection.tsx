@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Eyebrow, stats, aboutCards } from "./shared";
 
@@ -21,6 +22,39 @@ const fadeUp = {
     transition: spring(delay),
   }),
 };
+
+function AboutCard({ card, children }: { card: (typeof aboutCards)[number]; children: React.ReactNode }) {
+  return (
+    <Link
+      href={card.href}
+      className="about-card"
+      style={{
+        width: 252,
+        flexShrink: 0,
+        background: card.bg,
+        borderRadius: 20,
+        padding: 40,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        gap: 24,
+        textDecoration: "none",
+      }}
+    >
+      <div style={{ width: 42, height: 42, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {card.icon}
+      </div>
+      {children}
+      <div>
+        <div style={{ fontFamily: "var(--font-heading)", fontSize: 22, fontWeight: 700, lineHeight: 1.25, color: "#000", marginBottom: 8 }}>
+          {card.title}
+        </div>
+        <div style={{ fontFamily: "var(--font-body)", fontSize: 15, fontWeight: 400, lineHeight: 1.45, color: "#575757" }}>{card.desc}</div>
+        <div style={{ marginTop: 14, fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: card.ink }}>Explore →</div>
+      </div>
+    </Link>
+  );
+}
 
 export default function AboutSection() {
   return (
@@ -100,31 +134,16 @@ export default function AboutSection() {
           className="about-cards-row"
           style={{ display: "flex", gap: 24, alignItems: "stretch", height: 390 }}
         >
-          {/* Card 1 */}
-          <div
-            className="about-card"
-            style={{
-              width: 252,
-              flexShrink: 0,
-              background: aboutCards[0].bg,
-              borderRadius: 20,
-              padding: 40,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <div style={{ width: 42, height: 42, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              {aboutCards[0].icon}
+          <AboutCard card={aboutCards[0]}>
+            <div aria-hidden style={{ display: "flex", alignItems: "flex-end", gap: 6 }}>
+              {aboutCards[0].steps?.map((step, i) => (
+                <div key={step.label} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                  <div style={{ width: "100%", height: step.height, borderRadius: 8, background: aboutCards[0].accent, opacity: 0.35 + i * 0.2 }} />
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: aboutCards[0].ink }}>{step.label}</span>
+                </div>
+              ))}
             </div>
-            <div>
-              <div style={{ fontFamily: "var(--font-heading)", fontSize: 36, fontWeight: 600, lineHeight: "46.8px", color: "#000", marginBottom: 8 }}>
-                {aboutCards[0].value}
-              </div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757" }}>{aboutCards[0].label}</div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757", opacity: 0.7 }}>{aboutCards[0].sublabel}</div>
-            </div>
-          </div>
+          </AboutCard>
 
           {/* Center image */}
           <div style={{ flex: 1, borderRadius: 20, overflow: "hidden", minWidth: 200, position: "relative" }}>
@@ -137,31 +156,35 @@ export default function AboutSection() {
             />
           </div>
 
-          {/* Card 2 */}
-          <div
-            className="about-card"
-            style={{
-              width: 252,
-              flexShrink: 0,
-              background: aboutCards[1].bg,
-              borderRadius: 20,
-              padding: 40,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <div style={{ width: 42, height: 42, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              {aboutCards[1].icon}
+          <AboutCard card={aboutCards[1]}>
+            <div aria-hidden style={{ position: "relative", display: "flex", justifyContent: "space-between" }}>
+              <div style={{ position: "absolute", left: 13, right: 13, top: 13, height: 2, background: "rgba(82,0,128,0.25)" }} />
+              {aboutCards[1].grades?.map((grade, i, all) => {
+                const last = i === all.length - 1;
+                return (
+                  <div key={grade} style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                    <div
+                      style={{
+                        width: 28,
+                        height: 28,
+                        borderRadius: "50%",
+                        background: last ? aboutCards[1].accent : "#fff",
+                        border: `2px solid ${aboutCards[1].accent}`,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: last ? "#fff" : aboutCards[1].accent,
+                        fontSize: 12,
+                      }}
+                    >
+                      {last ? "★" : ""}
+                    </div>
+                    <span style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: aboutCards[1].accent }}>G{grade}</span>
+                  </div>
+                );
+              })}
             </div>
-            <div>
-              <div style={{ fontFamily: "var(--font-heading)", fontSize: 36, fontWeight: 600, lineHeight: "46.8px", color: "#000", marginBottom: 8 }}>
-                {aboutCards[1].value}
-              </div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757" }}>{aboutCards[1].label}</div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, color: "#575757", opacity: 0.7 }}>{aboutCards[1].sublabel}</div>
-            </div>
-          </div>
+          </AboutCard>
         </motion.div>
       </div>
     </section>

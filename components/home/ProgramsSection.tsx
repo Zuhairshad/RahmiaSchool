@@ -69,7 +69,7 @@ export default function ProgramsSection() {
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
-                      gap: 0,
+                      gap: 24,
                     }}
                   >
                     {/* Top: number + title + description + age pill */}
@@ -146,8 +146,8 @@ export default function ProgramsSection() {
                       </div>
                     </div>
 
-                    {/* Bottom: View details button */}
-                    <div style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                    {/* Bottom: View details link, indented to line up with the pill's text */}
+                    <div style={{ display: "inline-flex", alignItems: "center", gap: 6, paddingLeft: 20 }}>
                       <span
                         style={{
                           fontFamily: "var(--font-body)",

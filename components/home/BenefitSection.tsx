@@ -303,11 +303,6 @@ export default function BenefitSection() {
             >
               At RAHMA Model School, we are committed to creating future leaders through quality education, modern teaching methods, and a caring school culture rooted in Islamic values
             </p>
-
-            {/* Contact button */}
-            <div>
-              <ArrowButton href="/contact" variant="purple">Contact us</ArrowButton>
-            </div>
           </div>
 
           {/* Ticker Wrapper — overflow hidden, padding-left 60px, fills remaining space */}

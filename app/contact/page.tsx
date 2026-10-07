@@ -22,13 +22,13 @@ const contactCards = [
     bg: "var(--color-tint-green)",
     icon: "📍",
     title: "Address",
-    lines: ["Bagga Sheikhan, Near Rawat", "Rawalpindi, Pakistan"],
+    lines: ["Bagga Sheikhan, Chakbeli Khan Road", "Rawat, Rawalpindi, Pakistan"],
   },
   {
     bg: "var(--color-tint-purple)",
     icon: "📞",
     title: "Phone",
-    lines: ["+92 331 5947506"],
+    lines: ["0345 0515566"],
   },
   {
     bg: "var(--color-tint-cream)",

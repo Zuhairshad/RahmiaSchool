@@ -39,7 +39,7 @@ const infoCards = [
     bg: "var(--color-tint-green)",
     title: "General Inquiry",
     desc: "Have questions about our programs or classes? We're here to help anytime",
-    value: "+92 331 5947506",
+    value: "0345 0515566",
   },
   {
     bg: "var(--color-tint-purple)",
