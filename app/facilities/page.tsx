@@ -24,14 +24,14 @@ const facilities = [
     icon: "🔬",
     bg: "var(--color-tint-purple)",
     title: "Science Laboratory",
-    image: "/assets/images/rahma-kids-studying.jpeg",
+    image: "/assets/images/rahma-science-lab.jpeg",
     desc: "Our science laboratory provides practical learning opportunities where students perform experiments and develop scientific thinking, observation, and analytical skills",
   },
   {
     icon: "💻",
     bg: "var(--color-tint-cream)",
     title: "Computer Laboratory",
-    image: "/assets/images/rahma-computer-lab-2.png",
+    image: "/assets/images/rahma-computer-lab-2.jpeg",
     desc: "The computer lab is equipped with modern computers and internet facilities that help students develop digital literacy and technology skills essential for today's world",
   },
   {
@@ -59,7 +59,7 @@ const facilities = [
 
 const campusPhotos = [
   "/assets/images/rahma-school.jpeg",
-  "/assets/images/rahma-computer-lab-2.png",
+  "/assets/images/rahma-computer-lab-2.jpeg",
   "/assets/images/rahma-school-2.jpeg",
   "/assets/images/rahma-kids-studying.jpeg",
 ];
@@ -68,7 +68,7 @@ export default function FacilitiesPage() {
   return (
     <div>
       <style>{`
-        .grid-auto-320 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+        .facilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 24px; }
         .collage-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         @media (max-width: 640px) {
           .collage-4 { grid-template-columns: repeat(2, 1fr); }
@@ -107,14 +107,14 @@ export default function FacilitiesPage() {
       </section>
 
       {/* ── FACILITIES GRID ── */}
-      <section style={{ background: "var(--color-bg-cream)", padding: "60px 32px 80px" }}>
+      <section style={{ background: "var(--color-bg-cream)", padding: "60px 0 80px" }}>
         <Container>
-          <div className="grid-auto-320">
+          <div className="facilities-grid">
             {facilities.map((f) => (
               <div key={f.title} style={{ background: f.bg, borderRadius: 20, padding: "28px 28px 32px" }}>
                 <div style={{ fontSize: "2.2rem", marginBottom: 16 }}>{f.icon}</div>
-                <div style={{ height: 160, borderRadius: 12, marginBottom: 20, overflow: "hidden", position: "relative" }}>
-                  <Image src={f.image} alt={f.title} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 400px" style={{ objectFit: "cover" }} />
+                <div style={{ aspectRatio: "4 / 3", borderRadius: 14, marginBottom: 20, overflow: "hidden", position: "relative" }}>
+                  <Image src={f.image} alt={f.title} fill sizes="(max-width: 1000px) 100vw, 640px" style={{ objectFit: "cover" }} />
                 </div>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem", color: "var(--color-ink)", marginBottom: 10 }}>
                   {f.title}

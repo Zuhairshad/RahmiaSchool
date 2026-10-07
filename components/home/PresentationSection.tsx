@@ -26,7 +26,7 @@ export default function PresentationSection() {
       }}
     >
       <Image
-        src="/assets/images/rahma-computer-lab-2.png"
+        src="/assets/images/rahma-computer-lab-2.jpeg"
         alt="RAHMA Model School computer lab"
         fill
         sizes="100vw"
