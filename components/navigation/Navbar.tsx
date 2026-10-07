@@ -45,6 +45,10 @@ export default function Navbar() {
         .nav-link-hifz:hover, .nav-link-hifz.active { color: var(--color-brand-gold-light); }
         @media (max-width: 1379px) { .nav-links { display: none !important; } .nav-mobile-btn { display: flex !important; } }
         @media (min-width: 1380px) { .nav-mobile-overlay { display: none !important; } }
+        @media (max-width: 810px) {
+          .nav-bar-inner { height: 69px !important; }
+          .nav-mobile-overlay { top: 69px !important; height: calc(100vh - 69px) !important; }
+        }
       `}</style>
       <nav style={{
         position: pathname === "/" ? "absolute" : "sticky",
@@ -56,10 +60,10 @@ export default function Navbar() {
         backdropFilter: pathname === "/" ? "blur(10px)" : "none",
         borderBottom: pathname === "/" ? "none" : "1px solid rgba(255,255,255,0.06)",
       }}>
-        <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div className="nav-bar-inner" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
             <Image
-              src="/assets/images/rahmia-logo.jpeg"
+              src="/assets/images/rahmia-logo.png"
               alt="RAHMA Model School"
               width={0}
               height={0}

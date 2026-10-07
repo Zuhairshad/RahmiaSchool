@@ -2,18 +2,18 @@
 import Link from "next/link";
 
 /**
- * Matches the real export's Footer Menu 01 links exactly (index.html):
- * Home, About, Academic Programs, Contact, Student Life (-> blogs.html),
- * Faculty, Fee Structure, Admissions. There is no "Facilities" footer link
- * in the real site, see docs/reference-analysis.md §1.
+ * Footer links. Started from the Framer export's Footer Menu 01 (index.html),
+ * then extended with the site's own pages (Hifz Program, Facilities, Gallery)
+ * and with Student Life pointing at /student-life rather than the blog.
  */
 const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/programs", label: "Academic Programs" },
   { href: "/programs/hifz-program", label: "Hifz Program" },
+  { href: "/facilities", label: "Facilities" },
   { href: "/contact", label: "Contact" },
-  { href: "/blogs", label: "Student Life" },
+  { href: "/student-life", label: "Student Life" },
   { href: "/gallery", label: "Gallery" },
   { href: "/teachers", label: "Faculty" },
   { href: "/pricing", label: "Fee Structure" },

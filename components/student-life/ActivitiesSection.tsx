@@ -25,8 +25,8 @@ const activities = [
     title: "Sports & Athletics",
     desc: "A full physical programme that builds fitness, teamwork, and healthy competitive spirit in every student",
     items: ["Physical Training Exercises", "Indoor & Outdoor Games", "Sports Competitions", "Team-Building Activities", "Fun Races & Fitness Challenges", "Annual Sports Day"],
-    image: "/assets/images/rahma-sports-day.jpeg",
-    objectPosition: "center top",
+    // No photo: shown on a solid brand colour instead.
+    solid: "#3d2f6b",
   },
   {
     icon: "🔬",
@@ -34,8 +34,8 @@ const activities = [
     title: "Science Exhibitions",
     desc: "Students design, build, and present projects that bring classroom science to life through hands-on innovation",
     items: ["Science Models", "Educational Projects", "Classroom Experiments", "Innovation Displays"],
-    image: "/assets/images/rahma-academic-excellence-2.jpeg",
-    objectPosition: "center",
+    // No photo: shown on a solid brand colour instead.
+    solid: "#0b5c44",
   },
   {
     icon: "🎨",
@@ -78,6 +78,14 @@ const activities = [
 export default function ActivitiesSection() {
   return (
     <section style={{ background: "var(--color-bg-cream)", padding: "48px 0 80px" }}>
+      <style>{`
+        @media (max-width: 600px) {
+          .activity-card { height: auto !important; min-height: 460px; }
+          .activity-card-content { padding: 28px 24px !important; }
+          .activity-card-watermark { font-size: 150px !important; right: -16px !important; top: auto !important; bottom: -16px; transform: none !important; opacity: 0.12 !important; }
+          .activity-card-shade { background: linear-gradient(to bottom, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.45) 100%) !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px", boxSizing: "border-box" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
           {activities.map((a) => (
@@ -87,6 +95,7 @@ export default function ActivitiesSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={spring()}
               viewport={{ once: true, amount: 0.3 }}
+              className="activity-card"
               style={{
                 position: "relative",
                 borderRadius: 20,
@@ -96,33 +105,52 @@ export default function ActivitiesSection() {
                 alignItems: "stretch",
               }}
             >
-              {/* Full-bleed background image */}
-              <Image
-                src={a.image}
-                alt={a.title}
-                fill
-                sizes="(max-width: 1300px) 100vw, 1300px"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: a.objectPosition,
-                }}
-              />
-              {/* Gradient overlay */}
-              <div
-                aria-hidden
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.08) 100%)",
-                }}
-              />
+              {"image" in a && a.image ? (
+                <>
+                  {/* Full-bleed background image */}
+                  <Image
+                    src={a.image}
+                    alt={a.title}
+                    fill
+                    sizes="(max-width: 1300px) 100vw, 1300px"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: a.objectPosition,
+                    }}
+                  />
+                  {/* Gradient overlay */}
+                  <div
+                    aria-hidden
+                    className="activity-card-shade"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.08) 100%)",
+                    }}
+                  />
+                </>
+              ) : (
+                <>
+                  {/* Solid card: brand colour with the activity icon as a large watermark */}
+                  <div aria-hidden style={{ position: "absolute", inset: 0, background: "solid" in a ? a.solid : "var(--color-dark-bg)" }} />
+                  <div
+                    aria-hidden
+                    className="activity-card-watermark"
+                    style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", fontSize: 240, lineHeight: 1, opacity: 0.18, filter: "grayscale(0.2)" }}
+                  >
+                    {a.icon}
+                  </div>
+                </>
+              )}
               {/* Content */}
               <div
+                className="activity-card-content"
                 style={{
                   position: "relative",
                   zIndex: 2,
-                  width: 520,
-                  flexShrink: 0,
+                  width: "100%",
+                  maxWidth: 520,
+                  minWidth: 0,
                   padding: 40,
                   display: "flex",
                   flexDirection: "column",

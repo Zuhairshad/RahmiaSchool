@@ -78,7 +78,7 @@ export default function HomePage() {
 
           /* ── Vision section ── */
           .vision-layout { flex-direction: column !important; gap: 40px !important; }
-          .vision-photo-col { width: 100% !important; margin-top: 0 !important; max-height: 500px; overflow: hidden; }
+          .vision-photo-col { width: 100% !important; margin-top: 0 !important; }
           .vision-photo-col img { margin-top: 0 !important; object-fit: cover; width: 100% !important; height: 500px !important; }
           .vision-stats { grid-template-columns: 1fr 1fr !important; }
 

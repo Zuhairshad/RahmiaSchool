@@ -95,7 +95,7 @@ export default function VisionSection() {
             {[
               "Primary education coverage is on the rise in Pakistan; however, challenges with access still persist. According to government statistics, an estimated 22.6 million children aged 5–16 remain out of school, constituting 44% of all children in this age bracket",
               "Pakistan ranks second in South Asia for having the highest number of Out-Of-School Children (OOSC) at the primary level, with over half of them being girls. A significant portion of these OOSC comes from the poorest, marginalised, and socially excluded groups residing in makeshift tarpaulin huts in slums",
-              "In Rawalpindi/Islamabad alone, approximately 15,000 children from such backgrounds are not enrolled in schools. In response, RAHMA began offering education to these children in 2012, establishing a school within a slum near Rawalpindi Railway Station. What started in a small hut became the first-ever school built for these children",
+              "In Rawalpindi/Islamabad alone, approximately 15,000 children from such backgrounds are not enrolled in schools. In response, RAHMA began offering education to these children in 2012, establishing a school within a slum near Rawalpindi Railway Station. What started in a small hut became the first-ever school built for these children, and is now leading towards excellence",
             ].map((para, i) => (
               <p key={i} style={{ fontFamily: "var(--font-body)", fontSize: "1.15rem", lineHeight: 1.85, color: "#575757", margin: "0 0 20px" }}>
                 {para}
