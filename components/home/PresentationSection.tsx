@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Eyebrow } from "./shared";
+import { ArrowButton, Eyebrow } from "./shared";
 
 const spring = (delay = 0): Record<string, unknown> => ({
   type: "spring",
@@ -54,6 +54,9 @@ export default function PresentationSection() {
           >
             Discover our learning space
           </h2>
+          <div style={{ marginTop: 28 }}>
+            <ArrowButton href="/gallery?category=computer-lab#photos">See our computer lab</ArrowButton>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -14,8 +14,9 @@ const spring = (delay = 0): Record<string, unknown> => ({
 export default function VisionSection() {
   return (
     <section
+      id="vision"
       className="section-padded vision-section"
-      style={{ background: "var(--color-bg-cream)", padding: "180px 30px 120px", position: "relative", overflow: "hidden" }}
+      style={{ background: "var(--color-bg-cream)", padding: "180px 30px 120px", position: "relative", overflow: "hidden", scrollMarginTop: 40 }}
     >
       <div style={{ maxWidth: 1300, margin: "0 auto" }}>
         <div

@@ -5,6 +5,7 @@ export const galleryCategories = [
   "Study Trips",
   "Sports & Awards",
   "Community",
+  "Computer Lab",
 ] as const;
 
 export type GalleryCategory = (typeof galleryCategories)[number];
@@ -19,6 +20,11 @@ export type GalleryPhoto = {
 
 const p = (n: string) => `/assets/images/gallery/g-${n}.jpeg`;
 const img = (name: string) => `/assets/images/${name}.jpeg`;
+const lab = (n: number) => `/assets/images/gallery/computer-lab-${n}.jpeg`;
+
+/** URL-friendly form of a category, used by /gallery?category=… links. */
+export const categorySlug = (c: string) =>
+  c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 /** Ordered strongest-first. Width/height are the real pixel dimensions. */
 export const galleryPhotos: GalleryPhoto[] = [
@@ -28,6 +34,10 @@ export const galleryPhotos: GalleryPhoto[] = [
   { src: p("10"), width: 1800, height: 1800, category: "Study Trips", alt: "An instructor guiding a student as he aims a rifle at an outdoor shooting club trip" },
   { src: img("hifz-hero-class"), width: 1600, height: 1204, category: "Hifz", alt: "Hifz students seated at their desks before their Qari Sahib" },
   { src: p("03"), width: 1350, height: 1800, category: "Celebrations", alt: "Two young students making paper doves at a table in front of a World Peace Day board" },
+  { src: lab(1), width: 1012, height: 1800, category: "Computer Lab", alt: "A student working at a computer in the school computer lab" },
+  { src: lab(2), width: 1012, height: 1800, category: "Computer Lab", alt: "A student typing a document on a lab computer" },
+  { src: lab(3), width: 1012, height: 1800, category: "Computer Lab", alt: "A student using the mouse while working on an exam paper in Word" },
+  { src: lab(4), width: 1012, height: 1800, category: "Computer Lab", alt: "A student at the keyboard of a computer lab workstation" },
   { src: p("32"), width: 1800, height: 1350, category: "Classrooms", alt: "School prefects and head boy standing in a row wearing their sashes" },
   { src: p("29"), width: 1800, height: 1012, category: "Classrooms", alt: "Students gathered around a table sharing a bright pink project chart" },
   { src: p("24"), width: 1012, height: 1800, category: "Classrooms", alt: "A prefect concentrating as he draws at his classroom desk" },

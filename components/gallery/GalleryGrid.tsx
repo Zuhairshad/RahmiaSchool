@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { GalleryPhoto } from "@/lib/gallery";
+import { categorySlug, type GalleryPhoto } from "@/lib/gallery";
 
 const spring = (delay = 0): Record<string, unknown> => ({
   type: "spring",
@@ -31,6 +31,21 @@ export default function GalleryGrid({
   const [filter, setFilter] = useState<string>(ALL);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  // Open on a category when linked as /gallery?category=computer-lab
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("category");
+    const match = wanted && categories.find((c) => categorySlug(c) === wanted);
+    if (match) setFilter(match);
+  }, [categories]);
+
+  // On phones the pills scroll sideways; keep the selected one in view
+  const pillsRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const row = pillsRef.current;
+    const active = row?.querySelector<HTMLElement>("[aria-pressed=\"true\"]");
+    if (row && active) row.scrollLeft = active.offsetLeft - row.offsetLeft - 20;
+  }, [filter]);
+
   const usedCategories = useMemo(
     () => categories.filter((c) => photos.some((p) => p.category === c)),
     [categories, photos]
@@ -48,7 +63,7 @@ export default function GalleryGrid({
   }, [photos]);
 
   return (
-    <section className="gallery-section" style={{ background: "#fff", padding: "0 30px 60px" }}>
+    <section id="photos" className="gallery-section" style={{ scrollMarginTop: 80, background: "#fff", padding: "0 30px 60px" }}>
       <style>{`
         .gallery-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
         .gallery-pill {
@@ -111,7 +126,7 @@ export default function GalleryGrid({
 
       <div style={{ maxWidth: 1300, margin: "0 auto" }}>
         {usedCategories.length > 0 && (
-          <div className="gallery-pills" role="group" aria-label="Filter photos by category">
+          <div ref={pillsRef} className="gallery-pills" role="group" aria-label="Filter photos by category">
             {[ALL, ...usedCategories].map((c) => (
               <button
                 key={c}

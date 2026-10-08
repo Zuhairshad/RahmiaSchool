@@ -29,7 +29,13 @@ const allPagesLinks = [
   // { href: "/blogs", label: "Blog" },
 ];
 
-const allLinksForOverlay = [...primaryLinks, ...allPagesLinks];
+// Only in the phone/tablet menu
+const overlayOnlyLinks = [
+  { href: "/#vision", label: "Our Vision" },
+  { href: "/donate", label: "Assist in Sadqa Jaria", donate: true },
+];
+
+const allLinksForOverlay = [...primaryLinks, ...allPagesLinks, ...overlayOnlyLinks];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -198,8 +204,8 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               style={{
                 display: "block",
-                color: "highlight" in l ? "var(--color-brand-gold)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)",
-                fontWeight: "highlight" in l ? 700 : undefined,
+                color: "highlight" in l ? "var(--color-brand-gold)" : "donate" in l ? "var(--color-brand-teal)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)",
+                fontWeight: "highlight" in l || "donate" in l ? 700 : undefined,
                 padding: "16px 0",
                 fontSize: "1.05rem",
                 borderBottom: "1px solid rgba(255,255,255,0.08)",
