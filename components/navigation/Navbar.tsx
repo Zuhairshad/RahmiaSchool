@@ -29,13 +29,17 @@ const allPagesLinks = [
   // { href: "/blogs", label: "Blog" },
 ];
 
-// Only in the phone/tablet menu
-const overlayOnlyLinks = [
+// Phone/tablet menu: no Hifz link (laptop nav keeps it), Sadqa Jaria right
+// after Programs, and Our Vision at the end
+const allLinksForOverlay = [
+  ...primaryLinks
+    .filter((l) => !l.highlight)
+    .flatMap((l) =>
+      l.href === "/programs" ? [l, { href: "/donate", label: "Assist in Sadqa Jaria", donate: true }] : [l]
+    ),
+  ...allPagesLinks,
   { href: "/#vision", label: "Our Vision" },
-  { href: "/donate", label: "Assist in Sadqa Jaria", donate: true },
 ];
-
-const allLinksForOverlay = [...primaryLinks, ...allPagesLinks, ...overlayOnlyLinks];
 
 export default function Navbar() {
   const pathname = usePathname();
