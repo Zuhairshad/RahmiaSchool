@@ -46,7 +46,7 @@ export default function Navbar() {
         @media (max-width: 1379px) { .nav-links { display: none !important; } .nav-mobile-btn { display: flex !important; } .nav-center-pill { display: inline-flex !important; } }
         /* The hero carries this pill on desktop; on smaller screens it moves into the nav bar. */
         @media (max-width: 1379px) { .hero-pill { display: none !important; } }
-        @media (max-width: 420px) { .nav-bar-inner { padding: 0 20px !important; } .nav-center-pill { padding: 6px 10px !important; gap: 6px !important; } .nav-center-pill span { font-size: 9.5px !important; letter-spacing: 0.06em !important; } }
+        @media (max-width: 420px) { .nav-bar-inner { padding: 0 20px !important; } .nav-center-pill { padding: 6px 12px !important; } .nav-center-pill span { font-size: 10.5px !important; letter-spacing: 0.06em !important; } }
         @media (min-width: 1380px) { .nav-mobile-overlay { display: none !important; } }
         @media (max-width: 810px) {
           .nav-bar-inner { height: 69px !important; }
@@ -87,18 +87,14 @@ export default function Navbar() {
               top: "50%",
               transform: "translate(-50%, -50%)",
               alignItems: "center",
-              gap: 8,
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.3)",
+              background: "rgba(255,255,255,0.2)",
+              border: "1.5px solid rgba(255,255,255,0.75)",
               borderRadius: 50,
-              padding: "7px 14px",
+              padding: "7px 16px",
               whiteSpace: "nowrap",
             }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#fcb520" aria-hidden>
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-            <span style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: "rgba(255,255,255,0.9)", textTransform: "uppercase" }}>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.35)", textTransform: "uppercase" }}>
               Home of the RAHMATES
             </span>
           </Link>
