@@ -38,7 +38,10 @@ export default function HomePage() {
           .programs-grid { grid-template-columns: 1fr !important; }
           /* Tablets: keep the photo beside the text, just narrower */
           .vision-layout { gap: 48px !important; }
-          .vision-photo-col { width: 360px !important; }
+          .vision-photo-col { width: 360px !important; margin-top: 0 !important; }
+        }
+        @media (min-width: 811px) and (max-width: 1379px) {
+          .vision-section { padding-top: 100px !important; }
         }
         @media (max-width: 1023px) {
           .vision-layout { flex-direction: column !important; gap: 40px !important; }
