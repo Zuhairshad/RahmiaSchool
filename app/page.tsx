@@ -66,6 +66,7 @@ export default function HomePage() {
           /* ── About section ── */
           .about-title-row { flex-direction: column !important; gap: 16px !important; }
           .about-heading-wrapper { width: 100% !important; flex-shrink: 1 !important; }
+          .about-heading { font-size: 33px !important; font-weight: 400 !important; line-height: 1.3 !important; }
           .about-stats-row { flex-wrap: wrap !important; gap: 24px !important; }
           .about-stats-row > div { flex: 1 1 140px !important; }
           .about-cards-row { height: auto !important; flex-wrap: wrap !important; }

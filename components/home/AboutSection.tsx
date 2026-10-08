@@ -74,6 +74,7 @@ export default function AboutSection() {
             style={{ width: 650, flexShrink: 0 }}
           >
             <h2
+              className="about-heading"
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: 44,
