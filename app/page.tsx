@@ -36,7 +36,14 @@ export default function HomePage() {
           .benefit-grid { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
           .benefit-grid > div:first-child { height: 500px !important; }
           .programs-grid { grid-template-columns: 1fr !important; }
-          .vision-layout { flex-direction: column !important; gap: 48px !important; }
+          /* Tablets: keep the photo beside the text, just narrower */
+          .vision-layout { gap: 48px !important; }
+          .vision-photo-col { width: 360px !important; }
+        }
+        @media (max-width: 1023px) {
+          .vision-layout { flex-direction: column !important; gap: 40px !important; }
+          .vision-photo-col { width: 100% !important; max-width: 440px !important; margin-top: 0 !important; align-self: center; }
+          .vision-photo-col img { margin-top: 0 !important; height: 520px !important; object-fit: cover; object-position: center 35%; }
         }
         @media (max-width: 810px) {
           /* ── Benefit section (existing) ── */
