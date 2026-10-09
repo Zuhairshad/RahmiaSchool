@@ -11,9 +11,14 @@ import { useState } from "react";
  * switch is 1380px (confirmed via @media (min-width:1380px) in the export's
  * inlined CSS), not a single ~900px cutoff.
  */
+const aboutLinks = [
+  { href: "/about", label: "About Us" },
+  { href: "/about/management", label: "Management" },
+];
+
 const primaryLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About", children: aboutLinks },
   { href: "/contact", label: "Contact" },
   { href: "/programs", label: "Programs" },
   { href: "/programs/hifz-program", label: "Hifz Program", highlight: true },
@@ -47,10 +52,85 @@ const allLinksForOverlay = [
   { href: "/contact", label: "Contact" },
 ];
 
+function NavDropdown({
+  label,
+  href,
+  links,
+  active,
+  align = "left",
+}: {
+  label: string;
+  /** When set, the label itself is a link and the menu opens on hover. */
+  href?: string;
+  links: { href: string; label: string }[];
+  active?: boolean;
+  align?: "left" | "right";
+}) {
+  const [open, setOpen] = useState(false);
+  const chevron = (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+      <path d="M2.5 4.5L6 8l3.5-3.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+
+  return (
+    <div
+      style={{ position: "relative", display: "inline-flex", alignItems: "center", gap: 4, cursor: "pointer" }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      {href ? (
+        <>
+          <Link href={href} className={`nav-link nav-link-underline${active ? " active" : ""}`}>
+            {label}
+          </Link>
+          <button
+            type="button"
+            aria-label={`${label} pages`}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            style={{ background: "none", border: "none", cursor: "pointer", padding: 0, display: "inline-flex" }}
+          >
+            {chevron}
+          </button>
+        </>
+      ) : (
+        <button
+          type="button"
+          className="nav-link"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 0, display: "inline-flex", alignItems: "center", gap: 4, fontFamily: "inherit" }}
+        >
+          {label}
+          {chevron}
+        </button>
+      )}
+      {open && (
+        <div style={{ position: "absolute", top: "100%", [align]: 0, paddingTop: 12, zIndex: 10 }}>
+          <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, padding: 8, minWidth: 180, boxShadow: "0 10px 30px rgba(0,0,0,0.4)" }}>
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="nav-link"
+                onClick={() => setOpen(false)}
+                style={{ display: "block", padding: "8px 12px", borderRadius: 8, whiteSpace: "nowrap" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [allPagesOpen, setAllPagesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
     <>
@@ -116,52 +196,27 @@ export default function Navbar() {
           </Link>
 
           <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
-            {primaryLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`nav-link nav-link-underline${l.highlight ? " nav-link-hifz" : ""}${pathname === l.href ? " active" : ""}`}
-              >
-                {l.highlight && <span aria-hidden>★</span>}
-                {l.label}
-              </Link>
-            ))}
-            <div
-              style={{ position: "relative", display: "inline-flex", alignItems: "center", gap: 4, cursor: "pointer" }}
-              onMouseEnter={() => setAllPagesOpen(true)}
-              onMouseLeave={() => setAllPagesOpen(false)}
-            >
-              <button
-                type="button"
-                className="nav-link"
-                aria-expanded={allPagesOpen}
-                onClick={() => setAllPagesOpen((v) => !v)}
-                style={{ background: "none", border: "none", cursor: "pointer", padding: 0, display: "inline-flex", alignItems: "center", gap: 4, fontFamily: "inherit" }}
-              >
-                All Pages
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
-                  <path d="M2.5 4.5L6 8l3.5-3.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </button>
-              {allPagesOpen && (
-                <div
-                  style={{ position: "absolute", top: "100%", right: 0, paddingTop: 12, zIndex: 10 }}
+            {primaryLinks.map((l) =>
+              l.children ? (
+                <NavDropdown
+                  key={l.href}
+                  label={l.label}
+                  href={l.href}
+                  links={l.children}
+                  active={l.children.some((c) => c.href === pathname)}
+                />
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`nav-link nav-link-underline${l.highlight ? " nav-link-hifz" : ""}${pathname === l.href ? " active" : ""}`}
                 >
-                  <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, padding: 8, minWidth: 180, boxShadow: "0 10px 30px rgba(0,0,0,0.4)" }}>
-                    {allPagesLinks.map((l) => (
-                      <Link
-                        key={l.href}
-                        href={l.href}
-                        className="nav-link"
-                        style={{ display: "block", padding: "8px 12px", borderRadius: 8, whiteSpace: "nowrap" }}
-                      >
-                        {l.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+                  {l.highlight && <span aria-hidden>★</span>}
+                  {l.label}
+                </Link>
+              )
+            )}
+            <NavDropdown label="All Pages" links={allPagesLinks} align="right" />
           </div>
 
           <Link
@@ -207,24 +262,61 @@ export default function Navbar() {
             zIndex: 1050,
           }}
         >
-          {allLinksForOverlay.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              style={{
-                display: "block",
-                color: "highlight" in l ? "var(--color-brand-gold)" : "donate" in l ? "var(--color-brand-teal)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)",
-                fontWeight: "highlight" in l || "donate" in l ? 700 : undefined,
-                padding: "16px 0",
-                fontSize: "1.05rem",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-              }}
-            >
-              {"highlight" in l && "★ "}
-              {l.label}
-            </Link>
-          ))}
+          {allLinksForOverlay.map((l) =>
+            l.href === "/about" ? (
+              <div key={l.href} style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <Link
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    style={{ display: "block", flex: 1, color: pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)", padding: "16px 0", fontSize: "1.05rem" }}
+                  >
+                    {l.label}
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label={aboutOpen ? `Hide ${l.label} pages` : `Show ${l.label} pages`}
+                    aria-expanded={aboutOpen}
+                    onClick={() => setAboutOpen((v) => !v)}
+                    style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 4px 8px 16px", color: "rgba(255,255,255,0.8)", fontSize: "1.5rem", lineHeight: 1, fontFamily: "inherit" }}
+                  >
+                    <span aria-hidden style={{ display: "inline-block", transform: aboutOpen ? "rotate(45deg)" : "none", transition: "transform 0.2s" }}>+</span>
+                  </button>
+                </div>
+                {aboutOpen && (
+                  <div style={{ paddingBottom: 8 }}>
+                    {aboutLinks.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        onClick={() => setOpen(false)}
+                        style={{ display: "block", color: pathname === c.href ? "#fff" : "rgba(255,255,255,0.6)", padding: "10px 0 10px 20px", fontSize: "0.98rem" }}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                style={{
+                  display: "block",
+                  color: "highlight" in l ? "var(--color-brand-gold)" : "donate" in l ? "var(--color-brand-teal)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)",
+                  fontWeight: "highlight" in l || "donate" in l ? 700 : undefined,
+                  padding: "16px 0",
+                  fontSize: "1.05rem",
+                  borderBottom: "1px solid rgba(255,255,255,0.08)",
+                }}
+              >
+                {"highlight" in l && "★ "}
+                {l.label}
+              </Link>
+            )
+          )}
         </div>
       </nav>
     </>
