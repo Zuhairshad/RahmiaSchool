@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Primary links match the real Framer nav ("Large Menu 01" on index.html):
@@ -130,6 +130,28 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const isHome = pathname === "/";
+  // On the home page the bar floats see-through over the hero photo, then turns
+  // solid once the hero has scrolled away so the links stay readable on the
+  // light sections below.
+  const [pastHero, setPastHero] = useState(false);
+
+  useEffect(() => {
+    if (!isHome) return;
+    const update = () => {
+      const hero = document.querySelector(".hero-section");
+      setPastHero(hero ? hero.getBoundingClientRect().bottom <= 72 : window.scrollY > 40);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [isHome]);
+
+  const overHero = isHome && !pastHero;
 
   return (
     <>
@@ -151,14 +173,16 @@ export default function Navbar() {
         }
       `}</style>
       <nav style={{
-        position: pathname === "/" ? "absolute" : "sticky",
+        // Fixed on home so it can overlap the hero; sticky elsewhere so it keeps its place in the flow.
+        position: isHome ? "fixed" : "sticky",
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1000,
-        background: pathname === "/" ? "rgba(0,0,0,0.3)" : "var(--color-nav-bg)",
-        backdropFilter: pathname === "/" ? "blur(10px)" : "none",
-        borderBottom: pathname === "/" ? "none" : "1px solid rgba(255,255,255,0.06)",
+        background: overHero ? "rgba(0,0,0,0.3)" : "var(--color-nav-bg)",
+        backdropFilter: overHero ? "blur(10px)" : "none",
+        borderBottom: overHero ? "1px solid transparent" : "1px solid rgba(255,255,255,0.06)",
+        transition: "background 0.25s ease",
       }}>
         <div className="nav-bar-inner" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between", position: "relative" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
