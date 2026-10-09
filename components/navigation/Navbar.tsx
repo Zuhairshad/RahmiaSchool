@@ -185,13 +185,13 @@ export default function Navbar() {
               top: "50%",
               transform: "translate(-50%, -50%)",
               alignItems: "center",
-              background: "var(--color-brand-teal)",
+              background: "#1a90cc", // the logo blue
               borderRadius: 50,
               padding: "7px 16px",
               whiteSpace: "nowrap",
             }}
           >
-            <span style={{ fontFamily: "var(--font-body)", fontSize: 20, fontWeight: 700, letterSpacing: "0.1em", color: "#000", textTransform: "uppercase" }}>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: 20, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", textTransform: "uppercase" }}>
               Home of the RAHMATES
             </span>
           </Link>

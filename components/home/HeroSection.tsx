@@ -58,7 +58,7 @@ export default function HeroSection() {
                 alignSelf: "flex-start",
                 alignItems: "center",
                 gap: 10,
-                background: "var(--color-brand-teal)",
+                background: "#1a90cc", // the logo blue
                 borderRadius: 50,
                 padding: "8px 18px",
               }}
@@ -68,7 +68,7 @@ export default function HeroSection() {
                 fontSize: 20,
                 fontWeight: 700,
                 letterSpacing: "0.12em",
-                color: "#000",
+                color: "#fff",
                 textTransform: "uppercase",
               }}>
                 Home of the RAHMATES
