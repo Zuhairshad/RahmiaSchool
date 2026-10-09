@@ -10,8 +10,8 @@ const plans = {
     premium: { price: "PKR 3,000", period: "/month" },
   },
   annual: {
-    basic: { price: "PKR 25,000", period: "/year" },
-    premium: { price: "PKR 30,000", period: "/year" },
+    basic: { price: "PKR 30,000", period: "/year" },
+    premium: { price: "PKR 36,000", period: "/year" },
   },
 };
 
