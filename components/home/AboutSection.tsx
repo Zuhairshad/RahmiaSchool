@@ -112,14 +112,17 @@ export default function AboutSection() {
           {stats.map((stat, i) => (
             <div key={stat.label} style={{ display: "flex", alignItems: "center", flex: 1 }}>
               {i > 0 && (
-                <div style={{ width: 1, height: 86, background: "#d5d5d5", marginRight: 24, flexShrink: 0 }} />
+                <div style={{ width: 1, height: 112, background: "#d5d5d5", marginRight: 24, flexShrink: 0 }} />
               )}
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 4, paddingRight: 16 }}>
                 <span style={{ fontFamily: "var(--font-heading)", fontSize: 44, fontWeight: 600, lineHeight: "52.8px", color: "#000" }}>
                   {stat.value}
                 </span>
                 <span style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 400, lineHeight: "24px", color: "#575757" }}>
                   {stat.label}
+                </span>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 400, lineHeight: "20px", color: "#8a8a8a" }}>
+                  {stat.note}
                 </span>
               </div>
             </div>
