@@ -190,7 +190,7 @@ export default function Navbar() {
               whiteSpace: "nowrap",
             }}
           >
-            <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.35)", textTransform: "uppercase" }}>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: 15, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.35)", textTransform: "uppercase" }}>
               Home of the RAHMATES
             </span>
           </Link>
