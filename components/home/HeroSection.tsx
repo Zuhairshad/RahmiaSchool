@@ -58,7 +58,7 @@ export default function HeroSection() {
                 alignSelf: "flex-start",
                 alignItems: "center",
                 gap: 10,
-                background: "var(--color-brand-gold)",
+                background: "var(--color-brand-teal)",
                 borderRadius: 50,
                 padding: "8px 18px",
               }}

@@ -185,7 +185,7 @@ export default function Navbar() {
               top: "50%",
               transform: "translate(-50%, -50%)",
               alignItems: "center",
-              background: "var(--color-brand-gold)",
+              background: "var(--color-brand-teal)",
               borderRadius: 50,
               padding: "7px 16px",
               whiteSpace: "nowrap",
