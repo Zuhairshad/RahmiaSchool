@@ -185,7 +185,7 @@ export default function Navbar() {
               top: "50%",
               transform: "translate(-50%, -50%)",
               alignItems: "center",
-              background: "#1a90cc", // the logo blue
+              background: "#0a45c8", // the blue of the school building in the hero photo
               borderRadius: 50,
               padding: "7px 16px",
               whiteSpace: "nowrap",

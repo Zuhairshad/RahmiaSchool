@@ -58,7 +58,7 @@ export default function HeroSection() {
                 alignSelf: "flex-start",
                 alignItems: "center",
                 gap: 10,
-                background: "#1a90cc", // the logo blue
+                background: "#0a45c8", // the blue of the school building in the hero photo
                 borderRadius: 50,
                 padding: "8px 18px",
               }}
