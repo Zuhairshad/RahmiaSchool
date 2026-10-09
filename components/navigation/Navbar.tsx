@@ -40,7 +40,7 @@ const allLinksForOverlay: { href: string; label: string; donate?: boolean }[] = 
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/#vision", label: "Our Vision" },
-  { href: "/donate", label: "Assistance in Sadqa Jaria", donate: true },
+  { href: "/donate", label: "Assistance in Sadqa e Jaria", donate: true },
   { href: "/programs", label: "Programs" },
   { href: "/student-life", label: "Student Life" },
   { href: "/facilities", label: "Facilities" },

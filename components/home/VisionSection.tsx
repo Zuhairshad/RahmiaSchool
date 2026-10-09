@@ -115,7 +115,7 @@ export default function VisionSection() {
                 borderLeft: "4px solid var(--color-brand-teal)",
               }}
             >
-              Assistance in Sadqa Jaria
+              Assistance in Sadqa e Jaria
             </p>
 
             <div>

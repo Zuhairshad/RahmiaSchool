@@ -152,11 +152,11 @@ export default function AboutSection() {
           {/* Center image */}
           <div style={{ flex: 1, borderRadius: 20, overflow: "hidden", minWidth: 200, position: "relative" }}>
             <Image
-              src="/assets/images/rahma-parent-partnership-2.jpeg"
-              alt="Teacher and students at RAHMA Model School"
+              src="/assets/images/gallery/g-04.jpeg"
+              alt="Smiling RAHMA students with balloons and teddy bears on Colour Day"
               fill
-              sizes="(max-width: 810px) 100vw, 500px"
-              style={{ objectFit: "cover" }}
+              sizes="(max-width: 810px) 100vw, 800px"
+              style={{ objectFit: "cover", objectPosition: "center 45%" }}
             />
           </div>
 
