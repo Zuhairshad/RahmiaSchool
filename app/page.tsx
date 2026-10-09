@@ -43,7 +43,17 @@ export default function HomePage() {
         @media (min-width: 811px) and (max-width: 1379px) {
           .vision-section { padding-top: 100px !important; }
         }
+        /* Where /#vision lands: 40px above the section top, as before, while the
+           photo sits beside the text (section top padding + 40) */
+        .vision-content { scroll-margin-top: 220px; }
+        /* clip, not hidden: overflow: hidden makes the section a scroll container,
+           and the jump to /#vision then can't land above the section's top edge.
+           hidden stays as the fallback for browsers without clip (Safari < 16). */
+        .vision-section { overflow: hidden; overflow: clip; }
+        @media (max-width: 1379px) { .vision-content { scroll-margin-top: 140px; } }
         @media (max-width: 1023px) {
+          /* Photo stacks above the text: land on the heading, just below the nav bar */
+          .vision-content { scroll-margin-top: 96px; }
           .vision-layout { flex-direction: column !important; gap: 40px !important; }
           .vision-photo-col { width: 100% !important; max-width: 440px !important; margin-top: 0 !important; align-self: center; }
           .vision-photo-col img { margin-top: 0 !important; height: 520px !important; object-fit: cover; object-position: center 35%; }

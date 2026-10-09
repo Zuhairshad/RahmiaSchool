@@ -14,9 +14,8 @@ const spring = (delay = 0): Record<string, unknown> => ({
 export default function VisionSection() {
   return (
     <section
-      id="vision"
       className="section-padded vision-section"
-      style={{ background: "var(--color-bg-cream)", padding: "180px 30px 120px", position: "relative", overflow: "hidden", scrollMarginTop: 40 }}
+      style={{ background: "var(--color-bg-cream)", padding: "180px 30px 120px", position: "relative" }}
     >
       <div style={{ maxWidth: 1300, margin: "0 auto" }}>
         <div
@@ -69,8 +68,15 @@ export default function VisionSection() {
             </div>
           </motion.div>
 
-          {/* ── Right: content ── */}
+          {/* ── Right: content ──
+              The "Our Vision" link (/#vision) lands here rather than on the
+              section, so on phones, where the photo stacks above the text, it
+              opens on the heading. Where the photo sits beside the text, the
+              scroll margin (set in app/page.tsx) keeps the landing spot the same
+              as the section top. */}
           <motion.div
+            id="vision"
+            className="vision-content"
             initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={spring(0.1)}
