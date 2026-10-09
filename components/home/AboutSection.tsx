@@ -77,7 +77,7 @@ export default function AboutSection() {
               className="about-heading"
               style={{
                 fontFamily: "var(--font-heading)",
-                fontSize: 33,
+                fontSize: 28,
                 fontWeight: 600,
                 lineHeight: 1.3,
                 color: "#000",
