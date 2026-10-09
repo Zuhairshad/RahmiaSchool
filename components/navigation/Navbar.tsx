@@ -30,15 +30,16 @@ const allPagesLinks = [
 ];
 
 // Phone/tablet menu: no Hifz link (laptop nav keeps it), Sadqa Jaria right
-// after Programs, and Our Vision at the end
+// after Programs, then Our Vision, with Contact last as menus usually do
 const allLinksForOverlay = [
   ...primaryLinks
-    .filter((l) => !l.highlight)
+    .filter((l) => !l.highlight && l.href !== "/contact")
     .flatMap((l) =>
       l.href === "/programs" ? [l, { href: "/donate", label: "Assist in Sadqa Jaria", donate: true }] : [l]
     ),
   ...allPagesLinks,
   { href: "/#vision", label: "Our Vision" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {

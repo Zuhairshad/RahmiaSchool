@@ -103,7 +103,7 @@ export default function HeroSection() {
                 fontSize: 16,
                 fontWeight: 400,
                 lineHeight: "24px",
-                color: "rgba(255,255,255,0.85)",
+                color: "#fff",
                 margin: 0,
               }}
             >
