@@ -34,21 +34,20 @@ const allPagesLinks = [
   // { href: "/blogs", label: "Blog" },
 ];
 
-// Phone/tablet menu: no Hifz link (laptop nav keeps it), Our Vision and
-// Sadqa Jaria right after Programs, with Contact last as menus usually do
-const allLinksForOverlay = [
-  ...primaryLinks
-    .filter((l) => !l.highlight && l.href !== "/contact")
-    .flatMap((l) =>
-      l.href === "/programs"
-        ? [
-            l,
-            { href: "/#vision", label: "Our Vision" },
-            { href: "/donate", label: "Assistance in Sadqa Jaria", donate: true },
-          ]
-        : [l]
-    ),
-  ...allPagesLinks,
+// Phone/tablet menu has its own order (no Hifz link; the laptop nav keeps it).
+// About opens its sub-pages with the + button.
+const allLinksForOverlay: { href: string; label: string; donate?: boolean }[] = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/#vision", label: "Our Vision" },
+  { href: "/donate", label: "Assistance in Sadqa Jaria", donate: true },
+  { href: "/programs", label: "Programs" },
+  { href: "/student-life", label: "Student Life" },
+  { href: "/facilities", label: "Facilities" },
+  { href: "/teachers", label: "Faculty" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/pricing", label: "Fee Structure" },
+  { href: "/admission", label: "Admission" },
   { href: "/contact", label: "Contact" },
 ];
 
