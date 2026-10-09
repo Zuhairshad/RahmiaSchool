@@ -103,8 +103,23 @@ export default function VisionSection() {
               </p>
             ))}
 
-            <div style={{ marginTop: 8 }}>
-              <ArrowButton href="/donate" variant="purple">Assistance in Sadqa Jaria</ArrowButton>
+            <p
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "1.3rem",
+                fontWeight: 700,
+                lineHeight: 1.4,
+                color: "#000",
+                margin: "8px 0 28px",
+                paddingLeft: 18,
+                borderLeft: "4px solid var(--color-brand-teal)",
+              }}
+            >
+              Assistance in Sadqa Jaria
+            </p>
+
+            <div>
+              <ArrowButton href="/donate" variant="purple">Support the vision</ArrowButton>
             </div>
           </motion.div>
         </div>
