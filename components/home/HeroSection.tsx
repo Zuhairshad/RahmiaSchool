@@ -100,9 +100,9 @@ export default function HeroSection() {
               transition={{ duration: 0.7, ease, delay: 0.3 }}
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: 16,
+                fontSize: 18,
                 fontWeight: 400,
-                lineHeight: "24px",
+                lineHeight: "27px",
                 color: "#fff",
                 margin: 0,
               }}
