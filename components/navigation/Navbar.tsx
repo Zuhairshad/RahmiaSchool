@@ -44,7 +44,7 @@ const allLinksForOverlay = [
         ? [
             l,
             { href: "/#vision", label: "Our Vision" },
-            { href: "/donate", label: "Assist in Sadqa Jaria", donate: true },
+            { href: "/donate", label: "Assistance in Sadqa Jaria", donate: true },
           ]
         : [l]
     ),
