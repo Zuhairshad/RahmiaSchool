@@ -70,7 +70,7 @@ export default function HeroSection() {
               </svg>
               <span className="hero-pill-label" style={{
                 fontFamily: "var(--font-body)",
-                fontSize: 15,
+                fontSize: 20,
                 fontWeight: 700,
                 letterSpacing: "0.12em",
                 color: "rgba(255,255,255,0.9)",

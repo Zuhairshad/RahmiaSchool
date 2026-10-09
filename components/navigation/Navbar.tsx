@@ -142,6 +142,8 @@ export default function Navbar() {
         @media (max-width: 1379px) { .nav-links { display: none !important; } .nav-mobile-btn { display: flex !important; } .nav-center-pill { display: inline-flex !important; } }
         /* The hero carries this pill on desktop; on smaller screens it moves into the nav bar. */
         @media (max-width: 1379px) { .hero-pill { display: none !important; } }
+        /* 20px pill text crowds the logo and menu button on phones */
+        @media (max-width: 480px) { .nav-center-pill span { font-size: 15px !important; } }
         @media (max-width: 420px) { .nav-bar-inner { padding: 0 20px !important; } .nav-center-pill { padding: 6px 12px !important; } .nav-center-pill span { font-size: 10.5px !important; letter-spacing: 0.06em !important; } }
         @media (min-width: 1380px) { .nav-mobile-overlay { display: none !important; } }
         @media (max-width: 810px) {
@@ -190,7 +192,7 @@ export default function Navbar() {
               whiteSpace: "nowrap",
             }}
           >
-            <span style={{ fontFamily: "var(--font-body)", fontSize: 15, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.35)", textTransform: "uppercase" }}>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: 20, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.35)", textTransform: "uppercase" }}>
               Home of the RAHMATES
             </span>
           </Link>
