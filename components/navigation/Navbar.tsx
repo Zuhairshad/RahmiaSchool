@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { MENU_LINKS } from "./menuLinks";
 
 /**
  * Primary links match the real Framer nav ("Large Menu 01" on index.html):
@@ -34,22 +35,9 @@ const allPagesLinks = [
   // { href: "/blogs", label: "Blog" },
 ];
 
-// Phone/tablet menu has its own order (no Hifz link; the laptop nav keeps it).
-// About opens its sub-pages with the + button.
-const allLinksForOverlay: { href: string; label: string; donate?: boolean }[] = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/#vision", label: "Our Vision" },
-  { href: "/donate", label: "Assistance in Sadqa e Jaria", donate: true },
-  { href: "/programs", label: "Programs" },
-  { href: "/student-life", label: "Student Life" },
-  { href: "/facilities", label: "Facilities" },
-  { href: "/teachers", label: "Faculty" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/pricing", label: "Fee Structure" },
-  { href: "/admission", label: "Admission" },
-  { href: "/contact", label: "Contact" },
-];
+// Phone/tablet menu has its own order (no Hifz link; the laptop nav keeps it),
+// shared with the footer via menuLinks.ts. About opens its sub-pages with the + button.
+const allLinksForOverlay = MENU_LINKS;
 
 function NavDropdown({
   label,

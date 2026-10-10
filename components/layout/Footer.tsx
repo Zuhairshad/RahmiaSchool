@@ -1,24 +1,11 @@
 "use client";
 import Link from "next/link";
+import { MENU_LINKS } from "@/components/navigation/menuLinks";
 
-/**
- * Footer links. Started from the Framer export's Footer Menu 01 (index.html),
- * then extended with the site's own pages (Hifz Program, Facilities, Gallery)
- * and with Student Life pointing at /student-life rather than the blog.
- */
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/programs", label: "Academic Programs" },
-  { href: "/programs/hifz-program", label: "Hifz Program" },
-  { href: "/facilities", label: "Facilities" },
-  { href: "/contact", label: "Contact" },
-  { href: "/student-life", label: "Student Life" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/teachers", label: "Faculty" },
-  { href: "/pricing", label: "Fee Structure" },
-  { href: "/admission", label: "Admissions" },
-];
+// Same pages, same order as the phone menu. Filled down the left column first,
+// then down the right, so the list reads in that order.
+const footerLinks = MENU_LINKS;
+const footerRows = Math.ceil(footerLinks.length / 2);
 
 // Icons without an href stay hidden until the school has a link for them
 const socials = [
@@ -92,7 +79,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 32px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: `repeat(${footerRows}, auto)`, gridAutoFlow: "column", gap: "0 32px" }}>
           {footerLinks.map((l) => (
             <Link key={l.href + l.label} href={l.href} style={{ display: "block", color: "rgba(255,255,255,0.55)", fontSize: "0.875rem", marginBottom: 20 }}>
               {l.label}
