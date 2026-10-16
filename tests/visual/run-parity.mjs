@@ -37,7 +37,6 @@ const REAL_TOP_LEVEL = [
   { slug: "about", impl: "/about", ref: "/about.html" },
   { slug: "programs", impl: "/programs", ref: "/programs.html" },
   { slug: "teachers", impl: "/teachers", ref: "/teachers.html" },
-  { slug: "blogs", impl: "/blogs", ref: "/blogs.html" },
   { slug: "pricing", impl: "/pricing", ref: "/pricing.html" },
   { slug: "admission", impl: "/admission", ref: "/admission.html" },
 ];
@@ -47,8 +46,6 @@ const REAL_DETAIL = [
   { slug: "program-creative-minds", impl: "/programs/creative-minds-program", ref: "/programs/creative-minds-program.html" },
   { slug: "program-happy-learners", impl: "/programs/happy-learners-program", ref: "/programs/happy-learners-program.html" },
   { slug: "program-smart-thinkers", impl: "/programs/smart-thinkers-program", ref: "/programs/smart-thinkers-program.html" },
-  { slug: "blog-creative-games", impl: "/blogs/creative-games-that-make-learning-fun-for-kids", ref: "/blogs/creative-games-that-make-learning-fun-for-kids.html" },
-  { slug: "blog-easy-learning", impl: "/blogs/easy-learning-activities-for-curious-young-minds", ref: "/blogs/easy-learning-activities-for-curious-young-minds.html" },
 ];
 
 // No usable reference (empty Framer stub, or not a real page at all) —

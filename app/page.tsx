@@ -7,7 +7,6 @@ import PresentationSection from "@/components/home/PresentationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import VisionSection from "@/components/home/VisionSection";
 import PricingTabs from "@/components/home/PricingTabs";
-// import BlogSection from "@/components/home/BlogSection";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
@@ -30,8 +29,6 @@ export default function HomePage() {
         .program-card:hover { transform: translateY(-4px); }
         .feature-card { transition: transform 0.2s ease; }
         .feature-card:hover { transform: translateY(-4px); }
-        .blog-card { transition: transform 0.2s ease; }
-        .blog-card:hover { transform: translateY(-4px); }
         @media (max-width: 1379px) {
           .benefit-grid { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
           .benefit-grid > div:first-child { height: 500px !important; }
@@ -63,7 +60,6 @@ export default function HomePage() {
           .benefit-grid { grid-template-columns: 1fr !important; }
           .benefit-grid > div:first-child { height: 400px !important; }
           .benefit-bottom-grid { grid-template-columns: 1fr !important; }
-          .blog-grid { grid-template-columns: 1fr !important; }
 
           /* ── Hero ── */
           .hero-section { min-height: 800px !important; padding: 80px 20px 60px !important; }
@@ -114,10 +110,6 @@ export default function HomePage() {
           .pricing-large-card-inner { flex-direction: column !important; }
           .pricing-image-panel { width: 100% !important; min-height: 220px !important; position: relative !important; }
 
-          /* ── Blog section ── */
-          .blog-heading { font-size: 32px !important; line-height: 1.2 !important; }
-          .blog-grid { grid-template-columns: 1fr !important; }
-
           /* ── CTA section ── */
           .cta-inner { padding: 60px 20px !important; }
           .cta-heading { font-size: 32px !important; line-height: 1.2 !important; }
@@ -136,7 +128,6 @@ export default function HomePage() {
 
       <ProgramsSection />
       <PricingTabs />
-      {/* <BlogSection /> */}
       <CtaSection />
     </>
   );

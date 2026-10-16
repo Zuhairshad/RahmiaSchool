@@ -17,10 +17,10 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
-  // The blog only has the template's placeholder posts, so /blogs and every post
-  // under it send visitors home until the school has real posts. Temporary (307),
-  // not permanent: browsers and Google would remember a permanent redirect, and
-  // the blog may come back. Delete this rule to bring the blog back.
+  // The blog was removed (it only had the template's placeholder posts). Old
+  // /blogs links, bookmarked or found on Google, land on the home page instead of
+  // a 404. Temporary (307) so a future blog could reuse /blogs without browsers
+  // remembering this redirect.
   redirects() {
     return [{ source: "/blogs/:slug*", destination: "/", permanent: false }];
   },

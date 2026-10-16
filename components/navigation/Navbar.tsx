@@ -43,7 +43,6 @@ const allPagesLinks = [
   { href: "/student-life", label: "Student Life" },
   { href: "/facilities", label: "Facilities" },
   { href: "/gallery", label: "Gallery" },
-  // { href: "/blogs", label: "Blog" },
 ];
 
 // Phone/tablet menu has its own order, shared with the footer via menuLinks.ts.
