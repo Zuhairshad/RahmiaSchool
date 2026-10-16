@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import VideoModal from "@/components/ui/VideoModal";
 
 const spring = () => ({
   type: "spring" as const,
@@ -34,8 +35,9 @@ const activities = [
     title: "Science Exhibitions",
     desc: "Students design, build, and present projects that bring classroom science to life through hands-on innovation",
     items: ["Science Models", "Educational Projects", "Classroom Experiments", "Innovation Displays"],
-    // No photo: shown on a solid brand colour instead.
-    solid: "#0b5c44",
+    // The school's science lab apparatus: beakers, test tubes, tripod stand and balance.
+    image: "/assets/images/rahma-science-lab-equipment.jpeg",
+    objectPosition: "center 58%",
   },
   {
     icon: "🎨",
@@ -63,6 +65,11 @@ const activities = [
     items: ["Health Camps & Medical Checkups", "Child Welfare Initiatives", "Supportive & Attentive Teachers", "Safe & Inclusive Classrooms", "Student Well-being Monitoring"],
     image: "/assets/images/rahma-safe-caring.png",
     objectPosition: "center",
+    // The school's medical camp, from its YouTube channel.
+    videos: [
+      { id: "t8Bog8kz3KU", title: "Medical Camp at RAHMA Model School" },
+      { id: "YVWDQXwj4BQ", title: "Medical Camp: student health checks" },
+    ],
   },
   {
     icon: "⭐",
@@ -80,7 +87,7 @@ export default function ActivitiesSection() {
     <section style={{ background: "var(--color-bg-cream)", padding: "48px 0 80px" }}>
       <style>{`
         @media (max-width: 600px) {
-          .activity-card { height: auto !important; min-height: 460px; }
+          .activity-card { min-height: 460px; }
           .activity-card-content { padding: 28px 24px !important; }
           .activity-card-watermark { font-size: 150px !important; right: -16px !important; top: auto !important; bottom: -16px; transform: none !important; opacity: 0.12 !important; }
           .activity-card-shade { background: linear-gradient(to bottom, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.45) 100%) !important; }
@@ -100,7 +107,7 @@ export default function ActivitiesSection() {
                 position: "relative",
                 borderRadius: 20,
                 overflow: "hidden",
-                height: 460,
+                minHeight: 460,
                 display: "flex",
                 alignItems: "stretch",
               }}
@@ -184,6 +191,7 @@ export default function ActivitiesSection() {
                     </li>
                   ))}
                 </ul>
+                {"videos" in a && a.videos && <VideoModal videos={a.videos} label={a.videos.length > 1 ? "Watch videos" : "Watch video"} />}
               </div>
             </motion.div>
           ))}

@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  // The blog only has the template's placeholder posts, so /blogs and every post
+  // under it send visitors home until the school has real posts. Temporary (307),
+  // not permanent: browsers and Google would remember a permanent redirect, and
+  // the blog may come back. Delete this rule to bring the blog back.
+  redirects() {
+    return [{ source: "/blogs/:slug*", destination: "/", permanent: false }];
+  },
 };
 
 export default nextConfig;

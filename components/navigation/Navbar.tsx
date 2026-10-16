@@ -13,15 +13,26 @@ import { MENU_LINKS } from "./menuLinks";
  * inlined CSS), not a single ~900px cutoff.
  */
 const aboutLinks = [
-  { href: "/about", label: "About Us" },
   { href: "/about/management", label: "Management" },
+  { href: "/about", label: "About Us" },
 ];
+
+const programLinks = [
+  { href: "/programs", label: "Academic Programs" },
+  { href: "/programs/hifz-program", label: "Hifz Program" },
+];
+
+// Menu entries that open their sub-pages with a + button on phones and tablets.
+const overlayGroups: Record<string, { href: string; label: string }[]> = {
+  "/about": aboutLinks,
+  "/programs": programLinks,
+};
 
 const primaryLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About", children: aboutLinks },
   { href: "/contact", label: "Contact" },
-  { href: "/programs", label: "Programs" },
+  { href: "/programs", label: "Programs", children: programLinks },
   { href: "/programs/hifz-program", label: "Hifz Program", highlight: true },
   { href: "/teachers", label: "Faculty" },
 ];
@@ -35,8 +46,8 @@ const allPagesLinks = [
   // { href: "/blogs", label: "Blog" },
 ];
 
-// Phone/tablet menu has its own order (no Hifz link; the laptop nav keeps it),
-// shared with the footer via menuLinks.ts. About opens its sub-pages with the + button.
+// Phone/tablet menu has its own order, shared with the footer via menuLinks.ts.
+// About and Programs open their sub-pages with the + button (see overlayGroups).
 const allLinksForOverlay = MENU_LINKS;
 
 function NavDropdown({
@@ -117,7 +128,8 @@ function NavDropdown({
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
+  // Which + group is open in the phone menu. One at a time keeps the menu short.
+  const [expanded, setExpanded] = useState<string | null>(null);
   const isHome = pathname === "/";
   // On the home page the bar floats see-through over the hero photo, then turns
   // solid once the hero has scrolled away so the links stay readable on the
@@ -153,12 +165,19 @@ export default function Navbar() {
         @media (max-width: 1379px) { .hero-pill { display: none !important; } }
         /* 20px pill text crowds the logo and menu button on phones */
         @media (max-width: 480px) { .nav-center-pill span { font-size: 15px !important; } }
-        @media (max-width: 420px) { .nav-bar-inner { padding: 0 20px !important; } .nav-center-pill { padding: 6px 12px !important; } .nav-center-pill span { font-size: 10.5px !important; letter-spacing: 0.06em !important; } }
+        /* Narrow phones: the pill text grows with the screen, 11px at 320px wide up to
+           15px by ~390px, keeping at least 14px clear of the logo and menu button. */
+        @media (max-width: 420px) { .nav-bar-inner { padding: 0 20px !important; } .nav-center-pill { padding: 6px 12px !important; } .nav-center-pill span { font-size: clamp(11px, calc(11px + (100vw - 320px) * 0.06), 15px) !important; letter-spacing: 0.06em !important; } }
         @media (min-width: 1380px) { .nav-mobile-overlay { display: none !important; } }
         @media (max-width: 810px) {
           .nav-bar-inner { height: 69px !important; }
-          .nav-mobile-overlay { top: 69px !important; height: calc(100vh - 69px) !important; }
+          .nav-mobile-overlay { top: 69px !important; }
         }
+        /* Phone menu rows share the screen height (flex: 1), between 32px and 52px
+           each, so the whole menu fits without scrolling on most phones. It only
+           scrolls when even 32px rows don't fit (very short or landscape screens). */
+        .nav-overlay-row { flex: 1 1 0; min-height: 32px; max-height: 52px; display: flex; align-items: center; font-size: 0.95rem; line-height: 1.3; }
+        .nav-overlay-sub { flex: 1 1 0; min-height: 28px; max-height: 42px; display: flex; align-items: center; padding-left: 18px; font-size: 0.88rem; line-height: 1.3; }
       `}</style>
       <nav style={{
         // Fixed on home so it can overlap the hero; sticky elsewhere so it keeps its place in the flow.
@@ -262,73 +281,66 @@ export default function Navbar() {
         <div
           className="nav-mobile-overlay"
           style={{
+            // inset (top + bottom: 0) sizes the panel to the visible screen. A 100vh
+            // height would also count the strip behind the phone's address bar,
+            // pushing the last links out of view.
             position: "fixed",
             inset: 0,
             top: 64,
-            height: "calc(100vh - 64px)",
             background: "#0d0d0d",
             display: open ? "flex" : "none",
             flexDirection: "column",
-            padding: "24px 32px",
+            padding: "6px 32px 10px",
             overflowY: "auto",
             zIndex: 1050,
           }}
         >
-          {allLinksForOverlay.map((l) =>
-            l.href === "/about" ? (
-              <div key={l.href} style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <Link
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    style={{ display: "block", flex: 1, color: pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)", padding: "16px 0", fontSize: "1.05rem" }}
-                  >
-                    {l.label}
-                  </Link>
-                  <button
-                    type="button"
-                    aria-label={aboutOpen ? `Hide ${l.label} pages` : `Show ${l.label} pages`}
-                    aria-expanded={aboutOpen}
-                    onClick={() => setAboutOpen((v) => !v)}
-                    style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 4px 8px 16px", color: "rgba(255,255,255,0.8)", fontSize: "1.5rem", lineHeight: 1, fontFamily: "inherit" }}
-                  >
-                    <span aria-hidden style={{ display: "inline-block", transform: aboutOpen ? "rotate(45deg)" : "none", transition: "transform 0.2s" }}>+</span>
-                  </button>
-                </div>
-                {aboutOpen && (
-                  <div style={{ paddingBottom: 8 }}>
-                    {aboutLinks.map((c) => (
-                      <Link
-                        key={c.href}
-                        href={c.href}
-                        onClick={() => setOpen(false)}
-                        style={{ display: "block", color: pathname === c.href ? "#fff" : "rgba(255,255,255,0.6)", padding: "10px 0 10px 20px", fontSize: "0.98rem" }}
-                      >
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                style={{
-                  display: "block",
-                  color: "highlight" in l ? "var(--color-brand-gold)" : "donate" in l ? "var(--color-brand-teal)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)",
-                  fontWeight: "highlight" in l || "donate" in l ? 700 : undefined,
-                  padding: "16px 0",
-                  fontSize: "1.05rem",
-                  borderBottom: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                {"highlight" in l && "★ "}
-                {l.label}
-              </Link>
-            )
-          )}
+          {allLinksForOverlay.map((l) => {
+            const group = overlayGroups[l.href];
+            const rowColor = "donate" in l ? "var(--color-brand-teal)" : pathname === l.href ? "#fff" : "rgba(255,255,255,0.7)";
+            const rowStyle = { color: rowColor, fontWeight: "donate" in l ? 700 : undefined, borderBottom: "1px solid rgba(255,255,255,0.08)" };
+            if (!group) {
+              return (
+                <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="nav-overlay-row" style={rowStyle}>
+                  {l.label}
+                </Link>
+              );
+            }
+            const isOpen = expanded === l.href;
+            // Rows are returned flat (not wrapped) so the sub-pages share the menu's height too.
+            return [
+              <div key={l.href} className="nav-overlay-row" style={{ ...rowStyle, justifyContent: "space-between", borderBottom: isOpen ? "none" : rowStyle.borderBottom }}>
+                <Link href={l.href} onClick={() => setOpen(false)} style={{ flex: 1, color: "inherit", alignSelf: "stretch", display: "flex", alignItems: "center" }}>
+                  {l.label}
+                </Link>
+                <button
+                  type="button"
+                  aria-label={isOpen ? `Hide ${l.label} pages` : `Show ${l.label} pages`}
+                  aria-expanded={isOpen}
+                  onClick={() => setExpanded(isOpen ? null : l.href)}
+                  style={{ background: "none", border: "none", cursor: "pointer", alignSelf: "stretch", padding: "0 4px 0 24px", color: "rgba(255,255,255,0.8)", fontSize: "1.4rem", lineHeight: 1, fontFamily: "inherit" }}
+                >
+                  <span aria-hidden style={{ display: "inline-block", transform: isOpen ? "rotate(45deg)" : "none", transition: "transform 0.2s" }}>+</span>
+                </button>
+              </div>,
+              ...(isOpen
+                ? group.map((c, i) => (
+                    <Link
+                      key={l.href + c.href}
+                      href={c.href}
+                      onClick={() => setOpen(false)}
+                      className="nav-overlay-sub"
+                      style={{
+                        color: pathname === c.href ? "#fff" : "rgba(255,255,255,0.6)",
+                        borderBottom: i === group.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                      }}
+                    >
+                      {c.label}
+                    </Link>
+                  ))
+                : []),
+            ];
+          })}
         </div>
       </nav>
     </>

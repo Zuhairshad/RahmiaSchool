@@ -21,79 +21,7 @@ export default function DonatePage() {
         }
       `}</style>
 
-      {/* ── Hero ── */}
-      <section
-        style={{
-          background: "var(--color-dark-bg)",
-          padding: "100px 32px 80px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            top: -120,
-            right: -120,
-            width: 480,
-            height: 480,
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(9,216,154,0.12) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <Container>
-          <div style={{ maxWidth: 680, textAlign: "center", margin: "0 auto" }}>
-            <p
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "rgba(9,216,154,0.12)",
-                border: "1px solid rgba(9,216,154,0.3)",
-                borderRadius: 50,
-                padding: "6px 18px",
-                color: "#09d89a",
-                fontSize: "0.72rem",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                marginBottom: 28,
-              }}
-            >
-              ✦ Support a RAHMATE
-            </p>
-            <h1
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "clamp(2.4rem, 5.5vw, 4rem)",
-                fontWeight: 800,
-                color: "#fff",
-                lineHeight: 1.15,
-                margin: "0 0 24px",
-              }}
-            >
-              Empower a Child&apos;s{" "}
-              <span style={{ color: "#09d89a" }}>Education</span>
-            </h1>
-            <p
-              style={{
-                color: "rgba(255,255,255,0.65)",
-                fontSize: "1.05rem",
-                lineHeight: 1.8,
-                margin: 0,
-              }}
-            >
-              At Rahma Model School, every child deserves quality education regardless of financial
-              circumstances. Your generous donation supports orphaned and underprivileged RAHMATES
-              in their journey of learning and character building
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── Donation Details ── */}
+      {/* ── Donation Details: first, so donors see how to give straight away ── */}
       <section className="donate-details-section" style={{ background: "var(--color-paper)", padding: "80px 32px" }}>
         <Container>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
@@ -110,7 +38,7 @@ export default function DonatePage() {
             >
               ✦ Financial Assistance
             </p>
-            <h2
+            <h1
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
@@ -122,7 +50,7 @@ export default function DonatePage() {
               }}
             >
               Transfer your donation directly
-            </h2>
+            </h1>
 
             <div
               style={{
@@ -203,6 +131,78 @@ export default function DonatePage() {
                 ))}
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Why give (was the hero; now below the bank details) ── */}
+      <section
+        style={{
+          background: "var(--color-dark-bg)",
+          padding: "100px 32px 80px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: -120,
+            right: -120,
+            width: 480,
+            height: 480,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(9,216,154,0.12) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <Container>
+          <div style={{ maxWidth: 680, textAlign: "center", margin: "0 auto" }}>
+            <p
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                background: "rgba(9,216,154,0.12)",
+                border: "1px solid rgba(9,216,154,0.3)",
+                borderRadius: 50,
+                padding: "6px 18px",
+                color: "#09d89a",
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                marginBottom: 28,
+              }}
+            >
+              ✦ Support a RAHMATE
+            </p>
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "clamp(2.4rem, 5.5vw, 4rem)",
+                fontWeight: 800,
+                color: "#fff",
+                lineHeight: 1.15,
+                margin: "0 0 24px",
+              }}
+            >
+              Empower a Child&apos;s{" "}
+              <span style={{ color: "#09d89a" }}>Education</span>
+            </h2>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.65)",
+                fontSize: "1.05rem",
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              At Rahma Model School, every child deserves quality education regardless of financial
+              circumstances. Your generous donation supports orphaned and underprivileged RAHMATES
+              in their journey of learning and character building
+            </p>
           </div>
         </Container>
       </section>
