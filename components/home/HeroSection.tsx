@@ -22,12 +22,12 @@ export default function HeroSection() {
       }}
     >
       <Image
-        src="/assets/images/hero-daylight.png"
+        src="/assets/images/rahma-about.jpeg"
         alt="RAHMA Model School building"
         fill
         preload
         sizes="100vw"
-        style={{ objectFit: "cover", objectPosition: "center", zIndex: 0, filter: "brightness(1.15) saturate(1.05)" }}
+        style={{ objectFit: "cover", objectPosition: "center 30%", zIndex: 0 }}
       />
       <div
         style={{

@@ -306,11 +306,11 @@ export default function PricingTabs() {
               }}
             >
               <Image
-                src="/assets/images/yJpmVxeiLLChpwpGjaX5dl1UO64-bd4e3ad9.avif"
-                alt="RAHMA Model School"
+                src="/assets/images/gallery/g-03.jpeg"
+                alt="RAHMA students painting paper doves for World Peace Day"
                 fill
                 sizes="(max-width: 810px) 100vw, 50vw"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", objectPosition: "center 60%" }}
               />
             </div>
           </div>

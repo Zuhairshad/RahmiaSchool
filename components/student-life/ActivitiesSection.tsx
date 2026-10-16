@@ -45,8 +45,8 @@ const activities = [
     title: "Arts & Creative Activities",
     desc: "Creative expression develops imagination, fine motor skills, and self-confidence in every RAHMATE",
     items: ["Drawing & Colouring", "Craft Work", "Poster Making", "Model Making", "Creative Classroom Displays", "Art-Based Learning Activities"],
-    image: "/assets/images/rahma-arts-activities.png",
-    objectPosition: "center",
+    image: "/assets/images/gallery/g-26.jpeg",
+    objectPosition: "center 35%",
   },
   {
     icon: "🏛️",

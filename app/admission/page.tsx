@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Container, SectionLabel, WavyUnderline, Button, AdmissionForm, CtaImageRow } from "@/components/ui";
+import { Container, SectionLabel, WavyUnderline, Button, AdmissionForm } from "@/components/ui";
 import { HIFZ_PROGRAM } from "@/lib/admission";
 
 export const metadata: Metadata = {
@@ -208,7 +208,6 @@ export default async function AdmissionPage({ searchParams }: { searchParams: Pr
       {/* CTA */}
       <section style={{ background: "var(--color-brand-teal)", padding: "64px 0", textAlign: "center" }}>
         <Container>
-          <CtaImageRow />
           <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", fontWeight: 800, color: "#000", marginBottom: 16 }}>
             Join our learning community today
           </h2>

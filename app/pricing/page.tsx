@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Container, SectionLabel, WavyUnderline, Button, PricingCard, CtaImageRow } from "@/components/ui";
+import { Container, SectionLabel, WavyUnderline, Button, PricingCard } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Fee Structure & Admissions",
@@ -79,7 +79,6 @@ export default function PricingPage() {
       {/* CTA */}
       <section style={{ background: "var(--color-brand-teal)", padding: "64px 0", textAlign: "center" }}>
         <Container>
-          <CtaImageRow />
           <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", fontWeight: 800, color: "#000", marginBottom: 16 }}>
             Join our learning community today
           </h2>

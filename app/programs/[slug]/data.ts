@@ -117,7 +117,7 @@ export const programs: Record<string, Program> = {
     accentVar: "var(--color-brand-purple-deep)",
     tintVar: "var(--color-tint-purple)",
     textOnAccent: "light",
-    image: { src: "/assets/images/rahma-kid-writing.jpeg", width: 720, height: 1280 },
+    image: { src: "/assets/images/gallery/g-30.jpeg", width: 810, height: 1800 },
     imagePosition: "center 30%",
     sections: [
       {

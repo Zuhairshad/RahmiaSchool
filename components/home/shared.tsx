@@ -45,7 +45,7 @@ export const programs: HomeProgram[] = [
     tagColor: "#520080",
     desc: "Strong academics and character development through concept-based and interactive teaching, covering English, Urdu, Maths, Science, Islamiat, Computer Studies, and General Knowledge",
     bg: "#ebe1fd",
-    image: "/assets/images/rahma-kid-writing.jpeg",
+    image: "/assets/images/gallery/g-30.jpeg",
     imageWidth: 720,
     imageHeight: 1280,
     imagePosition: "center 30%",

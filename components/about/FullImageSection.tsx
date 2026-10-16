@@ -17,8 +17,8 @@ export default function FullImageSection() {
       }}
     >
       <Image
-        src="/assets/images/rahma-about-hero.png"
-        alt="RAHMA Model School aerial view"
+        src="/assets/images/rahma-about.jpeg"
+        alt="RAHMA Model School building"
         fill
         sizes="100vw"
         style={{ objectFit: "cover" }}

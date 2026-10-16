@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowButton } from "./shared";
 
@@ -76,102 +75,6 @@ export default function CtaSection() {
             opacity="0.9"
           />
         </svg>
-
-        {/* Avatar — top-left (larger) */}
-        <div
-          className="cta-avatar"
-          style={{
-            position: "absolute",
-            left: 80,
-            top: 60,
-            width: 70,
-            height: 70,
-            borderRadius: "50%",
-            overflow: "hidden",
-            border: "3px solid #fff",
-            zIndex: 1,
-          }}
-        >
-          <Image
-            src="/assets/images/bM5XLgck0nuZBUl800FPnYZLqM-49e6a37c.avif"
-            alt=""
-            fill
-            sizes="80px"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-
-        {/* Avatar — bottom-left (smaller) */}
-        <div
-          className="cta-avatar"
-          style={{
-            position: "absolute",
-            left: 40,
-            bottom: 80,
-            width: 60,
-            height: 60,
-            borderRadius: "50%",
-            overflow: "hidden",
-            border: "3px solid #fff",
-            zIndex: 1,
-          }}
-        >
-          <Image
-            src="/assets/images/FH7s1VpnmO3OdrrAkXKU3gealE-79d1a684.avif"
-            alt=""
-            fill
-            sizes="70px"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-
-        {/* Avatar — top-right (larger) */}
-        <div
-          className="cta-avatar"
-          style={{
-            position: "absolute",
-            right: 80,
-            top: 60,
-            width: 70,
-            height: 70,
-            borderRadius: "50%",
-            overflow: "hidden",
-            border: "3px solid #fff",
-            zIndex: 1,
-          }}
-        >
-          <Image
-            src="/assets/images/IIm5NEuXpUdRszfB2rjqlZaHRdg-670fd09e.avif"
-            alt=""
-            fill
-            sizes="80px"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-
-        {/* Avatar — bottom-right (smaller) */}
-        <div
-          className="cta-avatar"
-          style={{
-            position: "absolute",
-            right: 40,
-            bottom: 80,
-            width: 60,
-            height: 60,
-            borderRadius: "50%",
-            overflow: "hidden",
-            border: "3px solid #fff",
-            zIndex: 1,
-          }}
-        >
-          <Image
-            src="/assets/images/C5awbluBJPV4EhKVcTbPsA5i4-f26ae8c5.avif"
-            alt=""
-            fill
-            sizes="60px"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 24 }}

@@ -215,8 +215,8 @@ export default function ValuesSection() {
           }}
         >
           <Image
-            src="/assets/images/rahma-kid-writing.jpeg"
-            alt="RAHMA students in class"
+            src="/assets/images/gallery/g-26.jpeg"
+            alt="RAHMA students colouring their worksheets in class"
             fill
             sizes="(max-width: 810px) 100vw, 590px"
             style={{ objectFit: "cover", objectPosition: "center 28%" }}
