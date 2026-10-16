@@ -308,20 +308,34 @@ export default function Navbar() {
             const isOpen = expanded === l.href;
             // Rows are returned flat (not wrapped) so the sub-pages share the menu's height too.
             return [
-              <div key={l.href} className="nav-overlay-row" style={{ ...rowStyle, justifyContent: "space-between", borderBottom: isOpen ? "none" : rowStyle.borderBottom }}>
-                <Link href={l.href} onClick={() => setOpen(false)} style={{ flex: 1, color: "inherit", alignSelf: "stretch", display: "flex", alignItems: "center" }}>
-                  {l.label}
-                </Link>
-                <button
-                  type="button"
-                  aria-label={isOpen ? `Hide ${l.label} pages` : `Show ${l.label} pages`}
-                  aria-expanded={isOpen}
-                  onClick={() => setExpanded(isOpen ? null : l.href)}
-                  style={{ background: "none", border: "none", cursor: "pointer", alignSelf: "stretch", padding: "0 4px 0 24px", color: "rgba(255,255,255,0.8)", fontSize: "1.4rem", lineHeight: 1, fontFamily: "inherit" }}
-                >
-                  <span aria-hidden style={{ display: "inline-block", transform: isOpen ? "rotate(45deg)" : "none", transition: "transform 0.2s" }}>+</span>
-                </button>
-              </div>,
+              // The whole row works like the + (opens the sub-pages), so tapping the name
+              // never jumps to a page by surprise. The pages themselves are in the list
+              // that opens (About Us, Academic Programs).
+              <button
+                key={l.href}
+                type="button"
+                className="nav-overlay-row"
+                aria-label={isOpen ? `Hide ${l.label} pages` : `Show ${l.label} pages`}
+                aria-expanded={isOpen}
+                onClick={() => setExpanded(isOpen ? null : l.href)}
+                style={{
+                  ...rowStyle,
+                  justifyContent: "space-between",
+                  borderBottom: isOpen ? "none" : rowStyle.borderBottom,
+                  width: "100%",
+                  background: "none",
+                  borderTop: "none",
+                  borderLeft: "none",
+                  borderRight: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                  textAlign: "left",
+                }}
+              >
+                <span>{l.label}</span>
+                <span aria-hidden style={{ display: "inline-block", padding: "0 4px 0 24px", color: "rgba(255,255,255,0.8)", fontSize: "1.4rem", lineHeight: 1, transform: isOpen ? "rotate(45deg)" : "none", transition: "transform 0.2s" }}>+</span>
+              </button>,
               ...(isOpen
                 ? group.map((c, i) => (
                     <Link
