@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 // facilities.html, so this list is grounded in the "Little moments that shine"
 // feature teaser on the real homepage (science & computer labs, library, smart
 // classrooms, sports grounds) rather than a page-specific source document.
-const facilities = [
+const facilities: { icon: string; bg: string; title: string; image?: string; desc: string }[] = [
   {
     icon: "📚",
     bg: "var(--color-tint-green)",
@@ -24,7 +24,7 @@ const facilities = [
     icon: "🔬",
     bg: "var(--color-tint-purple)",
     title: "Science Laboratory",
-    image: "/assets/images/rahma-science-lab.jpeg",
+    // No photo: the previous one was AI-generated. Add a real lab photo here when there is one.
     desc: "Our science laboratory provides practical learning opportunities where students perform experiments and develop scientific thinking, observation, and analytical skills",
   },
   {
@@ -45,7 +45,8 @@ const facilities = [
     icon: "🤝",
     bg: "var(--color-tint-purple)",
     title: "Parent–School Partnership",
-    image: "/assets/images/rahma-parent-partnership-2.jpeg",
+    // A teacher handing a report card to a parent at a PTM.
+    image: "/assets/images/rahma-ptm-male-teacher.jpeg",
     desc: "We believe parents are partners in every child's education. Regular PTMs, progress reports, and open communication keep families closely involved in their child's learning journey",
   },
   {
@@ -114,7 +115,14 @@ export default function FacilitiesPage() {
               <div key={f.title} style={{ background: f.bg, borderRadius: 20, padding: "28px 28px 32px" }}>
                 <div style={{ fontSize: "2.2rem", marginBottom: 16 }}>{f.icon}</div>
                 <div style={{ aspectRatio: "4 / 3", borderRadius: 14, marginBottom: 20, overflow: "hidden", position: "relative" }}>
-                  <Image src={f.image} alt={f.title} fill sizes="(max-width: 1000px) 100vw, 640px" style={{ objectFit: "cover" }} />
+                  {f.image ? (
+                    <Image src={f.image} alt={f.title} fill sizes="(max-width: 1000px) 100vw, 640px" style={{ objectFit: "cover" }} />
+                  ) : (
+                    // No photo yet: a soft panel with the card's icon keeps the grid even.
+                    <div aria-hidden style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.45)", fontSize: "clamp(5rem, 14vw, 9rem)", opacity: 0.55 }}>
+                      {f.icon}
+                    </div>
+                  )}
                 </div>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem", color: "var(--color-ink)", marginBottom: 10 }}>
                   {f.title}

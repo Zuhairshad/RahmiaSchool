@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { MENU_LINKS } from "./menuLinks";
+import { MENU_LINKS, MENU_GROUPS, ABOUT_LINKS, PROGRAM_LINKS } from "./menuLinks";
 
 /**
  * Primary links match the real Framer nav ("Large Menu 01" on index.html):
@@ -12,21 +12,11 @@ import { MENU_LINKS } from "./menuLinks";
  * switch is 1380px (confirmed via @media (min-width:1380px) in the export's
  * inlined CSS), not a single ~900px cutoff.
  */
-const aboutLinks = [
-  { href: "/about/management", label: "Management" },
-  { href: "/about", label: "About Us" },
-];
-
-const programLinks = [
-  { href: "/programs", label: "Academic Programs" },
-  { href: "/programs/hifz-program", label: "Hifz Program" },
-];
+const aboutLinks = ABOUT_LINKS;
+const programLinks = PROGRAM_LINKS;
 
 // Menu entries that open their sub-pages with a + button on phones and tablets.
-const overlayGroups: Record<string, { href: string; label: string }[]> = {
-  "/about": aboutLinks,
-  "/programs": programLinks,
-};
+const overlayGroups = MENU_GROUPS;
 
 const primaryLinks = [
   { href: "/", label: "Home" },

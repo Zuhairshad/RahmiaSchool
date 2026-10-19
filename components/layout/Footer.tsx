@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { MENU_LINKS } from "@/components/navigation/menuLinks";
+import { useState } from "react";
+import { MENU_LINKS, MENU_GROUPS } from "@/components/navigation/menuLinks";
 
 // Same pages, same order as the phone menu. Filled down the left column first,
 // then down the right, so the list reads in that order.
@@ -26,7 +27,13 @@ const socials = [
   },
 ];
 
+const linkStyle = { display: "block", color: "rgba(255,255,255,0.55)", fontSize: "0.875rem", marginBottom: 20 } as const;
+
 export default function Footer() {
+  // Which + group (About or Programs) is open. Tapping the name opens it too,
+  // the same as in the phone menu.
+  const [expanded, setExpanded] = useState<string | null>(null);
+
   return (
     <footer style={{ background: "var(--color-dark-bg-deep)", color: "#fff" }}>
       <div className="footer-grid" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 32px 40px", display: "grid", gap: 48, alignItems: "start" }}>
@@ -80,11 +87,40 @@ export default function Footer() {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: `repeat(${footerRows}, auto)`, gridAutoFlow: "column", gap: "0 32px" }}>
-          {footerLinks.map((l) => (
-            <Link key={l.href + l.label} href={l.href} style={{ display: "block", color: "rgba(255,255,255,0.55)", fontSize: "0.875rem", marginBottom: 20 }}>
-              {l.label}
-            </Link>
-          ))}
+          {footerLinks.map((l) => {
+            const group = MENU_GROUPS[l.href];
+            if (!group) {
+              return (
+                <Link key={l.href + l.label} href={l.href} style={linkStyle}>
+                  {l.label}
+                </Link>
+              );
+            }
+            const isOpen = expanded === l.href;
+            return (
+              <div key={l.href + l.label}>
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-label={isOpen ? `Hide ${l.label} pages` : `Show ${l.label} pages`}
+                  onClick={() => setExpanded(isOpen ? null : l.href)}
+                  style={{ ...linkStyle, background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: "inherit", lineHeight: "inherit", display: "inline-flex", alignItems: "center", gap: 10 }}
+                >
+                  {l.label}
+                  <span aria-hidden style={{ fontSize: "1.1rem", lineHeight: 1, display: "inline-block", transform: isOpen ? "rotate(45deg)" : "none", transition: "transform 0.2s" }}>+</span>
+                </button>
+                {isOpen && (
+                  <div style={{ marginTop: -8, marginBottom: 12, paddingLeft: 14, borderLeft: "1px solid rgba(255,255,255,0.12)" }}>
+                    {group.map((c) => (
+                      <Link key={c.href} href={c.href} style={{ ...linkStyle, fontSize: "0.82rem", marginBottom: 12 }}>
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 

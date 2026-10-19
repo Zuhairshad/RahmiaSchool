@@ -17,3 +17,20 @@ export const MENU_LINKS: { href: string; label: string; donate?: boolean }[] = [
   { href: "/admission", label: "Admission" },
   { href: "/contact", label: "Contact" },
 ];
+
+// Entries that open their sub-pages with a + (phone menu and footer).
+// Change the sub-pages here and both update.
+export const ABOUT_LINKS = [
+  { href: "/about/management", label: "Management" },
+  { href: "/about", label: "About Us" },
+];
+
+export const PROGRAM_LINKS = [
+  { href: "/programs", label: "Academic Programs" },
+  { href: "/programs/hifz-program", label: "Hifz Program" },
+];
+
+export const MENU_GROUPS: Record<string, { href: string; label: string }[]> = {
+  "/about": ABOUT_LINKS,
+  "/programs": PROGRAM_LINKS,
+};
