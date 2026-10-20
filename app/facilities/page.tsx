@@ -45,8 +45,9 @@ const facilities: { icon: string; bg: string; title: string; image?: string; des
     icon: "🤝",
     bg: "var(--color-tint-purple)",
     title: "Parent–School Partnership",
-    // A teacher handing a report card to a parent at a PTM.
-    image: "/assets/images/rahma-ptm-male-teacher.jpeg",
+    // A teacher handing a report card to a parent at a PTM. To change a photo, use a
+    // new file name: optimised images are cached by name (see next.config.ts).
+    image: "/assets/images/rahma-ptm-teacher.jpeg",
     desc: "We believe parents are partners in every child's education. Regular PTMs, progress reports, and open communication keep families closely involved in their child's learning journey",
   },
   {
