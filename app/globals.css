@@ -122,11 +122,21 @@ img {
   desktop (>=1380px) 72px.
 */
 .hero-h1 {
-  font-size: 48px;
+  font-size: 36px;
+}
+.hero-text {
+  font-size: 15px !important;
+  line-height: 22px !important;
 }
 @media (max-width: 380px) {
   .hero-h1 {
-    font-size: 40px;
+    font-size: 32px;
+  }
+}
+@media (min-width: 810px) {
+  .hero-text {
+    font-size: 18px !important;
+    line-height: 27px !important;
   }
 }
 @media (min-width: 810px) {

@@ -90,6 +90,7 @@ export default function HeroSection() {
               Where Education and Faith Build Character
             </motion.h1>
             <motion.p
+              className="hero-text"
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease, delay: 0.3 }}

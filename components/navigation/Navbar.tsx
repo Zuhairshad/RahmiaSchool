@@ -175,8 +175,10 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        background: overHero ? "rgba(0,0,0,0.3)" : "var(--color-nav-bg)",
-        backdropFilter: overHero ? "blur(10px)" : "none",
+        // backdrop-filter turns the nav into the containing block for the fixed menu
+        // overlay inside it, collapsing the overlay to nothing. Drop it while the menu is open.
+        background: overHero && !open ? "rgba(0,0,0,0.3)" : "var(--color-nav-bg)",
+        backdropFilter: overHero && !open ? "blur(10px)" : "none",
         borderBottom: overHero ? "1px solid transparent" : "1px solid rgba(255,255,255,0.06)",
         transition: "background 0.25s ease",
       }}>
