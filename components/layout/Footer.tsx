@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { MENU_LINKS, MENU_GROUPS } from "@/components/navigation/menuLinks";
+import { SCHOOL_ADDRESS, SCHOOL_HOURS, SCHOOL_PHONES } from "@/lib/school-info";
 
 // Same pages, same order as the phone menu. Filled down the left column first,
 // then down the right, so the list reads in that order.
@@ -67,6 +68,24 @@ export default function Footer() {
               </span>
             </button>
           </form>
+
+          <div style={{ marginTop: 28, display: "flex", flexDirection: "column", gap: 14, fontSize: "0.85rem", lineHeight: 1.6, color: "rgba(255,255,255,0.55)" }}>
+            <address style={{ fontStyle: "normal" }}>
+              {SCHOOL_ADDRESS.map((line) => (
+                <span key={line} style={{ display: "block" }}>{line}</span>
+              ))}
+            </address>
+            <div>
+              {SCHOOL_PHONES.map((ph) => (
+                <a key={ph.tel} href={`tel:${ph.tel}`} style={{ display: "block", color: "inherit" }}>{ph.display}</a>
+              ))}
+            </div>
+            <div>
+              {SCHOOL_HOURS.map((line) => (
+                <span key={line} style={{ display: "block" }}>{line}</span>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="footer-socials" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, paddingTop: 4 }}>

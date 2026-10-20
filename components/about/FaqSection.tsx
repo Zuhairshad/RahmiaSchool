@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "What age groups do you accept?",
-    a: "We welcome children from early toddlers to preschool age, with carefully designed programs that match each stage of development. Our activities are tailored to support social and academic growth at every level",
+    a: "Toddler to Middle secondary school",
   },
   {
     q: "What is your teaching approach?",

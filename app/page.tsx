@@ -6,6 +6,7 @@ import BenefitSection from "@/components/home/BenefitSection";
 import PresentationSection from "@/components/home/PresentationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import VisionSection from "@/components/home/VisionSection";
+import ExploreSection from "@/components/home/ExploreSection";
 import PricingTabs from "@/components/home/PricingTabs";
 import CtaSection from "@/components/home/CtaSection";
 
@@ -127,6 +128,7 @@ export default function HomePage() {
       <VisionSection />
 
       <ProgramsSection />
+      <ExploreSection />
       <PricingTabs />
       <CtaSection />
     </>

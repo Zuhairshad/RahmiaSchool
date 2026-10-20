@@ -22,7 +22,7 @@ export const MENU_LINKS: { href: string; label: string; donate?: boolean }[] = [
 // Change the sub-pages here and both update.
 export const ABOUT_LINKS = [
   { href: "/about/management", label: "Management" },
-  { href: "/about", label: "About Us" },
+  { href: "/about", label: "RMS" },
 ];
 
 export const PROGRAM_LINKS = [

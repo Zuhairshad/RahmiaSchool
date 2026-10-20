@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Container, SectionLabel, WavyUnderline, Button, PricingCard } from "@/components/ui";
+import { FEE_NOTE, feeRows, formatFee } from "@/lib/fees";
+import { SCHOOL_PHONES } from "@/lib/school-info";
 
 export const metadata: Metadata = {
   title: "Fee Structure & Admissions",
@@ -11,6 +13,14 @@ export default function PricingPage() {
       <style>{`
         .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
         @media (max-width: 810px) { .pricing-grid { grid-template-columns: 1fr; } }
+        .fee-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 16px; align-items: center; padding: 18px 24px; border-top: 1px solid #ebebeb; }
+        .fee-row-head { border-top: none; background: var(--color-tint-purple); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-purple-deep); }
+        .fee-label { display: none; }
+        @media (max-width: 810px) {
+          .fee-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
+          .fee-row-head { display: none; }
+          .fee-label { display: inline; color: #888; font-weight: 600; }
+        }
       `}</style>
 
       {/* Header */}
@@ -36,6 +46,39 @@ export default function PricingPage() {
           </h1>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 560, margin: "16px auto 0" }}>
             RAHMA Model School is committed to making quality education accessible. Contact us directly for current fee details and information on merit and need-based scholarships
+          </p>
+        </Container>
+      </section>
+
+      {/* Fee table */}
+      <section style={{ background: "var(--color-paper)", padding: "0 0 60px" }}>
+        <Container>
+          <div style={{ border: "1px solid #ebebeb", borderRadius: 20, overflow: "hidden", background: "#fff" }}>
+            <div className="fee-row fee-row-head" aria-hidden>
+              <span>Level</span>
+              <span>Admission fee</span>
+              <span>Monthly fee</span>
+            </div>
+            {feeRows.map((r) => (
+              <div key={r.level} className="fee-row" style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem", color: "#000" }}>
+                <div>
+                  <div style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}>{r.level}</div>
+                  <div style={{ color: "var(--color-body-text)", fontSize: "0.85rem" }}>{r.classes}</div>
+                </div>
+                <div><span className="fee-label">Admission fee: </span>{formatFee(r.admission)}</div>
+                <div><span className="fee-label">Monthly fee: </span>{formatFee(r.monthly)}</div>
+              </div>
+            ))}
+          </div>
+          <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8, marginTop: 20, textAlign: "center" }}>
+            {FEE_NOTE} Call{" "}
+            {SCHOOL_PHONES.map((ph, i) => (
+              <span key={ph.tel}>
+                {i > 0 && " or "}
+                <a href={`tel:${ph.tel}`} style={{ color: "var(--color-brand-purple-deep)", fontWeight: 700 }}>{ph.display}</a>
+              </span>
+            ))}
+            .
           </p>
         </Container>
       </section>

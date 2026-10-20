@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container, SectionLabel, WavyUnderline, Button, AdmissionForm } from "@/components/ui";
 import { HIFZ_PROGRAM } from "@/lib/admission";
+import { SCHOOL_HOURS, SCHOOL_PHONES } from "@/lib/school-info";
 
 export const metadata: Metadata = {
   title: "Admissions",
@@ -39,14 +40,13 @@ const infoCards = [
     bg: "var(--color-tint-green)",
     title: "General Inquiry",
     desc: "Have questions about our programs or classes? We're here to help anytime",
-    value: "0345 0515566",
+    values: SCHOOL_PHONES.map((ph) => ph.display),
   },
   {
     bg: "var(--color-tint-purple)",
     title: "Opening Hours",
     desc: "Check our opening hours and plan your visit at a time that works best for you",
-    value: "Monday – Friday: 8:00 am – 2:00 pm",
-    value2: "Saturday: 8:00 am – 1:00 pm · Sunday: Closed",
+    values: SCHOOL_HOURS,
   },
 ];
 
@@ -152,10 +152,9 @@ export default async function AdmissionPage({ searchParams }: { searchParams: Pr
                     <p style={{ color: "var(--color-body-text)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: 8 }}>
                       {c.desc}
                     </p>
-                    <p style={{ fontWeight: 700, fontSize: "0.9rem", color: "#000" }}>{c.value}</p>
-                    {"value2" in c && c.value2 && (
-                      <p style={{ fontWeight: 600, fontSize: "0.8rem", color: "var(--color-body-text)" }}>{c.value2}</p>
-                    )}
+                    {c.values.map((v, i) => (
+                      <p key={v} style={i === 0 ? { fontWeight: 700, fontSize: "0.9rem", color: "#000" } : { fontWeight: 600, fontSize: "0.8rem", color: "var(--color-body-text)" }}>{v}</p>
+                    ))}
                   </div>
                 ))}
               </div>

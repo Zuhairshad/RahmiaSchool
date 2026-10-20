@@ -12,6 +12,7 @@
 
 import type { Metadata } from "next";
 import { Container, WavyUnderline, ContactForm } from "@/components/ui";
+import { SCHOOL_ADDRESS, SCHOOL_EMAIL, SCHOOL_HOURS, SCHOOL_PHONES } from "@/lib/school-info";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -22,25 +23,25 @@ const contactCards = [
     bg: "var(--color-tint-green)",
     icon: "📍",
     title: "Address",
-    lines: ["Bagga Sheikhan, Chakbeli Khan Road", "Rawat, Rawalpindi, Pakistan"],
+    lines: SCHOOL_ADDRESS,
   },
   {
     bg: "var(--color-tint-purple)",
     icon: "📞",
     title: "Phone",
-    lines: ["0345 0515566"],
+    lines: SCHOOL_PHONES.map((ph) => ph.display),
   },
   {
     bg: "var(--color-tint-cream)",
     icon: "✉️",
     title: "Email",
-    lines: ["adminrawat@rahmapk.org"],
+    lines: [SCHOOL_EMAIL],
   },
   {
     bg: "var(--color-tint-green)",
     icon: "🕐",
     title: "Office Hours",
-    lines: ["Monday – Friday: 8:00 am – 2:00 pm", "Saturday: 8:00 am – 1:00 pm · Sunday: Closed"],
+    lines: SCHOOL_HOURS,
   },
 ];
 

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import VideoModal from "@/components/ui/VideoModal";
 
 const spring = () => ({
@@ -79,6 +80,8 @@ const activities = [
     items: ["Quiz Competitions", "Islamic & Moral Learning Activities", "Storytelling Sessions", "Classroom Presentations", "Educational Games", "Educational Exhibitions"],
     image: "/assets/images/rahma-character-2.jpeg",
     objectPosition: "center top",
+    // The Friday activity video lives in the gallery
+    link: { href: "/gallery#videos", label: "Watch the Friday activity video" },
   },
 ];
 
@@ -191,6 +194,17 @@ export default function ActivitiesSection() {
                     </li>
                   ))}
                 </ul>
+                {"link" in a && a.link && (
+                  <Link
+                    href={a.link.href}
+                    style={{ alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: 10, background: "#fff", color: "#000", borderRadius: 100, padding: "8px 8px 8px 18px", fontFamily: "var(--font-body)", fontSize: "0.9rem", fontWeight: 700 }}
+                  >
+                    {a.link.label}
+                    <span aria-hidden style={{ width: 30, height: 30, borderRadius: "50%", background: "var(--color-brand-teal)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </span>
+                  </Link>
+                )}
                 {"videos" in a && a.videos && <VideoModal videos={a.videos} label={a.videos.length > 1 ? "Watch videos" : "Watch video"} />}
               </div>
             </motion.div>

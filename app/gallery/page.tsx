@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GalleryBanner from "@/components/gallery/GalleryBanner";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
+import GalleryVideos from "@/components/gallery/GalleryVideos";
 import CtaSection from "@/components/home/CtaSection";
 import { galleryCategories, galleryPhotos } from "@/lib/gallery";
 
@@ -21,6 +22,7 @@ export default function GalleryPage() {
         }
       `}</style>
       <GalleryBanner />
+      <GalleryVideos />
       <GalleryGrid photos={galleryPhotos} categories={galleryCategories} />
       <CtaSection />
     </>
