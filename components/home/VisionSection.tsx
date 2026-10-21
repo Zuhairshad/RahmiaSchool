@@ -65,6 +65,9 @@ export default function VisionSection() {
               <div style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--color-brand-teal)", fontWeight: 600 }}>
                 Educational Advisor, RAHMA Model School
               </div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", lineHeight: 1.6, color: "rgba(255,255,255,0.7)", margin: "10px 0 0" }}>
+                Dedicated to enhancing the quality of education and ensuring a bright future for our students
+              </p>
             </div>
           </motion.div>
 
