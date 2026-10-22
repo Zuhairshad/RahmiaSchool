@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="footer-grid" style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "64px 32px 40px", display: "grid", gap: 48, alignItems: "start" }}>
         <div>
           <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "1.4rem", color: "#fff", letterSpacing: "-0.01em", marginBottom: 16 }}>
-            RAHMA
+            RAHMA Model School
           </p>
           <p style={{ color: "var(--color-brand-teal)", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 12 }}>
             Where Education and Faith Build Character
