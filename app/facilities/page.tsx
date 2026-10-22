@@ -55,7 +55,7 @@ const facilities: { icon: string; bg: string; title: string; image?: string; des
     bg: "var(--color-tint-cream)",
     title: "Safe & Caring Environment",
     image: "/assets/images/rahma-safe-caring.png",
-    desc: "We prioritise every child's health and well-being through regular health camps, medical checkups, and a supportive school culture where every student feels safe, valued, and cared for",
+    desc: "Child safety is not left only to CCTV and a security wall; rather, it is built on attentive teachers, supervised activities, regular health camps and medical checkups, and a supportive school culture where every student feels safe, valued, and cared for",
   },
 ];
 

@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "How do you ensure child safety?",
-    a: "We ensure child safety through trained staff, secure facilities, supervised activities, strict safety policies, and a nurturing environment that prioritizes every child's well-being and protection",
+    a: "Child safety is not left only to CCTV and a security wall; rather, it is a responsibility shared by every RAHMATE. Our attentive teachers supervise classrooms and activities, keep a close watch on each student's well-being, and stay in regular contact with parents, while health camps, medical checkups and a caring school culture help every child feel safe, valued, and protected",
   },
   {
     q: "What are your class sizes?",
