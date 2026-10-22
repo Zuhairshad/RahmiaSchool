@@ -27,7 +27,7 @@ const premiumFeatures = [
   "Structured learning programs",
   "Interactive group activities",
   "Weekly progress reports",
-  "Healthy meals and snacks",
+  "Regular health camps and checkups",
   "Priority parent support",
 ];
 
