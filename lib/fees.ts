@@ -7,9 +7,6 @@ export type FeeRow = {
   monthly: number | null;
 };
 
-export const FEE_NOTE =
-  "Merit and need-based scholarships are available on request. Please contact the school office to confirm current fees.";
-
 export const feeRows: FeeRow[] = [
   { level: "Preschool", classes: "Play Group, Nursery & Prep", admission: null, monthly: null },
   { level: "Primary", classes: "Class 1 – 5", admission: null, monthly: null },

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Container, SectionLabel, WavyUnderline, Button, PricingCard } from "@/components/ui";
-import { FEE_NOTE, feeRows, formatFee } from "@/lib/fees";
-import { SCHOOL_PHONES } from "@/lib/school-info";
+import { feeRows, formatFee } from "@/lib/fees";
 
 export const metadata: Metadata = {
   title: "Fee Structure & Admissions",
@@ -70,16 +69,6 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
-          <p style={{ color: "var(--color-body-text)", fontSize: "0.9rem", lineHeight: 1.8, marginTop: 20, textAlign: "center" }}>
-            {FEE_NOTE} Call{" "}
-            {SCHOOL_PHONES.map((ph, i) => (
-              <span key={ph.tel}>
-                {i > 0 && " or "}
-                <a href={`tel:${ph.tel}`} style={{ color: "var(--color-brand-purple-deep)", fontWeight: 700 }}>{ph.display}</a>
-              </span>
-            ))}
-            .
-          </p>
         </Container>
       </section>
 
