@@ -44,7 +44,7 @@ export default function PricingPage() {
             </span>
           </h1>
           <p style={{ color: "var(--color-body-text)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: 560, margin: "16px auto 0" }}>
-            RAHMA Model School is committed to making quality education accessible. Contact us directly for current fee details and information on merit and need-based scholarships
+            RAHMA Model School is committed to making quality education accessible. Contact us directly for current fee details
           </p>
         </Container>
       </section>
@@ -78,7 +78,7 @@ export default function PricingPage() {
           <div className="pricing-grid">
             <PricingCard
               title="Preschool & Primary"
-              description="Affordable, community-focused fee structure with merit and need-based scholarships available upon request"
+              description="Affordable, community-focused fee structure for Preschool and Primary families"
               price="Contact us"
               variant="standard"
               ctaHref="/contact"
