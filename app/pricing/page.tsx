@@ -12,7 +12,7 @@ export default function PricingPage() {
       <style>{`
         .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
         @media (max-width: 810px) { .pricing-grid { grid-template-columns: 1fr; } }
-        .fee-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 16px; align-items: center; padding: 18px 24px; border-top: 1px solid #ebebeb; }
+        .fee-row { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; align-items: center; padding: 18px 24px; border-top: 1px solid #ebebeb; }
         .fee-row-head { border-top: none; background: var(--color-tint-purple); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-purple-deep); }
         .fee-label { display: none; }
         @media (max-width: 810px) {
@@ -55,8 +55,7 @@ export default function PricingPage() {
           <div style={{ border: "1px solid #ebebeb", borderRadius: 20, overflow: "hidden", background: "#fff" }}>
             <div className="fee-row fee-row-head" aria-hidden>
               <span>Level</span>
-              <span>Admission fee</span>
-              <span>Monthly fee</span>
+              <span>Fee per month</span>
             </div>
             {feeRows.map((r) => (
               <div key={r.level} className="fee-row" style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem", color: "#000" }}>
@@ -64,8 +63,7 @@ export default function PricingPage() {
                   <div style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}>{r.level}</div>
                   <div style={{ color: "var(--color-body-text)", fontSize: "0.85rem" }}>{r.classes}</div>
                 </div>
-                <div><span className="fee-label">Admission fee: </span>{formatFee(r.admission)}</div>
-                <div><span className="fee-label">Monthly fee: </span>{formatFee(r.monthly)}</div>
+                <div><span className="fee-label">Fee per month: </span>{formatFee(r.monthly)}</div>
               </div>
             ))}
           </div>
