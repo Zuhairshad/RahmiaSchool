@@ -7,7 +7,7 @@ import PresentationSection from "@/components/home/PresentationSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import VisionSection from "@/components/home/VisionSection";
 import ExploreSection from "@/components/home/ExploreSection";
-import PricingTabs from "@/components/home/PricingTabs";
+import FeeCards from "@/components/home/FeeCards";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
@@ -104,13 +104,6 @@ export default function HomePage() {
           /* ── CTA section ── */
           .cta-avatar { display: none !important; }
 
-          /* ── Pricing section ── */
-          .pricing-header { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
-          .pricing-heading { font-size: 32px !important; line-height: 1.2 !important; }
-          .pricing-cards-grid { grid-template-columns: 1fr !important; }
-          .pricing-large-card-inner { flex-direction: column !important; }
-          .pricing-image-panel { width: 100% !important; min-height: 220px !important; position: relative !important; }
-
           /* ── CTA section ── */
           .cta-inner { padding: 60px 20px !important; }
           .cta-heading { font-size: 32px !important; line-height: 1.2 !important; }
@@ -129,7 +122,7 @@ export default function HomePage() {
 
       <ProgramsSection />
       <ExploreSection />
-      <PricingTabs />
+      <FeeCards />
       <CtaSection />
     </>
   );
