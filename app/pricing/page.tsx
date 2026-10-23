@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container, SectionLabel, WavyUnderline, Button, PricingCard } from "@/components/ui";
-import { feeRows, formatFee } from "@/lib/fees";
+import { extraCharges, feeRows, formatFee } from "@/lib/fees";
 
 export const metadata: Metadata = {
   title: "Fee Structure & Admissions",
@@ -14,10 +14,12 @@ export default function PricingPage() {
         @media (max-width: 810px) { .pricing-grid { grid-template-columns: 1fr; } }
         .fee-row { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; align-items: center; padding: 18px 24px; border-top: 1px solid #ebebeb; }
         .fee-row-head { border-top: none; background: var(--color-tint-purple); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-purple-deep); }
+        .fee-extras { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
         .fee-label { display: none; }
         @media (max-width: 810px) {
           .fee-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
           .fee-row-head { display: none; }
+          .fee-extras { grid-template-columns: 1fr; }
           .fee-label { display: inline; color: #888; font-weight: 600; }
         }
       `}</style>
@@ -64,6 +66,14 @@ export default function PricingPage() {
                   <div style={{ color: "var(--color-body-text)", fontSize: "0.85rem" }}>{r.classes}</div>
                 </div>
                 <div><span className="fee-label">Fee per month: </span>{formatFee(r.monthly)}</div>
+              </div>
+            ))}
+          </div>
+          <div className="fee-extras">
+            {extraCharges.map((c) => (
+              <div key={c.label} style={{ background: "var(--color-tint-green)", borderRadius: 16, padding: "20px 24px", fontFamily: "var(--font-body)" }}>
+                <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-body-text)", marginBottom: 6 }}>{c.label}</div>
+                <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.4rem", fontWeight: 700, color: "#000" }}>{formatFee(c.amount)}</div>
               </div>
             ))}
           </div>

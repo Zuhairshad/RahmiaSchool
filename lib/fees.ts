@@ -12,5 +12,11 @@ export const feeRows: FeeRow[] = [
   { level: "High School", classes: "Grade 9 – 10", monthly: 4000 },
 ];
 
+// Charged in addition to the monthly fee, the same for every level.
+export const extraCharges = [
+  { label: "Admission fee", amount: 5000 },
+  { label: "Annual charges", amount: 3000 },
+];
+
 export const formatFee = (amount: number | null) =>
   amount === null ? "Contact the school" : `PKR ${amount.toLocaleString("en-US")}`;
