@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Eyebrow } from "./shared";
+import { cardColors, getInitials, homeTeachers } from "@/lib/faculty";
 
 const spring = (delay = 0): Record<string, unknown> => ({
   type: "spring",
@@ -10,111 +11,6 @@ const spring = (delay = 0): Record<string, unknown> => ({
   stiffness: 200,
   delay,
 });
-
-const tints = ["#d7fdcf", "#ebe1fd", "#feeecd"];
-const initColors = ["#09d89a", "#520080", "#f59e0b"];
-
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-}
-
-const teachers = [
-  {
-    name: "Shabnam Kayani",
-    role: "School Coordinator",
-    tint: tints[0], color: initColors[0],
-    bio: "Leading our school community with warmth, structure and a commitment to every child's growth",
-    grades: "All Classes",
-    experience: "8+ Years",
-    highlights: [
-      "Academic planning & staff coordination",
-      "Student welfare & parent relations",
-      "School events & co-curricular management",
-      "Teacher mentoring & professional development",
-      "Communication between parents & administration",
-    ],
-  },
-  {
-    name: "Rubab Zaitoon",
-    role: "Maths Teacher",
-    tint: tints[1], color: initColors[1],
-    bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction",
-    grades: "Classes 6–10",
-    experience: "6+ Years",
-    highlights: [
-      "Algebra, geometry & arithmetic",
-      "Board exam preparation",
-      "Interactive problem-solving sessions",
-      "Mental maths & speed drills",
-      "Remedial support for weaker students",
-    ],
-  },
-  {
-    name: "Sajal Fatima",
-    role: "Science Teacher",
-    tint: tints[2], color: initColors[2],
-    bio: "Sparking curiosity and critical thinking through discovery-based learning in every lesson",
-    grades: "Classes 6–10",
-    experience: "5+ Years",
-    highlights: [
-      "Biology, chemistry & physics",
-      "Lab experiments & demonstrations",
-      "Science exhibition preparation",
-      "Concept-based lesson planning",
-      "Environmental & health education",
-    ],
-  },
-  {
-    name: "Nida Jahan",
-    role: "Montessori Teacher",
-    tint: tints[0], color: initColors[0],
-    bio: "Guiding young minds through child-led exploration, nurturing independence from the very first step",
-    grades: "Play Group – Prep",
-    experience: "7+ Years",
-    highlights: [
-      "Hands-on Montessori activities",
-      "Early literacy & numeracy",
-      "Sensory & motor skill development",
-      "Social skills & classroom routine",
-      "Creative arts, music & storytelling",
-    ],
-  },
-  {
-    name: "Alishba Shahzadi",
-    role: "Urdu Teacher",
-    tint: tints[1], color: initColors[1],
-    bio: "Instilling a love for language and literature rooted in our rich cultural and literary heritage",
-    grades: "Classes 1–8",
-    experience: "4+ Years",
-    highlights: [
-      "Urdu reading, writing & grammar",
-      "Poetry appreciation & composition",
-      "Islamic literature & nasheeds",
-      "Dictation & handwriting development",
-      "Public speaking in Urdu",
-    ],
-  },
-  {
-    name: "Moin Ullah",
-    role: "Quran Teacher",
-    tint: tints[2], color: initColors[2],
-    bio: "Building a lifelong connection with the Quran through tajweed, memorisation and reflection",
-    grades: "All Classes",
-    experience: "10+ Years",
-    highlights: [
-      "Tajweed & Quranic recitation",
-      "Hifz programme support",
-      "Islamic values & character building",
-      "Duas, surahs & daily Islamic practice",
-      "Seerah & Islamic history lessons",
-    ],
-  },
-];
 
 export default function TestimonialsSection() {
   return (
@@ -166,7 +62,7 @@ export default function TestimonialsSection() {
             alignItems: "stretch",
           }}
         >
-          {teachers.map((t, i) => (
+          {homeTeachers.map((s, i) => ({ ...s, ...cardColors(i) })).map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, scale: 0.8, y: 24 }}
@@ -229,17 +125,19 @@ export default function TestimonialsSection() {
                   }}>
                     {t.grades}
                   </span>
-                  <span style={{
-                    background: t.color,
-                    borderRadius: 50,
-                    padding: "4px 14px",
-                    fontFamily: "var(--font-body)",
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#fff",
-                  }}>
-                    {t.experience}
-                  </span>
+                  {t.experience && (
+                    <span style={{
+                      background: t.color,
+                      borderRadius: 50,
+                      padding: "4px 14px",
+                      fontFamily: "var(--font-body)",
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: "#fff",
+                    }}>
+                      {t.experience}
+                    </span>
+                  )}
                 </div>
               </div>
 

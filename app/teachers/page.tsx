@@ -3,13 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { WavyUnderline } from "@/components/ui";
 import { Button, SectionLabel, Container } from "@/components/ui";
+import { cardColors, getInitials, teachingStaff } from "@/lib/faculty";
 
-const tints = ["#d7fdcf", "#ebe1fd", "#feeecd"];
-const initColors = ["#09d89a", "#520080", "#f59e0b"];
-
-function getInitials(name: string) {
-  return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
-}
 
 const spring = (delay = 0) => ({
   type: "spring" as const,
@@ -84,158 +79,6 @@ const leadership = [
   },
 ];
 
-const teachers = [
-  {
-    name: "Shabnam Kayani",
-    role: "School Coordinator",
-    tint: tints[0], color: initColors[0],
-    bio: "Leading our school community with warmth, structure and a commitment to every child's growth",
-    grades: "All Classes",
-    experience: "8+ Years",
-    highlights: [
-      "Academic planning & staff coordination",
-      "Student welfare & parent relations",
-      "School events & co-curricular management",
-      "Teacher mentoring & professional development",
-      "Communication between parents & administration",
-    ],
-  },
-  {
-    name: "Rubab Zaitoon",
-    role: "Maths Teacher",
-    tint: tints[1], color: initColors[1],
-    bio: "Making numbers approachable and exciting for every learner through patient, hands-on instruction",
-    grades: "Classes 6–10",
-    experience: "6+ Years",
-    highlights: [
-      "Algebra, geometry & arithmetic",
-      "Board exam preparation",
-      "Interactive problem-solving sessions",
-      "Mental maths & speed drills",
-      "Remedial support for weaker students",
-    ],
-  },
-  {
-    name: "Sajal Fatima",
-    role: "Science Teacher",
-    tint: tints[2], color: initColors[2],
-    bio: "Sparking curiosity and critical thinking through discovery-based learning in every lesson",
-    grades: "Classes 6–10",
-    experience: "5+ Years",
-    highlights: [
-      "Biology, chemistry & physics",
-      "Lab experiments & demonstrations",
-      "Science exhibition preparation",
-      "Concept-based lesson planning",
-      "Environmental & health education",
-    ],
-  },
-  {
-    name: "Nida Jahan",
-    role: "Montessori Teacher",
-    tint: tints[0], color: initColors[0],
-    bio: "Guiding young minds through child-led exploration, nurturing independence from the very first step",
-    grades: "Play Group – Prep",
-    experience: "7+ Years",
-    highlights: [
-      "Hands-on Montessori activities",
-      "Early literacy & numeracy",
-      "Sensory & motor skill development",
-      "Social skills & classroom routine",
-      "Creative arts, music & storytelling",
-    ],
-  },
-  {
-    name: "Muqadas Shahzadi",
-    role: "Montessori Teacher",
-    tint: tints[1], color: initColors[1],
-    bio: "Creating a joyful, structured environment where every young child feels seen, heard, and ready to learn",
-    grades: "Nursery – Prep",
-    experience: "5+ Years",
-    highlights: [
-      "Child-led Montessori learning",
-      "Fine motor & sensory play",
-      "Pre-literacy & number skills",
-      "Creative arts & storytelling",
-      "Positive classroom community building",
-    ],
-  },
-  {
-    name: "Rimsha Bibi",
-    role: "Islamiyat Teacher",
-    tint: tints[2], color: initColors[2],
-    bio: "Bringing the beauty of Islam into everyday learning, helping students grow in faith, knowledge and character",
-    grades: "All Classes",
-    experience: "4+ Years",
-    highlights: [
-      "Islamiyat curriculum (Classes 1–10)",
-      "Quranic studies & translation",
-      "Islamic history & Seerah",
-      "Moral values & character building",
-      "Daily duas & Islamic etiquette",
-    ],
-  },
-  {
-    name: "Alishba Shahzadi",
-    role: "Urdu Teacher",
-    tint: tints[0], color: initColors[0],
-    bio: "Instilling a love for language and literature rooted in our rich cultural and literary heritage",
-    grades: "Classes 1–8",
-    experience: "4+ Years",
-    highlights: [
-      "Urdu reading, writing & grammar",
-      "Poetry appreciation & composition",
-      "Islamic literature & nasheeds",
-      "Dictation & handwriting development",
-      "Public speaking in Urdu",
-    ],
-  },
-  {
-    name: "Sanam Shahzadi",
-    role: "Computer Teacher",
-    tint: tints[1], color: initColors[1],
-    bio: "Equipping students with modern digital skills and a confident foundation in technology for the future",
-    grades: "Classes 3–10",
-    experience: "3+ Years",
-    highlights: [
-      "Computer literacy & typing",
-      "MS Office & basic applications",
-      "Internet safety & digital skills",
-      "Coding fundamentals & logic",
-      "Practical lab-based assessments",
-    ],
-  },
-  {
-    name: "Moin Ullah",
-    role: "Quran Teacher",
-    tint: tints[2], color: initColors[2],
-    bio: "Building a lifelong connection with the Quran through tajweed, memorisation and reflection",
-    grades: "All Classes",
-    experience: "10+ Years",
-    highlights: [
-      "Tajweed & Quranic recitation",
-      "Hifz programme support",
-      "Islamic values & character building",
-      "Duas, surahs & daily Islamic practice",
-      "Seerah & Islamic history lessons",
-    ],
-  },
-  {
-    name: "Sadique Ullah",
-    role: "Hifz with Understanding Teacher",
-    tint: tints[0], color: initColors[0],
-    bio: "Guiding students through the sacred journey of Quran memorisation with patience, discipline and care",
-    grades: "All Classes",
-    experience: "8+ Years",
-    highlights: [
-      "Hifz with understanding: memorisation with Urdu translation",
-      "Tajweed & Quranic recitation",
-      "Individual memorisation plans",
-      "Daily revision & progress tracking",
-      "Student progress reports & parent updates",
-    ],
-  },
-];
 
 export default function TeachersPage() {
   return (
@@ -344,7 +187,7 @@ export default function TeachersPage() {
       <section className="faculty-section" style={{ background: "var(--color-bg-cream)", padding: "0 32px 80px" }}>
         <Container>
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            {teachers.map((t, i) => (
+            {teachingStaff.map((s, i) => ({ ...s, ...cardColors(i) })).map((t) => (
               <motion.div
                 key={t.name}
                 initial={{ opacity: 0, y: 28 }}
@@ -405,17 +248,19 @@ export default function TeachersPage() {
                     }}>
                       {t.grades}
                     </span>
-                    <span style={{
-                      background: t.color,
-                      borderRadius: 50,
-                      padding: "4px 16px",
-                      fontFamily: "var(--font-body)",
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: "#fff",
-                    }}>
-                      {t.experience}
-                    </span>
+                    {t.experience && (
+                      <span style={{
+                        background: t.color,
+                        borderRadius: 50,
+                        padding: "4px 16px",
+                        fontFamily: "var(--font-body)",
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: "#fff",
+                      }}>
+                        {t.experience}
+                      </span>
+                    )}
                   </div>
                 </div>
 
